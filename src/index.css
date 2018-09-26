@@ -1,0 +1,68 @@
+html,
+body {
+	height: 100%;
+}
+
+a {
+	color: #007aff;
+}
+
+@media screen and (min-width: 30em) {
+	.sidebar-width {
+		max-width: 24rem;
+	}
+}
+
+.mhn1 {
+	margin-left: -0.5rem;
+	margin-right: -0.5rem;
+}
+
+.pv05 {
+	padding-top: 0.125rem;
+	padding-bottom: 0.125rem;
+}
+
+.on:focus {
+	outline: none;
+}
+
+.circle {
+	height: 0.75rem;
+	width: 0.75rem;
+	border-radius: 0.75rem;
+}
+
+.blue {
+	color: #007aff !important;
+}
+
+.bg-map-beige {
+	background-color: rgb(229, 227, 223);
+}
+
+.bg-orange {
+	background-color: rgb(255, 149, 0) !important;
+}
+
+.mh-100 {
+	max-height: 100%;
+}
+
+.max-lines-1 {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.h-third {
+	height: calc(100% / 3);
+}
+
+.h-two-thirds {
+	height: calc(100% / 3 * 2);
+}
+
+.zoom-in {
+	cursor: zoom-in;
+}
