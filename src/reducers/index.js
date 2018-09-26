@@ -5,7 +5,6 @@ import active from "../data/active.json";
 import potential from "../data/potential.json";
 import links from "../data/links.json";
 import kiosks from "../data/kiosks.json";
-import tickets from "../data/tickets.json";
 
 import { nodeStatus } from "../utils";
 
@@ -31,7 +30,6 @@ const nodes = [...active, ...potential].sort(sortNodes);
 
 // Add links to node
 nodes.forEach(node => {
-	node.tickets = tickets[node.id];
 	node.links = links.filter(
 		link =>
 			link.status === "active" &&
