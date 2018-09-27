@@ -18,16 +18,14 @@ class App extends Component {
 		return (
 			<DocumentTitle title="Network Map - NYC Mesh">
 				<Provider store={store}>
-					<Router>
-						<div className="fixed top-0 left-0 right-0 bottom-0 overflow-hidden flex flex-row-ns flex-column-reverse justify-between sans-serif">
-							<div className="h-100-ns h-50 w-100 sidebar-width br-ns bb b--light-gray relative">
-								<Route path="/" component={SideBar} />
+					<Router basename={"/map"}>
+						<div className="fixed top-0 left-0 right-0 bottom-0 overflow-hidden sans-serif">
+							<div className="h-100 w-100">
+								<SideBar />
 								<Route
 									path="/nodes/:nodeId"
 									component={NodeInfo}
 								/>
-							</div>
-							<div className="h-100-ns h-50 w-100">
 								<Route
 									path="/nodes/:nodeId"
 									children={({ match }) => (

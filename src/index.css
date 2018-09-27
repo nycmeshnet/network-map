@@ -7,15 +7,29 @@ a {
 	color: #007aff;
 }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 40em) {
 	.sidebar-width {
 		max-width: 24rem;
 	}
 }
 
+@media screen and (max-width: 40em) {
+	.gm-bundled-control {
+		display: none;
+	}
+}
+
+.min-w-3 {
+	min-width: 4rem;
+}
+
 .mhn1 {
 	margin-left: -0.5rem;
 	margin-right: -0.5rem;
+}
+
+.mn05 {
+	margin: -0.25rem;
 }
 
 .pv05 {

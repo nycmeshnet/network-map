@@ -54,7 +54,7 @@ export default class MapView extends Component {
 					this.updateNodes(selectedNode, selectedMarker);
 					this.updateLinks(selectedNode);
 					this.panToNode(selectedNode);
-				}, 1000);
+				}, 500);
 			} catch (e) {
 				console.error(":(");
 			}

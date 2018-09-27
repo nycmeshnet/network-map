@@ -49,7 +49,7 @@ export default class Gallery extends PureComponent {
 			>
 				<div
 					onKeyDown={e => this.onKeyPressed(e)}
-					className="absolute top-0 right-0 bottom-0 left-0 bg-black flex items-center justify-center z-999"
+					className="absolute top-0 right-0 bottom-0 left-0 bg-black flex items-center justify-center z-max"
 				>
 					<Link to=".." className="absolute top-0 left-0 ma3 white">
 						<svg
