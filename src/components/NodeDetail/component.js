@@ -71,11 +71,7 @@ export default class NodeDetail extends PureComponent {
 		}
 		const [firstPanorama] = panoramas;
 		return (
-			<Link
-				key={firstPanorama}
-				to={`/nodes/${id}/panoramas/1`}
-				className="db node-image"
-			>
+			<Link to={`/nodes/${id}/panoramas/1`} className="db node-image">
 				<div
 					className="h-100 w-100 cover bg-center bg-near-white"
 					style={{
