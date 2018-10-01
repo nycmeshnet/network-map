@@ -2,6 +2,8 @@ import React, { PureComponent } from "react";
 import InfoBox from "react-google-maps/lib/components/addons/InfoBox";
 import { Link } from "react-router-dom";
 
+import { nodeName } from "../../utils";
+
 export default class NodeDetail extends PureComponent {
 	render() {
 		if (!this.props.match) return null;
@@ -15,22 +17,18 @@ export default class NodeDetail extends PureComponent {
 		if (!matchingNodes.length) return null;
 
 		const node = matchingNodes[0];
-		const { id, coordinates } = node;
+		const { coordinates } = node;
 		const [lng, lat] = coordinates;
 
 		return (
 			<InfoBox
-				position={{
-					lat,
-					lng,
-					lat: () => lat,
-					lng: () => lng
-				}}
+				position={new window.google.maps.LatLng(lat, lng)}
 				options={{
 					boxStyle: { overflow: "visible" },
+					boxClass: "overflow-visible pointer-events-none",
 					alignBottom: true,
 					closeBoxURL: ``,
-					enableEventPropagation: true
+					enableEventPropagation: false
 				}}
 			>
 				<div
@@ -38,12 +36,14 @@ export default class NodeDetail extends PureComponent {
 						marginLeft: "-50%",
 						marginRight: "50%"
 					}}
-					className="mb1 flex flex-column items-center"
+					className="mb1 flex flex-column items-center pointer-events-all"
 				>
-					<div className="flex items-center bg-white br2 overflow-hidden shadow-1">
+					<div className="flex items-center bg-white br2 overflow-hidden shadow-2">
 						{this.renderImage(node)}
 						<div className="pv1 ph2">
-							<span className="f5 fw6 nowrap sans-serif">{id}</span>
+							<span className="f5 fw6 nowrap sans-serif">
+								{nodeName(node)}
+							</span>
 						</div>
 					</div>
 					<svg
@@ -74,7 +74,7 @@ export default class NodeDetail extends PureComponent {
 			<Link
 				key={firstPanorama}
 				to={`/nodes/${id}/panoramas/1`}
-				className="db h2 w2"
+				className="db node-image"
 			>
 				<div
 					className="h-100 w-100 cover bg-center bg-near-white"
