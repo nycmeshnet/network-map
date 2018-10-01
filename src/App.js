@@ -4,9 +4,10 @@ import DocumentTitle from "react-document-title";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import React, { Component } from "react";
-import SideBar from "./components/SideBar";
+import SearchBar from "./components/SearchBar";
 import MapView from "./components/MapView";
-import NodeInfo from "./components/NodeInfo";
+import NodeDetail from "./components/NodeDetail";
+import Filters from "./components/Filters";
 import Gallery from "./components/Gallery";
 
 import rootReducer from "./reducers";
@@ -19,19 +20,22 @@ class App extends Component {
 			<DocumentTitle title="Network Map - NYC Mesh">
 				<Provider store={store}>
 					<Router basename={"/map"}>
-						<div className="fixed top-0 left-0 right-0 bottom-0 overflow-hidden sans-serif">
-							<div className="h-100 w-100">
-								<SideBar />
-								<Route
-									path="/nodes/:nodeId"
-									component={NodeInfo}
-								/>
+						<div className="vh-75 sans-serif">
+							<div className="h-100 w-100 relative">
+								<div className="absolute pa2 z-999 search-bar">
+									<Route path="/" component={SearchBar} />
+								</div>
 								<Route
 									path="/nodes/:nodeId"
 									children={({ match }) => (
-										<MapView match={match} />
+										<MapView match={match}>
+											<NodeDetail match={match} />
+										</MapView>
 									)}
 								/>
+								<div className="absolute bottom-0 left-0 ma2">
+									<Filters />
+								</div>
 							</div>
 							<Route
 								path="/nodes/:nodeId/panoramas/:panoId"
