@@ -4,29 +4,27 @@ import { icons } from "../NodeName";
 import { nodeColors } from "../../utils";
 
 // This should be defined elsewhere
-const labels = ["active", "potential", "supernode", "hub", "linkNYC", "dead"];
+const labels = ["active", "potential", "supernode", "hub", "linkNYC"];
 
 export default class Filters extends PureComponent {
 	render() {
 		return (
-			<div className="bt b--light-gray overflow-x-scroll">
-				<div role="group" className="dib ph3 pv2 mhn1">
-					<div className="flex items-center">
-						{labels.map(label => this.renderFilter(label))}
-					</div>
+			<div className="bg-white shadow-2">
+				<div role="group" className="dib pa2">
+					<div>{labels.map(label => this.renderFilter(label))}</div>
 				</div>
 			</div>
 		);
 	}
 
 	renderFilter(label) {
-		const { filters, toggleFilter } = this.props;
+		const { filters, statusCounts, toggleFilter } = this.props;
 		const opacity =
 			filters[label] || filters[label] === undefined
 				? "o-100"
 				: "o-50 strike";
 		return (
-			<div key={label} className={`pointer mh2 ${opacity}`}>
+			<div key={label} className={`pointer ${opacity}`}>
 				<input
 					className="ma0 mr1 dn"
 					type="checkbox"
@@ -41,8 +39,20 @@ export default class Filters extends PureComponent {
 					className="ttc pointer flex items-center nowrap"
 					onClick={() => toggleFilter(label)}
 				>
-					{icons[label]}
-					<span className="ml1">{label.replace("-", " ")}</span>
+					<div
+						style={{
+							marginLeft: "-0.5rem",
+							marginRight: "-0.25rem",
+							marginTop: "-0.125rem",
+							marginBottom: "-0.125rem"
+						}}
+						className="h2 w2 flex items-center justify-center"
+					>
+						{icons[label]}
+					</div>
+					<span className="ml1">
+						{label.replace("-", " ")} ({statusCounts[label]})
+					</span>
 				</label>
 			</div>
 		);

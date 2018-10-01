@@ -4,7 +4,8 @@ import PureFilters from "./component";
 import { toggleFilter } from "../../actions";
 
 const mapStateToProps = (state, ownProps) => ({
-	filters: state.filters
+	filters: state.filters,
+	statusCounts: state.statusCounts
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
