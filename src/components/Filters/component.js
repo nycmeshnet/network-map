@@ -31,10 +31,10 @@ export default class Filters extends PureComponent {
 					id={label}
 					name="feature"
 					value={label}
-					checked
+					defaultChecked={true}
 				/>
 				<label
-					for={label}
+					htmlFor={label}
 					style={{ color: nodeColors[label] }}
 					className="ttc pointer flex items-center nowrap"
 					onClick={() => toggleFilter(label)}
