@@ -1,15 +1,10 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import { withRouter } from "react-router";
 
 import NodeRow from "./NodeRow";
 import Filters from "../Filters";
 
-class SideBar extends PureComponent {
-	static contextTypes = {
-		router: PropTypes.object
-	};
-
+export default class SearchBar extends PureComponent {
 	state = {
 		filteredNodes: [],
 		search: "",
@@ -30,18 +25,25 @@ class SideBar extends PureComponent {
 
 	render() {
 		return (
-			<div className="absolute z-999 sidebar-width w-100 pa2">
-				<div className="shadow-2">
-					{this.renderSearchBar()}
-					{this.renderList()}
-				</div>
+			<div
+				className="w-100 shadow-2"
+				onClick={() => {
+					this.setState({
+						search: "",
+						filteredNodes: []
+					});
+					this.refs.search.focus();
+				}}
+			>
+				{this.renderSearchBar()}
+				{this.renderList()}
 			</div>
 		);
 	}
 
 	renderSearchBar() {
 		return (
-			<div className="flex items-center bg-white overflow-hidden">
+			<div className="flex items-center bg-white pv3 overflow-hidden">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="20"
@@ -60,7 +62,7 @@ class SideBar extends PureComponent {
 				</svg>
 				<input
 					ref="search"
-					className="pl2 pv3 pr3 input-reset f5 fw4 bw0 w-100 on"
+					className="h1 overflow-hidden pl2 pr3 input-reset f5 fw4 bw0 w-100 on"
 					value={this.state.search}
 					placeholder="Search nodes"
 					spellCheck={false}
@@ -85,30 +87,33 @@ class SideBar extends PureComponent {
 
 		const { search } = this.state;
 		return (
-			<div className="bg-white bt b--light-gray">
-				{this.state.filteredNodes
-					.slice(0, 5)
-					.map(node => (
-						<NodeRow
-							key={node.id}
-							node={node}
-							search={search}
-							iconColor={this.colorForNode(node)}
-							onClick={() =>
-								this.setState({ showDropdown: false })
-							}
-						/>
-					))}
+			<div className="bg-white bt b--light-gray max-h-5-rows overflow-y-scroll">
+				{this.state.filteredNodes.map(node => (
+					<NodeRow
+						key={node.id}
+						node={node}
+						search={search}
+						iconColor={this.colorForNode(node)}
+						onClick={() => this.setState({ showDropdown: false })}
+					/>
+				))}
 			</div>
 		);
 	}
 
 	renderClearButton() {
 		const { search } = this.state;
-		const { history } = this.context.router;
 
 		if (!search || !search.length) {
-			return null;
+			return (
+				<div
+					className="mr3"
+					style={{
+						width: 20,
+						height: 20
+					}}
+				/>
+			);
 		}
 
 		return (
@@ -118,15 +123,13 @@ class SideBar extends PureComponent {
 						search: "",
 						filteredNodes: []
 					});
-					history.push("/");
-					this.refs.search.focus();
 				}}
 				className="on btn bn pa0 bg-white pointer mr3 silver"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="24"
+					width="20"
+					height="20"
 					viewBox="0 0 24 24"
 					fill="none"
 					stroke="currentColor"
@@ -182,5 +185,3 @@ class SideBar extends PureComponent {
 				: "gray";
 	}
 }
-
-export default withRouter(SideBar);

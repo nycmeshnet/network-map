@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import PureSideBar from "./component";
+import PureSearchBar from "./component";
 
 const mapStateToProps = (state, ownProps) => ({
 	nodes: state.filteredNodes,
@@ -8,4 +8,4 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(PureSideBar);
+export default connect(mapStateToProps, mapDispatchToProps)(PureSearchBar);
