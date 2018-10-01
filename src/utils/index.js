@@ -1,9 +1,8 @@
 export function nodeStatus(node) {
-	const { status, notes, tickets, panoramas } = node;
+	const { status, notes, panoramas } = node;
 	const isActive = status === "Installed";
 	const isSupernode = notes.toLowerCase().indexOf("supernode") > -1;
 	const isHub = notes.toLowerCase().indexOf("hub") > -1;
-	const isResponsive = tickets && tickets.length > 2;
 	const hasPanoramas = panoramas && panoramas.length;
 
 	if (isActive) {
@@ -14,7 +13,7 @@ export function nodeStatus(node) {
 
 	if (isSupernode) return "potential-supernode";
 	if (isHub) return "potential-hub";
-	if (isResponsive || hasPanoramas) return "potential";
+	if (hasPanoramas) return "potential";
 	return "dead";
 }
 
