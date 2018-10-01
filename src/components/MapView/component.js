@@ -281,6 +281,6 @@ export default class MapView extends Component {
 	}
 
 	linkId(link) {
-		return JSON.stringify(link.coordinates);
+		return JSON.stringify(link);
 	}
 }
