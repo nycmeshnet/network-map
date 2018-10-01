@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Marker } from "react-google-maps";
 import { withRouter } from "react-router";
 
+import { nodeStatus } from "../../utils";
+
 class NodeMarker extends PureComponent {
 	static contextTypes = {
 		router: PropTypes.object
@@ -41,31 +43,28 @@ class NodeMarker extends PureComponent {
 
 	getMarkerProps() {
 		const { node } = this.props;
-		const { status, notes, tickets } = node;
-		const isActive = status === "Installed";
-		const isSupernode = notes.toLowerCase().indexOf("supernode") > -1;
-		const isHub = notes.toLowerCase().indexOf("hub") > -1;
-		const isResponsive = tickets && tickets.length > 2;
 
-		if (isActive) {
-			if (isSupernode)
-				return {
-					icon: {
-						url: "/img/map/supernode.svg",
-						anchor: { x: 14, y: 14 }
-					},
-					zIndex: 100
-				};
+		const status = nodeStatus(node);
 
-			if (isHub)
-				return {
-					icon: {
-						url: "/img/map/hub.svg",
-						anchor: { x: 10, y: 10 }
-					},
-					zIndex: 99
-				};
+		if (status === "supernode")
+			return {
+				icon: {
+					url: "/img/map/supernode.svg",
+					anchor: { x: 14, y: 14 }
+				},
+				zIndex: 100
+			};
 
+		if (status === "hub")
+			return {
+				icon: {
+					url: "/img/map/hub.svg",
+					anchor: { x: 10, y: 10 }
+				},
+				zIndex: 99
+			};
+
+		if (status === "active")
 			return {
 				icon: {
 					url: "/img/map/active.svg",
@@ -73,9 +72,8 @@ class NodeMarker extends PureComponent {
 				},
 				zIndex: 98
 			};
-		}
 
-		if (isSupernode)
+		if (status === "potential-supernode")
 			return {
 				icon: {
 					url: "/img/map/potential-supernode.svg",
@@ -84,7 +82,7 @@ class NodeMarker extends PureComponent {
 				zIndex: 89
 			};
 
-		if (isHub)
+		if (status === "potential-hub")
 			return {
 				icon: {
 					url: "/img/map/potential-hub.svg",
@@ -93,7 +91,7 @@ class NodeMarker extends PureComponent {
 				zIndex: 88
 			};
 
-		if (isResponsive)
+		if (status === "potential")
 			return {
 				icon: {
 					url: "/img/map/potential.svg",
