@@ -2186,17 +2186,6 @@
     ]
   },
   {
-    "id": 1636,
-    "status": "Installed",
-    "latlng": "40.693118, -73.919954",
-    "rooftopaccess": "I have Rooftop access",
-    "notes": "",
-    "coordinates": [
-      -73.919954,
-      40.693118
-    ]
-  },
-  {
     "id": 1659,
     "status": "Installed",
     "latlng": "40.688140, -73.918365",

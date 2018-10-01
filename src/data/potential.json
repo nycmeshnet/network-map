@@ -5232,6 +5232,17 @@
     ]
   },
   {
+    "id": 586,
+    "status": "",
+    "latlng": "40.722928, -73.631651",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "Possible supernode, Webair",
+    "coordinates": [
+      -73.631651,
+      40.722928
+    ]
+  },
+  {
     "id": 587,
     "status": "",
     "latlng": "40.711503, -73.946981",
@@ -5522,6 +5533,17 @@
     "coordinates": [
       -73.95172,
       40.766229
+    ]
+  },
+  {
+    "id": 620,
+    "status": "",
+    "latlng": "40.686818, -73.956174",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -73.956174,
+      40.686818
     ]
   },
   {
@@ -8659,6 +8681,17 @@
     ]
   },
   {
+    "id": 929,
+    "status": "",
+    "latlng": "35.233312, -82.701542",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -82.701542,
+      35.233312
+    ]
+  },
+  {
     "id": 930,
     "status": "",
     "latlng": "40.710082, -73.861622",
@@ -9564,6 +9597,17 @@
     ]
   },
   {
+    "id": 1015,
+    "status": "",
+    "latlng": "40.721059, -73.979494",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -73.979494,
+      40.721059
+    ]
+  },
+  {
     "id": 1016,
     "status": "",
     "latlng": "40.804342, -73.948412",
@@ -9638,6 +9682,17 @@
     "coordinates": [
       -73.991554,
       40.66283
+    ]
+  },
+  {
+    "id": 1023,
+    "status": "",
+    "latlng": "40.673842, -73.974532",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -73.974532,
+      40.673842
     ]
   },
   {
@@ -10283,6 +10338,28 @@
     ]
   },
   {
+    "id": 1085,
+    "status": "",
+    "latlng": "40.699679, -73.913547",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -73.913547,
+      40.699679
+    ]
+  },
+  {
+    "id": 1086,
+    "status": "",
+    "latlng": "40.673320, -73.978552",
+    "rooftopaccess": "",
+    "notes": "",
+    "coordinates": [
+      -73.978552,
+      40.67332
+    ]
+  },
+  {
     "id": 1087,
     "status": "",
     "latlng": "40.782625, -73.911410",
@@ -10465,6 +10542,17 @@
     ]
   },
   {
+    "id": 1107,
+    "status": "",
+    "latlng": "40.631527, -74.029163",
+    "rooftopaccess": "",
+    "notes": "",
+    "coordinates": [
+      -74.029163,
+      40.631527
+    ]
+  },
+  {
     "id": 1108,
     "status": "",
     "latlng": "40.725763, -73.940467",
@@ -10517,6 +10605,20 @@
     "coordinates": [
       -73.967418,
       40.638519
+    ]
+  },
+  {
+    "id": 1113,
+    "status": "",
+    "latlng": "40.727796, -74.059327",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -74.059327,
+      40.727796
+    ],
+    "panoramas": [
+      "1113.jpg"
     ]
   },
   {
@@ -18396,6 +18498,17 @@
     ]
   },
   {
+    "id": 1905,
+    "status": "",
+    "latlng": "40.695756, -73.983446",
+    "rooftopaccess": "",
+    "notes": "",
+    "coordinates": [
+      -73.983446,
+      40.695756
+    ]
+  },
+  {
     "id": 1907,
     "status": "",
     "latlng": "40.692608, -73.948186",
@@ -23708,6 +23821,17 @@
     "coordinates": [
       -73.964591,
       40.718549
+    ]
+  },
+  {
+    "id": 2445,
+    "status": "",
+    "latlng": "40.638766, -74.029404",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -74.029404,
+      40.638766
     ]
   }
 ]
