@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
+import { withRouter } from "react-router";
+import PropTypes from "prop-types";
 
 import NodeMarker from "./NodeMarker";
 import KioskMarker from "./KioskMarker";
@@ -32,7 +34,11 @@ const MapComponent = withScriptjs(
 	))
 );
 
-export default class MapView extends Component {
+class MapView extends Component {
+	static contextTypes = {
+		router: PropTypes.object
+	};
+
 	constructor(props) {
 		super(props);
 		this.map = React.createRef();
@@ -104,13 +110,14 @@ export default class MapView extends Component {
 	}
 
 	render() {
+		const { history } = this.context.router;
 		return (
 			<MapComponent
 				mapRef={this.map}
 				defaultZoom={13}
 				defaultCenter={{ lat: 40.7101809, lng: -73.9595798 }}
 				defaultOptions={options}
-				onClick={e => console.log(e)}
+				onClick={() => history.push("/")}
 				googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNClp7oJsw-eleEoR3-PQKV23tpeW-FpE"
 				loadingElement={<div className="h-100 bg-map-beige" />}
 				containerElement={<div className="h-100 bg-map-beige" />}
@@ -284,3 +291,5 @@ export default class MapView extends Component {
 		return JSON.stringify(link);
 	}
 }
+
+export default withRouter(MapView);

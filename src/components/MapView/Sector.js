@@ -45,7 +45,8 @@ export default class LinkLine extends PureComponent {
 					strokeOpacity: 0,
 					strokeWidth: 0,
 					fillColor: potential ? "#777" : "#007aff",
-					fillOpacity
+					fillOpacity,
+					clickable: false
 				}}
 			/>
 		);

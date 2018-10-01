@@ -26,7 +26,9 @@ class App extends Component {
 								</div>
 								<Route
 									path="/nodes/:nodeId"
-									component={MapView}
+									children={({ match }) => (
+										<MapView match={match} />
+									)}
 								/>
 								<div className="absolute bottom-0 left-0 ma2">
 									<Filters />
