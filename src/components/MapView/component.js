@@ -6,6 +6,7 @@ import NodeMarker from "./NodeMarker";
 import KioskMarker from "./KioskMarker";
 import LinkLine from "./LinkLine";
 import Sector from "./Sector";
+import NodeDetail from "../NodeDetail";
 
 import { mapStyles } from "./styles";
 
@@ -109,6 +110,7 @@ export default class MapView extends Component {
 				defaultZoom={13}
 				defaultCenter={{ lat: 40.7101809, lng: -73.9595798 }}
 				defaultOptions={options}
+				onClick={e => console.log(e)}
 				googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNClp7oJsw-eleEoR3-PQKV23tpeW-FpE"
 				loadingElement={<div className="h-100 bg-map-beige" />}
 				containerElement={<div className="h-100 bg-map-beige" />}
@@ -118,7 +120,7 @@ export default class MapView extends Component {
 				{this.renderLinks()}
 				{this.renderKiosks()}
 				{this.renderNodes()}
-				{this.props.children}
+				<NodeDetail match={this.props.match} />
 			</MapComponent>
 		);
 	}

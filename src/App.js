@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import React, { Component } from "react";
 import SearchBar from "./components/SearchBar";
 import MapView from "./components/MapView";
-import NodeDetail from "./components/NodeDetail";
 import Filters from "./components/Filters";
 import Gallery from "./components/Gallery";
 
@@ -28,9 +27,7 @@ class App extends Component {
 								<Route
 									path="/nodes/:nodeId"
 									children={({ match }) => (
-										<MapView match={match}>
-											<NodeDetail match={match} />
-										</MapView>
+										<MapView match={match} />
 									)}
 								/>
 								<div className="absolute bottom-0 left-0 ma2">
