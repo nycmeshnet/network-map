@@ -23,7 +23,8 @@ const options = {
 		position: "3"
 	},
 	backgroundColor: "#f5f5f5",
-	gestureHandling: "greedy"
+	gestureHandling: "greedy",
+	clickableIcons: false
 };
 
 const MapComponent = withScriptjs(
