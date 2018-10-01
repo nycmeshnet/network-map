@@ -1,3 +1,14 @@
+// Temporary hack
+const nodeNames = {
+	227: "Supernode 1",
+	570: "Supernode 2",
+	713: "Supernode 3"
+};
+
+export function nodeName(node) {
+	return nodeNames[node.id] || `Node ${node.id}`;
+}
+
 export function nodeStatus(node) {
 	const { status, notes, panoramas } = node;
 	const isActive = status === "Installed";
