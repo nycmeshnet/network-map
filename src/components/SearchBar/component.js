@@ -1,8 +1,6 @@
 import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
 
 import NodeRow from "./NodeRow";
-import Filters from "../Filters";
 
 export default class SearchBar extends PureComponent {
 	state = {
@@ -170,10 +168,8 @@ export default class SearchBar extends PureComponent {
 					if (a.status !== b.status) {
 						if (a.status === "Installed") return -1;
 						return 1;
-					} else {
-						return a.id - b.id;
 					}
-					return 0;
+					return a.id - b.id;
 				})
 		];
 	}
