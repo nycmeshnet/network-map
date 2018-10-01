@@ -13,6 +13,19 @@ a {
 	}
 }
 
+.node-image {
+	height: 3rem;
+	width: 3rem;
+}
+
+.pointer-events-none {
+	pointer-events: none;
+}
+
+.pointer-events-all {
+	pointer-events: all;
+}
+
 .svg-shadow-2 {
 	-webkit-filter: drop-shadow(6px 0 2px hsla(0, 0%, 0%, 0.2));
 	filter: drop-shadow(6px 0 2px hsla(0, 0%, 0%, 0.2));
