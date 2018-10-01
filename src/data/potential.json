@@ -14365,17 +14365,6 @@
     ]
   },
   {
-    "id": 1498,
-    "status": "",
-    "latlng": "40.717372, -73.874250",
-    "rooftopaccess": "I have Rooftop access",
-    "notes": "",
-    "coordinates": [
-      -73.87425,
-      40.717372
-    ]
-  },
-  {
     "id": 1499,
     "status": "",
     "latlng": "40.685385, -73.997011",
@@ -16156,17 +16145,6 @@
     ]
   },
   {
-    "id": 1677,
-    "status": "",
-    "latlng": "40.796303, -73.938248",
-    "rooftopaccess": "I have Rooftop access",
-    "notes": "",
-    "coordinates": [
-      -73.938248,
-      40.796303
-    ]
-  },
-  {
     "id": 1678,
     "status": "",
     "latlng": "40.615899, -73.903935",
@@ -16813,6 +16791,10 @@
     "coordinates": [
       -73.939805,
       40.724571
+    ],
+    "panoramas": [
+      "1738.jpg",
+      "1738a.jpg"
     ]
   },
   {
@@ -18814,21 +18796,6 @@
     ]
   },
   {
-    "id": 1939,
-    "status": "",
-    "latlng": "40.714654, -73.981221",
-    "rooftopaccess": "I have Rooftop access",
-    "notes": "",
-    "coordinates": [
-      -73.981221,
-      40.714654
-    ],
-    "panoramas": [
-      "1939.jpg",
-      "1939a.jpg"
-    ]
-  },
-  {
     "id": 1940,
     "status": "",
     "latlng": "40.715343, -73.962272",
@@ -19405,6 +19372,10 @@
     "coordinates": [
       -73.951429,
       40.688516
+    ],
+    "panoramas": [
+      "1995.jpg",
+      "1995a.jpg"
     ]
   },
   {
@@ -20601,6 +20572,10 @@
     "coordinates": [
       -73.964384,
       40.680104
+    ],
+    "panoramas": [
+      "2122.jpg",
+      "2122a.jpg"
     ]
   },
   {
@@ -21147,6 +21122,10 @@
     "coordinates": [
       -73.98099,
       40.652266
+    ],
+    "panoramas": [
+      "2178.jpg",
+      "2178a.jpg"
     ]
   },
   {
@@ -21297,6 +21276,10 @@
     "coordinates": [
       -74.007883,
       40.725118
+    ],
+    "panoramas": [
+      "2191.jpg",
+      "2191a.jpg"
     ]
   },
   {
@@ -21424,6 +21407,9 @@
     "coordinates": [
       -73.941229,
       40.682965
+    ],
+    "panoramas": [
+      "2203.jpg"
     ]
   },
   {
@@ -22762,6 +22748,9 @@
     "coordinates": [
       -73.940873,
       40.712879
+    ],
+    "panoramas": [
+      "2335.jpg"
     ]
   },
   {
@@ -22878,6 +22867,9 @@
     "coordinates": [
       -73.992271,
       40.694092
+    ],
+    "panoramas": [
+      "2348.jpg"
     ]
   },
   {
@@ -23024,6 +23016,9 @@
     "coordinates": [
       -73.938531,
       40.691534
+    ],
+    "panoramas": [
+      "2364.jpg"
     ]
   },
   {
@@ -23205,6 +23200,9 @@
     "coordinates": [
       -73.956471,
       40.721187
+    ],
+    "panoramas": [
+      "2383.jpg"
     ]
   },
   {
@@ -23238,17 +23236,23 @@
     "coordinates": [
       -73.989751,
       40.716117
+    ],
+    "panoramas": [
+      "2386.jpg"
     ]
   },
   {
     "id": 2387,
     "status": "",
-    "latlng": "40.695508, -73.911113",
+    "latlng": "40.695572, -73.911259",
     "rooftopaccess": "I have Rooftop access",
     "notes": "",
     "coordinates": [
-      -73.911113,
-      40.695508
+      -73.911259,
+      40.695572
+    ],
+    "panoramas": [
+      "2387.jpg"
     ]
   },
   {
@@ -23436,6 +23440,9 @@
     "coordinates": [
       -73.912387,
       40.70184
+    ],
+    "panoramas": [
+      "2406.jpg"
     ]
   },
   {
@@ -23491,6 +23498,10 @@
     "coordinates": [
       -73.974715,
       40.744021
+    ],
+    "panoramas": [
+      "2411.jpg",
+      "2411a.jpg"
     ]
   },
   {
@@ -23524,17 +23535,6 @@
     "coordinates": [
       -73.982108,
       40.733837
-    ]
-  },
-  {
-    "id": 2415,
-    "status": "",
-    "latlng": "40.715007, -73.998508",
-    "rooftopaccess": "I have Rooftop access",
-    "notes": "",
-    "coordinates": [
-      -73.998508,
-      40.715007
     ]
   },
   {
@@ -23678,6 +23678,149 @@
     "coordinates": [
       -73.929345,
       40.693007
+    ]
+  },
+  {
+    "id": 2429,
+    "status": "",
+    "latlng": "40.730938, -73.987268",
+    "rooftopaccess": "",
+    "notes": "",
+    "coordinates": [
+      -73.987268,
+      40.730938
+    ]
+  },
+  {
+    "id": 2430,
+    "status": "",
+    "latlng": "40.708138, -73.919217",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -73.919217,
+      40.708138
+    ]
+  },
+  {
+    "id": 2431,
+    "status": "",
+    "latlng": "40.863496, -73.866709",
+    "rooftopaccess": "",
+    "notes": "",
+    "coordinates": [
+      -73.866709,
+      40.863496
+    ]
+  },
+  {
+    "id": 2433,
+    "status": "",
+    "latlng": "40.706901, -73.952744",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -73.952744,
+      40.706901
+    ]
+  },
+  {
+    "id": 2434,
+    "status": "",
+    "latlng": "40.608177, -74.086383",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -74.086383,
+      40.608177
+    ]
+  },
+  {
+    "id": 2435,
+    "status": "",
+    "latlng": "40.789566, -73.978894",
+    "rooftopaccess": "",
+    "notes": "",
+    "coordinates": [
+      -73.978894,
+      40.789566
+    ]
+  },
+  {
+    "id": 2437,
+    "status": "",
+    "latlng": "40.717352, -73.953633",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -73.953633,
+      40.717352
+    ]
+  },
+  {
+    "id": 2438,
+    "status": "",
+    "latlng": "40.730179, -73.980822",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -73.980822,
+      40.730179
+    ]
+  },
+  {
+    "id": 2439,
+    "status": "",
+    "latlng": "40.773994, -73.919377",
+    "rooftopaccess": "",
+    "notes": "",
+    "coordinates": [
+      -73.919377,
+      40.773994
+    ]
+  },
+  {
+    "id": 2440,
+    "status": "",
+    "latlng": "40.739340, -73.992892",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -73.992892,
+      40.73934
+    ]
+  },
+  {
+    "id": 2441,
+    "status": "",
+    "latlng": "40.716559, -73.990418",
+    "rooftopaccess": "",
+    "notes": "",
+    "coordinates": [
+      -73.990418,
+      40.716559
+    ]
+  },
+  {
+    "id": 2442,
+    "status": "",
+    "latlng": "40.675387, -73.966267",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -73.966267,
+      40.675387
+    ]
+  },
+  {
+    "id": 2444,
+    "status": "",
+    "latlng": "40.718549, -73.964591",
+    "rooftopaccess": "",
+    "notes": "",
+    "coordinates": [
+      -73.964591,
+      40.718549
     ]
   }
 ]

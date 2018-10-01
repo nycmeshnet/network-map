@@ -1089,7 +1089,8 @@
       40.713991
     ],
     "panoramas": [
-      "570.jpg"
+      "570.jpg",
+      "570a.jpg"
     ]
   },
   {
@@ -2246,6 +2247,17 @@
     ]
   },
   {
+    "id": 1677,
+    "status": "Installed",
+    "latlng": "40.796303, -73.938248",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -73.938248,
+      40.796303
+    ]
+  },
+  {
     "id": 1710,
     "status": "Installed",
     "latlng": "40.703521, -73.904923",
@@ -2468,6 +2480,21 @@
     ],
     "panoramas": [
       "1930.jpg"
+    ]
+  },
+  {
+    "id": 1939,
+    "status": "Installed",
+    "latlng": "40.714654, -73.981221",
+    "rooftopaccess": "",
+    "notes": "LiteBeam in window",
+    "coordinates": [
+      -73.981221,
+      40.714654
+    ],
+    "panoramas": [
+      "1939.jpg",
+      "1939a.jpg"
     ]
   },
   {
@@ -2705,6 +2732,9 @@
     "coordinates": [
       -73.954098,
       40.72561
+    ],
+    "panoramas": [
+      "2090.jpg"
     ]
   },
   {
@@ -2862,6 +2892,9 @@
     "coordinates": [
       -73.932428,
       40.706035
+    ],
+    "panoramas": [
+      "2287.jpg"
     ]
   },
   {
@@ -2887,6 +2920,17 @@
     ],
     "panoramas": [
       "2350.jpg"
+    ]
+  },
+  {
+    "id": 2415,
+    "status": "Installed",
+    "latlng": "40.715007, -73.998508",
+    "rooftopaccess": "I have Rooftop access",
+    "notes": "",
+    "coordinates": [
+      -73.998508,
+      40.715007
     ]
   }
 ]
