@@ -12,7 +12,13 @@ import { mapStyles } from "./styles";
 const options = {
 	styles: mapStyles,
 	fullscreenControl: false,
-	mapTypeControl: false,
+	streetViewControl: false,
+	zoomControlOptions: {
+		position: "9"
+	},
+	mapTypeControlOptions: {
+		position: "3"
+	},
 	backgroundColor: "#f5f5f5",
 	gestureHandling: "greedy"
 };
@@ -112,6 +118,7 @@ export default class MapView extends Component {
 				{this.renderLinks()}
 				{this.renderKiosks()}
 				{this.renderNodes()}
+				{this.props.children}
 			</MapComponent>
 		);
 	}
