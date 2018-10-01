@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import Highlighter from "react-highlight-words";
 
-import { nodeStatus } from "../utils";
+import { nodeStatus, nodeName } from "../utils";
 
 export const icons = {
 	dead: (
@@ -131,7 +131,7 @@ export default class NodeName extends PureComponent {
 						highlightClassName="bg-light-yellow"
 						searchWords={[search]}
 						autoEscape={true}
-						textToHighlight={String(node.id)}
+						textToHighlight={String(nodeName(node))}
 					/>
 				</span>
 			</div>
