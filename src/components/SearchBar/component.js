@@ -170,6 +170,8 @@ export default class SearchBar extends PureComponent {
 					if (a.status !== b.status) {
 						if (a.status === "Installed") return -1;
 						return 1;
+					} else {
+						return a.id - b.id;
 					}
 					return 0;
 				})
