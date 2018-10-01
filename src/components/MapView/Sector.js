@@ -35,7 +35,7 @@ export default class LinkLine extends PureComponent {
 		PGpoints.push({ lat: lat2, lng: lon2 });
 		PGpoints.push(centerPoint);
 
-		const fillOpacity = 0.125;
+		const fillOpacity = 0.15;
 
 		return (
 			<Polygon
