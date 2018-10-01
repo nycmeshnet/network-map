@@ -28,6 +28,16 @@ active.forEach(node => {
 
 const nodes = [...active, ...potential].sort(sortNodes);
 
+const statusCounts = { linkNYC: kiosks.length };
+nodes.forEach(node => {
+	const status = nodeStatus(node);
+	if (status.indexOf("potential") > -1 || status === "dead") {
+		statusCounts.potential = (statusCounts.potential || 0) + 1;
+	} else {
+		statusCounts[status] = (statusCounts[status] || 0) + 1;
+	}
+});
+
 // Add links to node
 nodes.forEach(node => {
 	node.links = links.filter(
@@ -45,7 +55,8 @@ const initialState = {
 	links,
 	kiosks,
 	filteredNodes: filterNodes(nodes, initialFilters),
-	filters: initialFilters
+	filters: initialFilters,
+	statusCounts
 };
 
 const reducer = (state = initialState, action) => {
@@ -58,6 +69,20 @@ const reducer = (state = initialState, action) => {
 						? false
 						: !state.filters[action.label]
 			};
+			if (action.label === "potential") {
+				newFilters["dead"] =
+					state.filters["dead"] === undefined
+						? false
+						: !state.filters["dead"];
+				newFilters["potential-hub"] =
+					state.filters["potential-hub"] === undefined
+						? false
+						: !state.filters["potential-hub"];
+				newFilters["potential-supernode"] =
+					state.filters["potential-supernode"] === undefined
+						? false
+						: !state.filters["potential-supernode"];
+			}
 			return {
 				...state,
 				filters: newFilters,
