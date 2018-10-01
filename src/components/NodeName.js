@@ -126,14 +126,14 @@ export default class NodeName extends PureComponent {
 				<div className="flex items-center justify-center">
 					{icons[nodeStatus(node)]}
 				</div>
-				<h1 className="black f5 mv0 ml1">
+				<span className="fw6 black f5 mv0 ml1">
 					<Highlighter
 						highlightClassName="bg-light-yellow"
 						searchWords={[search]}
 						autoEscape={true}
 						textToHighlight={String(node.id)}
 					/>
-				</h1>
+				</span>
 			</div>
 		);
 	}
