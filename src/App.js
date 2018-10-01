@@ -22,13 +22,11 @@ class App extends Component {
 						<div className="vh-75 sans-serif">
 							<div className="h-100 w-100 relative">
 								<div className="absolute pa2 z-999 search-bar">
-									<Route path="/" component={SearchBar} />
+									<SearchBar />
 								</div>
 								<Route
 									path="/nodes/:nodeId"
-									children={({ match }) => (
-										<MapView match={match} />
-									)}
+									component={MapView}
 								/>
 								<div className="absolute bottom-0 left-0 ma2">
 									<Filters />
