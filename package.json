@@ -1,0 +1,30 @@
+{
+  "name": "node-map",
+  "homepage": "https://upbeat-shockley-1c672e.netlify.com/map/",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "date-fns": "^1.29.0",
+    "react": "^16.4.2",
+    "react-document-title": "^2.0.3",
+    "react-dom": "^16.4.2",
+    "react-google-maps": "^9.4.5",
+    "react-highlight-words": "^0.12.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.0.3",
+    "react-virtualized": "^9.20.1",
+    "redux": "^4.0.0",
+    "sanitize-html": "^1.18.4",
+    "tachyons": "^4.11.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "update-data": "curl https://node-db.netlify.com/nodes.json > src/data/nodes.json && curl https://node-db.netlify.com/links.json > src/data/links.json && curl https://node-db.netlify.com/kiosks.json > src/data/kiosks.json"
+  },
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+}
