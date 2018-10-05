@@ -91,7 +91,7 @@ export default class Gallery extends PureComponent {
 
 	getPanoramas() {
 		const { match, nodes } = this.props;
-		const { nodeId, panoId } = match.params;
+		const { nodeId } = match.params;
 		const matchingNodes = nodes.filter(
 			node => node.id === parseInt(nodeId, 10)
 		);

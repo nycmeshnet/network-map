@@ -1,15 +1,17 @@
 import { nodeStatus } from "../utils";
 
-import rawNodes from "../data/nodes";
-import rawLinks from "../data/links";
+import nodeData from "../data/nodes";
+import linkData from "../data/links";
+import sectorData from "../data/sectors";
 import kiosks from "../data/kiosks";
 
 const initialFilters = {};
 
-const { nodes, links } = addGraphData(rawNodes, rawLinks);
+const { nodes, links, sectors } = addGraphData(nodeData, linkData, sectorData);
 const initialState = {
 	nodes,
 	links,
+	sectors,
 	kiosks,
 	filteredNodes: nodes,
 	filteredLinks: links,
@@ -109,7 +111,7 @@ function filterLinks(links, filters) {
 	});
 }
 
-function addGraphData(nodes, links) {
+function addGraphData(nodes, links, sectors) {
 	// Calculate connected nodes for each active node
 	nodes.filter(node => node.status === "Installed").forEach(node => {
 		const connectedNodes = [node.id];
@@ -147,7 +149,12 @@ function addGraphData(nodes, links) {
 		link.toNode = nodeMap[link.to];
 	});
 
-	return { nodes, links };
+	sectors.forEach(sector => {
+		console.log(sector);
+		sector.node = nodeMap[sector.nodeId];
+	});
+
+	return { nodes, links, sectors };
 }
 
 function getCounts(nodes, kiosks) {

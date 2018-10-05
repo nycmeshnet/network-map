@@ -181,45 +181,24 @@ class MapView extends Component {
 	}
 
 	renderSectors() {
+		const { sectors } = this.props;
 		return (
 			<Fragment>
-				<Sector
-					lat={40.711137}
-					lng={-74.001122}
-					r={2}
-					azimuth={55}
-					width={90}
-				/>
-				<Sector
-					lat={40.713991}
-					lng={-73.929049}
-					r={2}
-					azimuth={180}
-					width={220}
-				/>
-				<Sector
-					lat={40.685823}
-					lng={-73.917272}
-					r={2}
-					azimuth={180}
-					width={360}
-				/>
-				<Sector
-					potential={true}
-					lat={40.657867}
-					lng={-74.004904}
-					r={2}
-					azimuth={40}
-					width={120}
-				/>
-				<Sector
-					potential={true}
-					lat={40.657867}
-					lng={-74.004904}
-					r={2}
-					azimuth={160}
-					width={120}
-				/>
+				{sectors.map(sector => {
+					const [lng, lat] = sector.node.coordinates;
+					const { radius, azimuth, width, active } = sector;
+					return (
+						<Sector
+							key={lat + lng + radius + azimuth + width}
+							lat={lat}
+							lng={lng}
+							radius={radius}
+							azimuth={azimuth}
+							width={width}
+							active={active}
+						/>
+					);
+				})}
 			</Fragment>
 		);
 	}

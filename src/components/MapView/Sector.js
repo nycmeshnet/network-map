@@ -3,9 +3,9 @@ import { Polygon } from "react-google-maps";
 
 export default class LinkLine extends PureComponent {
 	render() {
-		const { lat, lng, r, azimuth, width, potential } = this.props;
+		const { lat, lng, radius, azimuth, width, active } = this.props;
 		var centerPoint = { lat, lng };
-		var PRlat = (r / 3963) * (180 / Math.PI); // using 3963 miles as earth's radius
+		var PRlat = (radius / 3963) * (180 / Math.PI); // using 3963 miles as earth's radius
 		var PRlng = PRlat / Math.cos(lat * (Math.PI / 180));
 		var PGpoints = [];
 		PGpoints.push(centerPoint);
@@ -44,7 +44,7 @@ export default class LinkLine extends PureComponent {
 					strokeColor: "transparent",
 					strokeOpacity: 0,
 					strokeWidth: 0,
-					fillColor: potential ? "#777" : "#007aff",
+					fillColor: active ? "#007aff" : "#777",
 					fillOpacity,
 					clickable: false
 				}}

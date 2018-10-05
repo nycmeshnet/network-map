@@ -4,6 +4,7 @@ import PureMapView from "./component";
 const mapStateToProps = (state, ownProps) => ({
 	nodes: state.filteredNodes,
 	links: state.filteredLinks,
+	sectors: state.sectors,
 	kiosks: state.kiosks,
 	tickets: state.tickets
 });
