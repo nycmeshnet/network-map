@@ -8,6 +8,13 @@ export default class Gallery extends PureComponent {
 		router: PropTypes.object
 	};
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			panoramas: this.getPanoramas()
+		};
+	}
+
 	componentDidMount() {
 		this.keyDownHandler = this.handleKeyDown.bind(this);
 		window.addEventListener("keydown", this.keyDownHandler, false);
@@ -18,39 +25,34 @@ export default class Gallery extends PureComponent {
 	}
 
 	handleKeyDown(event) {
-		if (event.keyCode === 27) {
-			const { match } = this.props;
-			const { nodeId } = match.params;
-			const { history } = this.context.router;
+		const { keyCode } = event;
+		const { match } = this.props;
+		const { panoramas } = this.state;
+		const { nodeId, panoId } = match.params;
+		const { history } = this.context.router;
+		const panoIdInt = parseInt(panoId);
+		if (keyCode === 27) {
 			history.push(`/nodes/${nodeId}`);
+		} else if (keyCode === 39) {
+			const nextPanoId = panoIdInt < panoramas.length ? panoIdInt + 1 : 1;
+			history.push(`/nodes/${nodeId}/panoramas/${nextPanoId}`);
+		} else if (keyCode === 37) {
+			const prevPanoId = panoId > 1 ? panoIdInt - 1 : panoramas.length;
+			history.push(`/nodes/${nodeId}/panoramas/${prevPanoId}`);
 		}
 	}
 
 	render() {
-		const { match, nodes } = this.props;
+		const { match } = this.props;
 		const { nodeId, panoId } = match.params;
-		const matchingNodes = nodes.filter(
-			node => node.id === parseInt(nodeId, 10)
-		);
-		if (!matchingNodes || !matchingNodes.length) {
-			return null;
-		}
-
-		const { panoramas } = matchingNodes[0];
-		if (!panoramas || !panoramas.length) {
-			return null;
-		}
-
+		const { panoramas } = this.state;
 		const src = panoramas[panoId - 1];
 
 		return (
 			<DocumentTitle
 				title={`Panorama ${panoId} - Node ${nodeId} - NYC Mesh`}
 			>
-				<div
-					onKeyDown={e => this.onKeyPressed(e)}
-					className="fixed absolute--fill bg-black flex items-center justify-center z-max"
-				>
+				<div className="fixed absolute--fill bg-black flex items-center justify-center z-max">
 					<Link to=".." className="absolute top-0 left-0 ma3 white">
 						<svg
 							className="db ma0"
@@ -87,5 +89,21 @@ export default class Gallery extends PureComponent {
 		);
 	}
 
-	onKeyPressed(e) {}
+	getPanoramas() {
+		const { match, nodes } = this.props;
+		const { nodeId, panoId } = match.params;
+		const matchingNodes = nodes.filter(
+			node => node.id === parseInt(nodeId, 10)
+		);
+		if (!matchingNodes || !matchingNodes.length) {
+			return [];
+		}
+
+		const { panoramas } = matchingNodes[0];
+		if (!panoramas || !panoramas.length) {
+			return [];
+		}
+
+		return panoramas;
+	}
 }
