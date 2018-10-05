@@ -13,7 +13,7 @@ const initialState = {
 	filteredNodes: nodes,
 	filteredLinks: links,
 	filters: initialFilters,
-	statusCounts: getCounts(nodes)
+	statusCounts: getCounts(nodes, kiosks)
 };
 
 const reducer = (state = initialState, action) => {
@@ -149,7 +149,7 @@ function addGraphData(nodes, links) {
 	return { nodes, links };
 }
 
-function getCounts(nodes) {
+function getCounts(nodes, kiosks) {
 	const counts = {};
 	nodes.forEach(node => {
 		const status = nodeStatus(node);
@@ -163,6 +163,7 @@ function getCounts(nodes) {
 			counts["active"] = (counts["active"] || 0) + 1;
 		}
 	});
+	counts.linkNYC = kiosks.length;
 	return counts;
 }
 
