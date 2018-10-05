@@ -1,11 +1,12 @@
 import { nodeStatus } from "../utils";
 
-import nodes from "../data/nodes";
-import links from "../data/links";
+import rawNodes from "../data/nodes";
+import rawLinks from "../data/links";
 import kiosks from "../data/kiosks";
 
 const initialFilters = {};
 
+const { nodes, links } = addGraphData(rawNodes, rawLinks);
 const initialState = {
 	nodes,
 	links,
