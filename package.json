@@ -1,5 +1,6 @@
 {
   "name": "node-map",
+  "homepage": "/map",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -23,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "update-data": "curl https://node-db.netlify.com/nodes.json > src/data/nodes.json && curl https://node-db.netlify.com/links.json > src/data/links.json && curl https://node-db.netlify.com/kiosks.json > src/data/kiosks.json"
+    "update-data": "curl -s https://node-db.netlify.com/nodes.json > src/data/nodes.json && curl https://node-db.netlify.com/links.json > src/data/links.json && curl https://node-db.netlify.com/kiosks.json > src/data/kiosks.json"
   },
   "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
 }
