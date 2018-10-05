@@ -1,6 +1,5 @@
 {
   "name": "node-map",
-  "homepage": "https://upbeat-shockley-1c672e.netlify.com/map/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
