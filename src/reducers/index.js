@@ -47,8 +47,8 @@ const reducer = (state = initialState, action) => {
 				...state,
 				filters: newFilters,
 				filteredNodes: filterNodes(state.nodes, newFilters),
-				filteredLinks: filterLinks(state.links, newFilters)
-				// kiosks: newFilters.linkNYC === false ? [] : state.kiosks
+				filteredLinks: filterLinks(state.links, newFilters),
+				kiosks: newFilters.linkNYC === false ? [] : kiosks
 			};
 		case "FETCH_NODES_SUCCESS":
 			const { nodes: newNodes } = addGraphData(action.nodes, state.links);
@@ -93,17 +93,11 @@ function filterLinks(links, filters) {
 			return true;
 		}
 
-		if (
-			filters[nodeStatus(link.fromNode)] !== undefined &&
-			filters[nodeStatus(link.fromNode)] === false
-		) {
+		if (filters[nodeStatus(link.fromNode)] === false) {
 			return false;
 		}
 
-		if (
-			filters[nodeStatus(link.toNode)] !== undefined &&
-			filters[nodeStatus(link.toNode)] === false
-		) {
+		if (filters[nodeStatus(link.toNode)] === false) {
 			return false;
 		}
 
