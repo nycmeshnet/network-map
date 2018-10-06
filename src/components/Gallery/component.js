@@ -17,14 +17,16 @@ export default class Gallery extends PureComponent {
 
 	componentDidMount() {
 		this.keyDownHandler = this.handleKeyDown.bind(this);
-		window.addEventListener("keydown", this.keyDownHandler, false);
+		window.addEventListener("keydown", this.keyDownHandler, true);
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener("keydown", this.keyDownHandler, false);
+		window.removeEventListener("keydown", this.keyDownHandler, true);
 	}
 
 	handleKeyDown(event) {
+		event.preventDefault();
+		event.stopPropagation();
 		const { keyCode } = event;
 		const { match } = this.props;
 		const { panoramas } = this.state;
@@ -90,16 +92,15 @@ export default class Gallery extends PureComponent {
 	}
 
 	getPanoramas() {
-		const { match, nodes } = this.props;
+		const { match, nodesById } = this.props;
 		const { nodeId } = match.params;
-		const matchingNodes = nodes.filter(
-			node => node.id === parseInt(nodeId, 10)
-		);
-		if (!matchingNodes || !matchingNodes.length) {
+		const node = nodesById[nodeId];
+
+		if (!node) {
 			return [];
 		}
 
-		const { panoramas } = matchingNodes[0];
+		const { panoramas } = node;
 		if (!panoramas || !panoramas.length) {
 			return [];
 		}

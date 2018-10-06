@@ -35,6 +35,7 @@ class App extends Component {
 								</div>
 							</div>
 							<Route
+								exact
 								path="/nodes/:nodeId/panoramas/:panoId"
 								component={Gallery}
 							/>

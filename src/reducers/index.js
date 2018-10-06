@@ -7,12 +7,17 @@ import kiosks from "../data/kiosks";
 
 const initialFilters = {};
 
-const { nodes, links, sectors } = addGraphData(nodeData, linkData, sectorData);
+const { nodes, links, sectors, nodesById } = addGraphData(
+	nodeData,
+	linkData,
+	sectorData
+);
 const initialState = {
 	nodes,
 	links,
 	sectors,
 	kiosks,
+	nodesById,
 	filteredNodes: nodes,
 	filteredLinks: links,
 	filters: initialFilters,
@@ -124,7 +129,7 @@ function addGraphData(nodes, links, sectors) {
 		node.connectedNodes = connectedNodes;
 	});
 
-	const nodeMap = {};
+	const nodesById = {};
 
 	nodes.forEach(node => {
 		// Add links to node
@@ -135,20 +140,20 @@ function addGraphData(nodes, links, sectors) {
 					link.to === parseInt(node.id, 10))
 		);
 
-		nodeMap[node.id] = node;
+		nodesById[node.id] = node;
 	});
 
 	links.forEach(link => {
-		link.fromNode = nodeMap[link.from];
-		link.toNode = nodeMap[link.to];
+		link.fromNode = nodesById[link.from];
+		link.toNode = nodesById[link.to];
 	});
 
 	sectors.forEach(sector => {
 		console.log(sector);
-		sector.node = nodeMap[sector.nodeId];
+		sector.node = nodesById[sector.nodeId];
 	});
 
-	return { nodes, links, sectors };
+	return { nodes, links, sectors, nodesById };
 }
 
 function getCounts(nodes, kiosks) {

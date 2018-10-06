@@ -33,7 +33,7 @@ export default class SearchBar extends PureComponent {
 	renderSearchBar() {
 		return (
 			<div
-				className="flex items-center bg-white pv3 overflow-hidden"
+				className="flex items-center bg-white overflow-hidden"
 				onClick={() => {
 					this.refs.search.focus();
 				}}
@@ -56,7 +56,7 @@ export default class SearchBar extends PureComponent {
 				</svg>
 				<input
 					ref="search"
-					className="h1 overflow-hidden pl2 pr3 input-reset f5 fw4 bw0 w-100 on"
+					className="overflow-hidden pl2 pr3 pv3 input-reset f5 fw4 bw0 w-100 on"
 					value={this.state.search}
 					placeholder="Search nodes"
 					spellCheck={false}

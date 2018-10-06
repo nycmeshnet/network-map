@@ -6,17 +6,12 @@ import { nodeName } from "../../utils";
 
 export default class NodeDetail extends PureComponent {
 	render() {
-		if (!this.props.match) return null;
+		const { nodeId, nodesById } = this.props;
+		const node = nodesById[nodeId];
+		if (!node) {
+			return null;
+		}
 
-		const { match, nodes } = this.props;
-
-		const matchingNodes = nodes.filter(
-			node => node.id === parseInt(match.params.nodeId, 10)
-		);
-
-		if (!matchingNodes.length) return null;
-
-		const node = matchingNodes[0];
 		const { coordinates } = node;
 		const [lng, lat] = coordinates;
 

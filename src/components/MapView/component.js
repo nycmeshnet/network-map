@@ -142,7 +142,7 @@ class MapView extends Component {
 				{this.renderLinks()}
 				{this.renderKiosks()}
 				{this.renderNodes()}
-				<NodeDetail match={this.props.match} />
+				{this.renderNodeDetail()}
 			</MapComponent>
 		);
 	}
@@ -213,6 +213,14 @@ class MapView extends Component {
 				line.setVisibility("default")
 			);
 		});
+	}
+	renderNodeDetail() {
+		const { match } = this.props;
+		if (!match || !match.params) {
+			return null;
+		}
+		const { nodeId } = match.params;
+		return <NodeDetail nodeId={nodeId} />;
 	}
 
 	updateNodes(node, marker) {
