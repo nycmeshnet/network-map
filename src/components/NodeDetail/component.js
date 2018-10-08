@@ -2,8 +2,6 @@ import React, { PureComponent } from "react";
 import InfoBox from "react-google-maps/lib/components/addons/InfoBox";
 import { Link } from "react-router-dom";
 
-import { nodeName } from "../../utils";
-
 export default class NodeDetail extends PureComponent {
 	render() {
 		const { nodeId, nodesById } = this.props;
@@ -35,10 +33,11 @@ export default class NodeDetail extends PureComponent {
 				>
 					<div className="flex items-center bg-white br2 overflow-hidden shadow-2">
 						{this.renderImage(node)}
-						<div className="pv1 ph2">
+						<div className="pv1 ph2 flex flex-column justify-end">
 							<span className="f5 fw6 nowrap sans-serif">
-								{nodeName(node)}
+								Node {node.id}
 							</span>
+							{this.renderNotes(node)}
 						</div>
 					</div>
 					<svg
@@ -75,5 +74,13 @@ export default class NodeDetail extends PureComponent {
 				/>
 			</Link>
 		);
+	}
+
+	renderNotes(node) {
+		const { notes } = node;
+		if (!notes) {
+			return null;
+		}
+		return <span className="mv0 f7 gray truncate sans-serif">{notes}</span>;
 	}
 }
