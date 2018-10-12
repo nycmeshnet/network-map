@@ -13,7 +13,7 @@ class NodeMarker extends PureComponent {
 	render() {
 		const { node } = this.props;
 		const { history } = this.context.router;
-		const { id } = node;
+		const { id, notes } = node;
 		const [lng, lat] = node.coordinates;
 		const { icon, zIndex } = this.getMarkerProps();
 
@@ -21,6 +21,7 @@ class NodeMarker extends PureComponent {
 			<Marker
 				defaultPosition={{ lat, lng }}
 				icon={icon}
+				title={`${id}${notes ? ` - ${notes}` : ""}`}
 				options={{ opacity: this.getOpacity() }}
 				zIndex={this.getZIndex(zIndex)}
 				onClick={() => history.push(`/nodes/${id}`)}
