@@ -54,7 +54,7 @@ export default class Gallery extends PureComponent {
 			<DocumentTitle
 				title={`Panorama ${panoId} - Node ${nodeId} - NYC Mesh`}
 			>
-				<div className="fixed absolute--fill bg-black flex items-center justify-center z-max">
+				<div className="fixed absolute--fill bg-black flex flex-column items-center justify-center z-max">
 					<Link to=".." className="absolute top-0 left-0 ma3 white">
 						<svg
 							className="db ma0"
@@ -86,8 +86,34 @@ export default class Gallery extends PureComponent {
 						src={`https://node-db.netlify.com/panoramas/${src}`}
 						alt="Panorama"
 					/>
+					{this.renderPreviews()}
 				</div>
 			</DocumentTitle>
+		);
+	}
+
+	renderPreviews() {
+		const { match } = this.props;
+		const { nodeId, panoId } = match.params;
+		const { panoramas } = this.state;
+		if (!panoramas || !panoramas.length) {
+			return null;
+		}
+		return (
+			<div className="absolute bottom-0 right-0 left-0 flex ph1 pv2 overflow-x-scroll">
+				{panoramas.map((panorama, index) => (
+					<Link to={`/nodes/${nodeId}/panoramas/${index + 1}`}>
+						<div
+							className={`node-image mh1 cover ba bw1 b--white ${
+								index === panoId - 1 ? "" : "o-30"
+							}`}
+							style={{
+								backgroundImage: `url("https://node-db.netlify.com/panoramas/${panorama}")`
+							}}
+						/>
+					</Link>
+				))}
+			</div>
 		);
 	}
 
