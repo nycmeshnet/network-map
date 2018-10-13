@@ -56,23 +56,7 @@ class MapView extends Component {
 		if (this.props.match) {
 			try {
 				setTimeout(() => {
-					if (!this.props.match) {
-						return null;
-					}
-
-					const selectedNodeId = parseInt(
-						this.props.match.params.nodeId,
-						10
-					);
-					const selectedMarker = this.markerRefs[selectedNodeId];
-					if (!selectedMarker) {
-						return;
-					}
-
-					const { node: selectedNode } = selectedMarker.props;
-					this.updateNodes(selectedNode, selectedMarker);
-					this.updateLinks(selectedNode);
-					this.panToNode(selectedNode);
+					this.handleSelectedChange(this.props);
 				}, 500);
 			} catch (e) {
 				console.error(":(");
@@ -237,9 +221,6 @@ class MapView extends Component {
 	updateNodes(node, marker) {
 		ReactDOM.unstable_batchedUpdates(() => {
 			// Dim all nodes of same type
-
-			// TODO: optimize performance by only resetting selected nodes
-			// (selected node and all nodes of opposite type)
 			Object.values(this.markerRefs).forEach(marker => {
 				if (node.status === "Installed") {
 					if (node.id !== marker.props.node.id) {
