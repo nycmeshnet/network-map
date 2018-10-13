@@ -149,7 +149,6 @@ function addGraphData(nodes, links, sectors) {
 	});
 
 	sectors.forEach(sector => {
-		console.log(sector);
 		sector.node = nodesById[sector.nodeId];
 	});
 
