@@ -38,7 +38,7 @@ class NodeMarker extends PureComponent {
 
 	getZIndex(defaultZIndex) {
 		const { visibility } = this.props;
-		if (visibility === "highlight") return 999;
+		if (visibility === "highlight") return defaultZIndex + 999;
 		return defaultZIndex;
 	}
 
