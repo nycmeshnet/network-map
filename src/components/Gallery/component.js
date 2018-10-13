@@ -102,7 +102,10 @@ export default class Gallery extends PureComponent {
 		return (
 			<div className="absolute bottom-0 right-0 left-0 flex ph1 pv2 overflow-x-scroll">
 				{panoramas.map((panorama, index) => (
-					<Link to={`/nodes/${nodeId}/panoramas/${index + 1}`}>
+					<Link
+						key={index}
+						to={`/nodes/${nodeId}/panoramas/${index + 1}`}
+					>
 						<div
 							className={`node-image mh1 cover ba bw1 b--white ${
 								index === panoId - 1 ? "" : "o-30"
