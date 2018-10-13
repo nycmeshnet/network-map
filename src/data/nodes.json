@@ -75,48 +75,11 @@
     "panoramas": []
   },
   {
-    "id": 8,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.944902,
-      40.684838,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": [
-      "8.jpg"
-    ]
-  },
-  {
-    "id": 9,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.985142,
-      40.719503,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": [
-      "9.jpg"
-    ]
-  },
-  {
     "id": 10,
     "status": "Interested",
     "coordinates": [
       -73.9789232,
       40.7236662,
-      5
-    ],
-    "roofAccess": false,
-    "panoramas": []
-  },
-  {
-    "id": 12,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9358096,
-      40.7560488,
       5
     ],
     "roofAccess": false,
@@ -280,20 +243,6 @@
     "panoramas": []
   },
   {
-    "id": 27,
-    "status": "Abandoned",
-    "coordinates": [
-      -74.0309642,
-      40.6350186,
-      5
-    ],
-    "roofAccess": false,
-    "notes": "Dan",
-    "panoramas": [
-      "27.jpg"
-    ]
-  },
-  {
     "id": 28,
     "status": "Installed",
     "coordinates": [
@@ -375,28 +324,6 @@
     "panoramas": []
   },
   {
-    "id": 35,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.990492,
-      40.665544,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": []
-  },
-  {
-    "id": 36,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9842132,
-      40.6712909,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": []
-  },
-  {
     "id": 37,
     "status": "No Reply",
     "coordinates": [
@@ -471,17 +398,6 @@
       5
     ],
     "roofAccess": false,
-    "panoramas": []
-  },
-  {
-    "id": 44,
-    "status": "Abandoned",
-    "coordinates": [
-      -74.2191951,
-      40.7417358,
-      5
-    ],
-    "roofAccess": true,
     "panoramas": []
   },
   {
@@ -569,17 +485,6 @@
     "coordinates": [
       30.8839441,
       29.9355159,
-      5
-    ],
-    "roofAccess": false,
-    "panoramas": []
-  },
-  {
-    "id": 54,
-    "status": "Abandoned",
-    "coordinates": [
-      -74.0359261,
-      40.617031,
       5
     ],
     "roofAccess": false,
@@ -836,17 +741,6 @@
     "coordinates": [
       -94.5278664,
       38.9028889,
-      5
-    ],
-    "roofAccess": false,
-    "panoramas": []
-  },
-  {
-    "id": 78,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.998813,
-      40.683329,
       5
     ],
     "roofAccess": false,
@@ -1130,17 +1024,6 @@
     "panoramas": []
   },
   {
-    "id": 104,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9865933,
-      40.7044252,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": []
-  },
-  {
     "id": 105,
     "status": "Installed",
     "coordinates": [
@@ -1226,19 +1109,6 @@
     ]
   },
   {
-    "id": 112,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9763295,
-      40.6732022,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": [
-      "112.jpg"
-    ]
-  },
-  {
     "id": 113,
     "status": "No Reply",
     "coordinates": [
@@ -1319,17 +1189,6 @@
     "panoramas": []
   },
   {
-    "id": 120,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9917822,
-      40.7161623,
-      5
-    ],
-    "roofAccess": false,
-    "panoramas": []
-  },
-  {
     "id": 121,
     "status": "No Reply",
     "coordinates": [
@@ -1366,20 +1225,6 @@
     ]
   },
   {
-    "id": 124,
-    "status": "Abandoned",
-    "coordinates": [
-      -76.9836595,
-      40.1705641,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": [
-      "124.jpg",
-      "124a.jpg"
-    ]
-  },
-  {
     "id": 125,
     "status": "No Reply",
     "coordinates": [
@@ -1396,17 +1241,6 @@
     "coordinates": [
       -73.9643439,
       40.7563957,
-      5
-    ],
-    "roofAccess": false,
-    "panoramas": []
-  },
-  {
-    "id": 127,
-    "status": "Unsubscribe",
-    "coordinates": [
-      -73.959644,
-      40.771073,
       5
     ],
     "roofAccess": false,
@@ -1572,20 +1406,6 @@
     "panoramas": []
   },
   {
-    "id": 142,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.891865,
-      40.7443646,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": [
-      "142.jpg",
-      "142a.jpg"
-    ]
-  },
-  {
     "id": 143,
     "status": "No Reply",
     "coordinates": [
@@ -1595,19 +1415,6 @@
     ],
     "roofAccess": false,
     "panoramas": []
-  },
-  {
-    "id": 144,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9429286,
-      40.7087338,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": [
-      "144.jpg"
-    ]
   },
   {
     "id": 145,
@@ -1791,19 +1598,6 @@
     "panoramas": []
   },
   {
-    "id": 162,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9908103,
-      40.7369923,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": [
-      "162.jpg"
-    ]
-  },
-  {
     "id": 163,
     "coordinates": [
       -73.9953761,
@@ -1878,19 +1672,6 @@
     ],
     "roofAccess": false,
     "panoramas": []
-  },
-  {
-    "id": 170,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9479724,
-      40.7788147,
-      5
-    ],
-    "roofAccess": false,
-    "panoramas": [
-      "170.jpg"
-    ]
   },
   {
     "id": 171,
@@ -2063,17 +1844,6 @@
     "panoramas": []
   },
   {
-    "id": 187,
-    "status": "Unsubscribe",
-    "coordinates": [
-      -73.9902431,
-      40.7229018,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": []
-  },
-  {
     "id": 188,
     "coordinates": [
       -73.9881526,
@@ -2189,19 +1959,6 @@
     ],
     "roofAccess": true,
     "panoramas": []
-  },
-  {
-    "id": 200,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9435034,
-      40.7173939,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": [
-      "200.jpg"
-    ]
   },
   {
     "id": 201,
@@ -2406,17 +2163,6 @@
     "panoramas": []
   },
   {
-    "id": 220,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.8838391,
-      40.7479045,
-      5
-    ],
-    "roofAccess": false,
-    "panoramas": []
-  },
-  {
     "id": 221,
     "coordinates": [
       -120.9822,
@@ -2449,17 +2195,6 @@
     ]
   },
   {
-    "id": 224,
-    "status": "Unsubscribe",
-    "coordinates": [
-      -74.0780494,
-      40.6410115,
-      5
-    ],
-    "roofAccess": false,
-    "panoramas": []
-  },
-  {
     "id": 225,
     "status": "Installed",
     "coordinates": [
@@ -2471,17 +2206,6 @@
     "panoramas": [
       "225.jpg"
     ]
-  },
-  {
-    "id": 226,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.985142,
-      40.719503,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": []
   },
   {
     "id": 227,
@@ -2619,17 +2343,6 @@
     "panoramas": []
   },
   {
-    "id": 239,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9737449,
-      40.677462,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": []
-  },
-  {
     "id": 240,
     "status": "Installed",
     "coordinates": [
@@ -2638,17 +2351,6 @@
       5
     ],
     "roofAccess": false,
-    "panoramas": []
-  },
-  {
-    "id": 241,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9435034,
-      40.7173939,
-      5
-    ],
-    "roofAccess": true,
     "panoramas": []
   },
   {
@@ -2752,17 +2454,6 @@
     "panoramas": []
   },
   {
-    "id": 251,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.807602,
-      40.709153,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": []
-  },
-  {
     "id": 252,
     "coordinates": [
       -73.9769173,
@@ -2793,19 +2484,6 @@
     "panoramas": [
       "254.jpg",
       "254a.jpg"
-    ]
-  },
-  {
-    "id": 255,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.986209,
-      40.710885,
-      5
-    ],
-    "roofAccess": false,
-    "panoramas": [
-      "255.jpg"
     ]
   },
   {
@@ -3284,20 +2962,6 @@
     "panoramas": []
   },
   {
-    "id": 301,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9203139,
-      40.7058495,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": [
-      "301.jpg",
-      "301a.jpg"
-    ]
-  },
-  {
     "id": 302,
     "coordinates": [
       -73.9493869,
@@ -3368,17 +3032,6 @@
     "coordinates": [
       -97.741455,
       30.269162,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": []
-  },
-  {
-    "id": 309,
-    "status": "Unsubscribe",
-    "coordinates": [
-      -118.1916696,
-      33.7753415,
       5
     ],
     "roofAccess": true,
@@ -3748,17 +3401,6 @@
     "panoramas": []
   },
   {
-    "id": 343,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.983594,
-      40.644203,
-      5
-    ],
-    "roofAccess": false,
-    "panoramas": []
-  },
-  {
     "id": 344,
     "coordinates": [
       -74.0283467,
@@ -3971,11 +3613,12 @@
     "id": 363,
     "status": "Installed",
     "coordinates": [
-      -73.9513052,
-      40.7593447,
-      42
+      -73.99816,
+      40.75378,
+      54
     ],
-    "roofAccess": false,
+    "roofAccess": true,
+    "notes": "Apt PHD",
     "panoramas": []
   },
   {
@@ -5776,20 +5419,6 @@
     "panoramas": []
   },
   {
-    "id": 531,
-    "status": "Unsubscribe",
-    "coordinates": [
-      -73.9465871,
-      40.7162162,
-      5
-    ],
-    "roofAccess": false,
-    "panoramas": [
-      "531.jpg",
-      "531a.jpg"
-    ]
-  },
-  {
     "id": 532,
     "coordinates": [
       -73.9205798,
@@ -6010,19 +5639,6 @@
     ],
     "roofAccess": true,
     "panoramas": []
-  },
-  {
-    "id": 552,
-    "status": "Unsubscribe",
-    "coordinates": [
-      -73.9820359,
-      40.739789,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": [
-      "552.jpg"
-    ]
   },
   {
     "id": 553,
@@ -6543,20 +6159,6 @@
     ],
     "roofAccess": false,
     "panoramas": []
-  },
-  {
-    "id": 602,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.998448,
-      40.716183,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": [
-      "602.jpg",
-      "602a.jpg"
-    ]
   },
   {
     "id": 603,
@@ -7950,17 +7552,6 @@
     "panoramas": []
   },
   {
-    "id": 735,
-    "status": "Unsubscribe",
-    "coordinates": [
-      -73.980396,
-      40.729267,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": []
-  },
-  {
     "id": 736,
     "coordinates": [
       -73.9276414,
@@ -8876,19 +8467,6 @@
     ],
     "roofAccess": true,
     "panoramas": []
-  },
-  {
-    "id": 825,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9831033,
-      40.73009,
-      27
-    ],
-    "roofAccess": true,
-    "panoramas": [
-      "825.jpg"
-    ]
   },
   {
     "id": 826,
@@ -10194,17 +9772,6 @@
     ]
   },
   {
-    "id": 952,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9302249,
-      40.7053215,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": []
-  },
-  {
     "id": 953,
     "coordinates": [
       -74.0076984,
@@ -10275,19 +9842,6 @@
     ],
     "roofAccess": true,
     "panoramas": []
-  },
-  {
-    "id": 960,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.934113,
-      40.713758,
-      5
-    ],
-    "roofAccess": false,
-    "panoramas": [
-      "960.jpg"
-    ]
   },
   {
     "id": 961,
@@ -13574,19 +13128,6 @@
     "panoramas": []
   },
   {
-    "id": 1278,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9929441,
-      40.7222151,
-      5
-    ],
-    "roofAccess": false,
-    "panoramas": [
-      "1278.jpg"
-    ]
-  },
-  {
     "id": 1279,
     "coordinates": [
       -73.9100208,
@@ -14325,9 +13866,9 @@
     "id": 1350,
     "status": "Installed",
     "coordinates": [
-      -73.94744,
-      40.6873305,
-      5
+      -73.94745158,
+      40.68750962,
+      30
     ],
     "roofAccess": true,
     "notes": "hub",
@@ -15852,17 +15393,6 @@
     "panoramas": []
   },
   {
-    "id": 1498,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.87425,
-      40.717372,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": []
-  },
-  {
     "id": 1499,
     "coordinates": [
       -73.997011,
@@ -16944,32 +16474,6 @@
     "panoramas": []
   },
   {
-    "id": 1600,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9558376,
-      40.7227948,
-      5
-    ],
-    "roofAccess": true,
-    "notes": "moved",
-    "panoramas": []
-  },
-  {
-    "id": 1601,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.940946,
-      40.717488,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": [
-      "1601.jpg",
-      "1601a.jpg"
-    ]
-  },
-  {
     "id": 1602,
     "coordinates": [
       -73.9479075,
@@ -17327,17 +16831,6 @@
       "1635.jpg",
       "1635a.jpg"
     ]
-  },
-  {
-    "id": 1636,
-    "status": "Abandoned",
-    "coordinates": [
-      -73.9199539,
-      40.6931182,
-      27
-    ],
-    "roofAccess": true,
-    "panoramas": []
   },
   {
     "id": 1637,
@@ -20504,21 +19997,6 @@
     ],
     "roofAccess": true,
     "panoramas": []
-  },
-  {
-    "id": 1939,
-    "status": "Unsubscribe",
-    "coordinates": [
-      -73.9812206,
-      40.7146537,
-      5
-    ],
-    "roofAccess": false,
-    "notes": "LiteBeam in window",
-    "panoramas": [
-      "1939.jpg",
-      "1939a.jpg"
-    ]
   },
   {
     "id": 1940,
@@ -25859,18 +25337,12 @@
     ],
     "roofAccess": false,
     "notes": "hub",
-    "panoramas": []
-  },
-  {
-    "id": 2464,
-    "status": "Abandoned",
-    "coordinates": [
-      -74.01336309999999,
-      40.7131216,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2463.jpg",
+      "2463a.jpg",
+      "2463b.jpg",
+      "2463c.jpg"
+    ]
   },
   {
     "id": 2465,
@@ -26199,6 +25671,36 @@
     "coordinates": [
       -73.98959479999999,
       40.733988,
+      5
+    ],
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2498,
+    "coordinates": [
+      -73.963948,
+      40.7127424,
+      5
+    ],
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2499,
+    "coordinates": [
+      -73.93909459999999,
+      40.670775,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2500,
+    "coordinates": [
+      -73.9527208,
+      40.7785552,
       5
     ],
     "roofAccess": false,
