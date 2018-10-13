@@ -29,31 +29,30 @@ export default class NodeDetail extends PureComponent {
 						ref &&
 						window.google.maps.OverlayView.preventMapHitsFrom(ref)
 					}
+					className="flex flex-column items-center"
 				>
-					<div className="flex flex-column items-center pointer-events-all">
-						<div className="flex items-center bg-white br2 overflow-hidden shadow-2">
-							{this.renderImage(node)}
-							<div className="pv1 ph2 flex flex-column justify-end">
-								<span className="f5 fw6 nowrap sans-serif">
-									Node {node.id}
-								</span>
-								{this.renderNotes(node)}
-							</div>
+					<div className="flex items-center bg-white br2 overflow-hidden shadow-2">
+						{this.renderImage(node)}
+						<div className="pv1 ph2 flex flex-column justify-end">
+							<span className="f5 fw6 nowrap sans-serif">
+								Node {node.id}
+							</span>
+							{this.renderNotes(node)}
 						</div>
-						<svg
-							viewBox="0 5 12 12"
-							version="1.1"
-							width="12"
-							height="12"
-							aria-hidden="true"
-						>
-							<path
-								fillRule="evenodd"
-								fill="white"
-								d="M0 5l6 6 6-6H0z"
-							/>
-						</svg>
 					</div>
+					<svg
+						viewBox="0 5 12 12"
+						version="1.1"
+						width="12"
+						height="12"
+						aria-hidden="true"
+					>
+						<path
+							fillRule="evenodd"
+							fill="white"
+							d="M0 5l6 6 6-6H0z"
+						/>
+					</svg>
 				</div>
 			</OverlayView>
 		);

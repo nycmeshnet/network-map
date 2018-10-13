@@ -1,14 +1,16 @@
 import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
-import { withRouter } from "react-router";
+import { withRouter, Route } from "react-router";
 import PropTypes from "prop-types";
+import DocumentTitle from "react-document-title";
 
 import NodeMarker from "./NodeMarker";
 import KioskMarker from "./KioskMarker";
 import LinkLine from "./LinkLine";
 import Sector from "./Sector";
 import NodeDetail from "../NodeDetail";
+import Gallery from "../Gallery";
 
 import { mapStyles } from "./styles";
 
@@ -133,16 +135,21 @@ class MapView extends Component {
 				defaultCenter={{ lat: 40.7101809, lng: -73.9595798 }}
 				defaultOptions={options}
 				onClick={() => history.push("/")}
+				loadingElement={<div className="h-100" />}
+				containerElement={<div className="h-100" />}
+				mapElement={<div className="h-100" />}
 				googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNClp7oJsw-eleEoR3-PQKV23tpeW-FpE"
-				loadingElement={<div className="h-100 bg-map-beige" />}
-				containerElement={<div className="h-100 bg-map-beige" />}
-				mapElement={<div className="h-100 bg-map-beige" />}
 			>
 				{this.renderSectors()}
 				{this.renderLinks()}
 				{this.renderKiosks()}
 				{this.renderNodes()}
 				{this.renderNodeDetail()}
+				<Route
+					exact
+					path="/nodes/:nodeId/panoramas/:panoId"
+					component={Gallery}
+				/>
 			</MapComponent>
 		);
 	}
@@ -220,7 +227,11 @@ class MapView extends Component {
 			return null;
 		}
 		const { nodeId } = match.params;
-		return <NodeDetail nodeId={nodeId} />;
+		return (
+			<DocumentTitle title={`Node ${nodeId} - NYC Mesh`}>
+				<NodeDetail nodeId={nodeId} />
+			</DocumentTitle>
+		);
 	}
 
 	updateNodes(node, marker) {
