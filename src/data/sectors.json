@@ -1,28 +1,30 @@
 [
-	{
-		"nodeId": 227,
-		"radius": 2,
-		"azimuth": 55,
-		"width": 90,
-		"active": true
-	},
-	{
-		"nodeId": 1340,
-		"radius": 2,
-		"azimuth": 180,
-		"width": 360,
-		"active": true
-	},
-	{
-		"nodeId": 713,
-		"radius": 2,
-		"azimuth": 40,
-		"width": 120
-	},
-	{
-		"nodeId": 713,
-		"radius": 2,
-		"azimuth": 160,
-		"width": 120
-	}
+  {
+    "nodeId": 227,
+    "radius": 2,
+    "azimuth": 55,
+    "width": 90,
+    "active": true
+  },
+  {
+    "nodeId": 1340,
+    "radius": 2,
+    "azimuth": 180,
+    "width": 360,
+    "active": true
+  },
+  {
+    "nodeId": 713,
+    "radius": 2,
+    "azimuth": 40,
+    "width": 120,
+    "active": false
+  },
+  {
+    "nodeId": 713,
+    "radius": 2,
+    "azimuth": 160,
+    "width": 120,
+    "active": false
+  }
 ]
