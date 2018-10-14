@@ -25715,5 +25715,15 @@
     ],
     "roofAccess": true,
     "panoramas": []
+  },
+  {
+    "id": 2502,
+    "coordinates": [
+      -74.0059728,
+      40.7127753,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
   }
 ]
