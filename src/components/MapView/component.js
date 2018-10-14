@@ -14,6 +14,8 @@ import Gallery from "../Gallery";
 
 import { mapStyles } from "./styles";
 
+const DEFAULT_CENTER = { lat: 40.7001809, lng: -73.9595798 };
+
 const options = {
 	styles: mapStyles,
 	fullscreenControl: false,
@@ -116,7 +118,7 @@ class MapView extends Component {
 			<MapComponent
 				mapRef={this.map}
 				defaultZoom={13}
-				defaultCenter={{ lat: 40.7101809, lng: -73.9595798 }}
+				defaultCenter={DEFAULT_CENTER}
 				defaultOptions={options}
 				onClick={() => history.push("/")}
 				loadingElement={<div className="h-100" />}
@@ -124,7 +126,6 @@ class MapView extends Component {
 				mapElement={<div className="h-100" />}
 				googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNClp7oJsw-eleEoR3-PQKV23tpeW-FpE"
 			>
-				{this.renderSectors()}
 				{this.renderLinks()}
 				{this.renderKiosks()}
 				{this.renderNodes()}
@@ -171,29 +172,6 @@ class MapView extends Component {
 		));
 	}
 
-	renderSectors() {
-		const { sectors } = this.props;
-		return (
-			<Fragment>
-				{sectors.map(sector => {
-					const [lng, lat] = sector.node.coordinates;
-					const { radius, azimuth, width, active } = sector;
-					return (
-						<Sector
-							key={lat + lng + radius + azimuth + width}
-							lat={lat}
-							lng={lng}
-							radius={radius}
-							azimuth={azimuth}
-							width={width}
-							active={active}
-						/>
-					);
-				})}
-			</Fragment>
-		);
-	}
-
 	resetAllNodes() {
 		ReactDOM.unstable_batchedUpdates(() => {
 			Object.values(this.markerRefs).forEach(marker =>
@@ -235,17 +213,17 @@ class MapView extends Component {
 				}
 			});
 
-			// Highlight selected node
-			marker.setVisibility("highlight");
-
 			// Highlight directly connected nodes
 			node.connectedNodes &&
 				node.connectedNodes.forEach(connectedNodeId => {
 					const connectedMarker = this.markerRefs[connectedNodeId];
 					if (connectedMarker) {
-						connectedMarker.setVisibility("highlight");
+						connectedMarker.setVisibility("dim");
 					}
 				});
+
+			// Highlight selected node
+			marker.setVisibility("highlight");
 		});
 	}
 

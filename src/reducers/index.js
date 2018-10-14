@@ -5,7 +5,12 @@ import linkData from "../data/links";
 import sectorData from "../data/sectors";
 import kiosks from "../data/kiosks";
 
-const initialFilters = {};
+const initialFilters = {
+	potential: false,
+	dead: false,
+	"potential-hub": false,
+	"potential-supernode": false
+};
 
 const { nodes, links, sectors, nodesById } = addGraphData(
 	nodeData,
@@ -18,8 +23,8 @@ const initialState = {
 	sectors,
 	kiosks,
 	nodesById,
-	filteredNodes: nodes,
-	filteredLinks: links,
+	filteredNodes: filterNodes(nodes, initialFilters),
+	filteredLinks: filterLinks(links, initialFilters),
 	filters: initialFilters,
 	statusCounts: getCounts(nodes, kiosks)
 };
@@ -35,18 +40,11 @@ const reducer = (state = initialState, action) => {
 						: !state.filters[action.label]
 			};
 			if (action.label === "potential") {
-				newFilters["dead"] =
-					state.filters["dead"] === undefined
-						? false
-						: !state.filters["dead"];
-				newFilters["potential-hub"] =
-					state.filters["potential-hub"] === undefined
-						? false
-						: !state.filters["potential-hub"];
-				newFilters["potential-supernode"] =
-					state.filters["potential-supernode"] === undefined
-						? false
-						: !state.filters["potential-supernode"];
+				const hasValue = state.filters["potential"] === undefined;
+				const newValue = hasValue ? false : !state.filters["potential"];
+				newFilters["dead"] = newValue;
+				newFilters["potential-hub"] = newValue;
+				newFilters["potential-supernode"] = newValue;
 			}
 			return {
 				...state,
@@ -111,6 +109,8 @@ function filterLinks(links, filters) {
 }
 
 function addGraphData(nodes, links, sectors) {
+	const nodesById = {};
+
 	// Calculate connected nodes for each active node
 	nodes.filter(node => node.status === "Installed").forEach(node => {
 		const connectedNodes = [node.id];
@@ -129,10 +129,8 @@ function addGraphData(nodes, links, sectors) {
 		node.connectedNodes = connectedNodes;
 	});
 
-	const nodesById = {};
-
+	// Add links to nodes
 	nodes.forEach(node => {
-		// Add links to node
 		node.links = links.filter(
 			link =>
 				link.status === "active" &&
@@ -148,8 +146,16 @@ function addGraphData(nodes, links, sectors) {
 		link.toNode = nodesById[link.to];
 	});
 
+	// TODO: Calculate this in node-db
+	// Add sectors to nodes
+	const sectorsByNodeId = {};
 	sectors.forEach(sector => {
 		sector.node = nodesById[sector.nodeId];
+		sectorsByNodeId[sector.nodeId] = sectorsByNodeId[sector.nodeId] || [];
+		sectorsByNodeId[sector.nodeId].push(sector);
+	});
+	nodes.forEach(node => {
+		node.sectors = sectorsByNodeId[node.id];
 	});
 
 	return { nodes, links, sectors, nodesById };

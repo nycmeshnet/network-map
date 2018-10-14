@@ -1,9 +1,10 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, Fragment } from "react";
 import PropTypes from "prop-types";
 import { Marker } from "react-google-maps";
 import { withRouter } from "react-router";
 
 import { nodeStatus } from "../../utils";
+import Sector from "./Sector";
 
 class NodeMarker extends PureComponent {
 	static contextTypes = {
@@ -18,15 +19,44 @@ class NodeMarker extends PureComponent {
 		const { icon, zIndex } = this.getMarkerProps();
 
 		return (
-			<Marker
-				defaultPosition={{ lat, lng }}
-				icon={icon}
-				title={`${id}${notes ? ` - ${notes}` : ""}`}
-				options={{ opacity: this.getOpacity() }}
-				zIndex={this.getZIndex(zIndex)}
-				onClick={() => history.push(`/nodes/${id}`)}
-			/>
+			<Fragment>
+				<Marker
+					defaultPosition={{ lat, lng }}
+					icon={icon}
+					title={`${id}${notes ? ` - ${notes}` : ""}`}
+					options={{ opacity: this.getOpacity() }}
+					zIndex={this.getZIndex(zIndex)}
+					onClick={() => history.push(`/nodes/${id}`)}
+				/>
+				{this.renderSectors()}
+			</Fragment>
 		);
+	}
+
+	renderSectors() {
+		const { node, visibility } = this.props;
+		const { sectors } = node;
+		if (!sectors) {
+			return null;
+		}
+		return sectors.map(sector => {
+			const [lng, lat] = sector.node.coordinates;
+			const { radius, azimuth, width, active } = sector;
+			const key = lat + lng + radius + azimuth + width;
+			return (
+				<Sector
+					key={key}
+					lat={lat}
+					lng={lng}
+					radius={radius}
+					azimuth={azimuth}
+					width={width}
+					active={active}
+					visibility={visibility}
+					node={node}
+				/>
+			);
+		});
 	}
 
 	getOpacity() {
