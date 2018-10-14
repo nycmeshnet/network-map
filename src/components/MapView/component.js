@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
 import { withRouter, Route } from "react-router";
@@ -8,13 +8,13 @@ import DocumentTitle from "react-document-title";
 import NodeMarker from "./NodeMarker";
 import KioskMarker from "./KioskMarker";
 import LinkLine from "./LinkLine";
-import Sector from "./Sector";
 import NodeDetail from "../NodeDetail";
 import Gallery from "../Gallery";
 
 import { mapStyles } from "./styles";
 
-const DEFAULT_CENTER = { lat: 40.7001809, lng: -73.9595798 };
+const DEFAULT_ZOOM = 13;
+const DEFAULT_CENTER = { lat: 40.7031809, lng: -73.9595798 };
 
 const options = {
 	styles: mapStyles,
@@ -117,7 +117,7 @@ class MapView extends Component {
 		return (
 			<MapComponent
 				mapRef={this.map}
-				defaultZoom={13}
+				defaultZoom={DEFAULT_ZOOM}
 				defaultCenter={DEFAULT_CENTER}
 				defaultOptions={options}
 				onClick={() => history.push("/")}
