@@ -37,7 +37,6 @@ export default class NodeDetail extends PureComponent {
 							<span className="f5 fw6 nowrap sans-serif">
 								Node {node.id}
 							</span>
-							{this.renderNotes(node)}
 						</div>
 					</div>
 					<svg
