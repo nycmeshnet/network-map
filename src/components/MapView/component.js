@@ -218,7 +218,7 @@ class MapView extends Component {
 				node.connectedNodes.forEach(connectedNodeId => {
 					const connectedMarker = this.markerRefs[connectedNodeId];
 					if (connectedMarker) {
-						connectedMarker.setVisibility("dim");
+						connectedMarker.setVisibility("highlight");
 					}
 				});
 
