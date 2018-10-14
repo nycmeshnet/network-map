@@ -11,14 +11,16 @@ export function nodeName(node) {
 
 export function nodeStatus(node) {
 	const { status, notes, panoramas } = node;
+	const lowerNotes = notes ? notes.toLowerCase() : null;
 	const isActive = status === "Installed";
-	const isSupernode = notes && notes.toLowerCase().indexOf("supernode") > -1;
-	const isHub = notes && notes.toLowerCase().indexOf("hub") > -1;
+	const isSupernode = notes && lowerNotes.indexOf("supernode") > -1;
+	const isHub = notes && lowerNotes.indexOf("hub") > -1;
+	const notPotentialHub = !notes || lowerNotes.indexOf("hub?") === -1;
 	const hasPanoramas = panoramas && panoramas.length;
 
 	if (isActive) {
 		if (isSupernode) return "supernode";
-		if (isHub) return "hub";
+		if (isHub && notPotentialHub) return "hub";
 		return "active";
 	}
 
