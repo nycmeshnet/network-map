@@ -62,6 +62,7 @@ class NodeMarker extends PureComponent {
 	getOpacity() {
 		const { visibility } = this.props;
 		if (visibility === "highlight") return 1;
+		if (visibility === "secondary") return 1;
 		if (visibility === "dim") return 0.25;
 		return 1;
 	}
@@ -69,6 +70,7 @@ class NodeMarker extends PureComponent {
 	getZIndex(defaultZIndex) {
 		const { visibility } = this.props;
 		if (visibility === "highlight") return defaultZIndex + 999;
+		if (visibility === "secondary") return defaultZIndex + 998;
 		return defaultZIndex;
 	}
 

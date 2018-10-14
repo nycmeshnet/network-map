@@ -6,8 +6,9 @@ const MAX_OPACITY = 0.75;
 const INTERVAL_COUNT = 25;
 
 const visibilityMultipliers = {
-	highlight: 1,
-	dim: 0.25
+	highlight: 1.25,
+	secondary: 0.125,
+	dim: 0.125
 };
 
 const zIndexes = {
