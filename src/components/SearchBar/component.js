@@ -23,7 +23,7 @@ export default class SearchBar extends PureComponent {
 
 	render() {
 		return (
-			<div className="w-100 shadow-2">
+			<div className="w-100 mw6 shadow-2">
 				{this.renderSearchBar()}
 				{this.renderList()}
 			</div>
@@ -144,21 +144,20 @@ export default class SearchBar extends PureComponent {
 		if (!search) {
 			return [];
 		}
+
+		const lowerSearch = search.toLowerCase();
+
 		return [
-			...nodes.filter(node => node.id === parseInt(search, 10)),
+			...nodes.filter(
+				node =>
+					node.id === parseInt(search, 10) ||
+					lowerSearch === `node ${node.id}`
+			),
 			...nodes
 				.filter(
 					node =>
-						[
-							node.name,
-							node.location,
-							node.notes,
-							node.status,
-							node.email
-						]
-							.join(" ")
-							.toLowerCase()
-							.indexOf(search.toLowerCase()) > -1
+						node.notes &&
+						node.notes.toLowerCase().indexOf(lowerSearch) > -1
 				)
 				.sort((a, b) => {
 					if (a.status !== b.status) {

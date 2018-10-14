@@ -12,7 +12,7 @@ export default class NodeRow extends PureComponent {
 				<div
 					onClick={onClick}
 					key={id}
-					className="pointer hover-bg-near-white bb b--light-gray pa3"
+					className="pointer hover-bg-near-white bb b--light-gray pa3 pl2"
 				>
 					<NodeName node={node} search={search} />
 				</div>

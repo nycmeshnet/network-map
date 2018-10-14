@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import Highlighter from "react-highlight-words";
 
-import { nodeStatus, nodeName } from "../utils";
+import { nodeStatus } from "../utils";
 
 export const icons = {
 	dead: (
@@ -122,18 +122,31 @@ export default class NodeName extends PureComponent {
 	render() {
 		const { node, search } = this.props;
 		return (
-			<div className="h1 overflow-visible flex justify-start items-center">
-				<div className="flex items-center justify-center">
+			<div className="h1 w-100 overflow-visible flex justify-start items-center">
+				<div className="h2 w2 min-h2 min-w2 flex items-center justify-center">
 					{icons[nodeStatus(node)]}
 				</div>
-				<span className="fw6 black f5 mv0 ml1">
-					<Highlighter
-						highlightClassName="bg-light-yellow"
-						searchWords={[search]}
-						autoEscape={true}
-						textToHighlight={String(nodeName(node))}
-					/>
-				</span>
+				<div className="pl1 flex-1 truncate">
+					<span className="db f5 fw6 black mv0">
+						<Highlighter
+							highlightClassName="bg-light-yellow"
+							searchWords={[search]}
+							autoEscape={true}
+							textToHighlight={`Node ${node.id}`}
+						/>
+					</span>
+
+					{node.notes ? (
+						<span className="db f7 gray mv05 truncate">
+							<Highlighter
+								highlightClassName="bg-light-yellow dark-gray"
+								searchWords={[search]}
+								autoEscape={true}
+								textToHighlight={node.notes}
+							/>
+						</span>
+					) : null}
+				</div>
 			</div>
 		);
 	}
