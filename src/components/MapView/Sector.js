@@ -18,22 +18,23 @@ const zIndexes = {
 
 export default class Sector extends PureComponent {
 	render() {
-		const { active, visibility, node } = this.props;
+		const { visibility, node } = this.props;
 
 		const multiplier = visibilityMultipliers[visibility] || 1;
 		const fillOpacity = (MAX_OPACITY / INTERVAL_COUNT) * multiplier;
 		const fillColor = nodeColors[nodeStatus(node)];
 		const zIndex = zIndexes[visibility] || 1;
 
-		const circles = [];
 		const { lat, lng, radius, azimuth, width } = this.props;
 		const interval = radius / INTERVAL_COUNT;
 		const radiusIndices = [...Array(INTERVAL_COUNT).keys()];
+
 		return radiusIndices.map(index => {
 			const circleRadius = interval * index;
 			const path = getPath(lat, lng, circleRadius, azimuth, width);
 			return (
 				<Polygon
+					key={index}
 					path={path}
 					options={{
 						strokeColor: "transparent",
