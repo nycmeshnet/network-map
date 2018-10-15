@@ -8,10 +8,9 @@ export default class LinkLine extends PureComponent {
 
 	render() {
 		const { link } = this.props;
-
-		const [start, end] = link.coordinates;
-		const [lng1, lat1] = start;
-		const [lng2, lat2] = end;
+		const { fromNode, toNode } = link;
+		const [lng1, lat1] = fromNode.coordinates;
+		const [lng2, lat2] = toNode.coordinates;
 		const latlng1 = { lat: lat1, lng: lng1 };
 		const latlng2 = { lat: lat2, lng: lng2 };
 

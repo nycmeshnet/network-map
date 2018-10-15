@@ -112,6 +112,36 @@ function filterLinks(links, filters) {
 function addGraphData(nodes, links, sectors) {
 	const nodesById = {};
 
+	// Add links to nodes
+	nodes.forEach(node => {
+		node.links = links.filter(
+			link =>
+				link.status === "active" &&
+				(link.from === parseInt(node.id, 10) ||
+					link.to === parseInt(node.id, 10))
+		);
+
+		nodesById[node.id] = node;
+	});
+
+	// Add nodes to links
+	links.forEach(link => {
+		link.fromNode = nodesById[link.from];
+		link.toNode = nodesById[link.to];
+	});
+
+	// Add sectors to nodes
+	// TODO: Calculate this in node-db
+	const sectorsByNodeId = {};
+	sectors.forEach(sector => {
+		sector.node = nodesById[sector.nodeId];
+		sectorsByNodeId[sector.nodeId] = sectorsByNodeId[sector.nodeId] || [];
+		sectorsByNodeId[sector.nodeId].push(sector);
+	});
+	nodes.forEach(node => {
+		node.sectors = sectorsByNodeId[node.id];
+	});
+
 	// Calculate connected nodes for each active node
 	nodes.filter(node => node.status === "Installed").forEach(node => {
 		const connectedNodes = [node.id];
@@ -128,35 +158,6 @@ function addGraphData(nodes, links, sectors) {
 		});
 
 		node.connectedNodes = connectedNodes;
-	});
-
-	// Add links to nodes
-	nodes.forEach(node => {
-		node.links = links.filter(
-			link =>
-				link.status === "active" &&
-				(link.from === parseInt(node.id, 10) ||
-					link.to === parseInt(node.id, 10))
-		);
-
-		nodesById[node.id] = node;
-	});
-
-	links.forEach(link => {
-		link.fromNode = nodesById[link.from];
-		link.toNode = nodesById[link.to];
-	});
-
-	// TODO: Calculate this in node-db
-	// Add sectors to nodes
-	const sectorsByNodeId = {};
-	sectors.forEach(sector => {
-		sector.node = nodesById[sector.nodeId];
-		sectorsByNodeId[sector.nodeId] = sectorsByNodeId[sector.nodeId] || [];
-		sectorsByNodeId[sector.nodeId].push(sector);
-	});
-	nodes.forEach(node => {
-		node.sectors = sectorsByNodeId[node.id];
 	});
 
 	return { nodes, links, sectors, nodesById };
