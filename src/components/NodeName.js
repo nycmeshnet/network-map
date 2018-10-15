@@ -31,18 +31,15 @@ export const icons = {
 		</svg>
 	),
 	"potential-hub": (
-		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-			<g>
-				<circle
-					opacity="1"
-					fill="#777"
-					strokeWidth="2"
-					stroke="#fff"
-					r="8"
-					cy="10"
-					cx="10"
-				/>
-			</g>
+		<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+			<circle
+				fill="#777"
+				stroke="white"
+				r="8"
+				strokeWidth="3"
+				cy="11"
+				cx="11"
+			/>
 		</svg>
 	),
 	"potential-supernode": (
@@ -61,31 +58,27 @@ export const icons = {
 		</svg>
 	),
 	active: (
-		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
 			<circle
-				cx="10"
-				cy="10"
-				r="8"
-				stroke="#fff"
-				strokeWidth="2"
 				fill="rgb(255,59,48)"
-				opacity="1"
+				stroke="white"
+				r="6"
+				strokeWidth="2"
+				cx="8"
+				cy="8"
 			/>
 		</svg>
 	),
 	hub: (
-		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-			<g>
-				<circle
-					opacity="1"
-					fill="rgb(90,200,250)"
-					strokeWidth="2"
-					stroke="#fff"
-					r="8"
-					cy="10"
-					cx="10"
-				/>
-			</g>
+		<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+			<circle
+				fill="rgb(90,200,250)"
+				stroke="white"
+				r="8"
+				strokeWidth="3"
+				cy="11"
+				cx="11"
+			/>
 		</svg>
 	),
 	supernode: (
