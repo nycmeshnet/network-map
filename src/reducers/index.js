@@ -6,6 +6,7 @@ import sectorData from "../data/sectors";
 import kiosks from "../data/kiosks";
 
 const initialFilters = {
+	linkNYC: false,
 	potential: false,
 	dead: false,
 	"potential-hub": false,
@@ -21,7 +22,7 @@ const initialState = {
 	nodes,
 	links,
 	sectors,
-	kiosks,
+	kiosks: initialFilters.linkNYC === false ? [] : kiosks,
 	nodesById,
 	filteredNodes: filterNodes(nodes, initialFilters),
 	filteredLinks: filterLinks(links, initialFilters),
