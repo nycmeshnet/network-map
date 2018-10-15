@@ -6,9 +6,9 @@ const MAX_OPACITY = 0.75;
 const INTERVAL_COUNT = 25;
 
 const visibilityMultipliers = {
-	highlight: 1.25,
-	secondary: 0.125,
-	dim: 0.125
+	highlight: 1,
+	secondary: 0,
+	dim: 0
 };
 
 const zIndexes = {
@@ -20,7 +20,9 @@ export default class Sector extends PureComponent {
 	render() {
 		const { visibility, node } = this.props;
 
-		const multiplier = visibilityMultipliers[visibility] || 1;
+		const visibilityMultiplier = visibilityMultipliers[visibility];
+		const multiplier =
+			visibilityMultiplier === undefined ? 1 : visibilityMultiplier;
 		const fillOpacity = (MAX_OPACITY / INTERVAL_COUNT) * multiplier;
 		const fillColor = nodeColors[nodeStatus(node)];
 		const zIndex = zIndexes[visibility] || 1;
