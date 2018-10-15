@@ -14538,9 +14538,9 @@
     "id": 1417,
     "status": "Installed",
     "coordinates": [
-      -73.93547048,
-      40.71338374,
-      10
+      -73.9354884,
+      40.7136172,
+      14
     ],
     "roofAccess": true,
     "notes": "hub",
@@ -25721,6 +25721,16 @@
     "coordinates": [
       -74.0059728,
       40.7127753,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2503,
+    "coordinates": [
+      -73.984541,
+      40.7203976,
       5
     ],
     "roofAccess": true,

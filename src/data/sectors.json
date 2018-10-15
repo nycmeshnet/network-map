@@ -47,5 +47,54 @@
     "azimuth": 280,
     "width": 120,
     "active": true
+  },
+  {
+    "nodeId": 1350,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "active": true
+  },
+  {
+    "nodeId": 2463,
+    "radius": 1,
+    "azimuth": 90,
+    "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 731,
+    "radius": 1,
+    "azimuth": 40,
+    "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 731,
+    "radius": 1,
+    "azimuth": 280,
+    "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 664,
+    "radius": 1,
+    "azimuth": 310,
+    "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 664,
+    "radius": 1,
+    "azimuth": 70,
+    "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 664,
+    "radius": 1,
+    "azimuth": 190,
+    "width": 120,
+    "active": true
   }
 ]
