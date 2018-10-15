@@ -56,7 +56,7 @@ export default class SearchBar extends PureComponent {
 				</svg>
 				<input
 					ref="search"
-					className="overflow-hidden pl2 pr3 pv3 input-reset f5 fw4 bw0 w-100 on"
+					className="sans-serif overflow-hidden pl2 pr3 pv3 input-reset f5 fw4 bw0 w-100 on"
 					value={this.state.search}
 					placeholder="Search nodes"
 					spellCheck={false}
