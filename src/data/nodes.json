@@ -836,17 +836,6 @@
     "panoramas": []
   },
   {
-    "id": 87,
-    "status": "Installed",
-    "coordinates": [
-      -73.9942982,
-      40.640914,
-      5
-    ],
-    "roofAccess": true,
-    "panoramas": []
-  },
-  {
     "id": 88,
     "coordinates": [
       -73.9978832,
@@ -2219,7 +2208,8 @@
     "notes": "Supernode 1, Sector facing North",
     "panoramas": [
       "227.jpg",
-      "227a.jpg"
+      "227a.jpg",
+      "227b.png"
     ]
   },
   {
@@ -5676,7 +5666,7 @@
     "coordinates": [
       -73.9771565,
       40.7235148,
-      5
+      15
     ],
     "roofAccess": true,
     "panoramas": [
@@ -9690,7 +9680,7 @@
       38
     ],
     "roofAccess": true,
-    "notes": "hub? kiosk",
+    "notes": "hub kiosk",
     "panoramas": [
       "944.jpg",
       "944a.jpg",
@@ -12750,6 +12740,16 @@
     ]
   },
   {
+    "id": 1241,
+    "coordinates": [
+      82.9117309,
+      54.9938324,
+      5
+    ],
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
     "id": 1242,
     "coordinates": [
       -73.9652421,
@@ -15356,16 +15356,6 @@
       5
     ],
     "roofAccess": true,
-    "panoramas": []
-  },
-  {
-    "id": "Form Responses 1-1493",
-    "coordinates": [
-      -73.97310519999999,
-      40.6454763,
-      5
-    ],
-    "roofAccess": false,
     "panoramas": []
   },
   {
@@ -18458,7 +18448,9 @@
       5
     ],
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "1792.jpg"
+    ]
   },
   {
     "id": 1793,
@@ -21984,10 +21976,13 @@
     "coordinates": [
       -73.947881,
       40.683266,
-      5
+      25
     ],
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2129.jpg",
+      "2129a.jpg"
+    ]
   },
   {
     "id": 2130,
@@ -24141,10 +24136,12 @@
     "coordinates": [
       -73.9994167,
       40.64153690000001,
-      5
+      20
     ],
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2342.jpg"
+    ]
   },
   {
     "id": 2343,
@@ -24209,7 +24206,8 @@
     ],
     "roofAccess": true,
     "panoramas": [
-      "2348.jpg"
+      "2348.jpg",
+      "2348a.jpg"
     ]
   },
   {
@@ -24427,7 +24425,11 @@
       5
     ],
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2370.jpg",
+      "2370a.jpg",
+      "2370b.jpg"
+    ]
   },
   {
     "id": 2371,
@@ -24566,7 +24568,9 @@
       5
     ],
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2385.jpg"
+    ]
   },
   {
     "id": 2386,
@@ -25332,8 +25336,8 @@
     "status": "Installed",
     "coordinates": [
       -73.98809299999999,
-      40.719762,
-      5
+      40.719778,
+      72
     ],
     "roofAccess": false,
     "notes": "hub",
@@ -25731,6 +25735,76 @@
     "coordinates": [
       -73.984541,
       40.7203976,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2504,
+    "coordinates": [
+      -73.9894995,
+      40.7200585,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2505,
+    "coordinates": [
+      -73.97882480000001,
+      40.6877381,
+      5
+    ],
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2506,
+    "coordinates": [
+      -73.9889223,
+      40.7134154,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2507,
+    "coordinates": [
+      -73.8961042,
+      40.6795864,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2508,
+    "coordinates": [
+      -73.9565092,
+      40.7110671,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2509,
+    "coordinates": [
+      -73.91753109999999,
+      40.7003337,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2510,
+    "coordinates": [
+      -73.9781611,
+      40.7289174,
       5
     ],
     "roofAccess": true,

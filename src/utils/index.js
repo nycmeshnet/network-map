@@ -41,3 +41,8 @@ export const nodeColors = {
 	potential: "#777",
 	supernode: "#007aff"
 };
+
+export const sectorColors = {
+	supernode: "#007aff",
+	default: "rgb(90,200,250)"
+};

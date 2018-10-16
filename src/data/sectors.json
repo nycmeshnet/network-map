@@ -16,14 +16,14 @@
   {
     "nodeId": 713,
     "radius": 2,
-    "azimuth": 40,
+    "azimuth": 25,
     "width": 120,
     "active": false
   },
   {
     "nodeId": 713,
     "radius": 2,
-    "azimuth": 160,
+    "azimuth": 190,
     "width": 120,
     "active": false
   },
@@ -95,6 +95,76 @@
     "radius": 1,
     "azimuth": 190,
     "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 329,
+    "radius": 0.75,
+    "azimuth": 225,
+    "width": 60,
+    "active": true
+  },
+  {
+    "nodeId": 844,
+    "radius": 1,
+    "azimuth": 45,
+    "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 944,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "active": true
+  },
+  {
+    "nodeId": 1515,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "active": true
+  },
+  {
+    "nodeId": 2463,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "active": true
+  },
+  {
+    "nodeId": 731,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "active": true
+  },
+  {
+    "nodeId": 1147,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "active": true
+  },
+  {
+    "nodeId": 1567,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "active": true
+  },
+  {
+    "nodeId": 363,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "active": true
+  },
+  {
+    "nodeId": 1971,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
     "active": true
   }
 ]
