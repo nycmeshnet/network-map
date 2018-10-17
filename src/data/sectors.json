@@ -7,73 +7,17 @@
     "active": true
   },
   {
-    "nodeId": 1340,
-    "radius": 2,
-    "azimuth": 180,
-    "width": 360,
-    "active": true
-  },
-  {
-    "nodeId": 713,
-    "radius": 2,
-    "azimuth": 25,
-    "width": 120,
-    "active": false
-  },
-  {
-    "nodeId": 713,
-    "radius": 2,
-    "azimuth": 190,
-    "width": 120,
-    "active": false
-  },
-  {
-    "nodeId": 1049,
+    "nodeId": 329,
     "radius": 0.75,
-    "azimuth": 90,
+    "azimuth": 225,
     "width": 60,
     "active": true
   },
   {
-    "nodeId": 1417,
-    "radius": 1,
-    "azimuth": 120,
-    "width": 120,
-    "active": true
-  },
-  {
-    "nodeId": 1417,
-    "radius": 1,
-    "azimuth": 280,
-    "width": 120,
-    "active": true
-  },
-  {
-    "nodeId": 1350,
+    "nodeId": 363,
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "active": true
-  },
-  {
-    "nodeId": 2463,
-    "radius": 1,
-    "azimuth": 90,
-    "width": 120,
-    "active": true
-  },
-  {
-    "nodeId": 731,
-    "radius": 1,
-    "azimuth": 40,
-    "width": 120,
-    "active": true
-  },
-  {
-    "nodeId": 731,
-    "radius": 1,
-    "azimuth": 280,
-    "width": 120,
     "active": true
   },
   {
@@ -98,10 +42,38 @@
     "active": true
   },
   {
-    "nodeId": 329,
-    "radius": 0.75,
-    "azimuth": 225,
-    "width": 60,
+    "nodeId": 713,
+    "radius": 2,
+    "azimuth": 25,
+    "width": 120,
+    "active": false
+  },
+  {
+    "nodeId": 713,
+    "radius": 2,
+    "azimuth": 190,
+    "width": 120,
+    "active": false
+  },
+  {
+    "nodeId": 731,
+    "radius": 1,
+    "azimuth": 40,
+    "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 731,
+    "radius": 1,
+    "azimuth": 280,
+    "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 731,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
     "active": true
   },
   {
@@ -119,28 +91,49 @@
     "active": true
   },
   {
-    "nodeId": 1515,
-    "radius": 0.5,
-    "azimuth": 0,
-    "width": 360,
-    "active": true
-  },
-  {
-    "nodeId": 2463,
-    "radius": 0.5,
-    "azimuth": 0,
-    "width": 360,
-    "active": true
-  },
-  {
-    "nodeId": 731,
-    "radius": 0.5,
-    "azimuth": 0,
-    "width": 360,
+    "nodeId": 1049,
+    "radius": 0.75,
+    "azimuth": 90,
+    "width": 60,
     "active": true
   },
   {
     "nodeId": 1147,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "active": true
+  },
+  {
+    "nodeId": 1340,
+    "radius": 2,
+    "azimuth": 180,
+    "width": 360,
+    "active": true
+  },
+  {
+    "nodeId": 1350,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "active": true
+  },
+  {
+    "nodeId": 1417,
+    "radius": 1,
+    "azimuth": 120,
+    "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 1417,
+    "radius": 1,
+    "azimuth": 280,
+    "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 1515,
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
@@ -154,17 +147,38 @@
     "active": true
   },
   {
-    "nodeId": 363,
+    "nodeId": 1971,
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
     "active": true
   },
   {
-    "nodeId": 1971,
+    "nodeId": 2463,
+    "radius": 1,
+    "azimuth": 90,
+    "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 2463,
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
     "active": true
+  },
+  {
+    "nodeId": 1348,
+    "radius": 1,
+    "azimuth": 0,
+    "width": 360,
+    "active": false
+  },
+  {
+    "nodeId": 1384,
+    "radius": 0.5,
+    "azimuth": 170,
+    "width": 60,
+    "active": false
   }
 ]

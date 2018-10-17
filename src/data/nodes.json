@@ -795,8 +795,8 @@
     "id": 83,
     "status": "Installed",
     "coordinates": [
-      -75.1538531,
-      39.9498397,
+      -73.9662717,
+      40.7107468,
       5
     ],
     "roofAccess": false,
@@ -3608,7 +3608,7 @@
       54
     ],
     "roofAccess": true,
-    "notes": "Apt PHD",
+    "notes": "Zach",
     "panoramas": []
   },
   {
@@ -25340,7 +25340,7 @@
       72
     ],
     "roofAccess": false,
-    "notes": "hub",
+    "notes": "Rivington Hotel hub",
     "panoramas": [
       "2463.jpg",
       "2463a.jpg",
@@ -25805,6 +25805,46 @@
     "coordinates": [
       -73.9781611,
       40.7289174,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2511,
+    "coordinates": [
+      -73.95037889999999,
+      40.8249549,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2512,
+    "coordinates": [
+      -73.9553612,
+      40.6942566,
+      5
+    ],
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2513,
+    "coordinates": [
+      -73.9128935,
+      40.74758569999999,
+      5
+    ],
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2514,
+    "coordinates": [
+      -77.4209235,
+      38.4641442,
       5
     ],
     "roofAccess": true,
