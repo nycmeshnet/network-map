@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "date-fns": "^1.29.0",
+    "qs": "^6.5.2",
     "react": "^16.4.2",
     "react-document-title": "^2.0.3",
     "react-dom": "^16.4.2",
@@ -24,5 +25,10 @@
     "eject": "react-scripts eject",
     "update-data": "curl -s https://node-db.netlify.com/nodes.json > src/data/nodes.json && curl -s https://node-db.netlify.com/links.json > src/data/links.json && curl -s https://node-db.netlify.com/kiosks.json > src/data/kiosks.json && curl -s https://node-db.netlify.com/sectors.json > src/data/sectors.json"
   },
-  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
