@@ -35,7 +35,7 @@ export default class NodeDetail extends PureComponent {
 						{this.renderImage(node)}
 						<div className="pv1 ph2 flex flex-column justify-end">
 							<span className="f5 fw6 nowrap sans-serif">
-								Node {node.id}
+								{node.id}
 							</span>
 						</div>
 					</div>
@@ -64,7 +64,7 @@ export default class NodeDetail extends PureComponent {
 		}
 		const [firstPanorama] = panoramas;
 		return (
-			<Link to={`/nodes/${id}/panoramas/1`} className="db node-image">
+			<Link to={`/nodes/${id}/panoramas/1`} className="db h2 w2">
 				<div
 					className="h-100 w-100 cover bg-center bg-near-white"
 					style={{
