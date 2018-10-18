@@ -93,20 +93,23 @@ class MapView extends Component {
 	}
 
 	handleKeyDown(event) {
-		if (event.keyCode === 27) {
+		const { keyCode } = event;
+		if (keyCode === 27) {
 			const { history } = this.context.router;
 			history.push("/");
 		}
 
 		// Command key
-		if (event.keyCode === 91) {
+		if (keyCode === 91 || keyCode === 93) {
 			this.setState({ commandPressed: true });
 		}
 	}
 
 	handleKeyUp(event) {
+		const { keyCode } = event;
+
 		// Command key
-		if (event.keyCode === 91) {
+		if (keyCode === 91 || keyCode === 93) {
 			this.setState({ commandPressed: false });
 		}
 	}
