@@ -10,6 +10,11 @@ const getPixelPositionOffset = (width, height) => ({
 export default class NodeDetail extends PureComponent {
 	render() {
 		const { nodeId, nodesById } = this.props;
+
+		if (!nodeId || !nodesById) {
+			return null;
+		}
+
 		const node = nodesById[nodeId];
 		if (!node) {
 			return null;
