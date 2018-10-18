@@ -1,32 +1,25 @@
 import React, { PureComponent, Fragment } from "react";
-import PropTypes from "prop-types";
 import { Marker } from "react-google-maps";
-import { withRouter } from "react-router";
-
-import { nodeStatus } from "../../utils";
 import Sector from "./Sector";
 
 class NodeMarker extends PureComponent {
-	static contextTypes = {
-		router: PropTypes.object
-	};
-
 	render() {
-		const { node } = this.props;
-		const { history } = this.context.router;
-		const { id, notes } = node;
-		const [lng, lat] = node.coordinates;
+		const { node, onClick } = this.props;
+		const { id, notes, coordinates } = node;
+		const [lng, lat] = coordinates;
+		const title = `${id}${notes ? ` - ${notes}` : ""}`;
 		const { icon, zIndex } = this.getMarkerProps();
-
+		const adjustedZ = this.getZIndex(zIndex);
+		const opacity = this.getOpacity();
 		return (
 			<Fragment>
 				<Marker
 					defaultPosition={{ lat, lng }}
-					icon={icon}
-					title={`${id}${notes ? ` - ${notes}` : ""}`}
-					options={{ opacity: this.getOpacity() }}
-					zIndex={this.getZIndex(zIndex)}
-					onClick={() => history.push(`/nodes/${id}`)}
+					defaultIcon={icon}
+					defaultTitle={title}
+					options={{ opacity }}
+					zIndex={adjustedZ}
+					onClick={onClick}
 				/>
 				{this.renderSectors()}
 			</Fragment>
@@ -36,9 +29,11 @@ class NodeMarker extends PureComponent {
 	renderSectors() {
 		const { node, visibility } = this.props;
 		const { sectors } = node;
+
 		if (!sectors) {
 			return null;
 		}
+
 		return sectors.map(sector => {
 			const [lng, lat] = sector.node.coordinates;
 			const { radius, azimuth, width, active } = sector;
@@ -76,10 +71,9 @@ class NodeMarker extends PureComponent {
 
 	getMarkerProps() {
 		const { node } = this.props;
+		const { type } = node;
 
-		const status = nodeStatus(node);
-
-		if (status === "supernode")
+		if (type === "supernode")
 			return {
 				icon: {
 					url: "/img/map/supernode.svg",
@@ -88,7 +82,7 @@ class NodeMarker extends PureComponent {
 				zIndex: 100
 			};
 
-		if (status === "hub")
+		if (type === "hub")
 			return {
 				icon: {
 					url: "/img/map/hub.svg",
@@ -97,7 +91,7 @@ class NodeMarker extends PureComponent {
 				zIndex: 99
 			};
 
-		if (status === "active")
+		if (type === "active")
 			return {
 				icon: {
 					url: "/img/map/active.svg",
@@ -106,7 +100,7 @@ class NodeMarker extends PureComponent {
 				zIndex: 98
 			};
 
-		if (status === "potential-supernode")
+		if (type === "potential-supernode")
 			return {
 				icon: {
 					url: "/img/map/potential-supernode.svg",
@@ -115,7 +109,7 @@ class NodeMarker extends PureComponent {
 				zIndex: 89
 			};
 
-		if (status === "potential-hub")
+		if (type === "potential-hub")
 			return {
 				icon: {
 					url: "/img/map/potential-hub.svg",
@@ -124,7 +118,7 @@ class NodeMarker extends PureComponent {
 				zIndex: 88
 			};
 
-		if (status === "potential")
+		if (type === "potential")
 			return {
 				icon: {
 					url: "/img/map/potential.svg",
@@ -143,19 +137,14 @@ class NodeMarker extends PureComponent {
 	}
 }
 
-const RouterNodeMarker = withRouter(NodeMarker);
-
-export default class CombinedMarker extends PureComponent {
+export default class VisibilityMarker extends PureComponent {
 	state = {
 		visibility: "default"
 	};
 
 	render() {
 		return (
-			<RouterNodeMarker
-				{...this.props}
-				visibility={this.state.visibility}
-			/>
+			<NodeMarker {...this.props} visibility={this.state.visibility} />
 		);
 	}
 

@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { Polygon } from "react-google-maps";
-import { sectorColors, nodeStatus } from "../../utils";
+import { sectorColors } from "../../utils";
 
 const MAX_OPACITY = 0.75;
 const INTERVAL_COUNT = 25;
@@ -24,8 +24,7 @@ export default class Sector extends PureComponent {
 		const multiplier =
 			visibilityMultiplier === undefined ? 1 : visibilityMultiplier;
 		const fillOpacity = (MAX_OPACITY / INTERVAL_COUNT) * multiplier;
-		const fillColor =
-			sectorColors[nodeStatus(node)] || sectorColors.default;
+		const fillColor = sectorColors[node.type] || sectorColors.default;
 		const zIndex = zIndexes[visibility] || 1;
 
 		const { lat, lng, radius, azimuth, width } = this.props;

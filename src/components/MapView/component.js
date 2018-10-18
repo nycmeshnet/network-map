@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
 import { withRouter, Route } from "react-router";
-import PropTypes from "prop-types";
 import DocumentTitle from "react-document-title";
+import PropTypes from "prop-types";
+import { uniq, isEqual } from "lodash";
 
 import NodeMarker from "./NodeMarker";
 import KioskMarker from "./KioskMarker";
@@ -44,6 +45,10 @@ class MapView extends Component {
 		router: PropTypes.object
 	};
 
+	state = {
+		commandPressed: false
+	};
+
 	constructor(props) {
 		super(props);
 		this.map = React.createRef();
@@ -53,7 +58,9 @@ class MapView extends Component {
 
 	componentDidMount() {
 		this.keyDownHandler = this.handleKeyDown.bind(this);
+		this.keyUpHandler = this.handleKeyUp.bind(this);
 		window.addEventListener("keydown", this.keyDownHandler, false);
+		window.addEventListener("keyup", this.keyUpHandler, false);
 
 		if (this.props.match) {
 			try {
@@ -61,19 +68,23 @@ class MapView extends Component {
 					this.handleSelectedChange(this.props);
 				}, 500);
 			} catch (e) {
-				console.error(":(");
+				console.error(e);
 			}
 		}
 	}
 
 	componentWillUnmount() {
 		window.removeEventListener("keydown", this.keyDownHandler, false);
+		window.removeEventListener("keyup", this.keyUpHandler, false);
 	}
 
 	// This is a kinda hacky way to improve performance
 	// Instead of rerending the entire map, rerender specific nodes
 	shouldComponentUpdate(nextProps) {
-		if (this.props.nodes !== nextProps.node) {
+		const nodesChanged = !isEqual(this.props.nodes, nextProps.nodes);
+		const matchChanged = this.props.match !== nextProps.match;
+		const filtersChanged = this.props.filters !== nextProps.filters;
+		if (nodesChanged || matchChanged || filtersChanged) {
 			this.handleSelectedChange(nextProps);
 			return true;
 		}
@@ -85,6 +96,18 @@ class MapView extends Component {
 		if (event.keyCode === 27) {
 			const { history } = this.context.router;
 			history.push("/");
+		}
+
+		// Command key
+		if (event.keyCode === 91) {
+			this.setState({ commandPressed: true });
+		}
+	}
+
+	handleKeyUp(event) {
+		// Command key
+		if (event.keyCode === 91) {
+			this.setState({ commandPressed: false });
 		}
 	}
 
@@ -98,18 +121,30 @@ class MapView extends Component {
 			return false;
 		}
 
-		const nextSelectedNodeId = parseInt(nextProps.match.params.nodeId, 10);
-		const nextSelectedMarker = this.markerRefs[nextSelectedNodeId];
+		const nextSelectedNodeIds = this.selectedNodeIds(nextProps.match);
+		const nextSelectedMarkers = nextSelectedNodeIds
+			.map(id => this.markerRefs[id])
+			.filter(m => m); // filter null
 
-		if (!nextSelectedMarker) {
+		if (!nextSelectedMarkers.length) {
 			return;
 		}
 
-		const { node: nextSelectedNode } = nextSelectedMarker.props;
+		const nextSelectedNodes = nextSelectedMarkers.map(
+			marker => marker.props.node
+		);
+		this.updateNodes(nextSelectedNodes, nextSelectedMarkers);
+		this.updateLinks(nextSelectedNodes);
 
-		this.updateNodes(nextSelectedNode, nextSelectedMarker);
-		this.updateLinks(nextSelectedNode);
-		this.panToNode(nextSelectedNode);
+		const matchChanged = this.props.match !== nextProps.match;
+		const nodesChanged = this.props.nodes !== nextProps.nodes;
+		const fitBounds = !matchChanged && !nodesChanged;
+
+		const filtersChanged = this.props.filters !== nextProps.filters;
+
+		if (!filtersChanged) {
+			this.panToNodes(nextSelectedNodes, fitBounds);
+		}
 	}
 
 	render() {
@@ -140,16 +175,49 @@ class MapView extends Component {
 	}
 
 	renderNodes() {
-		const { nodes } = this.props;
-		return nodes.map(node => (
-			<NodeMarker
-				key={node.id}
-				ref={ref => {
-					this.handleMarkerRef(ref);
-				}}
-				node={node}
-			/>
-		));
+		const { nodes, filters } = this.props;
+		const selectedNodeIdsMap = {};
+		this.selectedNodeIds().forEach(
+			nodeId => (selectedNodeIdsMap[nodeId] = true)
+		);
+		return nodes.map(node => {
+			const isSelected = selectedNodeIdsMap[node.id];
+			if (filters[node.type] === false && !isSelected) {
+				return null;
+			}
+			return (
+				<NodeMarker
+					key={node.id}
+					node={node}
+					onClick={() => this.handleNodeClick(node)}
+					ref={ref => {
+						this.handleMarkerRef(ref);
+					}}
+				/>
+			);
+		});
+	}
+
+	renderLinks() {
+		const { links, filters } = this.props;
+		return links.map((link, index) => {
+			if (filters[link.fromNode.type] === false) {
+				return null;
+			}
+
+			if (filters[link.toNode.type] === false) {
+				return null;
+			}
+			return (
+				<LinkLine
+					key={this.linkId(link)}
+					ref={ref => {
+						this.handleLineRef(ref);
+					}}
+					link={link}
+				/>
+			);
+		});
 	}
 
 	renderKiosks() {
@@ -159,17 +227,50 @@ class MapView extends Component {
 		));
 	}
 
-	renderLinks() {
-		const { links } = this.props;
-		return links.map((link, index) => (
-			<LinkLine
-				key={this.linkId(link)}
-				ref={ref => {
-					this.handleLineRef(ref);
-				}}
-				link={link}
-			/>
-		));
+	renderNodeDetail() {
+		const { match } = this.props;
+		if (!match || !match.params) {
+			return null;
+		}
+		const nodeIds = this.selectedNodeIds();
+
+		const nodeTitles = nodeIds.join(", ");
+		const title = `${nodeTitles} - Map - NYC Mesh`;
+		return (
+			<DocumentTitle title={title}>
+				<Fragment>
+					{nodeIds.map(id => (
+						<NodeDetail key={id} nodeId={id} />
+					))}
+				</Fragment>
+			</DocumentTitle>
+		);
+	}
+
+	handleNodeClick(node) {
+		const { match } = this.props;
+		const { history } = this.context.router;
+
+		// Command click selects multiple nodes
+		if (this.state.commandPressed && match && match.params.nodeId) {
+			const nodeIds = this.selectedNodeIds();
+			const selectedId = node.id.toString();
+
+			let newNodeIds = [];
+			if (nodeIds.indexOf(selectedId) > -1) {
+				newNodeIds = nodeIds.filter(nodeId => nodeId !== selectedId);
+			} else {
+				nodeIds.push(selectedId);
+				newNodeIds = nodeIds;
+			}
+
+			const newNodeIdString = uniq(newNodeIds)
+				.sort()
+				.join("-");
+			history.push(`/nodes/${newNodeIdString}`);
+		} else {
+			history.push(`/nodes/${node.id}`);
+		}
 	}
 
 	resetAllNodes() {
@@ -183,69 +284,92 @@ class MapView extends Component {
 			);
 		});
 	}
-	renderNodeDetail() {
-		const { match } = this.props;
-		if (!match || !match.params) {
-			return null;
-		}
-		const { nodeId } = match.params;
-		return (
-			<DocumentTitle title={`Node ${nodeId} - NYC Mesh`}>
-				<NodeDetail nodeId={nodeId} />
-			</DocumentTitle>
-		);
-	}
 
-	updateNodes(node, marker) {
+	updateNodes(nodes, markers) {
 		ReactDOM.unstable_batchedUpdates(() => {
 			// Dim all nodes of same type
-			Object.values(this.markerRefs).forEach(marker => {
-				if (node.status === "Installed") {
-					if (node.id !== marker.props.node.id) {
-						marker.setVisibility("dim");
-					}
-				} else {
-					if (marker.props.node.status === "Installed") {
-						marker.setVisibility("default");
+			nodes.forEach(node => {
+				Object.values(this.markerRefs).forEach(marker => {
+					if (node.status === "Installed") {
+						if (node.id !== marker.props.node.id) {
+							marker.setVisibility("dim");
+						}
 					} else {
-						marker.setVisibility("dim");
+						if (marker.props.node.status === "Installed") {
+							marker.setVisibility("default");
+						} else {
+							marker.setVisibility("dim");
+						}
 					}
-				}
+				});
 			});
 
 			// Highlight directly connected nodes
-			node.connectedNodes &&
-				node.connectedNodes.forEach(connectedNodeId => {
-					const connectedMarker = this.markerRefs[connectedNodeId];
-					if (connectedMarker) {
-						connectedMarker.setVisibility("secondary");
-					}
-				});
+			nodes.forEach(node => {
+				node.connectedNodes &&
+					node.connectedNodes.forEach(connectedNodeId => {
+						const connectedMarker = this.markerRefs[
+							connectedNodeId
+						];
+						if (connectedMarker) {
+							connectedMarker.setVisibility("secondary");
+						}
+					});
+			});
 
 			// Highlight selected node
-			marker.setVisibility("highlight");
+			markers.forEach(marker => marker.setVisibility("highlight"));
 		});
 	}
 
-	updateLinks(node) {
+	updateLinks(nodes) {
 		// Dim all links
 		Object.values(this.lineRefs).forEach(line => line.setVisibility("dim"));
 
 		// Highlight direct links
-		if (node.links) {
-			node.links.forEach(link => {
-				const line = this.lineRefs[this.linkId(link)];
-				if (line) {
-					line.setVisibility("highlight");
-				}
-			});
-		}
+		nodes.forEach(node => {
+			if (node.links) {
+				node.links.forEach(link => {
+					const line = this.lineRefs[this.linkId(link)];
+					if (line) {
+						line.setVisibility("highlight");
+					}
+				});
+			}
+		});
 	}
 
-	panToNode(node) {
-		// TODO: only if out of viewport
-		const [lng, lat] = node.coordinates;
-		this.map.current.panTo({ lat, lng });
+	panToNodes(nodes, fitBounds) {
+		if (nodes.length === 1) {
+			const [lng, lat] = nodes[0].coordinates;
+			this.map.current.panTo({ lng, lat });
+			return;
+		}
+
+		let minLng = 9999,
+			minLat = 9999,
+			maxLng = -9999,
+			maxLat = -9999;
+		nodes.forEach(node => {
+			const [lng, lat] = node.coordinates;
+			if (lng < minLng) minLng = lng;
+			if (lng > maxLng) maxLng = lng;
+			if (lat < minLat) minLat = lat;
+			if (lat > maxLat) maxLat = lat;
+		});
+
+		const newBounds = {
+			east: maxLng,
+			north: maxLat,
+			south: minLat,
+			west: minLng
+		};
+
+		if (fitBounds) {
+			this.map.current.fitBounds(newBounds, window.innerWidth / 10);
+		} else {
+			this.map.current.panToBounds(newBounds, window.innerWidth / 10);
+		}
 	}
 
 	handleMarkerRef(ref) {
@@ -262,6 +386,14 @@ class MapView extends Component {
 
 	linkId(link) {
 		return `${link.from}-${link.to} ${link.coordinates} ${link.status}`;
+	}
+
+	selectedNodeIds(match = this.props.match) {
+		if (!match || !match.params) {
+			return [];
+		}
+		const { nodeId } = match.params;
+		return nodeId.split("-");
 	}
 }
 

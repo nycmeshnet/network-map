@@ -2,11 +2,11 @@ import { connect } from "react-redux";
 import PureMapView from "./component";
 
 const mapStateToProps = (state, ownProps) => ({
-	nodes: state.filteredNodes,
-	links: state.filteredLinks,
+	nodes: state.nodes,
+	links: state.links,
 	sectors: state.sectors,
 	kiosks: state.kiosks,
-	tickets: state.tickets
+	filters: state.filters
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({});
