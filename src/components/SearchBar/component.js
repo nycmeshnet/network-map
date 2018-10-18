@@ -87,7 +87,6 @@ export default class SearchBar extends PureComponent {
 						key={node.id}
 						node={node}
 						search={search}
-						iconColor={this.colorForNode(node)}
 						onClick={() => this.setState({ showDropdown: false })}
 					/>
 				))}
@@ -167,14 +166,5 @@ export default class SearchBar extends PureComponent {
 					return a.id - b.id;
 				})
 		];
-	}
-
-	colorForNode(node) {
-		const { status, tickets } = node;
-		return status === "Installed"
-			? "rgb(255,59,48)"
-			: tickets && tickets.length > 2
-				? "rgb(255,204,0)"
-				: "gray";
 	}
 }
