@@ -9,7 +9,7 @@ export function nodeName(node) {
 	return nodeNames[node.id] || `Node ${node.id}`;
 }
 
-export function nodeStatus(node) {
+export function nodeType(node) {
 	const { status, notes, panoramas } = node;
 	const lowerNotes = notes ? notes.toLowerCase() : null;
 	const isActive = status === "Installed";

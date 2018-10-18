@@ -1,4 +1,4 @@
-import { nodeStatus } from "../utils";
+import { nodeType } from "../utils";
 
 import nodeData from "../data/nodes";
 import linkData from "../data/links";
@@ -24,8 +24,6 @@ const initialState = {
 	sectors,
 	kiosks: initialFilters.linkNYC === false ? [] : kiosks,
 	nodesById,
-	filteredNodes: filterNodes(nodes, initialFilters),
-	filteredLinks: filterLinks(links, initialFilters),
 	filters: initialFilters,
 	statusCounts: getCounts(nodes, kiosks)
 };
@@ -50,8 +48,6 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				filters: newFilters,
-				filteredNodes: filterNodes(state.nodes, newFilters),
-				filteredLinks: filterLinks(state.links, newFilters),
 				kiosks: newFilters.linkNYC === false ? [] : kiosks
 			};
 		case "FETCH_NODES_SUCCESS":
@@ -60,15 +56,13 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				nodes: newNodes,
-				filteredNodes: filterNodes(newNodes, state.filters),
 				statusCounts: newStatusCounts
 			};
 		case "FETCH_LINKS_SUCCESS":
 			const { links: newLinks } = addGraphData(state.nodes, action.links);
 			return {
 				...state,
-				links: newLinks,
-				filteredLinks: filterLinks(newLinks, state.filters)
+				links: newLinks
 			};
 		case "FETCH_KIOSKS_SUCCESS":
 			return {
@@ -84,36 +78,12 @@ const reducer = (state = initialState, action) => {
 	}
 };
 
-function filterNodes(nodes, filters) {
-	return nodes.filter(
-		node =>
-			filters[nodeStatus(node)] === undefined || filters[nodeStatus(node)]
-	);
-}
-
-function filterLinks(links, filters) {
-	return links.filter(link => {
-		if (!link.fromNode || !link.toNode) {
-			return true;
-		}
-
-		if (filters[nodeStatus(link.fromNode)] === false) {
-			return false;
-		}
-
-		if (filters[nodeStatus(link.toNode)] === false) {
-			return false;
-		}
-
-		return true;
-	});
-}
-
 function addGraphData(nodes, links, sectors) {
 	const nodesById = {};
 
 	// Add links to nodes
 	nodes.forEach(node => {
+		node.type = nodeType(node);
 		node.links = links.filter(
 			link =>
 				link.status === "active" &&
@@ -166,14 +136,14 @@ function addGraphData(nodes, links, sectors) {
 function getCounts(nodes, kiosks) {
 	const counts = {};
 	nodes.forEach(node => {
-		const status = nodeStatus(node);
-		counts[status] = (counts[status] || 0) + 1;
+		const { type } = node;
+		counts[type] = (counts[type] || 0) + 1;
 
-		if (status.indexOf("potential-") > -1 || status === "dead") {
+		if (type.indexOf("potential-") > -1 || type === "dead") {
 			counts["potential"] = (counts["potential"] || 0) + 1;
 		}
 
-		if (status === "supernode" || status === "hub") {
+		if (type === "supernode" || type === "hub") {
 			counts["active"] = (counts["active"] || 0) + 1;
 		}
 	});

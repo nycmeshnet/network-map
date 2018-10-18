@@ -1,8 +1,6 @@
 import React, { PureComponent } from "react";
 import Highlighter from "react-highlight-words";
 
-import { nodeStatus } from "../utils";
-
 export const icons = {
 	dead: (
 		<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
@@ -117,7 +115,7 @@ export default class NodeName extends PureComponent {
 		return (
 			<div className="h1 w-100 overflow-visible flex justify-start items-center">
 				<div className="h2 w2 min-h2 min-w2 flex items-center justify-center">
-					{icons[nodeStatus(node)]}
+					{icons[node.type]}
 				</div>
 				<div className="pl1 flex-1 truncate">
 					<span className="db f5 fw6 black mv0">
