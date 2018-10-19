@@ -83,15 +83,14 @@ function addGraphData(nodes, links, sectors) {
 
 	// Add links to nodes
 	nodes.forEach(node => {
+		nodesById[node.id] = node;
+
 		node.type = nodeType(node);
 		node.links = links.filter(
 			link =>
 				link.status === "active" &&
-				(link.from === parseInt(node.id, 10) ||
-					link.to === parseInt(node.id, 10))
+				(link.from === node.id || link.to === node.id)
 		);
-
-		nodesById[node.id] = node;
 	});
 
 	// Add nodes to links
