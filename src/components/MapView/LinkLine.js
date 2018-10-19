@@ -7,7 +7,7 @@ export default class LinkLine extends PureComponent {
 	};
 
 	render() {
-		const { link } = this.props;
+		const { link, visible } = this.props;
 		const { fromNode, toNode } = link;
 
 		if (!fromNode || !toNode) {
@@ -28,6 +28,7 @@ export default class LinkLine extends PureComponent {
 					strokeColor,
 					strokeOpacity: this.getOpacity(strokeOpacity)
 				}}
+				visible={visible}
 				zIndex={this.getZIndex(zIndex)}
 			/>
 		);

@@ -137,7 +137,6 @@ class MapView extends Component {
 			marker => marker.props.node
 		);
 		this.updateNodes(nextSelectedNodes, nextSelectedMarkers);
-		this.updateLinks(nextSelectedNodes);
 
 		const matchChanged = this.props.match !== nextProps.match;
 		const nodesChanged = this.props.nodes !== nextProps.nodes;
@@ -146,6 +145,7 @@ class MapView extends Component {
 		const filtersChanged = this.props.filters !== nextProps.filters;
 
 		if (!filtersChanged) {
+			this.updateLinks(nextSelectedNodes);
 			this.panToNodes(nextSelectedNodes, fitBounds);
 		}
 	}
@@ -185,13 +185,12 @@ class MapView extends Component {
 		);
 		return nodes.map(node => {
 			const isSelected = selectedNodeIdsMap[node.id];
-			if (filters[node.type] === false && !isSelected) {
-				return null;
-			}
+			const hidden = filters[node.type] === false && !isSelected;
 			return (
 				<NodeMarker
 					key={node.id}
 					node={node}
+					visible={!hidden}
 					onClick={() => this.handleNodeClick(node)}
 					ref={ref => {
 						this.handleMarkerRef(ref);
@@ -204,19 +203,16 @@ class MapView extends Component {
 	renderLinks() {
 		const { links, filters } = this.props;
 		return links.map((link, index) => {
-			if (filters[link.fromNode.type] === false) {
-				return null;
-			}
-
-			if (filters[link.toNode.type] === false) {
-				return null;
-			}
+			const hidden =
+				filters[link.fromNode.type] === false ||
+				filters[link.toNode.type] === false;
 			return (
 				<LinkLine
 					key={this.linkId(link)}
 					ref={ref => {
 						this.handleLineRef(ref);
 					}}
+					visible={!hidden}
 					link={link}
 				/>
 			);
@@ -270,7 +266,7 @@ class MapView extends Component {
 			const newNodeIdString = uniq(newNodeIds)
 				.sort()
 				.join("-");
-			history.push(`/nodes/${newNodeIdString}`);
+			history.replace(`/nodes/${newNodeIdString}`);
 		} else {
 			history.push(`/nodes/${node.id}`);
 		}
@@ -290,55 +286,58 @@ class MapView extends Component {
 
 	updateNodes(nodes, markers) {
 		ReactDOM.unstable_batchedUpdates(() => {
+			const activeIsSelected = nodes.reduce(
+				(acc, node) => (acc = acc || node.status === "Installed"),
+				false
+			);
+
 			// Dim all nodes of same type
-			nodes.forEach(node => {
-				Object.values(this.markerRefs).forEach(marker => {
-					if (node.status === "Installed") {
-						if (node.id !== marker.props.node.id) {
-							marker.setVisibility("dim");
-						}
-					} else {
-						if (marker.props.node.status === "Installed") {
-							marker.setVisibility("default");
-						} else {
-							marker.setVisibility("dim");
-						}
-					}
-				});
+			Object.values(this.markerRefs).forEach(marker => {
+				if (
+					!activeIsSelected &&
+					marker.props.node.status === "Installed"
+				) {
+					marker.setVisibility("default");
+				} else {
+					marker.setVisibility("dim");
+				}
 			});
 
 			// Highlight directly connected nodes
 			nodes.forEach(node => {
-				node.connectedNodes &&
-					node.connectedNodes.forEach(connectedNodeId => {
-						const connectedMarker = this.markerRefs[
-							connectedNodeId
-						];
+				if (node.connectedNodes) {
+					node.connectedNodes.forEach(nodeId => {
+						const connectedMarker = this.markerRefs[nodeId];
 						if (connectedMarker) {
 							connectedMarker.setVisibility("secondary");
 						}
 					});
+				}
 			});
 
-			// Highlight selected node
+			// Highlight selected nodes
 			markers.forEach(marker => marker.setVisibility("highlight"));
 		});
 	}
 
 	updateLinks(nodes) {
-		// Dim all links
-		Object.values(this.lineRefs).forEach(line => line.setVisibility("dim"));
+		ReactDOM.unstable_batchedUpdates(() => {
+			// Dim all links
+			Object.values(this.lineRefs).forEach(line =>
+				line.setVisibility("dim")
+			);
 
-		// Highlight direct links
-		nodes.forEach(node => {
-			if (node.links) {
-				node.links.forEach(link => {
-					const line = this.lineRefs[this.linkId(link)];
-					if (line) {
-						line.setVisibility("highlight");
-					}
-				});
-			}
+			// Highlight direct links
+			nodes.forEach(node => {
+				if (node.links) {
+					node.links.forEach(link => {
+						const line = this.lineRefs[this.linkId(link)];
+						if (line) {
+							line.setVisibility("highlight");
+						}
+					});
+				}
+			});
 		});
 	}
 
@@ -353,6 +352,7 @@ class MapView extends Component {
 			minLat = 9999,
 			maxLng = -9999,
 			maxLat = -9999;
+
 		nodes.forEach(node => {
 			const [lng, lat] = node.coordinates;
 			if (lng < minLng) minLng = lng;
@@ -388,7 +388,7 @@ class MapView extends Component {
 	}
 
 	linkId(link) {
-		return `${link.from}-${link.to} ${link.coordinates} ${link.status}`;
+		return `${link.from}-${link.to} ${link.status}`;
 	}
 
 	selectedNodeIds(match = this.props.match) {

@@ -4,7 +4,7 @@ import Sector from "./Sector";
 
 class NodeMarker extends PureComponent {
 	render() {
-		const { node, onClick } = this.props;
+		const { node, visible, onClick } = this.props;
 		const { id, notes, coordinates } = node;
 		const [lng, lat] = coordinates;
 		const title = `${id}${notes ? ` - ${notes}` : ""}`;
@@ -18,6 +18,7 @@ class NodeMarker extends PureComponent {
 					defaultIcon={icon}
 					defaultTitle={title}
 					options={{ opacity }}
+					visible={visible}
 					zIndex={adjustedZ}
 					onClick={onClick}
 				/>
@@ -27,10 +28,10 @@ class NodeMarker extends PureComponent {
 	}
 
 	renderSectors() {
-		const { node, visibility } = this.props;
+		const { node, visible, visibility } = this.props;
 		const { sectors } = node;
 
-		if (!sectors) {
+		if (!sectors || !visible) {
 			return null;
 		}
 
