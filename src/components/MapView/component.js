@@ -179,22 +179,22 @@ class MapView extends Component {
 
 	renderNodes() {
 		const { nodes, filters } = this.props;
-		const selectedNodeIdsMap = {};
-		this.selectedNodeIds().forEach(
-			nodeId => (selectedNodeIdsMap[nodeId] = true)
+		const selectedIds = this.selectedNodeIds().reduce(
+			(idMap, nodeId) => ({ ...idMap, [nodeId]: true }),
+			{}
 		);
 		return nodes.map(node => {
-			const isSelected = selectedNodeIdsMap[node.id];
-			const hidden = filters[node.type] === false && !isSelected;
+			const isFiltered = filters[node.type] === false;
+			const isSelected = selectedIds[node.id] === true;
+			const visible = !isFiltered || isSelected;
+
 			return (
 				<NodeMarker
 					key={node.id}
 					node={node}
-					visible={!hidden}
+					visible={visible}
 					onClick={() => this.handleNodeClick(node)}
-					ref={ref => {
-						this.handleMarkerRef(ref);
-					}}
+					ref={ref => this.handleMarkerRef(ref)}
 				/>
 			);
 		});
@@ -392,11 +392,10 @@ class MapView extends Component {
 	}
 
 	selectedNodeIds(match = this.props.match) {
-		if (!match || !match.params) {
+		if (!match || !match.params || !match.params.nodeId) {
 			return [];
 		}
-		const { nodeId } = match.params;
-		return nodeId.split("-");
+		return match.params.nodeId.split("-");
 	}
 }
 
