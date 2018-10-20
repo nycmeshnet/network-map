@@ -24,7 +24,7 @@ export default class Sector extends PureComponent {
 		const multiplier =
 			visibilityMultiplier === undefined ? 1 : visibilityMultiplier;
 		const fillOpacity = (MAX_OPACITY / INTERVAL_COUNT) * multiplier;
-		const fillColor = sectorColors[node.type] || sectorColors.default;
+		const fillColor = this.getFillColor();
 		const zIndex = zIndexes[visibility] || 1;
 
 		const { lat, lng, radius, azimuth, width } = this.props;
@@ -50,6 +50,14 @@ export default class Sector extends PureComponent {
 				/>
 			);
 		});
+	}
+
+	getFillColor() {
+		const { node, active } = this.props;
+		if (!active) {
+			return sectorColors.potential;
+		}
+		return sectorColors[node.type] || sectorColors.default;
 	}
 }
 
