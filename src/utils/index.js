@@ -6,7 +6,7 @@ const nodeNames = {
 };
 
 export function nodeName(node) {
-	return nodeNames[node.id] || `Node ${node.id}`;
+	return nodeNames[node.id] || node.id;
 }
 
 export function nodeType(node) {
@@ -44,8 +44,8 @@ export const nodeColors = {
 
 export const sectorColors = {
 	supernode: "#007aff",
-	"potential-hub": "#777",
-	"potential-supernode": "#777",
-	potential: "#777",
+	"potential-hub": "#aaa",
+	"potential-supernode": "#aaa",
+	potential: "#aaa",
 	default: "rgb(90,200,250)"
 };

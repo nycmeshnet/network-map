@@ -2,6 +2,8 @@ import React, { PureComponent } from "react";
 import { OverlayView } from "react-google-maps";
 import { Link } from "react-router-dom";
 
+import { nodeName } from "../../utils";
+
 const getPixelPositionOffset = (width, height) => ({
 	x: -width / 2,
 	y: -height
@@ -40,7 +42,7 @@ export default class NodeDetail extends PureComponent {
 						{this.renderImage(node)}
 						<div className="pv1 ph2 flex flex-column justify-end">
 							<span className="f5 fw6 nowrap sans-serif">
-								{node.id}
+								{nodeName(node)}
 							</span>
 						</div>
 					</div>
