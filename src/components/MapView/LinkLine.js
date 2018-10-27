@@ -47,9 +47,11 @@ export default class LinkLine extends PureComponent {
 	}
 
 	getZIndex(defaultZIndex) {
+		const { link } = this.props;
 		const { visibility } = this.state;
-		if (visibility === "highlight") return 60;
-		return defaultZIndex;
+		const bonus = link.status === "active" ? 20 : 0;
+		if (visibility === "highlight") return 30 + bonus;
+		return defaultZIndex + bonus;
 	}
 
 	setVisibility(visibility) {
@@ -64,13 +66,13 @@ export default class LinkLine extends PureComponent {
 			return {
 				strokeColor: "#007aff",
 				strokeOpacity: 1,
-				zIndex: 50
+				zIndex: 10
 			};
 
 		return {
 			strokeColor: "#aaa",
 			strokeOpacity: 1,
-			zIndex: 50
+			zIndex: 0
 		};
 	}
 }
