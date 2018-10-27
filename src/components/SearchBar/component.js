@@ -23,7 +23,7 @@ export default class SearchBar extends PureComponent {
 
 	render() {
 		return (
-			<div className="w-100 mw6 shadow-2">
+			<div className="w-100 shadow-2">
 				{this.renderSearchBar()}
 				{this.renderList()}
 			</div>
@@ -160,7 +160,7 @@ export default class SearchBar extends PureComponent {
 				)
 				.sort((a, b) => {
 					if (a.status !== b.status) {
-						if (a.status === "Installed") return -1;
+						if (a.status === "active") return -1;
 						return 1;
 					}
 					return a.id - b.id;

@@ -1,24 +1,12 @@
-// Temporary hack
-const nodeNames = {
-	227: "Supernode 1",
-	570: "Supernode 2",
-	713: "Supernode 3"
-};
-
-export function nodeName(node) {
-	return nodeNames[node.id] || node.id;
-}
-
 export function nodeType(node) {
 	const { status, notes, panoramas } = node;
 	const lowerNotes = notes ? notes.toLowerCase() : null;
-	const isActive = status === "Installed";
 	const isSupernode = notes && lowerNotes.indexOf("supernode") > -1;
 	const isHub = notes && lowerNotes.indexOf("hub") > -1;
 	const notPotentialHub = !notes || lowerNotes.indexOf("hub?") === -1;
 	const hasPanoramas = panoramas && panoramas.length;
 
-	if (isActive) {
+	if (status === "active") {
 		if (isSupernode) return "supernode";
 		if (isHub && notPotentialHub) return "hub";
 		return "active";
@@ -28,6 +16,24 @@ export function nodeType(node) {
 	if (isHub) return "potential-hub";
 	if (hasPanoramas) return "potential";
 	return "dead";
+}
+
+export function nodeStatus(node) {
+	const { status } = node;
+	const isActive = status === "Installed";
+	return isActive ? "active" : "potential";
+}
+
+// TODO: Move this to node-db
+export function linkStatus(link) {
+	const { status, fromNode, toNode } = link;
+	if (
+		status === "active" &&
+		fromNode.status === "active" &&
+		toNode.status === "active"
+	)
+		return "active";
+	return "potential";
 }
 
 export const nodeColors = {

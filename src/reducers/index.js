@@ -1,4 +1,4 @@
-import { nodeType } from "../utils";
+import { nodeType, nodeStatus, linkStatus } from "../utils";
 
 import nodeData from "../data/nodes";
 import linkData from "../data/links";
@@ -18,17 +18,19 @@ const { nodes, links, sectors, nodesById } = addGraphData(
 	linkData,
 	sectorData
 );
-const initialState = {
-	nodes,
-	links,
-	sectors,
-	kiosks: initialFilters.linkNYC === false ? [] : kiosks,
-	nodesById,
-	filters: initialFilters,
-	statusCounts: getCounts(nodes, kiosks)
-};
 
-const reducer = (state = initialState, action) => {
+const reducer = (
+	state = {
+		nodes,
+		links,
+		sectors,
+		kiosks: initialFilters.linkNYC === false ? [] : kiosks,
+		nodesById,
+		filters: initialFilters,
+		statusCounts: getCounts(nodes, kiosks)
+	},
+	action
+) => {
 	switch (action.type) {
 		case "TOGGLE_FILTER":
 			const newFilters = {
@@ -50,73 +52,53 @@ const reducer = (state = initialState, action) => {
 				filters: newFilters,
 				kiosks: newFilters.linkNYC === false ? [] : kiosks
 			};
-		case "FETCH_NODES_SUCCESS":
-			const { nodes: newNodes } = addGraphData(action.nodes, state.links);
-			const newStatusCounts = getCounts(action.nodes);
-			return {
-				...state,
-				nodes: newNodes,
-				statusCounts: newStatusCounts
-			};
-		case "FETCH_LINKS_SUCCESS":
-			const { links: newLinks } = addGraphData(state.nodes, action.links);
-			return {
-				...state,
-				links: newLinks
-			};
-		case "FETCH_KIOSKS_SUCCESS":
-			return {
-				...state,
-				kiosks: action.kiosks,
-				statusCounts: {
-					...state.statusCounts,
-					linkNYC: action.kiosks.length
-				}
-			};
 		default:
 			return state;
 	}
 };
 
+// TODO: Calculate a lot of this in node-db
 function addGraphData(nodes, links, sectors) {
 	const nodesById = {};
 
-	// Add links to nodes
-	nodes.forEach(node => {
-		nodesById[node.id] = node;
-
-		node.type = nodeType(node);
-		node.links = links.filter(
-			link =>
-				link.status === "active" &&
-				(link.from === node.id || link.to === node.id)
-		);
+	const linksByNodeId = {};
+	links.forEach(link => {
+		linksByNodeId[link.from] = linksByNodeId[link.from] || [];
+		linksByNodeId[link.to] = linksByNodeId[link.to] || [];
+		linksByNodeId[link.from].push(link);
+		linksByNodeId[link.to].push(link);
 	});
 
-	// Add nodes to links
+	// Add status, types and links to nodes
+	nodes.forEach(node => {
+		nodesById[node.id] = node;
+		node.status = nodeStatus(node);
+		node.type = nodeType(node);
+		node.links = linksByNodeId[node.id];
+	});
+
+	// Add status and nodes to links
 	links.forEach(link => {
 		link.fromNode = nodesById[link.from];
 		link.toNode = nodesById[link.to];
+		link.status = linkStatus(link);
 	});
 
 	// Add sectors to nodes
-	// TODO: Calculate this in node-db
 	const sectorsByNodeId = {};
 	sectors.forEach(sector => {
 		sector.node = nodesById[sector.nodeId];
 		sectorsByNodeId[sector.nodeId] = sectorsByNodeId[sector.nodeId] || [];
 		sectorsByNodeId[sector.nodeId].push(sector);
 	});
+
 	nodes.forEach(node => {
 		node.sectors = sectorsByNodeId[node.id];
-	});
 
-	// Calculate connected nodes for each active node
-	nodes.filter(node => node.status === "Installed").forEach(node => {
+		// Calculate connected nodes for each active node
 		const connectedNodes = [node.id];
 
 		links.forEach(link => {
-			if (link.status !== "active") return;
 			if (link.from === parseInt(node.id, 10)) {
 				connectedNodes.push(link.to);
 			}

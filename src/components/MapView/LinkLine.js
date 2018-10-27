@@ -36,9 +36,14 @@ export default class LinkLine extends PureComponent {
 
 	getOpacity(defaultOpacity) {
 		const { visibility } = this.state;
-		if (visibility === "highlight") return 1;
-		if (visibility === "dim") return defaultOpacity * 0.125;
-		return defaultOpacity;
+		switch (visibility) {
+			case "highlight":
+				return 1;
+			case "dim":
+				return defaultOpacity * 0.1;
+			default:
+				return defaultOpacity;
+		}
 	}
 
 	getZIndex(defaultZIndex) {
@@ -64,7 +69,7 @@ export default class LinkLine extends PureComponent {
 
 		return {
 			strokeColor: "#aaa",
-			strokeOpacity: 0.25,
+			strokeOpacity: 1,
 			zIndex: 50
 		};
 	}

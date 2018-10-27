@@ -179,6 +179,8 @@ class MapView extends Component {
 
 	renderNodes() {
 		const { nodes, filters } = this.props;
+
+		// TODO: Refactor
 		const selectedIds = this.selectedNodeIds().reduce(
 			(idMap, nodeId) => ({ ...idMap, [nodeId]: true }),
 			{}
@@ -186,7 +188,13 @@ class MapView extends Component {
 		return nodes.map(node => {
 			const isFiltered = filters[node.type] === false;
 			const isSelected = selectedIds[node.id] === true;
-			const visible = !isFiltered || isSelected;
+			const isHighlighted = node.connectedNodes.reduce(
+				(acc, connectedNode) => {
+					return selectedIds[connectedNode] === true || acc;
+				},
+				false
+			);
+			const visible = !isFiltered || isSelected || isHighlighted;
 
 			return (
 				<NodeMarker
@@ -202,17 +210,29 @@ class MapView extends Component {
 
 	renderLinks() {
 		const { links, filters } = this.props;
+
+		// TODO: Refactor
+		const selectedIds = this.selectedNodeIds().reduce(
+			(idMap, nodeId) => ({ ...idMap, [nodeId]: true }),
+			{}
+		);
 		return links.map((link, index) => {
-			const hidden =
-				filters[link.fromNode.type] === false ||
-				filters[link.toNode.type] === false;
+			const { fromNode, toNode, status } = link;
+			const isFiltered =
+				filters[fromNode.type] === false ||
+				filters[toNode.type] === false ||
+				filters[status] === false;
+			const isSelected =
+				selectedIds[fromNode.id] === true ||
+				selectedIds[toNode.id] === true;
+			const visible = !isFiltered || isSelected;
 			return (
 				<LinkLine
 					key={this.linkId(link)}
 					ref={ref => {
 						this.handleLineRef(ref);
 					}}
-					visible={!hidden}
+					visible={visible}
 					link={link}
 				/>
 			);
@@ -284,27 +304,15 @@ class MapView extends Component {
 		});
 	}
 
-	updateNodes(nodes, markers) {
+	updateNodes(selectedNodes, markers) {
 		ReactDOM.unstable_batchedUpdates(() => {
-			const activeIsSelected = nodes.reduce(
-				(acc, node) => (acc = acc || node.status === "Installed"),
-				false
-			);
-
-			// Dim all nodes of same type
+			// Dim all nodes
 			Object.values(this.markerRefs).forEach(marker => {
-				if (
-					!activeIsSelected &&
-					marker.props.node.status === "Installed"
-				) {
-					marker.setVisibility("default");
-				} else {
-					marker.setVisibility("dim");
-				}
+				marker.setVisibility("dim");
 			});
 
 			// Highlight directly connected nodes
-			nodes.forEach(node => {
+			selectedNodes.forEach(node => {
 				if (node.connectedNodes) {
 					node.connectedNodes.forEach(nodeId => {
 						const connectedMarker = this.markerRefs[nodeId];

@@ -17,7 +17,7 @@ class App extends Component {
 		return (
 			<DocumentTitle title="Map - NYC Mesh">
 				<Provider store={store}>
-					<Router basename={"/map"}>
+					<Router basename="/map">
 						<div className="h-100 w-100 relative sans-serif">
 							<div className="absolute pa2 z-999 search-bar">
 								<SearchBar />

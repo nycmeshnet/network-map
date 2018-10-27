@@ -18,7 +18,7 @@ const zIndexes = {
 
 export default class Sector extends PureComponent {
 	render() {
-		const { visibility, node } = this.props;
+		const { visibility } = this.props;
 
 		const visibilityMultiplier = visibilityMultipliers[visibility];
 		const multiplier =
