@@ -2435,6 +2435,7 @@
   },
   {
     "id": 227,
+    "name": "Supernode 1",
     "status": "Installed",
     "coordinates": [
       -74.00127188,
@@ -8100,6 +8101,7 @@
   },
   {
     "id": 713,
+    "name": "Supernode 3",
     "status": "Installed",
     "coordinates": [
       -74.00490429999999,
@@ -15208,6 +15210,7 @@
   },
   {
     "id": 1340,
+    "name": "Saratoga",
     "status": "Installed",
     "coordinates": [
       -73.9174933,
@@ -15306,6 +15309,7 @@
   },
   {
     "id": 1348,
+    "name": "Supernode 4",
     "status": "Installed",
     "coordinates": [
       -73.96078949999999,
@@ -28097,6 +28101,7 @@
   },
   {
     "id": 2463,
+    "name": "Rivington",
     "status": "Installed",
     "coordinates": [
       -73.98809299999999,

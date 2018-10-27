@@ -11,84 +11,110 @@
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "active": true
+    "active": true,
+    "device": "Omni"
   },
   {
     "nodeId": 363,
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "active": true
+    "active": true,
+    "device": "Omni"
   },
   {
     "nodeId": 664,
     "radius": 1,
     "azimuth": 310,
     "width": 120,
-    "active": true
+    "active": true,
+    "device": "LBE120"
   },
   {
     "nodeId": 664,
     "radius": 1,
     "azimuth": 70,
     "width": 120,
-    "active": true
+    "active": true,
+    "device": "LBE120"
   },
   {
     "nodeId": 664,
     "radius": 1,
     "azimuth": 190,
     "width": 120,
-    "active": true
+    "active": true,
+    "device": "LBE120"
+  },
+  {
+    "nodeId": 713,
+    "radius": 2,
+    "azimuth": 25,
+    "width": 120,
+    "active": false
+  },
+  {
+    "nodeId": 713,
+    "radius": 2,
+    "azimuth": 190,
+    "width": 120,
+    "active": false
   },
   {
     "nodeId": 731,
     "radius": 1,
     "azimuth": 40,
     "width": 120,
-    "active": true
+    "active": true,
+    "device": "LBE120"
   },
   {
     "nodeId": 731,
     "radius": 1,
     "azimuth": 280,
     "width": 120,
-    "active": true
+    "active": true,
+    "device": "LBE120"
   },
   {
     "nodeId": 731,
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "active": true
+    "active": true,
+    "device": "Omni"
   },
   {
     "nodeId": 844,
     "radius": 1,
     "azimuth": 45,
     "width": 120,
-    "active": true
+    "active": true,
+    "device": "LBE120"
   },
   {
     "nodeId": 944,
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "active": true
+    "active": true,
+    "device": "Omni"
   },
   {
     "nodeId": 1049,
     "radius": 0.75,
     "azimuth": 90,
     "width": 60,
-    "active": true
+    "active": true,
+    "device": "NSM5"
   },
   {
     "nodeId": 1147,
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "active": true
+    "active": true,
+    "device": "Omni"
   },
   {
     "nodeId": 1340,
@@ -102,7 +128,8 @@
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "active": true
+    "active": true,
+    "device": "Omni"
   },
   {
     "nodeId": 1417,
@@ -123,55 +150,65 @@
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "active": true
+    "active": true,
+    "device": "Omni"
   },
   {
     "nodeId": 1567,
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "active": true
+    "active": true,
+    "device": "Omni"
   },
   {
     "nodeId": 1971,
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "active": true
+    "active": true,
+    "device": "Omni"
   },
   {
     "nodeId": 2463,
     "radius": 1,
     "azimuth": 90,
     "width": 120,
-    "active": true
+    "active": true,
+    "device": "LBE120"
   },
   {
     "nodeId": 2463,
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "active": true
+    "active": true,
+    "device": "Omni"
   },
   {
     "nodeId": 1348,
     "radius": 2,
     "azimuth": 0,
     "width": 120,
-    "active": true
+    "active": true,
+    "device": "LBE120",
+    "installDate": 1540008000000
   },
   {
     "nodeId": 1348,
     "radius": 2,
     "azimuth": 120,
     "width": 120,
-    "active": true
+    "active": true,
+    "device": "LBE120",
+    "installDate": 1540008000000
   },
   {
     "nodeId": 1384,
     "radius": 0.5,
     "azimuth": 170,
     "width": 60,
-    "active": true
+    "active": true,
+    "device": "NSM5"
   }
 ]
