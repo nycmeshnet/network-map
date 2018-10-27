@@ -36,7 +36,7 @@ class NodeMarker extends PureComponent {
 		}
 
 		return sectors.map(sector => {
-			const isFiltered = filters[sector.status] === true;
+			const isFiltered = filters[sector.status] === false;
 			if (isFiltered) {
 				return null;
 			}
