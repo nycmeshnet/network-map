@@ -188,19 +188,14 @@ class MapView extends Component {
 		return nodes.map(node => {
 			const isFiltered = filters[node.type] === false;
 			const isSelected = selectedIds[node.id] === true;
-			const isHighlighted = node.connectedNodes.reduce(
-				(acc, connectedNode) => {
-					return selectedIds[connectedNode] === true || acc;
-				},
-				false
-			);
-			const visible = !isFiltered || isSelected || isHighlighted;
+			const visible = !isFiltered || isSelected;
 
 			return (
 				<NodeMarker
 					key={node.id}
 					node={node}
 					visible={visible}
+					filters={filters}
 					onClick={() => this.handleNodeClick(node)}
 					ref={ref => this.handleMarkerRef(ref)}
 				/>
@@ -210,22 +205,13 @@ class MapView extends Component {
 
 	renderLinks() {
 		const { links, filters } = this.props;
-
-		// TODO: Refactor
-		const selectedIds = this.selectedNodeIds().reduce(
-			(idMap, nodeId) => ({ ...idMap, [nodeId]: true }),
-			{}
-		);
 		return links.map((link, index) => {
 			const { fromNode, toNode, status } = link;
 			const isFiltered =
 				filters[fromNode.type] === false ||
 				filters[toNode.type] === false ||
 				filters[status] === false;
-			const isSelected =
-				selectedIds[fromNode.id] === true ||
-				selectedIds[toNode.id] === true;
-			const visible = !isFiltered || isSelected;
+			const visible = !isFiltered;
 			return (
 				<LinkLine
 					key={this.linkId(link)}

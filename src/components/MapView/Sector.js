@@ -18,7 +18,10 @@ const zIndexes = {
 
 export default class Sector extends PureComponent {
 	render() {
-		const { visibility } = this.props;
+		const { sector, visibility } = this.props;
+
+		const [lng, lat] = sector.node.coordinates;
+		const { radius, azimuth, width, active } = sector;
 
 		const visibilityMultiplier = visibilityMultipliers[visibility];
 		const multiplier =
@@ -27,7 +30,6 @@ export default class Sector extends PureComponent {
 		const fillColor = this.getFillColor();
 		const zIndex = zIndexes[visibility] || 1;
 
-		const { lat, lng, radius, azimuth, width } = this.props;
 		const interval = radius / INTERVAL_COUNT;
 		const radiusIndices = [...Array(INTERVAL_COUNT).keys()];
 
@@ -53,11 +55,13 @@ export default class Sector extends PureComponent {
 	}
 
 	getFillColor() {
-		const { node, active } = this.props;
-		if (!active) {
-			return sectorColors.potential;
-		}
-		return sectorColors[node.type] || sectorColors.default;
+		const { sector, node } = this.props;
+		// TODO: Make this not hacky
+		return (
+			sectorColors[sector.status] ||
+			sectorColors[node.type] ||
+			sectorColors.default
+		);
 	}
 }
 

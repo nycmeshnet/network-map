@@ -28,7 +28,7 @@ class NodeMarker extends PureComponent {
 	}
 
 	renderSectors() {
-		const { node, visible, visibility } = this.props;
+		const { node, visible, visibility, filters } = this.props;
 		const { sectors } = node;
 
 		if (!sectors || !visible) {
@@ -36,18 +36,15 @@ class NodeMarker extends PureComponent {
 		}
 
 		return sectors.map(sector => {
-			const [lng, lat] = sector.node.coordinates;
-			const { radius, azimuth, width, active } = sector;
-			const key = lat + lng + radius + azimuth + width;
+			const isFiltered = filters[sector.status] === true;
+			if (isFiltered) {
+				return null;
+			}
+			const key = node.id + sector.azimuth;
 			return (
 				<Sector
 					key={key}
-					lat={lat}
-					lng={lng}
-					radius={radius}
-					azimuth={azimuth}
-					width={width}
-					active={active}
+					sector={sector}
 					visibility={visibility}
 					node={node}
 				/>
