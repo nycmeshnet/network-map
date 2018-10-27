@@ -8,9 +8,9 @@
   },
   {
     "nodeId": 329,
-    "radius": 0.75,
-    "azimuth": 225,
-    "width": 60,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
     "active": true
   },
   {
@@ -40,20 +40,6 @@
     "azimuth": 190,
     "width": 120,
     "active": true
-  },
-  {
-    "nodeId": 713,
-    "radius": 2,
-    "azimuth": 25,
-    "width": 120,
-    "active": false
-  },
-  {
-    "nodeId": 713,
-    "radius": 2,
-    "azimuth": 190,
-    "width": 120,
-    "active": false
   },
   {
     "nodeId": 731,
@@ -169,16 +155,23 @@
   },
   {
     "nodeId": 1348,
-    "radius": 1,
+    "radius": 2,
     "azimuth": 0,
-    "width": 360,
-    "active": false
+    "width": 120,
+    "active": true
+  },
+  {
+    "nodeId": 1348,
+    "radius": 2,
+    "azimuth": 120,
+    "width": 120,
+    "active": true
   },
   {
     "nodeId": 1384,
     "radius": 0.5,
     "azimuth": 170,
     "width": 60,
-    "active": false
+    "active": true
   }
 ]
