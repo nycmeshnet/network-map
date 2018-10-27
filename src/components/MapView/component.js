@@ -222,7 +222,7 @@ class MapView extends Component {
 			const isFiltered =
 				filters[fromNode.type] === false ||
 				filters[toNode.type] === false ||
-				filters[status] === false;
+				(status === "potential" && filters.potential === false);
 			const visible = !isFiltered;
 			return (
 				<LinkLine
