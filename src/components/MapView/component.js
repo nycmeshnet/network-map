@@ -54,6 +54,7 @@ class MapView extends Component {
 		this.map = React.createRef();
 		this.markerRefs = {};
 		this.lineRefs = {};
+		this.lastDoubleClick = Date.now();
 	}
 
 	componentDidMount() {

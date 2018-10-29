@@ -29066,5 +29066,27 @@
     "requestDate": 1540575339368,
     "roofAccess": true,
     "panoramas": []
+  },
+  {
+    "id": 2550,
+    "coordinates": [
+      -73.963388,
+      40.677205,
+      5
+    ],
+    "requestDate": 1540703717278,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2551,
+    "coordinates": [
+      -73.9601598,
+      40.6907857,
+      5
+    ],
+    "requestDate": 1540751367701,
+    "roofAccess": true,
+    "panoramas": []
   }
 ]
