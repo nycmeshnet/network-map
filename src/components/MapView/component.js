@@ -220,6 +220,8 @@ class MapView extends Component {
 		const { links, filters } = this.props;
 		return links.map((link, index) => {
 			const { fromNode, toNode, status } = link;
+			if (!fromNode || !toNode) return null;
+
 			const isFiltered =
 				filters[fromNode.type] === false ||
 				filters[toNode.type] === false ||
@@ -257,9 +259,7 @@ class MapView extends Component {
 		return (
 			<DocumentTitle title={title}>
 				<Fragment>
-					{nodeIds.map(id => (
-						<NodeDetail key={id} nodeId={id} />
-					))}
+					{nodeIds.map(id => <NodeDetail key={id} nodeId={id} />)}
 				</Fragment>
 			</DocumentTitle>
 		);
