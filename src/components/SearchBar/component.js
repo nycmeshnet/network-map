@@ -153,11 +153,15 @@ export default class SearchBar extends PureComponent {
 					lowerSearch === `node ${node.id}`
 			),
 			...nodes
-				.filter(
-					node =>
+				.filter(node => {
+					const notesMatch =
 						node.notes &&
-						node.notes.toLowerCase().indexOf(lowerSearch) > -1
-				)
+						node.notes.toLowerCase().indexOf(lowerSearch) > -1;
+					const nameMatches =
+						node.name &&
+						node.name.toLowerCase().indexOf(lowerSearch) > -1;
+					return notesMatch || nameMatches;
+				})
 				.sort((a, b) => {
 					if (a.status !== b.status) {
 						if (a.status === "active") return -1;

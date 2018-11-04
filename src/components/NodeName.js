@@ -112,6 +112,7 @@ export const icons = {
 export default class NodeName extends PureComponent {
 	render() {
 		const { node, search } = this.props;
+		const name = node.name || `Node ${node.id}`;
 		return (
 			<div className="h1 w-100 overflow-visible flex justify-start items-center">
 				<div className="h2 w2 min-h2 min-w2 flex items-center justify-center">
@@ -123,7 +124,7 @@ export default class NodeName extends PureComponent {
 							highlightClassName="bg-light-yellow"
 							searchWords={[search]}
 							autoEscape={true}
-							textToHighlight={`Node ${node.id}`}
+							textToHighlight={name}
 						/>
 					</span>
 
