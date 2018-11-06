@@ -36,8 +36,10 @@ class NodeMarker extends PureComponent {
 		}
 
 		return sectors.map(sector => {
-			const isFiltered = filters[sector.status] === false;
-			if (isFiltered) {
+			const isFiltered =
+				sector.status === "potential" &&
+				filters[sector.status] === false;
+			if (isFiltered && visibility !== "highlight") {
 				return null;
 			}
 			const key = node.id + sector.azimuth;
