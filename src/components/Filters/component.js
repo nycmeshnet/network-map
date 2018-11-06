@@ -7,6 +7,13 @@ import { nodeColors } from "../../utils";
 const labels = ["active", "supernode", "hub", "potential", "linkNYC"];
 
 export default class Filters extends PureComponent {
+	componentDidMount() {
+		const { toggleFilter } = this.props;
+		const params = new URLSearchParams(this.props.location.search);
+		if (params.get("potential") === "true") toggleFilter("potential");
+		if (params.get("linknyc") === "true") toggleFilter("linkNYC");
+	}
+
 	render() {
 		return (
 			<div className="bg-white f5 shadow-2">
