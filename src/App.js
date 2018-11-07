@@ -29,7 +29,7 @@ class App extends Component {
 								)}
 							/>
 							<div className="absolute bottom-0 left-0 ma2">
-								<Filters />
+								<Route component={Filters} />
 							</div>
 						</div>
 					</Router>
