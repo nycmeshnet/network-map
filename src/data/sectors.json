@@ -179,6 +179,14 @@
   },
   {
     "nodeId": 2463,
+    "radius": 1,
+    "azimuth": 330,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120"
+  },
+  {
+    "nodeId": 2463,
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,

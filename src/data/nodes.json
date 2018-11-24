@@ -1181,7 +1181,7 @@
     "coordinates": [
       -73.948649,
       40.673947,
-      5
+      42
     ],
     "requestDate": 1439328419553,
     "installDate": 1441166400000,
@@ -2424,7 +2424,7 @@
     "coordinates": [
       -73.9466956,
       40.716856,
-      5
+      16
     ],
     "requestDate": 1446747498384,
     "installDate": 1458360000000,
@@ -2469,7 +2469,7 @@
     "coordinates": [
       -73.9466956,
       40.716856,
-      5
+      16
     ],
     "requestDate": 1446747498384,
     "installDate": 1466568000000,
@@ -3279,13 +3279,17 @@
   },
   {
     "id": 303,
+    "name": "Dekalb",
+    "status": "Installed",
     "coordinates": [
-      -73.925203,
-      40.698579,
-      9
+      -73.92503961,
+      40.69858661,
+      22
     ],
     "requestDate": 1454985296937,
+    "installDate": 1542344400000,
     "roofAccess": true,
+    "notes": "hub",
     "panoramas": [
       "303.jpg",
       "303a.jpg"
@@ -3583,6 +3587,7 @@
   },
   {
     "id": 329,
+    "name": "Simona",
     "status": "Installed",
     "coordinates": [
       -73.94197707,
@@ -3596,7 +3601,8 @@
     "panoramas": [
       "329.jpg",
       "329a.jpg",
-      "329b.jpg"
+      "329b.jpg",
+      "329c.jpg"
     ]
   },
   {
@@ -4503,7 +4509,7 @@
   },
   {
     "id": 407,
-    "name": "Henry hub",
+    "name": "Henry",
     "status": "Installed",
     "coordinates": [
       -73.9903657,
@@ -7533,6 +7539,7 @@
   },
   {
     "id": 664,
+    "name": "Cyprus",
     "status": "Installed",
     "coordinates": [
       -73.91519213,
@@ -8329,6 +8336,7 @@
   },
   {
     "id": 731,
+    "name": "7th St.",
     "status": "Installed",
     "coordinates": [
       -73.98073040000001,
@@ -9707,9 +9715,9 @@
   {
     "id": 853,
     "coordinates": [
-      -73.9300566,
-      40.7053565,
-      22
+      -73.93556685,
+      40.71159939,
+      29
     ],
     "requestDate": 1513359131387,
     "roofAccess": false,
@@ -9842,9 +9850,9 @@
     "id": 865,
     "status": "Installed",
     "coordinates": [
-      -73.949739,
-      40.707237,
-      5
+      -73.94082709999999,
+      40.7180077,
+      24
     ],
     "requestDate": 1513367046773,
     "installDate": 1519880400000,
@@ -10725,6 +10733,7 @@
   },
   {
     "id": 944,
+    "name": "Flo",
     "status": "Installed",
     "coordinates": [
       -73.9547994,
@@ -11902,6 +11911,7 @@
   },
   {
     "id": 1049,
+    "name": "Troutman",
     "status": "Installed",
     "coordinates": [
       -73.925552,
@@ -15293,7 +15303,7 @@
     "coordinates": [
       -73.96078949999999,
       40.6706856,
-      72
+      67
     ],
     "requestDate": 1516832404663,
     "installDate": 1540008000000,
@@ -16074,6 +16084,7 @@
   },
   {
     "id": 1417,
+    "name": "Soft Surplus",
     "status": "Installed",
     "coordinates": [
       -73.9354884,
@@ -16117,7 +16128,9 @@
     ],
     "requestDate": 1518106944183,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "1420.jpg"
+    ]
   },
   {
     "id": 1421,
@@ -16227,13 +16240,16 @@
   },
   {
     "id": 1430,
+    "status": "Installed",
     "coordinates": [
-      -73.9859414,
-      40.7135097,
-      5
+      -73.987055,
+      40.721199,
+      25
     ],
     "requestDate": 1518359374844,
+    "installDate": 1541566800000,
     "roofAccess": false,
+    "notes": "Litebeam to Rivington",
     "panoramas": [
       "1430.jpg"
     ]
@@ -16542,6 +16558,7 @@
   },
   {
     "id": 1457,
+    "status": "No Reply",
     "coordinates": [
       -73.9991866,
       40.7170298,
@@ -17203,6 +17220,7 @@
   },
   {
     "id": 1515,
+    "name": "Domino",
     "status": "Installed",
     "coordinates": [
       -73.967361,
@@ -17611,7 +17629,7 @@
     "coordinates": [
       -73.941183,
       40.6740133,
-      5
+      34
     ],
     "requestDate": 1521516645563,
     "roofAccess": true,
@@ -18197,7 +18215,7 @@
     "coordinates": [
       -73.9050673,
       40.696279,
-      5
+      26
     ],
     "requestDate": 1522682074988,
     "roofAccess": true,
@@ -18267,12 +18285,14 @@
   },
   {
     "id": 1606,
+    "status": "Installed",
     "coordinates": [
       -73.9464296,
       40.717801,
-      5
+      13
     ],
     "requestDate": 1522888897797,
+    "installDate": 1542690000000,
     "roofAccess": true,
     "panoramas": [
       "1606.jpg",
@@ -19471,7 +19491,9 @@
     ],
     "requestDate": 1525296226747,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "1708.jpg"
+    ]
   },
   {
     "id": 1709,
@@ -20030,7 +20052,7 @@
     "coordinates": [
       -74.0105926,
       40.6436922,
-      5
+      43
     ],
     "requestDate": 1525475969703,
     "roofAccess": true,
@@ -21539,7 +21561,7 @@
     "coordinates": [
       -73.9777228,
       40.7139266,
-      5
+      25
     ],
     "requestDate": 1527878101521,
     "roofAccess": false,
@@ -22204,12 +22226,14 @@
   },
   {
     "id": 1946,
+    "status": "Installed",
     "coordinates": [
       -73.924993,
       40.698238,
       5
     ],
     "requestDate": 1529086891119,
+    "installDate": 1542344400000,
     "roofAccess": false,
     "panoramas": []
   },
@@ -22774,12 +22798,14 @@
   },
   {
     "id": 1995,
+    "status": "Installed",
     "coordinates": [
       -73.9514286,
       40.6885156,
       28
     ],
     "requestDate": 1530493389806,
+    "installDate": 1542776400000,
     "roofAccess": true,
     "panoramas": [
       "1995.jpg",
@@ -23750,9 +23776,9 @@
   {
     "id": 2081,
     "coordinates": [
-      -73.9073604,
-      40.6981574,
-      5
+      -73.9074,
+      40.6982,
+      30
     ],
     "requestDate": 1532791566631,
     "roofAccess": true,
@@ -23905,7 +23931,9 @@
     ],
     "requestDate": 1533167464593,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2093.jpg"
+    ]
   },
   {
     "id": 2094,
@@ -23945,7 +23973,7 @@
     "coordinates": [
       -73.9870959,
       40.723298,
-      5
+      22
     ],
     "requestDate": 1533241161619,
     "roofAccess": true,
@@ -23990,12 +24018,14 @@
   },
   {
     "id": 2101,
+    "status": "Installed",
     "coordinates": [
       -73.9041531,
       40.7070679,
       43
     ],
     "requestDate": 1533328792766,
+    "installDate": 1541394000000,
     "roofAccess": true,
     "panoramas": [
       "2101.jpg",
@@ -24367,13 +24397,15 @@
   {
     "id": 2132,
     "coordinates": [
-      -73.9433988,
-      40.7046258,
-      5
+      -73.943427,
+      40.704753,
+      25
     ],
     "requestDate": 1533952848121,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2132.jpg"
+    ]
   },
   {
     "id": 2133,
@@ -24874,7 +24906,7 @@
     "coordinates": [
       -73.9844492,
       40.7278371,
-      5
+      26
     ],
     "requestDate": 1535300143801,
     "roofAccess": true,
@@ -24989,11 +25021,13 @@
     "coordinates": [
       -73.9616521,
       40.7124161,
-      5
+      36
     ],
     "requestDate": 1535387299587,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2185.jpg"
+    ]
   },
   {
     "id": 2186,
@@ -25460,11 +25494,14 @@
     "coordinates": [
       -73.94120099999999,
       40.711348,
-      5
+      34
     ],
     "requestDate": 1535493876328,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2227.jpg",
+      "2227a.jpg"
+    ]
   },
   {
     "id": 2228,
@@ -25544,7 +25581,9 @@
     ],
     "requestDate": 1535497762509,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2234.jpg"
+    ]
   },
   {
     "id": 2235,
@@ -25599,7 +25638,9 @@
     ],
     "requestDate": 1535504440981,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2239.jpg"
+    ]
   },
   {
     "id": 2240,
@@ -25826,6 +25867,17 @@
     "panoramas": []
   },
   {
+    "id": 2262,
+    "coordinates": [
+      -73.702674,
+      40.647211,
+      5
+    ],
+    "requestDate": 1535559316500,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
     "id": 2263,
     "coordinates": [
       -73.9850804,
@@ -25856,7 +25908,9 @@
     ],
     "requestDate": 1535563561301,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2265.jpg"
+    ]
   },
   {
     "id": 2266,
@@ -25892,7 +25946,9 @@
     "installDate": 1537329600000,
     "roofAccess": false,
     "notes": "kiosk",
-    "panoramas": []
+    "panoramas": [
+      "2268.jpg"
+    ]
   },
   {
     "id": 2269,
@@ -26072,7 +26128,9 @@
     ],
     "requestDate": 1535652021855,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2283.jpg"
+    ]
   },
   {
     "id": 2284,
@@ -26138,11 +26196,16 @@
     "coordinates": [
       -73.9476351,
       40.6481266,
-      5
+      19
     ],
     "requestDate": 1535685403765,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2289.jpg",
+      "2289a.jpg",
+      "2289b.jpg",
+      "2289c.jpg"
+    ]
   },
   {
     "id": 2290,
@@ -26273,13 +26336,15 @@
   {
     "id": 2301,
     "coordinates": [
-      -73.9864786,
-      40.7231366,
-      5
+      -73.986463,
+      40.723198,
+      24
     ],
     "requestDate": 1535760307406,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2301.jpg"
+    ]
   },
   {
     "id": 2302,
@@ -26337,7 +26402,8 @@
     "requestDate": 1535827823025,
     "roofAccess": true,
     "panoramas": [
-      "2306.jpg"
+      "2306.jpg",
+      "2306a.jpg"
     ]
   },
   {
@@ -26378,11 +26444,13 @@
     "coordinates": [
       -73.949736,
       40.681963,
-      5
+      28
     ],
     "requestDate": 1535931011601,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2311.jpg"
+    ]
   },
   {
     "id": 2312,
@@ -27004,18 +27072,22 @@
     ],
     "requestDate": 1536583380523,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2367.jpg"
+    ]
   },
   {
     "id": 2368,
     "coordinates": [
       -73.9970289,
       40.72151270000001,
-      5
+      30
     ],
     "requestDate": 1536586056084,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2368.jpg"
+    ]
   },
   {
     "id": 2369,
@@ -27145,7 +27217,7 @@
     "coordinates": [
       -73.9024244,
       40.6914826,
-      5
+      28
     ],
     "requestDate": 1536713444985,
     "roofAccess": true,
@@ -27202,7 +27274,7 @@
     "coordinates": [
       -73.967713,
       40.677072,
-      5
+      40
     ],
     "requestDate": 1536798107119,
     "roofAccess": true,
@@ -27236,7 +27308,8 @@
     "roofAccess": true,
     "panoramas": [
       "2387.jpg",
-      "2387a.jpg"
+      "2387a.jpg",
+      "2387b.jpg"
     ]
   },
   {
@@ -27854,7 +27927,8 @@
     "requestDate": 1538229507745,
     "roofAccess": true,
     "panoramas": [
-      "2442.jpg"
+      "2442.jpg",
+      "2442a.jpg"
     ]
   },
   {
@@ -27894,13 +27968,16 @@
   },
   {
     "id": 2447,
+    "status": "Installed",
     "coordinates": [
       -73.9583427,
       40.6685959,
       5
     ],
     "requestDate": 1538419345662,
+    "installDate": 1539403200000,
     "roofAccess": true,
+    "notes": "kiosk",
     "panoramas": []
   },
   {
@@ -27922,17 +27999,6 @@
       5
     ],
     "requestDate": 1538453423864,
-    "roofAccess": true,
-    "panoramas": []
-  },
-  {
-    "id": 2450,
-    "coordinates": [
-      -73.9583427,
-      40.6685959,
-      5
-    ],
-    "requestDate": 1538483737040,
     "roofAccess": true,
     "panoramas": []
   },
@@ -28031,7 +28097,7 @@
     "coordinates": [
       -73.9921394,
       40.6408458,
-      5
+      33
     ],
     "requestDate": 1538771417516,
     "roofAccess": true,
@@ -28084,11 +28150,14 @@
     "coordinates": [
       -73.9357,
       40.689658,
-      5
+      26
     ],
     "requestDate": 1538873388998,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2465.jpg",
+      "2465a.jpg"
+    ]
   },
   {
     "id": 2466,
@@ -28246,7 +28315,9 @@
     ],
     "requestDate": 1539140824117,
     "roofAccess": true,
-    "panoramas": []
+    "panoramas": [
+      "2479.jpg"
+    ]
   },
   {
     "id": 2480,
@@ -28457,7 +28528,9 @@
     ],
     "requestDate": 1539391411983,
     "roofAccess": false,
-    "panoramas": []
+    "panoramas": [
+      "2498.jpg"
+    ]
   },
   {
     "id": 2499,
@@ -29187,7 +29260,9 @@
     ],
     "requestDate": 1540931743233,
     "roofAccess": false,
-    "panoramas": []
+    "panoramas": [
+      "2564.jpg"
+    ]
   },
   {
     "id": 2565,
@@ -29436,7 +29511,7 @@
   {
     "id": 2591,
     "coordinates": [
-      -73.98946509999999,
+      -73.9894651,
       40.6596921,
       46
     ],
@@ -29468,12 +29543,14 @@
   },
   {
     "id": 2596,
+    "status": "Installed",
     "coordinates": [
       -73.9556,
       40.6716,
       47
     ],
     "requestDate": 1541110624142,
+    "installDate": 1541653200000,
     "roofAccess": true,
     "panoramas": [
       "2596.jpg",
@@ -29525,7 +29602,8 @@
     "requestDate": 1541177533620,
     "roofAccess": true,
     "panoramas": [
-      "2603.jpg"
+      "2603.jpg",
+      "2603a.jpg"
     ]
   },
   {
@@ -29613,6 +29691,719 @@
       5
     ],
     "requestDate": 1541331130297,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2613,
+    "coordinates": [
+      -73.947681,
+      40.679381,
+      5
+    ],
+    "requestDate": 1541345792967,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2614,
+    "coordinates": [
+      -73.943905,
+      40.690954,
+      29
+    ],
+    "requestDate": 1541370593116,
+    "roofAccess": true,
+    "panoramas": [
+      "2614.jpg"
+    ]
+  },
+  {
+    "id": 2615,
+    "coordinates": [
+      -73.8999717,
+      40.7006471,
+      5
+    ],
+    "requestDate": 1541373749992,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2616,
+    "status": "Installed",
+    "coordinates": [
+      -73.9816141,
+      40.6722614,
+      33
+    ],
+    "requestDate": 1541444969519,
+    "installDate": 1541217600000,
+    "roofAccess": true,
+    "notes": "kiosk",
+    "panoramas": [
+      "2616.jpg",
+      "2616a.jpg"
+    ]
+  },
+  {
+    "id": 2617,
+    "coordinates": [
+      -73.9841278,
+      40.6653615,
+      50
+    ],
+    "requestDate": 1541446635379,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2618,
+    "coordinates": [
+      -73.7791419,
+      45.5458,
+      5
+    ],
+    "requestDate": 1541471818005,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2619,
+    "coordinates": [
+      -73.9866858,
+      40.73065,
+      5
+    ],
+    "requestDate": 1541525791088,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2620,
+    "coordinates": [
+      -73.9517565,
+      40.7018751,
+      5
+    ],
+    "requestDate": 1541531402885,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2621,
+    "coordinates": [
+      -73.99271329999999,
+      40.687912,
+      5
+    ],
+    "requestDate": 1541535228638,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2622,
+    "coordinates": [
+      -73.9527667,
+      40.6724632,
+      5
+    ],
+    "requestDate": 1541538874345,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2623,
+    "status": "Installed",
+    "coordinates": [
+      -73.9550168,
+      40.679816,
+      5
+    ],
+    "requestDate": 1541563194459,
+    "installDate": 1542085200000,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2624,
+    "coordinates": [
+      -73.9826796,
+      40.715342,
+      5
+    ],
+    "requestDate": 1541626657537,
+    "roofAccess": false,
+    "panoramas": [
+      "2624.jpg"
+    ]
+  },
+  {
+    "id": 2625,
+    "coordinates": [
+      -74.28192729999999,
+      40.4507222,
+      5
+    ],
+    "requestDate": 1541643972425,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2626,
+    "coordinates": [
+      -73.9663587,
+      40.6812733,
+      5
+    ],
+    "requestDate": 1541667115653,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2627,
+    "coordinates": [
+      -74.00285939999999,
+      40.6285001,
+      5
+    ],
+    "requestDate": 1541714376972,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2628,
+    "coordinates": [
+      -73.9731773,
+      40.6351005,
+      5
+    ],
+    "requestDate": 1541716478333,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2629,
+    "coordinates": [
+      -73.92651130000002,
+      40.7049171,
+      5
+    ],
+    "requestDate": 1541905214827,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2630,
+    "coordinates": [
+      -73.9425262,
+      40.8436061,
+      5
+    ],
+    "requestDate": 1541953081654,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2631,
+    "coordinates": [
+      -86.42702299999999,
+      39.423782,
+      5
+    ],
+    "requestDate": 1541963718663,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2632,
+    "coordinates": [
+      -73.9551077,
+      40.6658684,
+      36
+    ],
+    "requestDate": 1541969029992,
+    "roofAccess": true,
+    "panoramas": [
+      "2632.jpg",
+      "2632a.jpg"
+    ]
+  },
+  {
+    "id": 2633,
+    "coordinates": [
+      -73.90858999999999,
+      40.713589,
+      5
+    ],
+    "requestDate": 1541976108782,
+    "roofAccess": true,
+    "panoramas": [
+      "2633.jpg"
+    ]
+  },
+  {
+    "id": 2634,
+    "coordinates": [
+      -73.9542362,
+      40.6889779,
+      5
+    ],
+    "requestDate": 1542038379222,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2635,
+    "coordinates": [
+      -73.97640299999999,
+      40.665622,
+      5
+    ],
+    "requestDate": 1542040666607,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2636,
+    "coordinates": [
+      -73.97640299999999,
+      40.665622,
+      5
+    ],
+    "requestDate": 1542040673667,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2637,
+    "coordinates": [
+      -73.9811038,
+      40.6873477,
+      5
+    ],
+    "requestDate": 1542048320367,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2638,
+    "coordinates": [
+      -73.9533637,
+      40.6619585,
+      5
+    ],
+    "requestDate": 1542062891149,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2639,
+    "coordinates": [
+      -97.37863709999999,
+      37.6955301,
+      5
+    ],
+    "requestDate": 1542074346793,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2640,
+    "coordinates": [
+      -73.9886502,
+      40.7300742,
+      5
+    ],
+    "requestDate": 1542143316804,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2641,
+    "status": "Installed",
+    "coordinates": [
+      -73.9605,
+      40.6576049,
+      28
+    ],
+    "requestDate": 1542213238905,
+    "installDate": 1542517200000,
+    "roofAccess": true,
+    "notes": "Kiosk",
+    "panoramas": []
+  },
+  {
+    "id": 2642,
+    "coordinates": [
+      -74.00449189999999,
+      40.6441861,
+      5
+    ],
+    "requestDate": 1542216245697,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2643,
+    "coordinates": [
+      -73.951892,
+      40.660969,
+      5
+    ],
+    "requestDate": 1542230607600,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2644,
+    "coordinates": [
+      -73.994216,
+      40.7414476,
+      5
+    ],
+    "requestDate": 1542301671250,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2645,
+    "coordinates": [
+      -73.9553268,
+      40.7309873,
+      21
+    ],
+    "requestDate": 1542381067423,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2646,
+    "coordinates": [
+      -73.9464411,
+      40.6835132,
+      5
+    ],
+    "requestDate": 1542405482721,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2647,
+    "coordinates": [
+      -73.9215023,
+      40.70288499999999,
+      5
+    ],
+    "requestDate": 1542409182647,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2648,
+    "coordinates": [
+      -73.9510906,
+      40.7343128,
+      6
+    ],
+    "requestDate": 1542409217573,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2649,
+    "coordinates": [
+      -73.98156809999999,
+      40.7223215,
+      5
+    ],
+    "requestDate": 1542410765482,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2650,
+    "coordinates": [
+      -73.9652452,
+      40.6783232,
+      44
+    ],
+    "requestDate": 1542413412795,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2651,
+    "coordinates": [
+      -73.947637,
+      40.674814,
+      5
+    ],
+    "requestDate": 1542420181429,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2652,
+    "coordinates": [
+      -73.940686,
+      40.713338,
+      5
+    ],
+    "requestDate": 1542467330068,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2653,
+    "coordinates": [
+      -73.94734799999999,
+      40.721094,
+      5
+    ],
+    "requestDate": 1542497991482,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2654,
+    "coordinates": [
+      -73.9793225,
+      40.7142344,
+      5
+    ],
+    "requestDate": 1542508533837,
+    "roofAccess": false,
+    "panoramas": [
+      "2654.jpg",
+      "2654a.jpg"
+    ]
+  },
+  {
+    "id": 2655,
+    "coordinates": [
+      -73.89318,
+      40.75012600000001,
+      5
+    ],
+    "requestDate": 1542511791228,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2656,
+    "coordinates": [
+      -73.90212919999999,
+      40.8711424,
+      5
+    ],
+    "requestDate": 1542511843130,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2657,
+    "coordinates": [
+      -73.9793225,
+      40.7142344,
+      5
+    ],
+    "requestDate": 1542511965803,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2658,
+    "coordinates": [
+      -73.9793225,
+      40.7142344,
+      5
+    ],
+    "requestDate": 1542513673453,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2659,
+    "coordinates": [
+      -73.9789584,
+      40.7136882,
+      5
+    ],
+    "requestDate": 1542513776143,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2660,
+    "coordinates": [
+      -73.978966,
+      40.7140634,
+      5
+    ],
+    "requestDate": 1542513899125,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2661,
+    "coordinates": [
+      -73.904546,
+      40.7073899,
+      5
+    ],
+    "requestDate": 1542571400065,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2662,
+    "coordinates": [
+      -73.9905096,
+      40.7252219,
+      5
+    ],
+    "requestDate": 1542605444786,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2663,
+    "status": "Installed",
+    "coordinates": [
+      -73.997066,
+      40.716808,
+      28
+    ],
+    "requestDate": 1542666920565,
+    "installDate": 1542949200000,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2664,
+    "coordinates": [
+      -73.9541018,
+      40.72554,
+      5
+    ],
+    "requestDate": 1542736095551,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2665,
+    "status": "Installed",
+    "coordinates": [
+      -73.9464335,
+      40.7178088,
+      5
+    ],
+    "requestDate": 1542741559163,
+    "installDate": 1542690000000,
+    "roofAccess": true,
+    "panoramas": [
+      "2665.jpg",
+      "2665a.jpg"
+    ]
+  },
+  {
+    "id": 2666,
+    "status": "To be scheduled",
+    "coordinates": [
+      -73.99919059999999,
+      40.7170368,
+      5
+    ],
+    "requestDate": 1542765320991,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2667,
+    "coordinates": [
+      -73.989741,
+      40.6861249,
+      5
+    ],
+    "requestDate": 1542768505207,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2668,
+    "coordinates": [
+      -73.9468888,
+      40.6717046,
+      5
+    ],
+    "requestDate": 1542818619022,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2669,
+    "coordinates": [
+      -73.9643959,
+      40.6736,
+      5
+    ],
+    "requestDate": 1542822364780,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2670,
+    "coordinates": [
+      -73.9746431,
+      40.69826279999999,
+      5
+    ],
+    "requestDate": 1542828665606,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2671,
+    "coordinates": [
+      -73.99959299999999,
+      40.713565,
+      5
+    ],
+    "requestDate": 1542829316384,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2672,
+    "coordinates": [
+      -73.9700939,
+      40.6905337,
+      5
+    ],
+    "requestDate": 1542829463966,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 2673,
+    "coordinates": [
+      -73.95100169999999,
+      40.6775291,
+      5
+    ],
+    "requestDate": 1542854357310,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 2674,
+    "coordinates": [
+      -73.9406952,
+      40.7227427,
+      5
+    ],
+    "requestDate": 1542999141233,
     "roofAccess": true,
     "panoramas": []
   }

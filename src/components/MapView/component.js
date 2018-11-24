@@ -14,8 +14,8 @@ import Gallery from "../Gallery";
 
 import { mapStyles } from "./styles";
 
-const DEFAULT_ZOOM = 13;
-const DEFAULT_CENTER = { lat: 40.7031809, lng: -73.9595798 };
+const DEFAULT_ZOOM = 11;
+const DEFAULT_CENTER = { lat: 40.72, lng: -73.9595798 };
 
 const options = {
 	styles: mapStyles,
