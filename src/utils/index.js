@@ -27,6 +27,7 @@ export function nodeStatus(node) {
 // TODO: Move this to node-db
 export function linkStatus(link) {
 	const { status, fromNode, toNode } = link;
+	if (!fromNode || !toNode) return "invalid";
 	if (
 		status === "active" &&
 		fromNode.status === "active" &&
