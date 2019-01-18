@@ -1,6 +1,12 @@
 import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
-import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
+import {
+	withScriptjs,
+	withGoogleMap,
+	GoogleMap,
+	Polygon,
+	OverlayView
+} from "react-google-maps";
 import { withRouter, Route } from "react-router";
 import DocumentTitle from "react-document-title";
 import PropTypes from "prop-types";
@@ -13,6 +19,11 @@ import NodeDetail from "../NodeDetail";
 import Gallery from "../Gallery";
 
 import { mapStyles } from "./styles";
+
+const getPixelPositionOffset = (width, height) => ({
+	x: -width / 2,
+	y: -height
+});
 
 const DEFAULT_ZOOM = 11;
 const DEFAULT_CENTER = { lat: 40.72, lng: -73.9595798 };
@@ -177,6 +188,7 @@ class MapView extends Component {
 				mapElement={<div className="h-100" />}
 				googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNClp7oJsw-eleEoR3-PQKV23tpeW-FpE"
 			>
+				{this.renderDistricts()}
 				{this.renderLinks()}
 				{this.renderKiosks()}
 				{this.renderNodes()}
@@ -188,6 +200,92 @@ class MapView extends Component {
 				/>
 			</MapComponent>
 		);
+	}
+
+	renderDistricts() {
+		const { districts } = this.props;
+		const { features } = districts;
+		return features.map((feature, featureIndex) => {
+			const { geometry, properties } = feature;
+			const { coordinates } = geometry;
+			const { coun_dist, shape_area, shape_leng } = properties;
+
+			const areaPaths = [],
+				areaMarkers = [];
+			coordinates.forEach((area, index) => {
+				let [minLat, minLng, maxLat, maxLng] = [
+					Number.MAX_SAFE_INTEGER,
+					Number.MAX_SAFE_INTEGER,
+					0,
+					0
+				];
+				const paths = area.map(area =>
+					area.map(([lng, lat]) => {
+						minLat = Math.min(lat, minLat || lat);
+						minLng = Math.min(lng, minLng || lng);
+						maxLat = Math.max(lat, maxLat || lat);
+						maxLng = Math.max(lng, maxLng || lng);
+						return { lat, lng };
+					})
+				);
+				areaPaths.push(...paths);
+				if (index === 0) {
+					const midLat = minLat + (maxLat - minLat) / 2;
+					const midLng = minLng + (maxLng - minLng) / 2;
+					areaMarkers.push({
+						label: coun_dist,
+						lat: midLat,
+						lng: midLng
+					});
+				}
+			});
+
+			return (
+				<Fragment key={coun_dist + featureIndex}>
+					{areaPaths.map((path, areaIndex) => (
+						<Polygon
+							key={coun_dist + areaIndex}
+							defaultPath={path}
+							options={{
+								strokeColor: "rgba(0,0,0,1)",
+								fillColor: colorForDistrict(coun_dist)
+							}}
+						/>
+					))}
+					{
+						// 	areaMarkers.map(marker => (
+						// 	<OverlayView
+						// 		defaultPosition={
+						// 			new window.google.maps.LatLng(
+						// 				marker.lat,
+						// 				marker.lng
+						// 			)
+						// 		}
+						// 		mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+						// 		getPixelPositionOffset={getPixelPositionOffset}
+						// 	>
+						// 		<div>
+						// 			<span>{marker.label}</span>
+						// 		</div>
+						// 	</OverlayView>
+						// ))
+					}
+				</Fragment>
+			);
+		});
+
+		function colorForDistrict(num) {
+			const colors = {
+				0: "red",
+				1: "orange",
+				2: "yellow",
+				3: "green",
+				4: "blue",
+				5: "violet"
+			};
+			const key = num % 6;
+			return colors[key];
+		}
 	}
 
 	renderNodes() {
@@ -259,7 +357,9 @@ class MapView extends Component {
 		return (
 			<DocumentTitle title={title}>
 				<Fragment>
-					{nodeIds.map(id => <NodeDetail key={id} nodeId={id} />)}
+					{nodeIds.map(id => (
+						<NodeDetail key={id} nodeId={id} />
+					))}
 				</Fragment>
 			</DocumentTitle>
 		);

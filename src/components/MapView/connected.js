@@ -6,6 +6,7 @@ const mapStateToProps = (state, ownProps) => ({
 	links: state.links,
 	sectors: state.sectors,
 	kiosks: state.kiosks,
+	districts: state.districts,
 	filters: state.filters
 });
 

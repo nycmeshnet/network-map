@@ -68,6 +68,7 @@ export default class SearchBar extends PureComponent {
 							filteredNodes: this.filterSearch(event.target.value)
 						})
 					}
+					onSubmit={() => alert("!!")}
 				/>
 				{this.renderClearButton()}
 			</div>

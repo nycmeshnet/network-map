@@ -4,6 +4,7 @@ import nodeData from "../data/nodes";
 import linkData from "../data/links";
 import sectorData from "../data/sectors";
 import kiosks from "../data/kiosks";
+import districts from "../data/districts";
 
 const initialFilters = {
 	linkNYC: false,
@@ -25,6 +26,7 @@ const reducer = (
 		links,
 		sectors,
 		kiosks: initialFilters.linkNYC === false ? [] : kiosks,
+		districts,
 		nodesById,
 		filters: initialFilters,
 		statusCounts: getCounts(nodes, kiosks)
