@@ -941,7 +941,7 @@
       -73.98133262,
       40.74153614
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-000278",
@@ -7573,7 +7573,7 @@
       -73.97976183,
       40.73925317
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-010764",
@@ -7781,7 +7781,7 @@
       -74.00567121,
       40.73827778
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-010846",
@@ -7789,7 +7789,7 @@
       -73.99820283,
       40.76065999
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-010852",
@@ -7845,7 +7845,7 @@
       -74.00528546,
       40.73879783
     ],
-    "status": "pending"
+    "status": "active"
   },
   {
     "id": "LINK-010871",
@@ -9397,7 +9397,7 @@
       -74.00677065,
       40.72301338
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-012249",
@@ -9413,7 +9413,7 @@
       -74.00627426,
       40.725666
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-012255",
@@ -9765,7 +9765,7 @@
       -73.98096599,
       40.78094218
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-012539",
@@ -9877,7 +9877,7 @@
       -73.97907885,
       40.74061156
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-012579",
@@ -10813,7 +10813,7 @@
       -73.9905922,
       40.75122432
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-013290",
@@ -11093,7 +11093,7 @@
       -73.912837,
       40.76909552
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-013527",
@@ -11221,7 +11221,7 @@
       -73.95806217,
       40.76519297
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-013674",
@@ -11301,7 +11301,7 @@
       -73.98014812,
       40.73913724
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-013713",
@@ -11309,7 +11309,7 @@
       -73.979693,
       40.73976238
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-013714",
@@ -11317,7 +11317,7 @@
       -73.97932655,
       40.73985154
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-013718",
@@ -11613,7 +11613,7 @@
       -73.9966041,
       40.73788645
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-013881",
@@ -12317,7 +12317,7 @@
       -73.97882096,
       40.74509981
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-014625",
@@ -14645,7 +14645,7 @@
       -73.83136082,
       40.70753055
     ],
-    "status": "installed"
+    "status": "pending"
   },
   {
     "id": "LINK-021536",
