@@ -26,6 +26,7 @@ export default class LinkLine extends PureComponent {
 				path={[latlng1, latlng2]}
 				options={{
 					strokeColor,
+					strokeWeight: 2.5,
 					strokeOpacity: this.getOpacity(strokeOpacity)
 				}}
 				visible={visible}
@@ -62,16 +63,18 @@ export default class LinkLine extends PureComponent {
 		const { link } = this.props;
 		const { status } = link;
 
+		const defaultOpacity = 0.75;
+
 		if (status === "active")
 			return {
 				strokeColor: "#007aff",
-				strokeOpacity: 1,
+				strokeOpacity: defaultOpacity,
 				zIndex: 10
 			};
 
 		return {
 			strokeColor: "#aaa",
-			strokeOpacity: 1,
+			strokeOpacity: defaultOpacity,
 			zIndex: 0
 		};
 	}

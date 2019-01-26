@@ -54,5 +54,5 @@ export const sectorColors = {
 	"potential-hub": "#aaa",
 	"potential-supernode": "#aaa",
 	potential: "#aaa",
-	default: "rgb(90,200,250)"
+	default: "#007aff"
 };

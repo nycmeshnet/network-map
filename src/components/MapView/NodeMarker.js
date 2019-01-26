@@ -86,7 +86,7 @@ class NodeMarker extends PureComponent {
 			return {
 				icon: {
 					url: "/img/map/hub.svg",
-					anchor: { x: 11, y: 11 }
+					anchor: { x: 10, y: 10 }
 				},
 				zIndex: 99
 			};
@@ -95,7 +95,7 @@ class NodeMarker extends PureComponent {
 			return {
 				icon: {
 					url: "/img/map/active.svg",
-					anchor: { x: 8, y: 8 }
+					anchor: { x: 7, y: 7 }
 				},
 				zIndex: 98
 			};
@@ -113,7 +113,7 @@ class NodeMarker extends PureComponent {
 			return {
 				icon: {
 					url: "/img/map/potential-hub.svg",
-					anchor: { x: 11, y: 11 }
+					anchor: { x: 10, y: 10 }
 				},
 				zIndex: 88
 			};
@@ -122,7 +122,7 @@ class NodeMarker extends PureComponent {
 			return {
 				icon: {
 					url: "/img/map/potential.svg",
-					anchor: { x: 8, y: 8 }
+					anchor: { x: 7, y: 7 }
 				},
 				zIndex: 87
 			};
@@ -130,7 +130,7 @@ class NodeMarker extends PureComponent {
 		return {
 			icon: {
 				url: "/img/map/dead.svg",
-				anchor: { x: 7, y: 7 }
+				anchor: { x: 5, y: 5 }
 			},
 			zIndex: 86
 		};

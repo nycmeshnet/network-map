@@ -2,8 +2,8 @@ import React, { PureComponent } from "react";
 import { Polygon } from "react-google-maps";
 import { sectorColors } from "../../utils";
 
-const MAX_OPACITY = 0.75;
-const INTERVAL_COUNT = 25;
+const MAX_OPACITY = 0.4;
+const INTERVAL_PER_MILE = 10;
 
 const visibilityMultipliers = {
 	highlight: 1,
@@ -21,17 +21,18 @@ export default class Sector extends PureComponent {
 		const { sector, visibility } = this.props;
 
 		const [lng, lat] = sector.node.coordinates;
-		const { radius, azimuth, width, active } = sector;
+		const { radius, azimuth, width, active, device } = sector;
 
 		const visibilityMultiplier = visibilityMultipliers[visibility];
 		const multiplier =
 			visibilityMultiplier === undefined ? 1 : visibilityMultiplier;
-		const fillOpacity = (MAX_OPACITY / INTERVAL_COUNT) * multiplier;
+		const intervalCount = Math.ceil(INTERVAL_PER_MILE * radius);
+		const fillOpacity = (MAX_OPACITY / intervalCount) * multiplier;
 		const fillColor = this.getFillColor();
 		const zIndex = zIndexes[visibility] || 1;
 
-		const interval = radius / INTERVAL_COUNT;
-		const radiusIndices = [...Array(INTERVAL_COUNT).keys()];
+		const interval = radius / intervalCount;
+		const radiusIndices = [...Array(intervalCount).keys()];
 
 		return radiusIndices.map(index => {
 			const circleRadius = interval * index;
