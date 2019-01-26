@@ -1,13 +1,35 @@
 import React, { PureComponent } from "react";
+import { withRouter } from "react-router";
 
 import NodeRow from "./NodeRow";
 
-export default class SearchBar extends PureComponent {
+class SearchBar extends PureComponent {
 	state = {
 		filteredNodes: [],
 		search: "",
-		showDropdown: false
+		showDropdown: false,
+		focused: false
 	};
+
+	componentDidMount() {
+		this.keyDownHandler = this.handleKeyDown.bind(this);
+		window.addEventListener("keydown", this.keyDownHandler, false);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener("keydown", this.keyDownHandler, false);
+	}
+
+	handleKeyDown(event) {
+		const { history } = this.props;
+		const { focused, filteredNodes } = this.state;
+		const { keyCode } = event;
+		if (keyCode === 13 && focused && filteredNodes.length) {
+			history.push(`/nodes/${filteredNodes[0].id}`);
+			this.setState({ showDropdown: false });
+			this.refs.search.blur();
+		}
+	}
 
 	componentDidUpdate(prevProps, prevState) {
 		// Super hacky, do this better
@@ -61,7 +83,10 @@ export default class SearchBar extends PureComponent {
 					placeholder="Search nodes"
 					spellCheck={false}
 					autoCorrect="false"
-					onFocus={() => this.setState({ showDropdown: true })}
+					onFocus={() =>
+						this.setState({ showDropdown: true, focused: true })
+					}
+					onBlur={() => this.setState({ focused: false })}
 					onChange={event =>
 						this.setState({
 							search: event.target.value,
@@ -172,3 +197,5 @@ export default class SearchBar extends PureComponent {
 		];
 	}
 }
+
+export default withRouter(SearchBar);
