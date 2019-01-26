@@ -8,7 +8,7 @@ const labels = ["active", "supernode", "hub", "potential", "linkNYC"];
 
 export default class Filters extends PureComponent {
 	componentDidMount() {
-		const { location, toggleFilter } = this.props;
+		const { toggleFilter } = this.props;
 		const params = new URLSearchParams(this.props.location.search);
 		if (params.get("potential") === "true") toggleFilter("potential");
 		if (params.get("linknyc") === "true") toggleFilter("linkNYC");

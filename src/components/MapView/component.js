@@ -201,7 +201,15 @@ class MapView extends Component {
 		return nodes.map(node => {
 			const isFiltered = filters[node.type] === false;
 			const isSelected = selectedIds[node.id] === true;
-			const visible = !isFiltered || isSelected;
+			let neighborIsSelected = false;
+			if (node.links) {
+				node.links.forEach(link => {
+					if (selectedIds[link.from] && selectedIds[link.to]) {
+						neighborIsSelected = true;
+					}
+				});
+			}
+			const visible = !isFiltered || isSelected || neighborIsSelected;
 
 			return (
 				<NodeMarker
@@ -218,15 +226,24 @@ class MapView extends Component {
 
 	renderLinks() {
 		const { links, filters } = this.props;
+
+		// TODO: Refactor
+		const selectedIds = this.selectedNodeIds().reduce(
+			(idMap, nodeId) => ({ ...idMap, [nodeId]: true }),
+			{}
+		);
+
 		return links.map((link, index) => {
 			const { fromNode, toNode, status } = link;
 			if (!fromNode || !toNode) return null;
 
+			const isSelected =
+				selectedIds[fromNode.id] && selectedIds[toNode.id];
 			const isFiltered =
 				filters[fromNode.type] === false ||
 				filters[toNode.type] === false ||
 				(status === "potential" && filters.potential === false);
-			const visible = !isFiltered;
+			const visible = isSelected || !isFiltered;
 			return (
 				<LinkLine
 					key={this.linkId(link)}
@@ -259,7 +276,9 @@ class MapView extends Component {
 		return (
 			<DocumentTitle title={title}>
 				<Fragment>
-					{nodeIds.map(id => <NodeDetail key={id} nodeId={id} />)}
+					{nodeIds.map(id => (
+						<NodeDetail key={id} nodeId={id} />
+					))}
 				</Fragment>
 			</DocumentTitle>
 		);

@@ -21,7 +21,7 @@ export default class Sector extends PureComponent {
 		const { sector, visibility } = this.props;
 
 		const [lng, lat] = sector.node.coordinates;
-		const { radius, azimuth, width, active, device } = sector;
+		const { radius, azimuth, width } = sector;
 
 		const visibilityMultiplier = visibilityMultipliers[visibility];
 		const multiplier =
