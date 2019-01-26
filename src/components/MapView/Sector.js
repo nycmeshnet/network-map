@@ -47,9 +47,9 @@ export default class Sector extends PureComponent {
 						strokeWidth: 0,
 						fillColor,
 						fillOpacity,
-						clickable: false
+						clickable: false,
+						zIndex
 					}}
-					zIndex={zIndex}
 				/>
 			);
 		});

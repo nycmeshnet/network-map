@@ -27,10 +27,10 @@ export default class LinkLine extends PureComponent {
 				options={{
 					strokeColor,
 					strokeWeight: 2.5,
-					strokeOpacity: this.getOpacity(strokeOpacity)
+					strokeOpacity: this.getOpacity(strokeOpacity),
+					zIndex: this.getZIndex(zIndex)
 				}}
 				visible={visible}
-				zIndex={this.getZIndex(zIndex)}
 			/>
 		);
 	}
@@ -63,7 +63,7 @@ export default class LinkLine extends PureComponent {
 		const { link } = this.props;
 		const { status } = link;
 
-		const defaultOpacity = 0.75;
+		const defaultOpacity = 1;
 
 		if (status === "active")
 			return {
