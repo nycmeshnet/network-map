@@ -58,7 +58,7 @@ export const icons = {
 	active: (
 		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
 			<circle
-				fill="rgb(255,59,48)"
+				fill="rgb(255,45,85)"
 				stroke="white"
 				r="6"
 				strokeWidth="2"

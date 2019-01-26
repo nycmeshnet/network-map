@@ -38,7 +38,7 @@ export function linkStatus(link) {
 }
 
 export const nodeColors = {
-	active: "rgb(255,59,48)",
+	active: "rgb(255,45,85)",
 	dead: "#aaa",
 	hub: "rgb(90,200,250)",
 	kiosk: "#01a2eb",
