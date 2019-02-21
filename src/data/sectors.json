@@ -7,6 +7,21 @@
     "status": "active"
   },
   {
+    "nodeId": 227,
+    "radius": 0.75,
+    "azimuth": 300,
+    "width": 90,
+    "status": "active"
+  },
+  {
+    "nodeId": 303,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni"
+  },
+  {
     "nodeId": 329,
     "radius": 0.5,
     "azimuth": 0,
@@ -17,18 +32,34 @@
   {
     "nodeId": 363,
     "radius": 0.5,
-    "azimuth": 0,
-    "width": 360,
+    "azimuth": 255,
+    "width": 270,
     "status": "active",
     "device": "Omni"
   },
   {
-    "nodeId": 664,
-    "radius": 1,
-    "azimuth": 310,
+    "nodeId": 407,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni"
+  },
+  {
+    "nodeId": 407,
+    "radius": 2,
+    "azimuth": 60,
     "width": 120,
     "status": "active",
     "device": "LBE120"
+  },
+  {
+    "nodeId": 659,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni"
   },
   {
     "nodeId": 664,
@@ -42,6 +73,14 @@
     "nodeId": 664,
     "radius": 1,
     "azimuth": 190,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120"
+  },
+  {
+    "nodeId": 664,
+    "radius": 1,
+    "azimuth": 310,
     "width": 120,
     "status": "active",
     "device": "LBE120"
@@ -119,9 +158,60 @@
   {
     "nodeId": 1340,
     "radius": 2,
-    "azimuth": 180,
+    "azimuth": 350,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120"
+  },
+  {
+    "nodeId": 1340,
+    "radius": 2,
+    "azimuth": 80,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120"
+  },
+  {
+    "nodeId": 1340,
+    "radius": 2,
+    "azimuth": 170,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120"
+  },
+  {
+    "nodeId": 1340,
+    "radius": 2,
+    "azimuth": 260,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120"
+  },
+  {
+    "nodeId": 1348,
+    "radius": 2,
+    "azimuth": 0,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120",
+    "installDate": 1540008000000
+  },
+  {
+    "nodeId": 1348,
+    "radius": 2,
+    "azimuth": 120,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120",
+    "installDate": 1540008000000
+  },
+  {
+    "nodeId": 1348,
+    "radius": 0.5,
+    "azimuth": 0,
     "width": 360,
-    "status": "active"
+    "status": "active",
+    "device": "Omni"
   },
   {
     "nodeId": 1350,
@@ -132,18 +222,28 @@
     "device": "Omni"
   },
   {
+    "nodeId": 1384,
+    "radius": 0.5,
+    "azimuth": 170,
+    "width": 60,
+    "status": "active",
+    "device": "NSM5"
+  },
+  {
     "nodeId": 1417,
     "radius": 1,
     "azimuth": 120,
     "width": 120,
-    "status": "active"
+    "status": "active",
+    "device": "LBE120"
   },
   {
     "nodeId": 1417,
     "radius": 1,
     "azimuth": 280,
     "width": 120,
-    "status": "active"
+    "status": "active",
+    "device": "LBE120"
   },
   {
     "nodeId": 1515,
@@ -162,7 +262,31 @@
     "device": "Omni"
   },
   {
+    "nodeId": 1606,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni"
+  },
+  {
     "nodeId": 1971,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni"
+  },
+  {
+    "nodeId": 2274,
+    "radius": 1,
+    "azimuth": 12,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120"
+  },
+  {
+    "nodeId": 2274,
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
@@ -194,29 +318,11 @@
     "device": "Omni"
   },
   {
-    "nodeId": 1348,
-    "radius": 2,
+    "nodeId": 2814,
+    "radius": 0.2,
     "azimuth": 0,
-    "width": 120,
+    "width": 360,
     "status": "active",
-    "device": "LBE120",
-    "installDate": 1540008000000
-  },
-  {
-    "nodeId": 1348,
-    "radius": 2,
-    "azimuth": 120,
-    "width": 120,
-    "status": "active",
-    "device": "LBE120",
-    "installDate": 1540008000000
-  },
-  {
-    "nodeId": 1384,
-    "radius": 0.5,
-    "azimuth": 170,
-    "width": 60,
-    "status": "active",
-    "device": "NSM5"
+    "device": "Omni"
   }
 ]
