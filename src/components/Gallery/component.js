@@ -4,10 +4,6 @@ import { Link } from "react-router-dom";
 import DocumentTitle from "react-document-title";
 
 export default class Gallery extends PureComponent {
-	static contextTypes = {
-		router: PropTypes.object
-	};
-
 	constructor(props) {
 		super(props);
 		this.state = {
