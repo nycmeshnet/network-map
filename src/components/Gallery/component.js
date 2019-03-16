@@ -28,10 +28,9 @@ export default class Gallery extends PureComponent {
 		event.preventDefault();
 		event.stopPropagation();
 		const { keyCode } = event;
-		const { match } = this.props;
+		const { match, history } = this.props;
 		const { panoramas } = this.state;
 		const { nodeId, panoId } = match.params;
-		const { history } = this.context.router;
 		const panoIdInt = parseInt(panoId);
 		if (keyCode === 27) {
 			history.push(`/nodes/${nodeId}`);

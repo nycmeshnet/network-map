@@ -96,7 +96,7 @@ class MapView extends Component {
 	handleKeyDown(event) {
 		const { keyCode } = event;
 		if (keyCode === 27) {
-			const { history } = this.context.router;
+			const { history } = this.props;
 			history.push("/");
 		}
 
@@ -152,7 +152,7 @@ class MapView extends Component {
 	}
 
 	render() {
-		const { history } = this.context.router;
+		const { history } = this.props;
 		return (
 			<MapComponent
 				mapRef={this.map}
@@ -285,8 +285,7 @@ class MapView extends Component {
 	}
 
 	handleNodeClick(node) {
-		const { match } = this.props;
-		const { history } = this.context.router;
+		const { match, history } = this.props;
 
 		// Command click selects multiple nodes
 		if (this.state.commandPressed && match && match.params.nodeId) {
