@@ -41,10 +41,6 @@ const MapComponent = withScriptjs(
 );
 
 class MapView extends Component {
-	static contextTypes = {
-		router: PropTypes.object
-	};
-
 	state = {
 		commandPressed: false
 	};
