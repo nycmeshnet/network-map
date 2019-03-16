@@ -3738,7 +3738,7 @@ highlight-words-core@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/highlight-words-core/-/highlight-words-core-1.2.0.tgz#232bec301cbf2a4943d335dc748ce70e9024f3b1"
 
-history@^4.8.0-beta.0, history@^4.9.0:
+history@^4.7.2, history@^4.9.0:
   version "4.9.0"
   resolved "https://registry.yarnpkg.com/history/-/history-4.9.0.tgz#84587c2068039ead8af769e9d6a6860a14fa1bca"
   integrity sha512-H2DkjCjXf0Op9OAr6nJ56fcRkTSNrUiv41vNJ6IswJjif6wlpZK0BTfFbi7qK9dXLSYZxkq5lBsj3vUjlYBYZA==
@@ -3762,7 +3762,7 @@ hoek@4.x.x:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb"
 
-hoist-non-react-statics@^2.3.1:
+hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
 
@@ -6879,20 +6879,19 @@ react-redux@^5.0.7:
     react-is "^16.6.0"
     react-lifecycles-compat "^3.0.0"
 
-react-router-dom@^4.3.1:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.4.0.tgz#fad67b46375f7081a76d1c92a83a92d28b5abc35"
-  integrity sha512-r4knbi8lanTGrwoUXFaWALrJZOAl3h9bdFUz4woHgEm7/bYcpBGfnYhPU82xjXrPeJyWF6OmIxpwXjxos30gOQ==
+react-router-dom@~4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.3.1.tgz#4c2619fc24c4fa87c9fd18f4fb4a43fe63fbd5c6"
+  integrity sha512-c/MlywfxDdCp7EnB7YfPMOfMD3tOtIjrQlj/CKfNMBxdmpJP8xcz5P/UAFn3JbnQCNUxsHyVVqllF9LhgVyFCA==
   dependencies:
-    "@babel/runtime" "^7.1.2"
-    history "^4.8.0-beta.0"
+    history "^4.7.2"
+    invariant "^2.2.4"
     loose-envify "^1.3.1"
-    prop-types "^15.6.2"
-    react-router "^4.4.0"
-    tiny-invariant "^1.0.2"
-    tiny-warning "^1.0.0"
+    prop-types "^15.6.1"
+    react-router "^4.3.1"
+    warning "^4.0.1"
 
-react-router@^4.3.1, react-router@^4.4.0:
+react-router@^4.3.1:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.4.0.tgz#e8b8b88329f564d4c48b7ee631b10310188c6888"
   integrity sha512-qTGsOSF2b02zOsUfcnHjw7muI0Ejx+yA2e4P9qqzB2O+N3Icpca4epViXRgkBIvBjagXBtroxXqH0RJhYDMUbg==
@@ -6907,6 +6906,19 @@ react-router@^4.3.1, react-router@^4.4.0:
     react-is "^16.6.0"
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
+
+react-router@~4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.3.1.tgz#aada4aef14c809cb2e686b05cee4742234506c4e"
+  integrity sha512-yrvL8AogDh2X42Dt9iknk4wF4V8bWREPirFfS9gLU1huk6qK41sg7Z/1S81jjTrGHxa3B8R3J6xIkDAA6CVarg==
+  dependencies:
+    history "^4.7.2"
+    hoist-non-react-statics "^2.5.0"
+    invariant "^2.2.4"
+    loose-envify "^1.3.1"
+    path-to-regexp "^1.7.0"
+    prop-types "^15.6.1"
+    warning "^4.0.1"
 
 react-scripts@2.0.3:
   version "2.0.3"
@@ -8373,6 +8385,13 @@ warning@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
   integrity sha1-MuU3fLVy3kqwR1O9+IIcAe1gW3w=
+  dependencies:
+    loose-envify "^1.0.0"
+
+warning@^4.0.1:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
+  integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
   dependencies:
     loose-envify "^1.0.0"
 
