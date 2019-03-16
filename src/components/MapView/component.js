@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
-import { withRouter, Route } from "react-router";
+import { Route } from "react-router";
 import DocumentTitle from "react-document-title";
 import PropTypes from "prop-types";
 import { uniq, isEqual } from "lodash";
@@ -40,7 +40,7 @@ const MapComponent = withScriptjs(
 	))
 );
 
-class MapView extends Component {
+export default class MapView extends Component {
 	state = {
 		commandPressed: false
 	};
@@ -419,5 +419,3 @@ class MapView extends Component {
 		return match.params.nodeId.split("-");
 	}
 }
-
-export default withRouter(MapView);
