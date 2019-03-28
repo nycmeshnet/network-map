@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import { Polygon } from "react-google-maps";
 import { sectorColors } from "../../utils";
 
-const MAX_OPACITY = 0.4;
+const MAX_OPACITY = 0.3;
 const INTERVAL_PER_MILE = 10;
 
 const visibilityMultipliers = {
