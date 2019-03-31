@@ -7,13 +7,21 @@ a {
 	color: #007aff;
 }
 .search-bar {
-	width: 20rem;
+	width: 22rem;
 }
 
 @media screen and (max-width: 40em) {
 	.search-bar {
 		width: 100%;
 	}
+}
+
+.pink {
+	color: rgb(255, 45, 85);
+}
+
+.light-blue {
+	color: rgb(90, 200, 250);
 }
 
 .node-image {

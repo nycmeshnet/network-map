@@ -7,6 +7,7 @@ import React, { Component } from "react";
 import SearchBar from "./components/SearchBar";
 import MapView from "./components/MapView";
 import Filters from "./components/Filters";
+import Stats from "./components/Stats";
 
 import rootReducer from "./reducers";
 
@@ -31,6 +32,7 @@ class App extends Component {
 							<div className="absolute bottom-0 left-0 ma2">
 								<Route component={Filters} />
 							</div>
+							<Route path="/" component={Stats} />
 						</div>
 					</Router>
 				</Provider>

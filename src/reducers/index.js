@@ -27,7 +27,8 @@ const reducer = (
 		kiosks: initialFilters.linkNYC === false ? [] : kiosks,
 		nodesById,
 		filters: initialFilters,
-		statusCounts: getCounts(nodes, kiosks)
+		statusCounts: getCounts(nodes, kiosks),
+		showFilters: false
 	},
 	action
 ) => {
@@ -52,6 +53,12 @@ const reducer = (
 				filters: newFilters,
 				kiosks: newFilters.linkNYC === false ? [] : kiosks
 			};
+		case "TOGGLE_FILTERS":
+			return {
+				...state,
+				showFilters: !state.showFilters
+			};
+
 		default:
 			return state;
 	}
@@ -122,10 +129,6 @@ function getCounts(nodes, kiosks) {
 
 		if (type.indexOf("potential-") > -1 || type === "dead") {
 			counts["potential"] = (counts["potential"] || 0) + 1;
-		}
-
-		if (type === "supernode" || type === "hub") {
-			counts["active"] = (counts["active"] || 0) + 1;
 		}
 	});
 	counts.linkNYC = kiosks.length;

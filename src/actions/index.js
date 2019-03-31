@@ -28,3 +28,7 @@ export function fetchKiosks(dispatch) {
 export function toggleFilter(label, dispatch) {
 	dispatch({ type: "TOGGLE_FILTER", label });
 }
+
+export function toggleFilters(dispatch) {
+	dispatch({ type: "TOGGLE_FILTERS" });
+}

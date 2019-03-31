@@ -5,11 +5,15 @@ import { toggleFilter } from "../../actions";
 
 const mapStateToProps = (state, ownProps) => ({
 	filters: state.filters,
-	statusCounts: state.statusCounts
+	statusCounts: state.statusCounts,
+	showFilters: state.showFilters
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
 	toggleFilter: label => toggleFilter(label, dispatch)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PureFilters);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(PureFilters);

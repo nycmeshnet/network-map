@@ -15,6 +15,8 @@ export default class Filters extends PureComponent {
 	}
 
 	render() {
+		const { showFilters } = this.props;
+		if (!showFilters) return null;
 		return (
 			<div className="bg-white f5 shadow-2">
 				<div role="group" className="dib pa2">
