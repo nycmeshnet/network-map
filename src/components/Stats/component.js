@@ -12,11 +12,11 @@ export default class Stats extends PureComponent {
 					<div className="flex justify-between f3 fw6">
 						<span className="mr3">
 							{total}{" "}
-							<span className="mid-gray db f4">Nodes</span>
+							<span className="mid-gray db f4">Total</span>
 						</span>
 						<span className="mr3 pink">
 							{active}{" "}
-							<span className="mid-gray db f4">Active</span>
+							<span className="mid-gray db f4">Nodes</span>
 						</span>
 						<span className="mr3 light-blue">
 							{hub} <span className="mid-gray db f4">Hubs</span>
