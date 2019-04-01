@@ -7,7 +7,7 @@ export default class Stats extends PureComponent {
 		const { active, hub, supernode } = statusCounts;
 		const total = active + hub + supernode;
 		return (
-			<div className="ph3">
+			<div className="ph3 bg-white">
 				<div className="measure-wide center pv4-ns pv3">
 					<div className="flex justify-between f3 fw6">
 						<span className="mr3">

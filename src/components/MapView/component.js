@@ -167,9 +167,9 @@ class MapView extends Component {
 					const now = Date.now();
 					this.lastDoubleClick = now;
 				}}
-				loadingElement={<div className="h-100" />}
-				containerElement={<div className="h-100" />}
-				mapElement={<div className="h-100" />}
+				loadingElement={<div className="h-100 flex flex-column" />}
+				containerElement={<div className="h-100 flex flex-column" />}
+				mapElement={<div className="h-100 flex flex-column" />}
 				googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNClp7oJsw-eleEoR3-PQKV23tpeW-FpE"
 			>
 				{this.renderLinks()}
