@@ -19,18 +19,20 @@ class App extends Component {
 			<DocumentTitle title="Map - NYC Mesh">
 				<Provider store={store}>
 					<Router basename="/map">
-						<div className="h-100 w-100 relative flex flex-column sans-serif">
-							<div className="absolute pa2 z-999 search-bar">
-								<SearchBar />
-							</div>
-							<Route
-								path="/nodes/:nodeId"
-								children={({ match }) => (
-									<MapView match={match} />
-								)}
-							/>
-							<div className="absolute bottom-0 left-0 ma2">
-								<Route component={Filters} />
+						<div className="h-100 w-100 flex flex-column sans-serif">
+							<div className="h-100 w-100 relative flex flex-column">
+								<div className="absolute pa2 z-999 search-bar">
+									<SearchBar />
+								</div>
+								<Route
+									path="/nodes/:nodeId"
+									children={({ match }) => (
+										<MapView match={match} />
+									)}
+								/>
+								<div className="absolute bottom-0 left-0 ma2">
+									<Route component={Filters} />
+								</div>
 							</div>
 							<Route path="/" component={Stats} />
 						</div>
