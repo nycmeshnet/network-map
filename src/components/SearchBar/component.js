@@ -97,8 +97,11 @@ class SearchBar extends PureComponent {
 				/>
 				{this.renderClearButton()}
 				<button
-					className="h2 w2 bn bg-transparent mr2 pointer"
-					onClick={() => toggleFilters()}
+					className="h2 w2 bn bg-transparent mr2 pointer dark-gray"
+					onClick={event => {
+						event.stopPropagation();
+						toggleFilters();
+					}}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
