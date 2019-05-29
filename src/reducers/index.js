@@ -78,6 +78,9 @@ function addGraphData(nodes, links, sectors) {
 
 	// Add status, types and links to nodes
 	nodes.forEach(node => {
+		if (node.notes) {
+			node.notes = String(node.notes)
+		}
 		nodesById[node.id] = node;
 		node.status = nodeStatus(node);
 		node.type = nodeType(node);
