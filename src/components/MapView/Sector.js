@@ -19,6 +19,10 @@ const zIndexes = {
 export default class Sector extends PureComponent {
 	render() {
 		const { sector, visibility } = this.props;
+		const { status } = sector
+		if (status !== "active" && status !== "potential") {
+			return null
+		}
 
 		const [lng, lat] = sector.node.coordinates;
 		const { radius, azimuth, width } = sector;
