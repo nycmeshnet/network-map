@@ -4,11 +4,13 @@ export function nodeType(node) {
 	const isSupernode = notes && lowerNotes.indexOf("supernode") > -1;
 	const isHub = notes && lowerNotes.indexOf("hub") > -1;
 	const notPotentialHub = !notes || lowerNotes.indexOf("hub?") === -1;
+	const isOmni = notes && lowerNotes.indexOf("omni") > -1;
 	const hasPanoramas = panoramas && panoramas.length;
 
 	if (status === "active") {
 		if (isSupernode) return "supernode";
 		if (isHub && notPotentialHub) return "hub";
+		if (isOmni) return "omni"
 		return "active";
 	}
 

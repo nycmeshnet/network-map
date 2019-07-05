@@ -91,6 +91,15 @@ class NodeMarker extends PureComponent {
 				zIndex: 99
 			};
 
+		if (type === "omni")
+			return {
+				icon: {
+					url: "/img/map/omni.svg",
+					anchor: { x: 7, y: 7 }
+				},
+				zIndex: 98
+			};
+
 		if (type === "active")
 			return {
 				icon: {
