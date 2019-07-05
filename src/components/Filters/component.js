@@ -4,7 +4,7 @@ import { icons } from "../NodeName";
 import { nodeColors } from "../../utils";
 
 // This should be defined elsewhere
-const labels = ["active", "supernode", "hub", "potential", "linkNYC"];
+const labels = ["active", "supernode", "hub", "omni", "potential", "linkNYC"];
 const displayLabels = { active: "node" };
 
 export default class Filters extends PureComponent {

@@ -61,16 +61,27 @@ export default class LinkLine extends PureComponent {
 
 	getLineProps() {
 		const { link } = this.props;
-		const { status } = link;
+		const { status, fromNode, toNode } = link;
+
 
 		const defaultOpacity = 1;
 
-		if (status === "active")
+		if (status === "active") {
+			const isBackbone = fromNode.type !== "active" && toNode.type !== "active"
+			if (isBackbone) {
+				return {
+					strokeColor: "#007aff",
+					strokeOpacity: defaultOpacity,
+					zIndex: 20
+				}
+			}
+
 			return {
-				strokeColor: "#007aff",
-				strokeOpacity: defaultOpacity,
+				strokeColor: "#ff2d55",
+				strokeOpacity: defaultOpacity * 0.25,
 				zIndex: 10
-			};
+			}
+		}
 
 		return {
 			strokeColor: "#aaa",
