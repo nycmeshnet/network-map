@@ -5,7 +5,7 @@ import { nodeColors } from "../../utils";
 
 // This should be defined elsewhere
 const labels = ["active", "supernode", "hub", "potential", "linkNYC"];
-const displayLabels = { active: "node" };
+const displayLabels = { active: "Total Active" };
 
 export default class Filters extends PureComponent {
 	componentDidMount() {
@@ -31,8 +31,7 @@ export default class Filters extends PureComponent {
 		const { filters, statusCounts, toggleFilter } = this.props;
 		const enabled = filters[label] || filters[label] === undefined;
 		const opacity = enabled ? "o-100" : "o-50 strike";
-		const sanitizedLabel = label.replace("-", " ");
-		const labelName = displayLabels[sanitizedLabel] || sanitizedLabel;
+		const labelDisplay = displayLabels[label] || label;
 		return (
 			<div
 				key={label}
@@ -56,7 +55,7 @@ export default class Filters extends PureComponent {
 						{icons[label]}
 					</div>
 					<span className="ml1">
-						{labelName} ({statusCounts[label] || 0})
+						{labelDisplay} ({statusCounts[label] || 0})
 					</span>
 				</label>
 				<input
