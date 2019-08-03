@@ -1,6 +1,8 @@
 import { connect } from "react-redux";
 import PureComponent from "./component";
 
+import { toggleFilter } from "../../actions";
+
 const mapStateToProps = (state, ownProps) => ({
 	nodes: state.nodes,
 	links: state.links,
@@ -10,7 +12,9 @@ const mapStateToProps = (state, ownProps) => ({
 	filters: state.filters
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({});
+const mapDispatchToProps = (dispatch, ownProps) => ({
+	toggleFilter: label => toggleFilter(label, dispatch)
+});
 
 export default connect(
 	mapStateToProps,

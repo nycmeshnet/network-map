@@ -21,7 +21,10 @@ class App extends Component {
 				<Provider store={store}>
 					<Router basename="/map">
 						<div className="helvetica">
-							<div className="h-100 w-100 flex flex-column">
+							<div
+								id="map-stats-container"
+								className="h-100 w-100 flex flex-column"
+							>
 								<div className="h-100 w-100 relative flex flex-column">
 									<div className="absolute pa2 z-999 search-bar">
 										<SearchBar />

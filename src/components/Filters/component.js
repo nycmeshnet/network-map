@@ -25,7 +25,6 @@ export default class Filters extends PureComponent {
 						{labels.map(label => this.renderFilter(label))}
 						{this.renderFilter("sector")}
 						{this.renderFilter("backbone", true)}
-						{this.renderFilter("changelog", true)}
 					</div>
 				</div>
 			</div>

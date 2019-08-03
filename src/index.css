@@ -9,6 +9,10 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.map-stats-container {
+	height: calc(100vh - 96px);
+}
+
 a {
 	color: #007aff;
 }

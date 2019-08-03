@@ -4,11 +4,26 @@ import { format } from "date-fns";
 import { icons } from "../NodeName";
 
 export default class Log extends PureComponent {
-	state = {};
+	state = {
+		limit: 3
+	};
 
 	render() {
-		const { links, filters } = this.props;
-		if (!filters.changelog) return null;
+		const { links, filters, toggleFilter } = this.props;
+		const { limit } = this.state;
+		// if (!filters.changelog)
+		// 	return (
+		// 		<div className="ph3 bg-white">
+		// 			<div className="measure-wide center pt3 flex justify-center">
+		// 				<button
+		// 					className="bg-transparent bn pa0 gray mb4 pointer"
+		// 					onClick={() => toggleFilter("changelog", true)}
+		// 				>
+		// 					Show changelog
+		// 				</button>
+		// 			</div>
+		// 		</div>
+		// 	);
 
 		const sortedLinks = links
 			.filter(link => link.status === "active" && link.installDate)
@@ -59,10 +74,9 @@ export default class Log extends PureComponent {
 		}
 
 		return (
-			<div className="ph3 bg-white">
-				<div className="measure-wide center pt3">
-					<h2 className="f4 fw6 mv2">Changelog</h2>
-					{sortedLinks.map(link => {
+			<div className="ph3 pb3 bg-white">
+				<div className="measure-wide center">
+					{sortedLinks.slice(0, limit).map(link => {
 						return (
 							<Link
 								key={`${link.from} ${link.to}`}
@@ -76,6 +90,14 @@ export default class Log extends PureComponent {
 							</Link>
 						);
 					})}
+					{limit < sortedLinks.length ? (
+						<button
+							className="mv4 center bg-transparent bn pa0 blue pointer"
+							onClick={() => this.setState({ limit: limit * 2 })}
+						>
+							Show more
+						</button>
+					) : null}
 				</div>
 			</div>
 		);
