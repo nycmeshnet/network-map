@@ -36,9 +36,13 @@ export default class LinkLine extends PureComponent {
 	}
 
 	getOpacity(defaultOpacity) {
+		const { link, filters } = this.props;
 		const { visibility } = this.state;
 		switch (visibility) {
 			case "highlight":
+				if (filters.backbone) {
+					if (!isBackbone(link)) return defaultOpacity * 2;
+				}
 				return 1;
 			case "dim":
 				return defaultOpacity * 0.1;
@@ -60,17 +64,25 @@ export default class LinkLine extends PureComponent {
 	}
 
 	getLineProps() {
-		const { link } = this.props;
+		const { link, filters } = this.props;
 		const { status } = link;
 
 		const defaultOpacity = 1;
 
-		if (status === "active")
+		if (status === "active") {
+			if (filters.backbone && !isBackbone(link))
+				return {
+					strokeColor: "#ff2d55",
+					strokeOpacity: defaultOpacity * 0.25,
+					zIndex: 10
+				};
+
 			return {
 				strokeColor: "#007aff",
 				strokeOpacity: defaultOpacity,
-				zIndex: 10
+				zIndex: 20
 			};
+		}
 
 		return {
 			strokeColor: "#aaa",
@@ -78,4 +90,9 @@ export default class LinkLine extends PureComponent {
 			zIndex: 0
 		};
 	}
+}
+
+function isBackbone(link) {
+	const { fromNode, toNode } = link;
+	return fromNode.type !== "active" && toNode.type !== "active";
 }

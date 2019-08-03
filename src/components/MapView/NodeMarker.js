@@ -15,8 +15,8 @@ class NodeMarker extends PureComponent {
 			<Fragment>
 				<Marker
 					defaultPosition={{ lat, lng }}
-					defaultIcon={icon}
 					defaultTitle={title}
+					icon={icon}
 					options={{ opacity }}
 					visible={visible}
 					zIndex={adjustedZ}
@@ -49,6 +49,7 @@ class NodeMarker extends PureComponent {
 					sector={sector}
 					visibility={visibility}
 					node={node}
+					filters={filters}
 				/>
 			);
 		});
@@ -70,7 +71,7 @@ class NodeMarker extends PureComponent {
 	}
 
 	getMarkerProps() {
-		const { node } = this.props;
+		const { node, filters } = this.props;
 		const { type } = node;
 
 		if (type === "supernode")
@@ -90,6 +91,35 @@ class NodeMarker extends PureComponent {
 				},
 				zIndex: 99
 			};
+
+		if (type === "omni") {
+			const url = filters.backbone
+				? "/img/map/omni.svg"
+				: "/img/map/active.svg";
+			const zIndex = filters.backbone ? 99 : 98;
+			return {
+				icon: {
+					url,
+					anchor: { x: 7, y: 7 }
+				},
+				zIndex
+			};
+		}
+
+		if (type === "vpn") {
+			const url = filters.backbone
+				? "/img/map/vpn.svg"
+				: "/img/map/active.svg";
+			const anchor = filters.backbone ? { x: 5, y: 5 } : { x: 7, y: 7 };
+
+			return {
+				icon: {
+					url,
+					anchor
+				},
+				zIndex: 98
+			};
+		}
 
 		if (type === "active")
 			return {

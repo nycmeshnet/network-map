@@ -67,6 +67,18 @@ export const icons = {
 			/>
 		</svg>
 	),
+	omni: (
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+			<circle
+				fill="rgb(90,200,250)"
+				stroke="white"
+				r="6"
+				strokeWidth="2"
+				cx="8"
+				cy="8"
+			/>
+		</svg>
+	),
 	hub: (
 		<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22">
 			<circle

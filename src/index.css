@@ -3,6 +3,16 @@ body {
 	height: 100%;
 }
 
+body {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.map-stats-container {
+	height: calc(100vh - 96px);
+}
+
 a {
 	color: #007aff;
 }

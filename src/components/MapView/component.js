@@ -134,15 +134,15 @@ class MapView extends Component {
 		);
 		this.updateNodes(nextSelectedNodes, nextSelectedMarkers);
 
-		const matchChanged = this.props.match !== nextProps.match;
-		const nodesChanged = this.props.nodes !== nextProps.nodes;
-		const fitBounds = !matchChanged && !nodesChanged;
+		// const matchChanged = this.props.match !== nextProps.match;
+		// const nodesChanged = this.props.nodes !== nextProps.nodes;
+		// const fitBounds = !matchChanged && !nodesChanged;
 
 		const filtersChanged = this.props.filters !== nextProps.filters;
 
 		if (!filtersChanged) {
 			this.updateLinks(nextSelectedNodes);
-			this.panToNodes(nextSelectedNodes, fitBounds);
+			this.panToNodes(nextSelectedNodes, true);
 		}
 	}
 
@@ -247,6 +247,7 @@ class MapView extends Component {
 					}}
 					visible={visible}
 					link={link}
+					filters={filters}
 				/>
 			);
 		});

@@ -10,7 +10,10 @@ const initialFilters = {
 	potential: false,
 	dead: false,
 	"potential-hub": false,
-	"potential-supernode": false
+	"potential-supernode": false,
+	sector: true,
+	backbone: false,
+	changelog: false
 };
 
 const { nodes, links, sectors, nodesById } = addGraphData(
@@ -79,12 +82,12 @@ function addGraphData(nodes, links, sectors) {
 	// Add status, types and links to nodes
 	nodes.forEach(node => {
 		if (node.notes) {
-			node.notes = String(node.notes)
+			node.notes = String(node.notes);
 		}
 		nodesById[node.id] = node;
+		node.links = linksByNodeId[node.id];
 		node.status = nodeStatus(node);
 		node.type = nodeType(node);
-		node.links = linksByNodeId[node.id];
 	});
 
 	// Add status and nodes to links
@@ -132,6 +135,10 @@ function getCounts(nodes, kiosks) {
 
 		if (type.indexOf("potential-") > -1 || type === "dead") {
 			counts["potential"] = (counts["potential"] || 0) + 1;
+		}
+
+		if (node.sectors) {
+			counts["sector"] = (counts["sector"] || 0) + node.sectors.length;
 		}
 	});
 	counts.linkNYC = kiosks.length;

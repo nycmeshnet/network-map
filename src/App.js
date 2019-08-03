@@ -8,6 +8,7 @@ import SearchBar from "./components/SearchBar";
 import MapView from "./components/MapView";
 import Filters from "./components/Filters";
 import Stats from "./components/Stats";
+import Log from "./components/Log";
 
 import rootReducer from "./reducers";
 
@@ -19,22 +20,28 @@ class App extends Component {
 			<DocumentTitle title="Map - NYC Mesh">
 				<Provider store={store}>
 					<Router basename="/map">
-						<div className="h-100 w-100 flex flex-column sans-serif">
-							<div className="h-100 w-100 relative flex flex-column">
-								<div className="absolute pa2 z-999 search-bar">
-									<SearchBar />
+						<div className="helvetica">
+							<div
+								id="map-stats-container"
+								className="h-100 w-100 flex flex-column"
+							>
+								<div className="h-100 w-100 relative flex flex-column">
+									<div className="absolute pa2 z-999 search-bar">
+										<SearchBar />
+									</div>
+									<Route
+										path="/nodes/:nodeId"
+										children={({ match }) => (
+											<MapView match={match} />
+										)}
+									/>
+									<div className="absolute bottom-0 left-0 ma2">
+										<Route component={Filters} />
+									</div>
 								</div>
-								<Route
-									path="/nodes/:nodeId"
-									children={({ match }) => (
-										<MapView match={match} />
-									)}
-								/>
-								<div className="absolute bottom-0 left-0 ma2">
-									<Route component={Filters} />
-								</div>
+								<Route path="/" component={Stats} />
 							</div>
-							<Route path="/" component={Stats} />
+							<Route path="/" component={Log} />
 						</div>
 					</Router>
 				</Provider>

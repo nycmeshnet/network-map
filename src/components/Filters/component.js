@@ -4,7 +4,7 @@ import { icons } from "../NodeName";
 import { nodeColors } from "../../utils";
 
 // This should be defined elsewhere
-const labels = ["active", "supernode", "hub", "potential", "linkNYC"];
+const labels = ["active", "supernode", "hub", "omni", "potential", "linkNYC"];
 const displayLabels = { active: "node" };
 
 export default class Filters extends PureComponent {
@@ -21,13 +21,17 @@ export default class Filters extends PureComponent {
 		return (
 			<div className="bg-white f5 shadow-2">
 				<div role="group" className="dib pa2">
-					<div>{labels.map(label => this.renderFilter(label))}</div>
+					<div>
+						{labels.map(label => this.renderFilter(label))}
+						{this.renderFilter("sector")}
+						{this.renderFilter("backbone", true)}
+					</div>
 				</div>
 			</div>
 		);
 	}
 
-	renderFilter(label) {
+	renderFilter(label, hideCount) {
 		const { filters, statusCounts, toggleFilter } = this.props;
 		const enabled = filters[label] || filters[label] === undefined;
 		const opacity = enabled ? "o-100" : "o-50 strike";
@@ -55,8 +59,10 @@ export default class Filters extends PureComponent {
 					>
 						{icons[label]}
 					</div>
+
 					<span className="ml1">
-						{labelName} ({statusCounts[label] || 0})
+						{labelName}{" "}
+						{hideCount ? null : `(${statusCounts[label] || 0})`}
 					</span>
 				</label>
 				<input
