@@ -16,7 +16,6 @@ export default class Log extends PureComponent {
 
 		links.forEach(link => {
 			if (link.status === "active" && (!link.fromNode || !link.toNode)) {
-				console.log(link);
 				return;
 			}
 		});
