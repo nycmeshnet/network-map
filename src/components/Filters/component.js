@@ -12,9 +12,9 @@ const labels = [
 	"hub",
 	"supernode",
 	"potential",
-	"linkNYC"
+	"linkNYC",
+	"sector"
 ];
-const displayLabels = { active: "node" };
 
 export default class Filters extends PureComponent {
 	componentDidMount() {
@@ -32,7 +32,6 @@ export default class Filters extends PureComponent {
 				<div role="group" className="dib pa2">
 					<div className="flex flex-column-ns flex-wrap justify-between">
 						{labels.map(label => this.renderFilter(label))}
-						{this.renderFilter("sector")}
 						{this.renderFilter("backbone", true)}
 					</div>
 				</div>
@@ -44,12 +43,22 @@ export default class Filters extends PureComponent {
 		const { filters, statusCounts, toggleFilter } = this.props;
 		const enabled = filters[label] || filters[label] === undefined;
 		const opacity = enabled ? "o-100" : "o-50 strike";
-		const sanitizedLabel = label.replace("-", " ");
-		const labelName = displayLabels[sanitizedLabel] || sanitizedLabel;
 
-		function renderLabel(label) {
+		function getLabel(label) {
 			if (label === "vpn") return "VPN";
 			return label;
+		}
+
+		// Hack to change omni color based on backbone filter
+		function getIcon(label) {
+			if (label === "omni" && !filters.backbone) return icons.active;
+			if (label === "vpn" && filters.backbone) return icons.vpn;
+			return icons[label];
+		}
+
+		function getColor(label) {
+			if (label === "omni" && !filters.backbone) return nodeColors.active;
+			return nodeColors[label];
 		}
 
 		return (
@@ -60,7 +69,7 @@ export default class Filters extends PureComponent {
 			>
 				<label
 					htmlFor={label}
-					style={{ color: nodeColors[label] }}
+					style={{ color: getColor(label) }}
 					className="ttc pointer flex items-center nowrap"
 				>
 					<div
@@ -72,11 +81,11 @@ export default class Filters extends PureComponent {
 						}}
 						className="h2 w2 flex items-center justify-center"
 					>
-						{icons[label]}
+						{getIcon(label)}
 					</div>
 
 					<span className="ml1">
-						{renderLabel(label)}{" "}
+						{getLabel(label)}{" "}
 						{hideCount ? null : `(${statusCounts[label] || 0})`}
 					</span>
 				</label>

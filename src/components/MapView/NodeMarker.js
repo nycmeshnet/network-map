@@ -5,7 +5,7 @@ import Sector from "./Sector";
 class NodeMarker extends PureComponent {
 	render() {
 		const { node, visible, onClick } = this.props;
-		const { id, notes, coordinates, memberNodes } = node;
+		const { notes, coordinates, memberNodes } = node;
 		const [lng, lat] = coordinates;
 		const title = `${memberNodes.map(n => n.id).join(", ")}${
 			notes ? ` - ${notes}` : ""
