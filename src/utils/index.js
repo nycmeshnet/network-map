@@ -53,7 +53,7 @@ export const nodeColors = {
 	"potential-supernode": "#777",
 	potential: "#777",
 	supernode: "#007aff",
-	sectors: "#007aff",
+	sector: "#007aff",
 	backbone: "#007aff"
 };
 

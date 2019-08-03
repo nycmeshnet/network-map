@@ -24,7 +24,7 @@ export default class Sector extends PureComponent {
 			return null;
 		}
 
-		if (!filters.sectors) return null;
+		if (!filters.sector) return null;
 
 		const [lng, lat] = sector.node.coordinates;
 		const { radius, azimuth, width } = sector;

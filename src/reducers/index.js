@@ -11,7 +11,7 @@ const initialFilters = {
 	dead: false,
 	"potential-hub": false,
 	"potential-supernode": false,
-	sectors: true,
+	sector: true,
 	backbone: false,
 	changelog: false
 };
@@ -138,7 +138,7 @@ function getCounts(nodes, kiosks) {
 		}
 
 		if (node.sectors) {
-			counts["sectors"] = (counts["sectors"] || 0) + node.sectors.length;
+			counts["sector"] = (counts["sector"] || 0) + node.sectors.length;
 		}
 	});
 	counts.linkNYC = kiosks.length;

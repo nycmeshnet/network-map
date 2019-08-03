@@ -23,7 +23,7 @@ export default class Filters extends PureComponent {
 				<div role="group" className="dib pa2">
 					<div>
 						{labels.map(label => this.renderFilter(label))}
-						{this.renderFilter("sectors")}
+						{this.renderFilter("sector")}
 						{this.renderFilter("backbone", true)}
 						{this.renderFilter("changelog", true)}
 					</div>
