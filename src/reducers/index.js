@@ -80,6 +80,9 @@ function addGraphData(nodes, links, sectors) {
 		linksByNodeId[link.to].push(link);
 	});
 
+	// Group nodes at same lat / lng
+	const mergedNodes = {};
+
 	// Add status, types and links to nodes
 	nodes.forEach(node => {
 		if (node.notes) {
@@ -88,7 +91,9 @@ function addGraphData(nodes, links, sectors) {
 		nodesById[node.id] = node;
 		node.links = linksByNodeId[node.id];
 		node.status = nodeStatus(node);
-		node.type = nodeType(node);
+		const key = geoKey(node);
+		mergedNodes[key] = mergedNodes[key] || [];
+		mergedNodes[key].push(node);
 	});
 
 	// Add status and nodes to links
@@ -123,6 +128,10 @@ function addGraphData(nodes, links, sectors) {
 		});
 
 		node.connectedNodes = connectedNodes;
+		node.memberNodes = mergedNodes[geoKey(node)];
+
+		node.type = nodeType(node);
+		nodesById[node.id] = node;
 	});
 
 	return { nodes, links, sectors, nodesById };
@@ -144,6 +153,13 @@ function getCounts(nodes, kiosks) {
 	});
 	counts.linkNYC = kiosks.length;
 	return counts;
+}
+
+function geoKey(node) {
+	const precision = 3;
+	const [lat, lng] = node.coordinates;
+	const key = lat.toFixed(precision) + "-" + lng.toFixed(precision);
+	return key;
 }
 
 export default reducer;

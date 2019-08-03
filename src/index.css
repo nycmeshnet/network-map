@@ -10,7 +10,7 @@ body {
 }
 
 #map-stats-container {
-	height: calc(100vh - 96px);
+	height: calc(100vh - 64px);
 }
 
 a {
@@ -23,6 +23,10 @@ a {
 @media screen and (max-width: 40em) {
 	.search-bar {
 		width: 100%;
+	}
+
+	#map-stats-container {
+		height: calc(100vh - 64px);
 	}
 }
 
