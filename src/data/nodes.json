@@ -42032,7 +42032,9 @@
     ],
     "requestDate": 1564777527824,
     "roofAccess": false,
-    "panoramas": []
+    "panoramas": [
+      "3754.jpg"
+    ]
   },
   {
     "id": 3755,
@@ -42064,6 +42066,39 @@
       32
     ],
     "requestDate": 1564789872837,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 3758,
+    "coordinates": [
+      -73.9341671,
+      40.7098681,
+      17
+    ],
+    "requestDate": 1564791419901,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 3759,
+    "coordinates": [
+      -73.9565092,
+      40.8169423,
+      71
+    ],
+    "requestDate": 1564791991955,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 3760,
+    "coordinates": [
+      -74.0014553,
+      40.7416505,
+      30
+    ],
+    "requestDate": 1564802410246,
     "roofAccess": true,
     "panoramas": []
   }
