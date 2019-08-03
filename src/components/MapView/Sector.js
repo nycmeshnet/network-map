@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import { Polygon } from "react-google-maps";
 import { sectorColors } from "../../utils";
 
-const MAX_OPACITY = 0.3;
+const MAX_OPACITY = 0.2;
 const INTERVAL_PER_MILE = 10;
 
 const visibilityMultipliers = {
@@ -18,11 +18,13 @@ const zIndexes = {
 
 export default class Sector extends PureComponent {
 	render() {
-		const { sector, visibility } = this.props;
-		const { status } = sector
+		const { sector, visibility, filters } = this.props;
+		const { status } = sector;
 		if (status !== "active" && status !== "potential") {
-			return null
+			return null;
 		}
+
+		if (!filters.sectors) return null;
 
 		const [lng, lat] = sector.node.coordinates;
 		const { radius, azimuth, width } = sector;
