@@ -771,6 +771,11 @@
     "installDate": 1544072400000
   },
   {
+    "from": 1916,
+    "to": 713,
+    "status": "planned"
+  },
+  {
     "from": 1922,
     "to": 227,
     "status": "active"
@@ -1549,11 +1554,6 @@
     "status": "planned"
   },
   {
-    "from": 2911,
-    "to": 2463,
-    "status": "planned"
-  },
-  {
     "from": 2827,
     "to": 944,
     "status": "planned"
@@ -1944,11 +1944,6 @@
   {
     "from": 2803,
     "to": 2673,
-    "status": "planned"
-  },
-  {
-    "from": 3021,
-    "to": 944,
     "status": "planned"
   },
   {
