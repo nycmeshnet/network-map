@@ -4,7 +4,15 @@ import { icons } from "../NodeName";
 import { nodeColors } from "../../utils";
 
 // This should be defined elsewhere
-const labels = ["active", "supernode", "hub", "omni", "potential", "linkNYC"];
+const labels = [
+	"active",
+	"vpn",
+	"hub",
+	"omni",
+	"supernode",
+	"potential",
+	"linkNYC"
+];
 const displayLabels = { active: "node" };
 
 export default class Filters extends PureComponent {
@@ -37,6 +45,12 @@ export default class Filters extends PureComponent {
 		const opacity = enabled ? "o-100" : "o-50 strike";
 		const sanitizedLabel = label.replace("-", " ");
 		const labelName = displayLabels[sanitizedLabel] || sanitizedLabel;
+
+		function renderLabel(label) {
+			if (label === "vpn") return "VPN";
+			return label;
+		}
+
 		return (
 			<div
 				key={label}
@@ -61,7 +75,7 @@ export default class Filters extends PureComponent {
 					</div>
 
 					<span className="ml1">
-						{labelName}{" "}
+						{renderLabel(label)}{" "}
 						{hideCount ? null : `(${statusCounts[label] || 0})`}
 					</span>
 				</label>
