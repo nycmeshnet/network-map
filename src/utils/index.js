@@ -1,19 +1,20 @@
 export function nodeType(node) {
-	const { status, notes, panoramas, links, sectors } = node;
+	const { status, notes, panoramas } = node;
 	const lowerNotes = notes ? notes.toLowerCase() : null;
 	const isSupernode = notes && lowerNotes.indexOf("supernode") > -1;
 	const isHub = notes && lowerNotes.indexOf("hub") > -1;
 	const notPotentialHub = !notes || lowerNotes.indexOf("hub?") === -1;
 	const isOmni = notes && lowerNotes.indexOf("omni") > -1;
+	const isKiosk = notes && lowerNotes.indexOf("kiosk") > -1;
+	const isVPN = notes && lowerNotes.indexOf("rem") > -1;
 	const hasPanoramas = panoramas && panoramas.length;
-	const hasSectors = sectors && sectors.length;
 
 	if (status === "active") {
 		if (isSupernode) return "supernode";
-		if ((isHub && notPotentialHub) || hasSectors) return "hub";
+		if (isHub && notPotentialHub) return "hub";
 		if (isOmni) return "omni";
-		if (!links || !links.filter(l => l.status === "active").length)
-			return "vpn";
+		if (isKiosk) return "kiosk";
+		if (isVPN) return "vpn";
 		return "active";
 	}
 
@@ -48,8 +49,8 @@ export const nodeColors = {
 	dead: "#aaa",
 	hub: "rgb(90,200,250)",
 	omni: "rgb(90,200,250)",
-	kiosk: "#01a2eb",
 	linkNYC: "#01a2eb",
+	kiosk: "rgb(255,45,85)",
 	"potential-hub": "#777",
 	"potential-supernode": "#777",
 	potential: "#777",

@@ -4,11 +4,20 @@ export default class Stats extends PureComponent {
 	render() {
 		const { statusCounts, filters } = this.props;
 		if (!statusCounts) return null;
-		const { active, hub, supernode, omni, vpn } = statusCounts;
+		const {
+			active = 0,
+			hub = 0,
+			supernode = 0,
+			omni = 0,
+			vpn = 0,
+			kiosk = 0
+		} = statusCounts;
 		const totalCount = filters.backbone
 			? active + hub + supernode + omni
-			: active + hub + supernode + omni + vpn;
-		const nodeCount = filters.backbone ? active : active + omni + vpn;
+			: active + hub + supernode + omni + vpn + kiosk;
+		const nodeCount = filters.backbone
+			? active
+			: active + omni + vpn + kiosk;
 		const hubCount = filters.backbone ? hub + omni : hub;
 		return (
 			<div className="ph3 bg-white">

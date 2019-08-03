@@ -5,9 +5,11 @@ import Sector from "./Sector";
 class NodeMarker extends PureComponent {
 	render() {
 		const { node, visible, onClick } = this.props;
-		const { id, notes, coordinates } = node;
+		const { id, notes, coordinates, memberNodes } = node;
 		const [lng, lat] = coordinates;
-		const title = `${id}${notes ? ` - ${notes}` : ""}`;
+		const title = `${memberNodes.map(n => n.id).join(", ")}${
+			notes ? ` - ${notes}` : ""
+		}`;
 		const { icon, zIndex } = this.getMarkerProps();
 		const adjustedZ = this.getZIndex(zIndex);
 		const opacity = this.getOpacity();
@@ -89,14 +91,14 @@ class NodeMarker extends PureComponent {
 					url: "/img/map/hub.svg",
 					anchor: { x: 10, y: 10 }
 				},
-				zIndex: 99
+				zIndex: 93
 			};
 
 		if (type === "omni") {
 			const url = filters.backbone
 				? "/img/map/omni.svg"
 				: "/img/map/active.svg";
-			const zIndex = filters.backbone ? 99 : 98;
+			const zIndex = filters.backbone ? 92 : 91;
 			return {
 				icon: {
 					url,
@@ -117,7 +119,22 @@ class NodeMarker extends PureComponent {
 					url,
 					anchor
 				},
-				zIndex: 98
+				zIndex: 90
+			};
+		}
+
+		if (type === "kiosk") {
+			const url = filters.backbone
+				? "/img/map/vpn.svg"
+				: "/img/map/active.svg";
+			const anchor = filters.backbone ? { x: 5, y: 5 } : { x: 7, y: 7 };
+
+			return {
+				icon: {
+					url,
+					anchor
+				},
+				zIndex: 90
 			};
 		}
 
@@ -127,7 +144,7 @@ class NodeMarker extends PureComponent {
 					url: "/img/map/active.svg",
 					anchor: { x: 7, y: 7 }
 				},
-				zIndex: 98
+				zIndex: 91
 			};
 
 		if (type === "potential-supernode")
@@ -136,7 +153,7 @@ class NodeMarker extends PureComponent {
 					url: "/img/map/potential-supernode.svg",
 					anchor: { x: 14, y: 14 }
 				},
-				zIndex: 89
+				zIndex: 83
 			};
 
 		if (type === "potential-hub")
@@ -145,7 +162,7 @@ class NodeMarker extends PureComponent {
 					url: "/img/map/potential-hub.svg",
 					anchor: { x: 10, y: 10 }
 				},
-				zIndex: 88
+				zIndex: 82
 			};
 
 		if (type === "potential")
@@ -154,7 +171,7 @@ class NodeMarker extends PureComponent {
 					url: "/img/map/potential.svg",
 					anchor: { x: 7, y: 7 }
 				},
-				zIndex: 87
+				zIndex: 81
 			};
 
 		return {
@@ -162,7 +179,7 @@ class NodeMarker extends PureComponent {
 				url: "/img/map/dead.svg",
 				anchor: { x: 5, y: 5 }
 			},
-			zIndex: 86
+			zIndex: 80
 		};
 	}
 }

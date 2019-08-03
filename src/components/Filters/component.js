@@ -7,8 +7,9 @@ import { nodeColors } from "../../utils";
 const labels = [
 	"active",
 	"vpn",
-	"hub",
+	"kiosk",
 	"omni",
+	"hub",
 	"supernode",
 	"potential",
 	"linkNYC"
@@ -29,7 +30,7 @@ export default class Filters extends PureComponent {
 		return (
 			<div className="bg-white f5 shadow-2">
 				<div role="group" className="dib pa2">
-					<div>
+					<div className="flex flex-column-ns flex-wrap justify-between">
 						{labels.map(label => this.renderFilter(label))}
 						{this.renderFilter("sector")}
 						{this.renderFilter("backbone", true)}
@@ -54,7 +55,7 @@ export default class Filters extends PureComponent {
 		return (
 			<div
 				key={label}
-				className={`pointer flex items-center justify-between ${opacity}`}
+				className={`w-auto-ns w-50 pointer flex items-center justify-between ${opacity}`}
 				onClick={() => toggleFilter(label)}
 			>
 				<label

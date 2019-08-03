@@ -9,21 +9,8 @@ export default class Log extends PureComponent {
 	};
 
 	render() {
-		const { links, filters, toggleFilter } = this.props;
+		const { links } = this.props;
 		const { limit } = this.state;
-		// if (!filters.changelog)
-		// 	return (
-		// 		<div className="ph3 bg-white">
-		// 			<div className="measure-wide center pt3 flex justify-center">
-		// 				<button
-		// 					className="bg-transparent bn pa0 gray mb4 pointer"
-		// 					onClick={() => toggleFilter("changelog", true)}
-		// 				>
-		// 					Show changelog
-		// 				</button>
-		// 			</div>
-		// 		</div>
-		// 	);
 
 		const sortedLinks = links
 			.filter(link => link.status === "active" && link.installDate)
@@ -92,7 +79,7 @@ export default class Log extends PureComponent {
 					})}
 					{limit < sortedLinks.length ? (
 						<button
-							className="mv4 center bg-transparent bn pa0 blue pointer"
+							className="mt4 center bg-transparent bn pa0 blue pointer"
 							onClick={() => this.setState({ limit: limit * 2 })}
 						>
 							Show more
