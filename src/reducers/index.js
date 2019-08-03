@@ -6,6 +6,7 @@ import sectorData from "../data/sectors";
 import kiosks from "../data/kiosks";
 
 const initialFilters = {
+	vpn: true,
 	linkNYC: false,
 	potential: false,
 	dead: false,
