@@ -9,15 +9,15 @@ export default class Stats extends PureComponent {
 			hub = 0,
 			supernode = 0,
 			omni = 0,
-			vpn = 0,
+			remote = 0,
 			kiosk = 0
 		} = statusCounts;
 		const totalCount = filters.backbone
 			? active + hub + supernode + omni
-			: active + hub + supernode + omni + vpn + kiosk;
+			: active + hub + supernode + omni + remote + kiosk;
 		const nodeCount = filters.backbone
 			? active
-			: active + omni + vpn + kiosk;
+			: active + omni + remote + kiosk;
 		const hubCount = filters.backbone ? hub + omni : hub;
 		return (
 			<div className="ph3 bg-white">

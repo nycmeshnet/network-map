@@ -108,9 +108,9 @@ class NodeMarker extends PureComponent {
 			};
 		}
 
-		if (type === "vpn") {
+		if (type === "remote") {
 			const url = filters.backbone
-				? "/img/map/vpn.svg"
+				? "/img/map/remote.svg"
 				: "/img/map/active.svg";
 			const anchor = filters.backbone ? { x: 5, y: 5 } : { x: 7, y: 7 };
 
@@ -125,7 +125,7 @@ class NodeMarker extends PureComponent {
 
 		if (type === "kiosk") {
 			const url = filters.backbone
-				? "/img/map/vpn.svg"
+				? "/img/map/remote.svg"
 				: "/img/map/active.svg";
 			const anchor = filters.backbone ? { x: 5, y: 5 } : { x: 7, y: 7 };
 

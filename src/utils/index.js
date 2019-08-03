@@ -6,7 +6,7 @@ export function nodeType(node) {
 	const notPotentialHub = !notes || lowerNotes.indexOf("hub?") === -1;
 	const isOmni = notes && lowerNotes.indexOf("omni") > -1;
 	const isKiosk = notes && lowerNotes.indexOf("kiosk") > -1;
-	const isVPN = notes && lowerNotes.indexOf("rem") > -1;
+	const isRemote = notes && lowerNotes.indexOf("rem") > -1;
 	const hasPanoramas = panoramas && panoramas.length;
 
 	if (status === "active") {
@@ -14,7 +14,7 @@ export function nodeType(node) {
 		if (isHub && notPotentialHub) return "hub";
 		if (isOmni) return "omni";
 		if (isKiosk) return "kiosk";
-		if (isVPN) return "vpn";
+		if (isRemote) return "remote";
 		return "active";
 	}
 
@@ -45,7 +45,7 @@ export function linkStatus(link) {
 
 export const nodeColors = {
 	active: "rgb(255,45,85)",
-	vpn: "rgb(255,45,85)",
+	remote: "rgb(255,45,85)",
 	dead: "#aaa",
 	hub: "rgb(90,200,250)",
 	omni: "rgb(90,200,250)",

@@ -6,7 +6,7 @@ import { nodeColors } from "../../utils";
 // This should be defined elsewhere
 const labels = [
 	"active",
-	"vpn",
+	"remote",
 	"kiosk",
 	"omni",
 	"hub",
@@ -45,14 +45,13 @@ export default class Filters extends PureComponent {
 		const opacity = enabled ? "o-100" : "o-50 strike";
 
 		function getLabel(label) {
-			if (label === "vpn") return "VPN";
 			return label;
 		}
 
 		// Hack to change omni color based on backbone filter
 		function getIcon(label) {
 			if (label === "omni" && !filters.backbone) return icons.active;
-			if (label === "vpn" && filters.backbone) return icons.vpn;
+			if (label === "remote" && filters.backbone) return icons.remote;
 			return icons[label];
 		}
 
