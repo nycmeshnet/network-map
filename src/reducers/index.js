@@ -156,7 +156,7 @@ function getCounts(nodes, kiosks) {
 }
 
 function geoKey(node) {
-	const precision = 3;
+	const precision = 5;
 	const [lat, lng] = node.coordinates;
 	const key = lat.toFixed(precision) + "-" + lng.toFixed(precision);
 	return key;
