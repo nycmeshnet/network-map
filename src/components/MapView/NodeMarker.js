@@ -44,7 +44,7 @@ class NodeMarker extends PureComponent {
 			if (isFiltered && visibility !== "highlight") {
 				return null;
 			}
-			const key = node.id + sector.azimuth;
+			const key = `${node.id}-${sector.azimuth}-${sector.width}`
 			return (
 				<Sector
 					key={key}

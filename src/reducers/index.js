@@ -10,8 +10,8 @@ const initialFilters = {
 	linkNYC: false,
 	potential: false,
 	dead: false,
-	"potential-hub": false,
-	"potential-supernode": false,
+	"potential-hub": true,
+	"potential-supernode": true,
 	sector: true,
 	backbone: false,
 	changelog: false
@@ -49,8 +49,6 @@ const reducer = (
 				const hasValue = state.filters["potential"] === undefined;
 				const newValue = hasValue ? false : !state.filters["potential"];
 				newFilters["dead"] = newValue;
-				newFilters["potential-hub"] = newValue;
-				newFilters["potential-supernode"] = newValue;
 			}
 			return {
 				...state,
@@ -142,10 +140,6 @@ function getCounts(nodes, kiosks) {
 	nodes.forEach(node => {
 		const { type } = node;
 		counts[type] = (counts[type] || 0) + 1;
-
-		if (type.indexOf("potential-") > -1 || type === "dead") {
-			counts["potential"] = (counts["potential"] || 0) + 1;
-		}
 
 		if (node.sectors) {
 			counts["sector"] = (counts["sector"] || 0) + node.sectors.length;

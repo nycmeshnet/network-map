@@ -12,6 +12,8 @@ const labels = [
 	"hub",
 	"supernode",
 	"potential",
+	"potential-hub",
+	"potential-supernode",
 	"linkNYC",
 	"sector"
 ];
@@ -45,7 +47,7 @@ export default class Filters extends PureComponent {
 		const opacity = enabled ? "o-100" : "o-50 strike";
 
 		function getLabel(label) {
-			return label;
+			return label.replace("-", " ");
 		}
 
 		// Hack to change omni color based on backbone filter

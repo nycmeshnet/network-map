@@ -18,17 +18,19 @@
   },
   {
     "nodeId": 227,
-    "radius": 2,
+    "radius": 1,
     "azimuth": 55,
     "width": 90,
-    "status": "active"
+    "status": "active",
+    "device": "SN1Sector1"
   },
   {
     "nodeId": 227,
     "radius": 0.75,
     "azimuth": 300,
     "width": 90,
-    "status": "active"
+    "status": "active",
+    "device": "SN1Sector2"
   },
   {
     "nodeId": 248,
@@ -78,6 +80,22 @@
     "device": "LBE120"
   },
   {
+    "nodeId": 407,
+    "radius": 1,
+    "azimuth": 164,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120"
+  },
+  {
+    "nodeId": 407,
+    "radius": 1,
+    "azimuth": 328,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120"
+  },
+  {
     "nodeId": 465,
     "radius": 0.3,
     "azimuth": 0,
@@ -100,7 +118,7 @@
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "status": "potential",
+    "status": "active",
     "device": "Omni"
   },
   {
@@ -121,7 +139,7 @@
   },
   {
     "nodeId": 664,
-    "radius": 1,
+    "radius": 0.5,
     "azimuth": 310,
     "width": 120,
     "status": "active",
@@ -165,7 +183,7 @@
     "radius": 0.5,
     "azimuth": 40,
     "width": 120,
-    "status": "abandoned",
+    "status": "active",
     "device": "LBE120"
   },
   {
@@ -173,7 +191,7 @@
     "radius": 0.5,
     "azimuth": 160,
     "width": 120,
-    "status": "abandoned",
+    "status": "active",
     "device": "LBE120"
   },
   {
@@ -181,7 +199,7 @@
     "radius": 0.5,
     "azimuth": 280,
     "width": 120,
-    "status": "abandoned",
+    "status": "active",
     "device": "LBE120"
   },
   {
@@ -189,7 +207,7 @@
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "status": "abandoned",
+    "status": "active",
     "device": "Omni"
   },
   {
@@ -197,7 +215,7 @@
     "radius": 1,
     "azimuth": 45,
     "width": 120,
-    "status": "abandoned",
+    "status": "active",
     "device": "LBE120"
   },
   {
@@ -216,6 +234,22 @@
     "status": "active",
     "device": "Mikrotik120",
     "installDate": 1562299200000
+  },
+  {
+    "nodeId": 1049,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 60,
+    "status": "abandoned",
+    "device": "NSM5"
+  },
+  {
+    "nodeId": 1126,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni"
   },
   {
     "nodeId": 1126,
@@ -406,7 +440,7 @@
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "status": "abandoned",
+    "status": "active",
     "device": "Omni",
     "installDate": 1559361600000
   },
@@ -415,7 +449,7 @@
     "radius": 1,
     "azimuth": 10,
     "width": 120,
-    "status": "abandoned",
+    "status": "active",
     "device": "LBE120",
     "installDate": 1559361600000
   },
@@ -424,7 +458,7 @@
     "radius": 1,
     "azimuth": 120,
     "width": 120,
-    "status": "abandoned",
+    "status": "active",
     "device": "LBE120",
     "installDate": 1559361600000
   },
@@ -433,7 +467,7 @@
     "radius": 1,
     "azimuth": 34,
     "width": 120,
-    "status": "abandoned",
+    "status": "active",
     "device": "LBE120"
   },
   {
@@ -441,7 +475,7 @@
     "radius": 1,
     "azimuth": 324,
     "width": 120,
-    "status": "abandoned",
+    "status": "active",
     "device": "LBE120"
   },
   {
@@ -449,7 +483,7 @@
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "status": "abandoned",
+    "status": "active",
     "device": "Omni"
   },
   {
@@ -484,7 +518,7 @@
     "radius": 1,
     "azimuth": 90,
     "width": 120,
-    "status": "abandoned",
+    "status": "active",
     "device": "LBE120"
   },
   {
@@ -492,7 +526,7 @@
     "radius": 1,
     "azimuth": 330,
     "width": 120,
-    "status": "abandoned",
+    "status": "active",
     "device": "LBE120"
   },
   {
@@ -500,7 +534,7 @@
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "status": "abandoned",
+    "status": "active",
     "device": "Omni"
   },
   {
@@ -509,7 +543,7 @@
     "azimuth": 0,
     "width": 360,
     "status": "potential",
-    "device": "Omni-only",
+    "device": "Omni",
     "installDate": 1562990400000
   },
   {
@@ -562,7 +596,7 @@
     "radius": 0.3,
     "azimuth": 0,
     "width": 360,
-    "status": "abandoned",
+    "status": "active",
     "device": "Omni",
     "installDate": 1548392400000
   },
@@ -592,6 +626,30 @@
     "status": "active",
     "device": "Omni",
     "installDate": 1550638800000
+  },
+  {
+    "nodeId": 2933,
+    "radius": 1,
+    "azimuth": 0,
+    "width": 120,
+    "status": "potential",
+    "device": "LBE120"
+  },
+  {
+    "nodeId": 2933,
+    "radius": 1,
+    "azimuth": 120,
+    "width": 120,
+    "status": "potential",
+    "device": "LBE120"
+  },
+  {
+    "nodeId": 2933,
+    "radius": 1,
+    "azimuth": 240,
+    "width": 120,
+    "status": "potential",
+    "device": "LBE120"
   },
   {
     "nodeId": 2933,
@@ -777,7 +835,7 @@
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "status": "abandoned",
+    "status": "active",
     "device": "Omni",
     "installDate": 1562472000000
   },
@@ -858,7 +916,7 @@
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "status": "potential",
+    "status": "active",
     "device": "Omni",
     "installDate": 1561694400000
   },
@@ -886,7 +944,7 @@
     "azimuth": 0,
     "width": 360,
     "status": "potential",
-    "device": "Omni-only",
+    "device": "Omni",
     "installDate": 1563076800000
   },
   {
@@ -912,7 +970,7 @@
     "radius": 0.5,
     "azimuth": 0,
     "width": 360,
-    "status": "abandoned",
+    "status": "potential",
     "device": "Omni",
     "installDate": 1568174400000
   },
@@ -933,5 +991,347 @@
     "status": "potential",
     "device": "Omni",
     "installDate": 1564718400000
+  },
+  {
+    "nodeId": 2794,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1564718400000
+  },
+  {
+    "nodeId": 3646,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1565409600000
+  },
+  {
+    "nodeId": 2364,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1565668800000
+  },
+  {
+    "nodeId": 3864,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1566014400000
+  },
+  {
+    "nodeId": 3971,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1566100800000
+  },
+  {
+    "nodeId": 3715,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1566273600000
+  },
+  {
+    "nodeId": 3782,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1566619200000
+  },
+  {
+    "nodeId": 3575,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1566705600000
+  },
+  {
+    "nodeId": 3162,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1566792000000
+  },
+  {
+    "nodeId": 3939,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1567310400000
+  },
+  {
+    "nodeId": 3790,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1567310400000
+  },
+  {
+    "nodeId": 4106,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1567483200000
+  },
+  {
+    "nodeId": 4018,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1567828800000
+  },
+  {
+    "nodeId": 1440,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1567828800000
+  },
+  {
+    "nodeId": 3652,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1567915200000
+  },
+  {
+    "nodeId": 3461,
+    "radius": 1.5,
+    "azimuth": 55,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120",
+    "installDate": 1568174400000
+  },
+  {
+    "nodeId": 3461,
+    "radius": 1.5,
+    "azimuth": 145,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120",
+    "installDate": 1568174400000
+  },
+  {
+    "nodeId": 3461,
+    "radius": 1.5,
+    "azimuth": 235,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120",
+    "installDate": 1568174400000
+  },
+  {
+    "nodeId": 3461,
+    "radius": 1.5,
+    "azimuth": 335,
+    "width": 120,
+    "status": "active",
+    "device": "LBE120",
+    "installDate": 1568174400000
+  },
+  {
+    "nodeId": 3461,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1568174400000
+  },
+  {
+    "nodeId": 4266,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1568347200000
+  },
+  {
+    "nodeId": 4270,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1568520000000
+  },
+  {
+    "nodeId": 4192,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "potential",
+    "device": "Omni",
+    "installDate": 1568520000000
+  },
+  {
+    "nodeId": 4402,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1571457600000
+  },
+  {
+    "nodeId": 4507,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1571457600000
+  },
+  {
+    "nodeId": 4459,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1571457600000
+  },
+  {
+    "nodeId": 4530,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1571457600000
+  },
+  {
+    "nodeId": 2111,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1572753600000
+  },
+  {
+    "nodeId": 3654,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1572753600000
+  },
+  {
+    "nodeId": 2404,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1573275600000
+  },
+  {
+    "nodeId": 4343,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1573275600000
+  },
+  {
+    "nodeId": 3682,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1573880400000
+  },
+  {
+    "nodeId": 4585,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1573102800000
+  },
+  {
+    "nodeId": 48,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1574571600000
+  },
+  {
+    "nodeId": 2101,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1572930000000
+  },
+  {
+    "nodeId": 4739,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1575781200000
+  },
+  {
+    "nodeId": 4128,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1576299600000
+  },
+  {
+    "nodeId": 3716,
+    "radius": 0.5,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1576472400000
   }
 ]

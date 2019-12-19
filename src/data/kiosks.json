@@ -93,7 +93,7 @@
       -73.95786908,
       40.71777024
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-000031",
@@ -941,7 +941,7 @@
       -73.98133262,
       40.74153614
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-000278",
@@ -1261,7 +1261,7 @@
       -73.97047,
       40.756577
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-000342",
@@ -1269,7 +1269,7 @@
       -73.97008839,
       40.75711322
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-000344",
@@ -2157,7 +2157,7 @@
       -73.98037405,
       40.7450706
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-000650",
@@ -2165,7 +2165,7 @@
       -73.9799974,
       40.74559121
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-000652",
@@ -2229,7 +2229,7 @@
       -73.97327607,
       40.7550884
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-000684",
@@ -4440,6 +4440,14 @@
     "status": "active"
   },
   {
+    "id": "LINK-001607",
+    "coordinates": [
+      -73.96657376,
+      40.80464541
+    ],
+    "status": "installed"
+  },
+  {
     "id": "LINK-001608",
     "coordinates": [
       -73.96678806,
@@ -5701,7 +5709,7 @@
       -73.93878768,
       40.84449293
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-004809",
@@ -6549,7 +6557,7 @@
       -74.007972,
       40.724065
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-008200",
@@ -6621,7 +6629,7 @@
       -73.989008,
       40.730578
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-008224",
@@ -7293,7 +7301,7 @@
       -74.003811,
       40.753067
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-010615",
@@ -7373,7 +7381,7 @@
       -73.96397801,
       40.75629836
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-010664",
@@ -7501,7 +7509,7 @@
       -74.00523226,
       40.72780341
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-010726",
@@ -7509,7 +7517,7 @@
       -73.99663087,
       40.71903975
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-010733",
@@ -7557,7 +7565,7 @@
       -73.96782908,
       40.75617415
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-010755",
@@ -7573,7 +7581,7 @@
       -73.97976183,
       40.73925317
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-010764",
@@ -7781,7 +7789,7 @@
       -74.00567121,
       40.73827778
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-010846",
@@ -7789,7 +7797,7 @@
       -73.99820283,
       40.76065999
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-010852",
@@ -7845,7 +7853,7 @@
       -74.00528546,
       40.73879783
     ],
-    "status": "pending"
+    "status": "active"
   },
   {
     "id": "LINK-010871",
@@ -7890,8 +7898,8 @@
   {
     "id": "LINK-010896",
     "coordinates": [
-      -73.98511899,
-      40.72764987
+      -73.9851189882664,
+      40.7276498658094
     ],
     "status": "active"
   },
@@ -8101,7 +8109,7 @@
       -73.99938138,
       40.7391558
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-011008",
@@ -8205,7 +8213,7 @@
       -73.97946572,
       40.73964666
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-011080",
@@ -8725,7 +8733,7 @@
       -74.00387699,
       40.73290856
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-011378",
@@ -9397,7 +9405,7 @@
       -74.00677065,
       40.72301338
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-012249",
@@ -9413,7 +9421,7 @@
       -74.00627426,
       40.725666
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-012255",
@@ -9517,7 +9525,7 @@
       -73.96459519,
       40.75581174
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-012360",
@@ -9581,7 +9589,7 @@
       -73.96997867,
       40.76621551
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-012396",
@@ -9637,7 +9645,7 @@
       -73.97785338,
       40.77888904
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-012454",
@@ -9661,7 +9669,7 @@
       -73.978561,
       40.740894
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-012462",
@@ -9765,7 +9773,7 @@
       -73.98096599,
       40.78094218
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-012539",
@@ -9853,7 +9861,7 @@
       -73.97684323,
       40.74365854
     ],
-    "status": "pending"
+    "status": "active"
   },
   {
     "id": "LINK-012573",
@@ -9877,7 +9885,7 @@
       -73.97907885,
       40.74061156
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-012579",
@@ -10101,7 +10109,7 @@
       -73.98272283,
       40.74498361
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-012679",
@@ -10125,7 +10133,7 @@
       -73.99336769,
       40.76233629
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-012689",
@@ -10317,7 +10325,7 @@
       -73.96597025,
       40.75375106
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-012792",
@@ -10429,7 +10437,7 @@
       -73.9658397,
       40.75877707
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-012863",
@@ -10530,8 +10538,8 @@
   {
     "id": "LINK-012986",
     "coordinates": [
-      -73.98706811,
-      40.68759361
+      -73.9870681131993,
+      40.6875936081062
     ],
     "status": "active"
   },
@@ -10813,7 +10821,7 @@
       -73.9905922,
       40.75122432
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-013290",
@@ -11093,7 +11101,7 @@
       -73.912837,
       40.76909552
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-013527",
@@ -11221,7 +11229,7 @@
       -73.95806217,
       40.76519297
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-013674",
@@ -11301,7 +11309,7 @@
       -73.98014812,
       40.73913724
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-013713",
@@ -11309,7 +11317,7 @@
       -73.979693,
       40.73976238
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-013714",
@@ -11317,7 +11325,7 @@
       -73.97932655,
       40.73985154
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-013718",
@@ -11349,7 +11357,7 @@
       -73.970116,
       40.752476
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-013736",
@@ -11613,7 +11621,7 @@
       -73.9966041,
       40.73788645
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-013881",
@@ -11845,7 +11853,7 @@
       -73.99079235,
       40.74611567
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-014096",
@@ -11856,7 +11864,7 @@
     "status": "active"
   },
   {
-    "id": "LINK-014133",
+    "id": "LINK-014133_Old",
     "coordinates": [
       -73.91297466,
       40.75607269
@@ -11880,6 +11888,14 @@
     "status": "active"
   },
   {
+    "id": "LINK-014174",
+    "coordinates": [
+      -73.9930158102286,
+      40.758482405837
+    ],
+    "status": "installed"
+  },
+  {
     "id": "LINK-014179",
     "coordinates": [
       -73.98618292,
@@ -11888,7 +11904,7 @@
     "status": "active"
   },
   {
-    "id": "LINK-014181",
+    "id": "LINK-014181_Old",
     "coordinates": [
       -73.9738668,
       40.78944465
@@ -11909,7 +11925,7 @@
       -73.97905068,
       40.77657343
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-014190",
@@ -11933,7 +11949,7 @@
       -73.95460936,
       40.76950566
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-014206",
@@ -12053,7 +12069,7 @@
       -74.00202234,
       40.72433792
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-014303",
@@ -12165,7 +12181,7 @@
       -73.86858881,
       40.75748463
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-014433",
@@ -12317,7 +12333,7 @@
       -73.97882096,
       40.74509981
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-014625",
@@ -12629,7 +12645,7 @@
       -73.957793,
       40.671355
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-018095",
@@ -13605,7 +13621,7 @@
       -73.96827641,
       40.75501502
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-020495",
@@ -13800,7 +13816,7 @@
     "status": "active"
   },
   {
-    "id": "LINK-020657",
+    "id": "LINK-020657_Old",
     "coordinates": [
       -73.99158104,
       40.68479895
@@ -14021,7 +14037,7 @@
       -73.921267,
       40.763207
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-020965",
@@ -14197,7 +14213,7 @@
       -73.96244,
       40.7099
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-021162",
@@ -14285,7 +14301,7 @@
       -73.95531649,
       40.707581
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-021248",
@@ -14349,7 +14365,7 @@
       -73.96853381,
       40.71098811
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-021303",
@@ -14645,7 +14661,7 @@
       -73.83136082,
       40.70753055
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-021536",
@@ -14893,7 +14909,7 @@
       -73.95781959,
       40.64860712
     ],
-    "status": "installed"
+    "status": "active"
   },
   {
     "id": "LINK-022296",
