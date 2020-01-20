@@ -1,5 +1,7 @@
 # Node Map
 
+![Screenshot of a web browser running the network map. There is a map with red and blue circles and blue lines to represent nodes and the links between them.](/image.png?raw=true "Screenshot")
+
 ### Getting Started
 
 #### `yarn`
