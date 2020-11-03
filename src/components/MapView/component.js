@@ -21,10 +21,10 @@ const options = {
 	fullscreenControl: false,
 	streetViewControl: false,
 	zoomControlOptions: {
-		position: "9"
+		position: 9
 	},
 	mapTypeControlOptions: {
-		position: "3"
+		position: 3
 	},
 	backgroundColor: "#f5f5f5",
 	gestureHandling: "greedy",
