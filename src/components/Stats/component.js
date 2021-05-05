@@ -10,15 +10,17 @@ export default class Stats extends PureComponent {
 			supernode = 0,
 			omni = 0,
 			remote = 0,
-			kiosk = 0
+			kiosk = 0,
+			ap = 55
 		} = statusCounts;
 		const totalCount = filters.backbone
 			? active + hub + supernode + omni
-			: active + hub + supernode + omni + remote + kiosk;
+			: active + hub + supernode + omni + remote + kiosk + ap;
 		const nodeCount = filters.backbone
 			? active
 			: active + omni + remote + kiosk;
 		const hubCount = filters.backbone ? hub + omni : hub;
+		const apCount = ap;
 		return (
 			<div className="ph3 bg-white">
 				<div className="measure-wide center pt4-ns pb3-ns pt3">
@@ -27,18 +29,22 @@ export default class Stats extends PureComponent {
 							{totalCount}{" "}
 							<span className="mid-gray db f4 fw5">Total</span>
 						</span>
+						<span className="mr3 mb3 orange">
+							{apCount}{" "}
+							<span className="mid-gray db f4 fw5">AP</span>
+						</span>
 						<span className="mr3 mb3 pink">
 							{nodeCount}{" "}
-							<span className="mid-gray db f4 fw5">Nodes</span>
+							<span className="mid-gray db f4 fw5">Non-hub</span>
 						</span>
 						<span className="mr3 mb3 light-blue">
 							{hubCount}{" "}
-							<span className="mid-gray db f4 fw5">Hubs</span>
+							<span className="mid-gray db f4 fw5">Hub</span>
 						</span>
 						<span className="mr3 mb3 blue">
 							{supernode}{" "}
 							<span className="mid-gray db f4 fw5">
-								Supernodes
+								SN
 							</span>
 						</span>
 					</div>
