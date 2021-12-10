@@ -92,6 +92,15 @@ function addGraphData(nodes, links, sectors) {
 		const key = geoKey(node);
 		mergedNodes[key] = mergedNodes[key] || [];
 		mergedNodes[key].push(node);
+
+		// Make sure values are all strings
+		if (node.name) {
+			node.name = String(node.name)
+		}
+
+		if (node.notes) {
+			node.notes = String(node.notes)
+		}
 	});
 
 	// Add status and nodes to links
