@@ -211,10 +211,10 @@ class SearchBar extends PureComponent {
 				.filter(node => {
 					const notesMatch =
 						node.notes &&
-						node.notes.toLowerCase().indexOf(lowerSearch) > -1;
+						String(node.notes).toLowerCase().indexOf(lowerSearch) > -1;
 					const nameMatches =
 						node.name &&
-						node.name.toLowerCase().indexOf(lowerSearch) > -1;
+						String(node.name).toLowerCase().indexOf(lowerSearch) > -1;
 					return notesMatch || nameMatches;
 				})
 				.sort((a, b) => {
