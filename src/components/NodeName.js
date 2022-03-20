@@ -130,6 +130,21 @@ export const icons = {
 			</g>
 		</svg>
 	),
+	pop: (
+		<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+			<g>
+				<circle
+					opacity="1"
+					fill="#FFFF00"
+					strokeWidth="4"
+					stroke="#fff"
+					r="10"
+					cy="14"
+					cx="14"
+				/>
+			</g>
+		</svg>
+	),
 	linkNYC: (
 		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
 			<circle
