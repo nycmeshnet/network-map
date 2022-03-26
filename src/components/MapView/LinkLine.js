@@ -68,8 +68,17 @@ export default class LinkLine extends PureComponent {
 		const { status } = link;
 
 		const defaultOpacity = 1;
+		var activeColor = "#007aff";
+		
+		// added fiber and vpn color 2022-03-26
+		if (status === "fiber"){
+			activeColor = "#f6be00"
+		} else if (status === "vpn"){
+			activeColor = "#cc99ff"
+		}
 
-		if (status === "active") {
+
+		if (status === "fiber"||status === "vpn"||status === "active") {
 			if (filters.backbone && !isBackbone(link))
 				return {
 					strokeColor: "#ff2d55",
@@ -78,7 +87,7 @@ export default class LinkLine extends PureComponent {
 				};
 
 			return {
-				strokeColor: "#007aff",
+				strokeColor: activeColor,
 				strokeOpacity: defaultOpacity,
 				zIndex: 20
 			};
