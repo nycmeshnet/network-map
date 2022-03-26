@@ -35,11 +35,11 @@ export function linkStatus(link) {
 	const { status, fromNode, toNode } = link;
 	if (!fromNode || !toNode) return "invalid";
 	if (
-		status === "active" &&
+		(status === "active" || status === "fiber" || status === "vpn") &&
 		fromNode.status === "active" &&
 		toNode.status === "active"
 	)
-		return "active";
+		return status; // changed from: return "active" 2022-03-26
 	return "potential";
 }
 
