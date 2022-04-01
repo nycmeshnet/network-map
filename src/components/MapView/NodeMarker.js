@@ -94,6 +94,15 @@ class NodeMarker extends PureComponent {
 				zIndex: 100
 			};
 
+		if (type === "ap")
+			return {
+				icon: {
+					url: "/img/map/ap.svg",
+					anchor: { x: 10, y: 10 }
+				},
+				zIndex: 100
+			};
+
 		if (type === "hub")
 			return {
 				icon: {

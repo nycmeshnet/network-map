@@ -128916,5 +128916,207 @@
     "requestDate": 1648790607408,
     "roofAccess": true,
     "panoramas": []
+  },
+  {
+    "id": 11840,
+    "coordinates": [
+      -73.9573837,
+      40.6745877,
+      47
+    ],
+    "requestDate": 1648831692249,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 11841,
+    "coordinates": [
+      -73.9970671,
+      40.6611079,
+      29
+    ],
+    "requestDate": 1648832042877,
+    "roofAccess": false,
+    "panoramas": []
+  },
+  {
+    "id": 11842,
+    "coordinates": [
+      -73.9626876,
+      40.6752695,
+      52
+    ],
+    "requestDate": 1648833246552,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 11843,
+    "name": "131 Community Center 1",
+    "coordinates": [
+      -73.986221,
+      40.7160738,
+      94
+    ],
+    "requestDate": 1648838321948,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11844,
+    "name": "131 Community Center 2",
+    "coordinates": [
+      -73.9913147,
+      40.7173907,
+      85
+    ],
+    "requestDate": 1648838321948,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11845,
+    "name": "131 J-pipe outdoor",
+    "status": "Installed",
+    "coordinates": [
+      -73.9846,
+      40.71601,
+      94
+    ],
+    "requestDate": 1648838322000,
+    "installDate": 1596254400000,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11846,
+    "name": "T7",
+    "coordinates": [
+      -73.986221,
+      40.7160738,
+      94
+    ],
+    "requestDate": 1648838322000,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11847,
+    "name": "T19",
+    "coordinates": [
+      -73.986221,
+      40.7160738,
+      94
+    ],
+    "requestDate": 1648838322000,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11848,
+    "name": "T9",
+    "coordinates": [
+      -73.986221,
+      40.7160738,
+      94
+    ],
+    "requestDate": 1648838322000,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11849,
+    "name": "T24",
+    "coordinates": [
+      -73.986221,
+      40.7160738,
+      94
+    ],
+    "requestDate": 1648838417999,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11850,
+    "name": "T28",
+    "coordinates": [
+      -73.986221,
+      40.7160738,
+      94
+    ],
+    "requestDate": 1648838458968,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11851,
+    "name": "410 25th Fl 1",
+    "coordinates": [
+      -73.986221,
+      40.7160738,
+      94
+    ],
+    "requestDate": 1648838495195,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11852,
+    "name": "410 25th Fl 2",
+    "coordinates": [
+      -73.986221,
+      40.7160738,
+      94
+    ],
+    "requestDate": 1648838528906,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11853,
+    "name": "410 25th Fl 1",
+    "coordinates": [
+      -73.986221,
+      40.7160738,
+      94
+    ],
+    "requestDate": 1648838581651,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11854,
+    "name": "410 25th Fl 2",
+    "coordinates": [
+      -73.986221,
+      40.7160738,
+      94
+    ],
+    "requestDate": 1648839095503,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11855,
+    "coordinates": [
+      -73.9494383,
+      40.6782261,
+      37
+    ],
+    "requestDate": 1648841488647,
+    "roofAccess": true,
+    "panoramas": []
   }
 ]

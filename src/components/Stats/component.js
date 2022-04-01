@@ -4,6 +4,7 @@ export default class Stats extends PureComponent {
 	render() {
 		const { statusCounts, filters } = this.props;
 		if (!statusCounts) return null;
+		
 		const {
 			active = 0,
 			hub = 0,
@@ -11,16 +12,17 @@ export default class Stats extends PureComponent {
 			omni = 0,
 			remote = 0,
 			kiosk = 0,
-			ap = 55
+			ap = 0,
+			apFudge = 55
 		} = statusCounts;
 		const totalCount = filters.backbone
 			? active + hub + supernode + omni
-			: active + hub + supernode + omni + remote + kiosk + ap;
+			: active + hub + supernode + omni + remote + kiosk + ap + apFudge;
 		const nodeCount = filters.backbone
 			? active
 			: active + omni + remote + kiosk;
 		const hubCount = filters.backbone ? hub + omni : hub;
-		const apCount = ap;
+		const apCount = ap + apFudge - 7 //faking this until all APs are in spreadsheet
 		return (
 			<div className="ph3 bg-white">
 				<div className="measure-wide center pt4-ns pb3-ns pt3">
