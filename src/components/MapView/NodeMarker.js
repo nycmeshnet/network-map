@@ -85,6 +85,15 @@ class NodeMarker extends PureComponent {
 				zIndex: 100
 			};
 
+		if (type === "pop")
+			return {
+				icon: {
+					url: "/img/map/pop.svg",
+					anchor: { x: 14, y: 14 }
+				},
+				zIndex: 100
+			};
+
 		if (type === "hub")
 			return {
 				icon: {

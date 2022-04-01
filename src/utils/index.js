@@ -2,6 +2,7 @@ export function nodeType(node) {
 	const { status, notes, panoramas } = node;
 	const lowerNotes = notes ? notes.toLowerCase() : null;
 	const isSupernode = notes && lowerNotes.indexOf("supernode") > -1;
+	const isPop = notes && lowerNotes.indexOf("pop") > -1;
 	const isHub = notes && lowerNotes.indexOf("hub") > -1;
 	const notPotentialHub = !notes || lowerNotes.indexOf("hub?") === -1;
 	const isOmni = notes && lowerNotes.indexOf("omni") > -1;
@@ -11,6 +12,7 @@ export function nodeType(node) {
 
 	if (status === "active") {
 		if (isSupernode) return "supernode";
+		if (isPop) return "pop";
 		if (isHub && notPotentialHub) return "hub";
 		if (isOmni) return "omni";
 		if (isKiosk) return "kiosk";
@@ -55,6 +57,7 @@ export const nodeColors = {
 	"potential-supernode": "#777",
 	potential: "#777",
 	supernode: "#007aff",
+	pop: "#F6BE00",
 	sector: "#007aff",
 	backbone: "#007aff"
 };
