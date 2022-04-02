@@ -13,7 +13,7 @@ export default class Stats extends PureComponent {
 			remote = 0,
 			kiosk = 0,
 			ap = 0,
-			apFudge = 47
+			apFudge = 42
 		} = statusCounts;
 		const totalCount = filters.backbone
 			? active + hub + supernode + omni
@@ -22,7 +22,7 @@ export default class Stats extends PureComponent {
 			? active
 			: active + omni + remote + kiosk;
 		const hubCount = filters.backbone ? hub + omni : hub;
-		const apCount = ap + apFudge - 4 //faking this until all APs are in spreadsheet
+		const apCount = ap + apFudge - 3 //faking this until all APs are in spreadsheet
 		return (
 			<div className="ph3 bg-white">
 				<div className="measure-wide center pt4-ns pb3-ns pt3">

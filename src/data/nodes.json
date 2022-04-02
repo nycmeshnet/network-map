@@ -4248,22 +4248,6 @@
     "panoramas": []
   },
   {
-    "id": 399,
-    "coordinates": [
-      -73.9805223,
-      40.6759275,
-      34
-    ],
-    "requestDate": 1473207314884,
-    "roofAccess": true,
-    "panoramas": [
-      "399.jpg",
-      "399a.jpg",
-      "399b.jpg",
-      "399c.jpg"
-    ]
-  },
-  {
     "id": 400,
     "coordinates": [
       -73.982598,
@@ -124347,13 +124331,16 @@
   },
   {
     "id": 11446,
+    "status": "Installed",
     "coordinates": [
       -73.946705,
       40.6777858,
       32
     ],
     "requestDate": 1644425969925,
+    "installDate": 1648872000000,
     "roofAccess": true,
+    "notes": "Omni",
     "panoramas": [
       "11446.jpg",
       "11446a.jpg",
@@ -128961,9 +128948,9 @@
     "name": "131 Community Center 1",
     "status": "Installed",
     "coordinates": [
-      -73.986221,
-      40.7160738,
-      94
+      -73.98454840000001,
+      40.7161517,
+      85
     ],
     "requestDate": 1648838321948,
     "installDate": 1590465600000,
@@ -128975,9 +128962,9 @@
     "id": 11844,
     "name": "131 Community Center 2",
     "coordinates": [
-      -73.9913147,
-      40.7173907,
-      85
+      -73.98454840000001,
+      40.7161517,
+      24
     ],
     "requestDate": 1648838321948,
     "roofAccess": false,
@@ -129065,7 +129052,7 @@
     "status": "Installed",
     "coordinates": [
       -73.986221,
-      40.7160738,
+      40.715840218508866,
       94
     ],
     "requestDate": 1648838458968,
@@ -129077,12 +129064,14 @@
   {
     "id": 11851,
     "name": "410 25th Fl 1",
+    "status": "Installed",
     "coordinates": [
       -73.986221,
       40.7160738,
       94
     ],
     "requestDate": 1648838495195,
+    "installDate": 1619582400000,
     "roofAccess": false,
     "notes": "AP",
     "panoramas": []
@@ -129090,12 +129079,14 @@
   {
     "id": 11852,
     "name": "410 25th Fl 2",
+    "status": "Installed",
     "coordinates": [
       -73.986221,
       40.7160738,
       94
     ],
     "requestDate": 1648838528906,
+    "installDate": 1619668800000,
     "roofAccess": false,
     "notes": "AP",
     "panoramas": []
@@ -129103,12 +129094,14 @@
   {
     "id": 11853,
     "name": "410 25th Fl 1",
+    "status": "Installed",
     "coordinates": [
       -73.986221,
       40.7160738,
       94
     ],
     "requestDate": 1648838581651,
+    "installDate": 1619755200000,
     "roofAccess": false,
     "notes": "AP",
     "panoramas": []
@@ -129116,12 +129109,14 @@
   {
     "id": 11854,
     "name": "410 25th Fl 2",
+    "status": "Installed",
     "coordinates": [
       -73.986221,
       40.7160738,
       94
     ],
     "requestDate": 1648839095503,
+    "installDate": 1619841600000,
     "roofAccess": false,
     "notes": "AP",
     "panoramas": []
