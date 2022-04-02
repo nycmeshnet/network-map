@@ -4225,10 +4225,11 @@
   },
   {
     "id": 397,
+    "status": "NN assigned",
     "coordinates": [
-      -73.926272,
-      40.701533,
-      29
+      -73.899631,
+      40.7007509,
+      35
     ],
     "requestDate": 1473094505347,
     "roofAccess": false,
@@ -17212,13 +17213,16 @@
   },
   {
     "id": 1571,
+    "status": "Installed",
     "coordinates": [
       -73.9844262,
       40.7155733,
       93
     ],
     "requestDate": 1522025319405,
+    "installDate": 1648785600000,
     "roofAccess": false,
+    "notes": "ONU 1933-12D",
     "panoramas": [
       "1571.jpg"
     ]
@@ -123035,14 +123039,16 @@
   },
   {
     "id": 11336,
-    "status": "Not Contacted Yet",
+    "status": "Installed",
     "coordinates": [
       -73.98454840000001,
       40.7161517,
       85
     ],
     "requestDate": 1643135479512,
+    "installDate": 1648785600000,
     "roofAccess": true,
+    "notes": "ONU 1934-13D",
     "panoramas": []
   },
   {
@@ -128953,12 +128959,14 @@
   {
     "id": 11843,
     "name": "131 Community Center 1",
+    "status": "Installed",
     "coordinates": [
       -73.986221,
       40.7160738,
       94
     ],
     "requestDate": 1648838321948,
+    "installDate": 1590465600000,
     "roofAccess": false,
     "notes": "AP",
     "panoramas": []
@@ -128978,7 +128986,7 @@
   },
   {
     "id": 11845,
-    "name": "131 J-pipe outdoor",
+    "name": "131 outdoor AP",
     "status": "Installed",
     "coordinates": [
       -73.9846,
@@ -128986,7 +128994,7 @@
       94
     ],
     "requestDate": 1648838322000,
-    "installDate": 1596254400000,
+    "installDate": 1590465600000,
     "roofAccess": false,
     "notes": "AP",
     "panoramas": []
@@ -128994,12 +129002,14 @@
   {
     "id": 11846,
     "name": "T7",
+    "status": "Installed",
     "coordinates": [
       -73.986221,
       40.7160738,
       94
     ],
     "requestDate": 1648838322000,
+    "installDate": 1590552000000,
     "roofAccess": false,
     "notes": "AP",
     "panoramas": []
@@ -129007,12 +129017,14 @@
   {
     "id": 11847,
     "name": "T19",
+    "status": "Installed",
     "coordinates": [
       -73.986221,
       40.7160738,
       94
     ],
     "requestDate": 1648838322000,
+    "installDate": 1590638400000,
     "roofAccess": false,
     "notes": "AP",
     "panoramas": []
@@ -129020,12 +129032,14 @@
   {
     "id": 11848,
     "name": "T9",
+    "status": "Installed",
     "coordinates": [
       -73.986221,
       40.7160738,
       94
     ],
     "requestDate": 1648838322000,
+    "installDate": 1590724800000,
     "roofAccess": false,
     "notes": "AP",
     "panoramas": []
@@ -129033,12 +129047,14 @@
   {
     "id": 11849,
     "name": "T24",
+    "status": "Installed",
     "coordinates": [
       -73.986221,
       40.7160738,
       94
     ],
     "requestDate": 1648838417999,
+    "installDate": 1590811200000,
     "roofAccess": false,
     "notes": "AP",
     "panoramas": []
@@ -129046,12 +129062,14 @@
   {
     "id": 11850,
     "name": "T28",
+    "status": "Installed",
     "coordinates": [
       -73.986221,
       40.7160738,
       94
     ],
     "requestDate": 1648838458968,
+    "installDate": 1590897600000,
     "roofAccess": false,
     "notes": "AP",
     "panoramas": []
@@ -129116,6 +129134,85 @@
       37
     ],
     "requestDate": 1648841488647,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 11856,
+    "coordinates": [
+      -73.99969519999999,
+      40.7280985,
+      41
+    ],
+    "requestDate": 1648843421535,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 11857,
+    "coordinates": [
+      -73.9494383,
+      40.6782261,
+      37
+    ],
+    "requestDate": 1648844544846,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 11858,
+    "coordinates": [
+      -73.93113699999999,
+      40.6977434,
+      5
+    ],
+    "requestDate": 1648848315825,
+    "roofAccess": true,
+    "panoramas": [
+      "11858.jpg"
+    ]
+  },
+  {
+    "id": 11859,
+    "coordinates": [
+      -73.958897,
+      40.67207870000001,
+      65
+    ],
+    "requestDate": 1648912678817,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 11860,
+    "coordinates": [
+      -73.9473021,
+      40.716535,
+      14
+    ],
+    "requestDate": 1648918695680,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 11861,
+    "coordinates": [
+      -73.9181804,
+      40.676119,
+      40
+    ],
+    "requestDate": 1648919071177,
+    "roofAccess": true,
+    "panoramas": []
+  },
+  {
+    "id": 11862,
+    "coordinates": [
+      -73.95797859999999,
+      40.6411009,
+      34
+    ],
+    "requestDate": 1648921879756,
     "roofAccess": true,
     "panoramas": []
   }

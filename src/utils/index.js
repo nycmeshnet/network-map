@@ -3,7 +3,7 @@ export function nodeType(node) {
 	const lowerNotes = notes ? notes.toLowerCase() : null;
 	const isSupernode = notes && lowerNotes.indexOf("supernode") > -1;
 	const isPop = notes && lowerNotes.indexOf("pop") > -1;
-	const isAP = notes && lowerNotes.indexOf("ap") > -1;
+	const isAP = notes && notes.indexOf("AP") > -1;
 	const isHub = notes && lowerNotes.indexOf("hub") > -1;
 	const notPotentialHub = !notes || lowerNotes.indexOf("hub?") === -1;
 	const isOmni = notes && lowerNotes.indexOf("omni") > -1;
