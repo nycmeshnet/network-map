@@ -31,7 +31,7 @@ export default class Stats extends PureComponent {
 							{totalCount}{" "}
 							<span className="mid-gray db f4 fw5">Total</span>
 						</span>
-						<span className="mr3 mb3 orange">
+						<span className="mr3 mb3 green">
 							{apCount}{" "}
 							<span className="mid-gray db f4 fw5">AP</span>
 						</span>
