@@ -129345,5 +129345,89 @@
     "requestDate": 1649017927730,
     "roofAccess": false,
     "panoramas": []
+  },
+  {
+    "id": 11875,
+    "name": "East",
+    "status": "Installed",
+    "coordinates": [
+      -73.94067559999999,
+      40.6961389,
+      17
+    ],
+    "requestDate": 1649012283000,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11876,
+    "name": "Southeast",
+    "status": "Installed",
+    "coordinates": [
+      -73.93880279999999,
+      40.6959891,
+      17
+    ],
+    "requestDate": 1649098683000,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11877,
+    "name": "South",
+    "status": "Installed",
+    "coordinates": [
+      -73.9396725,
+      40.6958641,
+      17
+    ],
+    "requestDate": 1649185083000,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11878,
+    "name": "Southwest",
+    "status": "Installed",
+    "coordinates": [
+      -73.938852,
+      40.6959045,
+      17
+    ],
+    "requestDate": 1649271483000,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11879,
+    "name": "West",
+    "status": "Installed",
+    "coordinates": [
+      -73.9397023,
+      40.6962121,
+      17
+    ],
+    "requestDate": 1649357883000,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
+  },
+  {
+    "id": 11880,
+    "name": "Northeast",
+    "status": "Installed",
+    "coordinates": [
+      -73.9388249,
+      40.6962367,
+      17
+    ],
+    "requestDate": 1649444283000,
+    "roofAccess": false,
+    "notes": "AP",
+    "panoramas": []
   }
 ]
