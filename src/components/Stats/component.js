@@ -13,7 +13,7 @@ export default class Stats extends PureComponent {
 			remote = 0,
 			kiosk = 0,
 			ap = 0,
-			apFudge = 36
+			apFudge = 33
 		} = statusCounts;
 		const totalCount = filters.backbone
 			? active + hub + supernode + omni
