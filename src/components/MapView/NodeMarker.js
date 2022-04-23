@@ -100,7 +100,7 @@ class NodeMarker extends PureComponent {
 					url: "/img/map/ap.svg",
 					anchor: { x: 10, y: 10 }
 				},
-				zIndex: 100
+				zIndex: 90
 			};
 
 		if (type === "hub")
