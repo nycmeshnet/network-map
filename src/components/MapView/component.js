@@ -170,7 +170,7 @@ class MapView extends Component {
 				loadingElement={<div className="h-100 flex flex-column" />}
 				containerElement={<div className="h-100 flex flex-column" />}
 				mapElement={<div className="h-100 flex flex-column" />}
-				googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNClp7oJsw-eleEoR3-PQKV23tpeW-FpE"
+				googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkBIy80YVhu7nYjVweruALNkpgFKquIEw"
 			>
 				{this.renderLinks()}
 				{this.renderKiosks()}
