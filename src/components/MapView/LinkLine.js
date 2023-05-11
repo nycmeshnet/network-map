@@ -76,7 +76,7 @@ export default class LinkLine extends PureComponent {
 		} else if (status === "vpn"){
 			activeColor = "#cc99ff"
 		} else if (status === "60GHz"){
-			activeColor = "##03fcf8"
+			activeColor = "#03fcf8"
 		}
 
 
