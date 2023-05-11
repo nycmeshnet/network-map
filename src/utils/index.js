@@ -30,7 +30,7 @@ export function nodeType(node) {
 
 export function nodeStatus(node) {
 	const { status } = node;
-	const isActive = status === "Installed";
+	const isActive = (status === "Installed" || status === "NN Assigned");
 	return isActive ? "active" : "potential";
 }
 
@@ -39,7 +39,7 @@ export function linkStatus(link) {
 	const { status, fromNode, toNode } = link;
 	if (!fromNode || !toNode) return "invalid";
 	if (
-		(status === "active" || status === "fiber" || status === "vpn") &&
+		(status === "active" || status === "fiber" || status === "vpn" || status === "60GHz") &&
 		fromNode.status === "active" &&
 		toNode.status === "active"
 	)
