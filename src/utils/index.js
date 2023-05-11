@@ -21,7 +21,7 @@ export function nodeType(node) {
 		if (isRemote) return "remote";
 		return "active";
 	}
-
+	if (status === "NN assigned") return "NN assigned"
 	if (isSupernode) return "potential-supernode";
 	if (isHub) return "potential-hub";
 	if (hasPanoramas) return "potential";
@@ -50,6 +50,7 @@ export function linkStatus(link) {
 export const nodeColors = {
 	active: "rgb(255,45,85)",
 	remote: "rgb(255,45,85)",
+	"NN assigned": "rgb(255,166,201)",
 	dead: "#aaa",
 	hub: "rgb(90,200,250)",
 	omni: "rgb(90,200,250)",
