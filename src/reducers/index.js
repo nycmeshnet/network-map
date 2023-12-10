@@ -5,9 +5,13 @@ import linkData from "../data/links";
 import sectorData from "../data/sectors";
 import kiosks from "../data/kiosks";
 
+const kiosks5g = kiosks.filter(kiosk => kiosk.type.toLowerCase().includes("5g"));
+const kiosksClassic = kiosks.filter(kiosk => !kiosk.type.toLowerCase().includes("5g"));
+
 const initialFilters = {
 	remote: true,
-	linkNYC: false,
+	"linkNYC Classic": false,
+	"linkNYC 5G": false,
 	potential: false,
 	dead: false,
 	"potential-hub": true,
@@ -28,10 +32,11 @@ const reducer = (
 		nodes,
 		links,
 		sectors,
-		kiosks: initialFilters.linkNYC === false ? [] : kiosks,
+		kiosksClassic: initialFilters["linkNYC Classic"] === false ? [] : kiosksClassic,
+		kiosks5g: initialFilters["linkNYC 5G"] === false ? [] : kiosks5g,
 		nodesById,
 		filters: initialFilters,
-		statusCounts: getCounts(nodes, kiosks),
+		statusCounts: getCounts(nodes, kiosksClassic, kiosks5g),
 		showFilters: false
 	},
 	action
@@ -53,7 +58,9 @@ const reducer = (
 			return {
 				...state,
 				filters: newFilters,
-				kiosks: newFilters.linkNYC === false ? [] : kiosks
+				kiosksClassic: newFilters["linkNYC Classic"] === false ? [] : kiosksClassic,
+				kiosks5g: newFilters["linkNYC 5G"] === false ? [] : kiosks5g,
+				
 			};
 		case "TOGGLE_FILTERS":
 			return {
@@ -144,7 +151,7 @@ function addGraphData(nodes, links, sectors) {
 	return { nodes, links, sectors, nodesById };
 }
 
-function getCounts(nodes, kiosks) {
+function getCounts(nodes, kiosksClassic, kiosks5g) {
 	const counts = {};
 	nodes.forEach(node => {
 		const { type } = node;
@@ -154,7 +161,8 @@ function getCounts(nodes, kiosks) {
 			counts["sector"] = (counts["sector"] || 0) + node.sectors.length;
 		}
 	});
-	counts.linkNYC = kiosks.length;
+	counts["linkNYC Classic"] = kiosksClassic.length;
+	counts["linkNYC 5G"] = kiosks5g.length;
 	return counts;
 }
 
