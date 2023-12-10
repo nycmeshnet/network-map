@@ -14,7 +14,8 @@ const labels = [
 	"potential",
 	"potential-hub",
 	"potential-supernode",
-	"linkNYC",
+	"linkNYC Classic",
+	"linkNYC 5G",
 	"sector"
 ];
 
@@ -23,7 +24,6 @@ export default class Filters extends PureComponent {
 		const { toggleFilter } = this.props;
 		const params = new URLSearchParams(this.props.location.search);
 		if (params.get("potential") === "true") toggleFilter("potential");
-		if (params.get("linknyc") === "true") toggleFilter("linkNYC");
 	}
 
 	render() {

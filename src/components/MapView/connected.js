@@ -5,7 +5,8 @@ const mapStateToProps = (state, ownProps) => ({
 	nodes: state.nodes,
 	links: state.links,
 	sectors: state.sectors,
-	kiosks: state.kiosks,
+	kiosksClassic: state.kiosksClassic,
+	kiosks5g: state.kiosks5g,
 	filters: state.filters
 });
 

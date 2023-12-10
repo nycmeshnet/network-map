@@ -170,11 +170,11 @@ class MapView extends Component {
 				loadingElement={<div className="h-100 flex flex-column" />}
 				containerElement={<div className="h-100 flex flex-column" />}
 				mapElement={<div className="h-100 flex flex-column" />}
-				// googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkBIy80YVhu7nYjVweruALNkpgFKquIEw"
-				googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5HWodOyFI3NQJpnFUS-C2ZuDH5xBCGI4"
+				googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkBIy80YVhu7nYjVweruALNkpgFKquIEw"
 			>
 				{this.renderLinks()}
 				{this.renderKiosks()}
+				{this.renderKiosks5g()}
 				{this.renderNodes()}
 				{this.renderNodeDetail()}
 				<Route
@@ -255,11 +255,18 @@ class MapView extends Component {
 	}
 
 	renderKiosks() {
-		const { kiosks } = this.props;
-		return kiosks.map(kiosk => (
-			<KioskMarker key={kiosk.id} kiosk={kiosk} />
+		const { kiosksClassic } = this.props;
+		return kiosksClassic.map(kiosk => (
+			<KioskMarker key={kiosk.id} kiosk={kiosk} isClassic={true} />
 		));
 	}
+
+	renderKiosks5g() {
+		const { kiosks5g } = this.props;
+		return kiosks5g.map(kiosk => (
+			<KioskMarker key={kiosk.id} kiosk={kiosk} isClassic={false} />
+		));
+	}	
 
 	renderNodeDetail() {
 		const { match } = this.props;

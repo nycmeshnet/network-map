@@ -130,7 +130,7 @@ export const icons = {
 			</g>
 		</svg>
 	),
-	linkNYC: (
+	"linkNYC Classic": (
 		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
 			<circle
 				cx="10"
@@ -139,6 +139,19 @@ export const icons = {
 				stroke="white"
 				strokeWidth="0"
 				fill="#01a2eb"
+				opacity="1"
+			/>
+		</svg>
+	),
+	"linkNYC 5G": (
+		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+			<circle
+				cx="10"
+				cy="10"
+				r="3"
+				stroke="white"
+				strokeWidth="0"
+				fill="#fcba03"
 				opacity="1"
 			/>
 		</svg>
