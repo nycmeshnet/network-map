@@ -27,6 +27,51 @@
     "installDate": 1556942400000
   },
   {
+    "nodeId": 136,
+    "radius": 0.3,
+    "azimuth": 0,
+    "width": 120,
+    "status": "active",
+    "device": "mAnt19",
+    "installDate": 1696478400000
+  },
+  {
+    "nodeId": 155,
+    "radius": 0.3,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1616299200000
+  },
+  {
+    "nodeId": 155,
+    "radius": 1,
+    "azimuth": 0,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1616299200000
+  },
+  {
+    "nodeId": 155,
+    "radius": 1,
+    "azimuth": 180,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1616299200000
+  },
+  {
+    "nodeId": 219,
+    "radius": 0.3,
+    "azimuth": 0,
+    "width": 180,
+    "status": "active",
+    "device": "wAP 60Gx3",
+    "installDate": 1653796800000
+  },
+  {
     "nodeId": 227,
     "radius": 1,
     "azimuth": 55,
@@ -39,8 +84,80 @@
     "radius": 0.75,
     "azimuth": 300,
     "width": 90,
-    "status": "active",
+    "status": "abandoned",
     "device": "SN1Sector2"
+  },
+  {
+    "nodeId": 231,
+    "radius": 1,
+    "azimuth": 0,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1686542400000
+  },
+  {
+    "nodeId": 231,
+    "radius": 1,
+    "azimuth": 90,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1686542400000
+  },
+  {
+    "nodeId": 231,
+    "radius": 1,
+    "azimuth": 180,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1686542400000
+  },
+  {
+    "nodeId": 231,
+    "radius": 1,
+    "azimuth": 270,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1686542400000
+  },
+  {
+    "nodeId": 295,
+    "radius": 3,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1633233600000
+  },
+  {
+    "nodeId": 295,
+    "radius": 1,
+    "azimuth": 65,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1633233600000
+  },
+  {
+    "nodeId": 295,
+    "radius": 1,
+    "azimuth": 185,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1633233600000
+  },
+  {
+    "nodeId": 295,
+    "radius": 1,
+    "azimuth": 305,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1633233600000
   },
   {
     "nodeId": 303,
@@ -81,7 +198,7 @@
     "radius": 1,
     "azimuth": 256,
     "width": 120,
-    "status": "active",
+    "status": "abandoned",
     "device": "LAP-120",
     "installDate": 1595649600000
   },
@@ -116,6 +233,33 @@
     "width": 360,
     "status": "active",
     "device": "Omni"
+  },
+  {
+    "nodeId": 426,
+    "radius": 1,
+    "azimuth": 350,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1663041600000
+  },
+  {
+    "nodeId": 511,
+    "radius": 1,
+    "azimuth": 25,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1686369600000
+  },
+  {
+    "nodeId": 511,
+    "radius": 1,
+    "azimuth": 250,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1686369600000
   },
   {
     "nodeId": 659,
@@ -214,6 +358,42 @@
     "device": "LAP-120"
   },
   {
+    "nodeId": 898,
+    "radius": 1,
+    "azimuth": 29,
+    "width": 120,
+    "status": "active",
+    "device": "LiteAP GPS",
+    "installDate": 1640667600000
+  },
+  {
+    "nodeId": 898,
+    "radius": 1,
+    "azimuth": 119,
+    "width": 120,
+    "status": "active",
+    "device": "LiteAP GPS",
+    "installDate": 1640667600000
+  },
+  {
+    "nodeId": 898,
+    "radius": 1,
+    "azimuth": 209,
+    "width": 120,
+    "status": "active",
+    "device": "LiteAP GPS",
+    "installDate": 1640667600000
+  },
+  {
+    "nodeId": 898,
+    "radius": 1,
+    "azimuth": 299,
+    "width": 120,
+    "status": "active",
+    "device": "LiteAP GPS",
+    "installDate": 1640667600000
+  },
+  {
     "nodeId": 944,
     "radius": 0.3,
     "azimuth": 0,
@@ -290,42 +470,6 @@
     "width": 360,
     "status": "potential",
     "device": "Omni"
-  },
-  {
-    "nodeId": 9891,
-    "radius": 3,
-    "azimuth": 0,
-    "width": 360,
-    "status": "active",
-    "device": "Omni",
-    "installDate": 1633233600000
-  },
-  {
-    "nodeId": 9891,
-    "radius": 1,
-    "azimuth": 65,
-    "width": 120,
-    "status": "active",
-    "device": "LAP-120",
-    "installDate": 1633233600000
-  },
-  {
-    "nodeId": 9891,
-    "radius": 1,
-    "azimuth": 185,
-    "width": 120,
-    "status": "active",
-    "device": "LAP-120",
-    "installDate": 1633233600000
-  },
-  {
-    "nodeId": 9891,
-    "radius": 1,
-    "azimuth": 305,
-    "width": 120,
-    "status": "active",
-    "device": "LAP-120",
-    "installDate": 1633233600000
   },
   {
     "nodeId": 1340,
@@ -423,7 +567,7 @@
   {
     "nodeId": 1417,
     "radius": 1,
-    "azimuth": 120,
+    "azimuth": 100,
     "width": 120,
     "status": "active",
     "device": "LAP-120"
@@ -431,7 +575,7 @@
   {
     "nodeId": 1417,
     "radius": 1,
-    "azimuth": 280,
+    "azimuth": 300,
     "width": 120,
     "status": "active",
     "device": "LAP-120"
@@ -781,33 +925,6 @@
     "installDate": 1548392400000
   },
   {
-    "nodeId": 3606,
-    "radius": 0.3,
-    "azimuth": 0,
-    "width": 360,
-    "status": "active",
-    "device": "Omni",
-    "installDate": 1638075600000
-  },
-  {
-    "nodeId": 3606,
-    "radius": 1,
-    "azimuth": 135,
-    "width": 120,
-    "status": "active",
-    "device": "LAP-120",
-    "installDate": 1638075600000
-  },
-  {
-    "nodeId": 3606,
-    "radius": 1,
-    "azimuth": 225,
-    "width": 120,
-    "status": "active",
-    "device": "LAP-120",
-    "installDate": 1638075600000
-  },
-  {
     "nodeId": 3461,
     "radius": 1,
     "azimuth": 55,
@@ -851,6 +968,42 @@
     "status": "active",
     "device": "Omni",
     "installDate": 1568174400000
+  },
+  {
+    "nodeId": 3606,
+    "radius": 0.3,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1638075600000
+  },
+  {
+    "nodeId": 3606,
+    "radius": 1,
+    "azimuth": 135,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1638075600000
+  },
+  {
+    "nodeId": 3606,
+    "radius": 1,
+    "azimuth": 225,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1638075600000
+  },
+  {
+    "nodeId": 4507,
+    "radius": 0.3,
+    "azimuth": 180,
+    "width": 120,
+    "status": "active",
+    "device": "mANT19",
+    "installDate": 1702098000000
   },
   {
     "nodeId": 4801,
@@ -905,6 +1058,24 @@
     "status": "active",
     "device": "Omni",
     "installDate": 1574398800000
+  },
+  {
+    "nodeId": 5283,
+    "radius": 0.3,
+    "azimuth": 0,
+    "width": 360,
+    "status": "active",
+    "device": "Omni",
+    "installDate": 1574398800000
+  },
+  {
+    "nodeId": 5283,
+    "radius": 0.3,
+    "azimuth": 0,
+    "width": 180,
+    "status": "active",
+    "device": "wAP60Gx3 ",
+    "installDate": 1614488400000
   },
   {
     "nodeId": 5575,
@@ -986,6 +1157,42 @@
     "status": "active",
     "device": "Omni",
     "installDate": 1587182400000
+  },
+  {
+    "nodeId": 5916,
+    "radius": 1,
+    "azimuth": 304,
+    "width": 87,
+    "status": "active",
+    "device": "RP-5AC-Gen2",
+    "installDate": 1619496000000
+  },
+  {
+    "nodeId": 5916,
+    "radius": 1,
+    "azimuth": 216,
+    "width": 90,
+    "status": "active",
+    "device": "RP-5AC-Gen2",
+    "installDate": 1619496000000
+  },
+  {
+    "nodeId": 5916,
+    "radius": 1,
+    "azimuth": 126,
+    "width": 90,
+    "status": "active",
+    "device": "RP-5AC-Gen2",
+    "installDate": 1619496000000
+  },
+  {
+    "nodeId": 5916,
+    "radius": 1,
+    "azimuth": 38,
+    "width": 87,
+    "status": "active",
+    "device": "RP-5AC-Gen2",
+    "installDate": 1619496000000
   },
   {
     "nodeId": 5965,
@@ -1177,102 +1384,48 @@
     "installDate": 1618545600000
   },
   {
-    "nodeId": 8174,
-    "radius": 0.3,
-    "azimuth": 0,
-    "width": 360,
-    "status": "active",
-    "device": "Omni",
-    "installDate": 1616299200000
-  },
-  {
-    "nodeId": 8174,
+    "nodeId": 14391,
     "radius": 1,
     "azimuth": 0,
     "width": 120,
     "status": "active",
     "device": "LAP-120",
-    "installDate": 1616299200000
+    "installDate": 1703739600000
   },
   {
-    "nodeId": 8174,
+    "nodeId": 14391,
+    "radius": 1,
+    "azimuth": 90,
+    "width": 120,
+    "status": "active",
+    "device": "LAP-120",
+    "installDate": 1703739600000
+  },
+  {
+    "nodeId": 14391,
     "radius": 1,
     "azimuth": 180,
     "width": 120,
     "status": "active",
     "device": "LAP-120",
-    "installDate": 1616299200000
+    "installDate": 1703739600000
   },
   {
-    "nodeId": 5916,
+    "nodeId": 14391,
     "radius": 1,
-    "azimuth": 304,
-    "width": 87,
-    "status": "active",
-    "device": "RP-5AC-Gen2",
-    "installDate": 1619496000000
-  },
-  {
-    "nodeId": 5916,
-    "radius": 1,
-    "azimuth": 216,
-    "width": 90,
-    "status": "active",
-    "device": "RP-5AC-Gen2",
-    "installDate": 1619496000000
-  },
-  {
-    "nodeId": 5916,
-    "radius": 1,
-    "azimuth": 126,
-    "width": 90,
-    "status": "active",
-    "device": "RP-5AC-Gen2",
-    "installDate": 1619496000000
-  },
-  {
-    "nodeId": 5916,
-    "radius": 1,
-    "azimuth": 38,
-    "width": 87,
-    "status": "active",
-    "device": "RP-5AC-Gen2",
-    "installDate": 1619496000000
-  },
-  {
-    "nodeId": 10697,
-    "radius": 1,
-    "azimuth": 29,
+    "azimuth": 270,
     "width": 120,
     "status": "active",
-    "device": "LiteAP GPS",
-    "installDate": 1640667600000
+    "device": "LAP-120",
+    "installDate": 1703739600000
   },
   {
-    "nodeId": 10697,
-    "radius": 1,
-    "azimuth": 119,
-    "width": 120,
+    "nodeId": 14391,
+    "radius": 0.3,
+    "azimuth": 0,
+    "width": 360,
     "status": "active",
-    "device": "LiteAP GPS",
-    "installDate": 1640667600000
-  },
-  {
-    "nodeId": 10697,
-    "radius": 1,
-    "azimuth": 209,
-    "width": 120,
-    "status": "active",
-    "device": "LiteAP GPS",
-    "installDate": 1640667600000
-  },
-  {
-    "nodeId": 10697,
-    "radius": 1,
-    "azimuth": 299,
-    "width": 120,
-    "status": "active",
-    "device": "LiteAP GPS",
-    "installDate": 1640667600000
+    "device": "Omni",
+    "installDate": 1703739600000
   }
 ]

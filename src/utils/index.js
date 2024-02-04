@@ -30,7 +30,7 @@ export function nodeType(node) {
 
 export function nodeStatus(node) {
 	const { status } = node;
-	const isActive = (status === "Installed" || status === "NN Assigned");
+	const isActive = (status === "Installed" || status === "NN assigned");
 	return isActive ? "active" : "potential";
 }
 
