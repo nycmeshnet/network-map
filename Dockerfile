@@ -1,22 +1,23 @@
-# #############################   Stage 0, Build the app   #####################
-# pull official base image
-FROM node:13.12.0-alpine as build-stage
-# set working directory
+# Use official Node.js 14 image as the base image
+FROM node:14-alpine
+
+# Set working directory
 WORKDIR /app
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-# install app dependencies
+
+# Copy package.json and package-lock.json files
 COPY package*.json ./
-#RUN npm install
+
+# Install dependencies
 RUN npm install
 
-# add app
-COPY . ./
+# Copy the rest of the application
+COPY . .
 
-#build for production
-RUN npm run-script build
+# Create a production build
+RUN npm run build
 
-# #### Stage 1, push the compressed  built app into nginx ####
-FROM nginx:1.17
+# Expose port 3000
+EXPOSE 3000
 
-COPY --from=build-stage /app/build/ /usr/share/nginx/html
+# Command to run the application (serve built files using a lightweight HTTP server like 'serve')
+CMD ["npx", "serve", "-s", "build", "-l", "3000"]
