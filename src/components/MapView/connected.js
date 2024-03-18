@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import PureMapView from "./component";
+import {fetchLinks, fetchNodes, fetchSectors} from "../../actions";
 
 const mapStateToProps = (state, ownProps) => ({
 	nodes: state.nodes,
@@ -10,7 +11,11 @@ const mapStateToProps = (state, ownProps) => ({
 	filters: state.filters
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({});
+const mapDispatchToProps = (dispatch, ownProps) => ({
+	fetchNodes: () => fetchNodes(dispatch),
+	fetchLinks: () => fetchLinks(dispatch),
+	fetchSectors: () => fetchSectors(dispatch)
+});
 
 export default connect(
 	mapStateToProps,

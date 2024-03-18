@@ -1,5 +1,5 @@
 export function fetchNodes(dispatch) {
-	fetch("https://node-db.netlify.com/nodes.json")
+	fetch("http://127.0.0.1:8000/api/v1/mapdata/nodes/?format=json")
 		.then(res => res.json())
 		.then(json => {
 			dispatch({ type: "FETCH_NODES_SUCCESS", nodes: json });
@@ -8,10 +8,19 @@ export function fetchNodes(dispatch) {
 }
 
 export function fetchLinks(dispatch) {
-	fetch("https://node-db.netlify.com/links.json")
+	fetch("http://127.0.0.1:8000/api/v1/mapdata/links/?format=json")
 		.then(res => res.json())
 		.then(json => {
 			dispatch({ type: "FETCH_LINKS_SUCCESS", links: json });
+		})
+		.catch(err => console.log(err));
+}
+
+export function fetchSectors(dispatch) {
+	fetch("http://127.0.0.1:8000/api/v1/mapdata/sectors/?format=json")
+		.then(res => res.json())
+		.then(json => {
+			dispatch({ type: "FETCH_SECTORS_SUCCESS", sectors: json });
 		})
 		.catch(err => console.log(err));
 }

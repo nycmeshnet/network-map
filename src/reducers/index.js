@@ -1,8 +1,5 @@
 import { nodeType, nodeStatus, linkStatus } from "../utils";
 
-import nodeData from "../data/nodes";
-import linkData from "../data/links";
-import sectorData from "../data/sectors";
 import kiosks from "../data/kiosks";
 
 const kiosks5g = kiosks.filter(kiosk => kiosk.type.toLowerCase().includes("5g"));
@@ -21,22 +18,19 @@ const initialFilters = {
 	changelog: false
 };
 
-const { nodes, links, sectors, nodesById } = addGraphData(
-	nodeData,
-	linkData,
-	sectorData
-);
-
 const reducer = (
 	state = {
-		nodes,
-		links,
-		sectors,
+		nodesRaw: [],
+		nodes: [],
+		linksRaw: [],
+		links: [],
+		sectorsRaw: [],
+		sectors: [],
 		kiosksClassic: initialFilters["linkNYC Classic"] === false ? [] : kiosksClassic,
 		kiosks5g: initialFilters["linkNYC 5G"] === false ? [] : kiosks5g,
-		nodesById,
+		nodesById: {},
 		filters: initialFilters,
-		statusCounts: getCounts(nodes, kiosksClassic, kiosks5g),
+		statusCounts: getCounts([], kiosksClassic, kiosks5g),
 		showFilters: false
 	},
 	action
@@ -67,6 +61,35 @@ const reducer = (
 				...state,
 				showFilters: !state.showFilters
 			};
+		case "FETCH_NODES_SUCCESS":
+			if (action.type === "FETCH_NODES_SUCCESS") {
+				state.nodesRaw = action.nodes;
+			}
+		case "FETCH_LINKS_SUCCESS":
+			if (action.type === "FETCH_LINKS_SUCCESS") {
+				state.linksRaw = action.links;
+			}
+		case "FETCH_SECTORS_SUCCESS":
+			if (action.type === "FETCH_SECTORS_SUCCESS") {
+				state.sectorsRaw = action.sectors;
+			}
+			const { nodes, links, sectors, nodesById } = addGraphData(
+				state.nodesRaw,
+				state.linksRaw,
+				state.sectorsRaw
+			);
+
+			return {
+				...state,
+				nodes,
+				links,
+				sectors,
+				nodesById,
+				nodesRaw: state.nodesRaw,
+				linksRaw: state.linksRaw,
+				sectorsRaw: state.sectorsRaw,
+				statusCounts: getCounts(nodes, kiosksClassic, kiosks5g),
+			}
 
 		default:
 			return state;
@@ -111,10 +134,17 @@ function addGraphData(nodes, links, sectors) {
 	});
 
 	// Add status and nodes to links
-	links.forEach(link => {
-		link.fromNode = nodesById[link.from];
-		link.toNode = nodesById[link.to];
-		link.status = linkStatus(link);
+	const newLinks = links.map(link => {
+		return {
+			...link,
+			fromNode: nodesById[link.from],
+			toNode: nodesById[link.to],
+		}
+	}).map(link => {
+		return {
+			...link,
+			status: linkStatus(link),
+		}
 	});
 
 	// Add sectors to nodes
@@ -148,7 +178,7 @@ function addGraphData(nodes, links, sectors) {
 		nodesById[node.id] = node;
 	});
 
-	return { nodes, links, sectors, nodesById };
+	return { nodes, links: newLinks, sectors, nodesById };
 }
 
 function getCounts(nodes, kiosksClassic, kiosks5g) {

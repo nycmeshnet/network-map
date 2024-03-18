@@ -53,6 +53,10 @@ class MapView extends Component {
 	}
 
 	componentDidMount() {
+		this.props.fetchNodes();
+		this.props.fetchLinks();
+		this.props.fetchSectors();
+
 		this.keyDownHandler = this.handleKeyDown.bind(this);
 		this.keyUpHandler = this.handleKeyUp.bind(this);
 		window.addEventListener("keydown", this.keyDownHandler, false);
@@ -62,7 +66,7 @@ class MapView extends Component {
 			try {
 				setTimeout(() => {
 					this.handleSelectedChange(this.props);
-				}, 500);
+				}, 3000);
 			} catch (e) {
 				console.error(e);
 			}
