@@ -73,6 +73,14 @@ const reducer = (
 			if (action.type === "FETCH_SECTORS_SUCCESS") {
 				state.sectorsRaw = action.sectors;
 			}
+
+			if (!(state.nodesRaw && state.linksRaw && state.sectorsRaw)) return {
+				...state,
+				nodesRaw: state.nodesRaw,
+				linksRaw: state.linksRaw,
+				sectorsRaw: state.sectorsRaw,
+			}
+
 			const { nodes, links, sectors, nodesById } = addGraphData(
 				state.nodesRaw,
 				state.linksRaw,
