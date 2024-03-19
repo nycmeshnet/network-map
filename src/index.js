@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import Map from "./Map";
 
 require("tachyons");
 require("./index.css");
 
 
-ReactDOM.render(<App />, document.getElementById("map-root"));
+ReactDOM.render(<Map />, document.getElementById("map-root"));

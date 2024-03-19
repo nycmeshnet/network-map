@@ -91,8 +91,7 @@ class MapView extends Component {
 	handleKeyDown(event) {
 		const { keyCode } = event;
 		if (keyCode === 27) {
-			const { history } = this.props;
-			history.push("/");
+			this.selectNode(undefined);
 		}
 
 		// Command key
@@ -108,6 +107,10 @@ class MapView extends Component {
 		if (keyCode === 91 || keyCode === 93) {
 			this.setState({ commandPressed: false });
 		}
+	}
+
+	selectNode(newNodes){
+		this.props.updateSelected(newNodes);
 	}
 
 	handleSelectedChange(nextProps) {
@@ -159,9 +162,9 @@ class MapView extends Component {
 					setTimeout(() => {
 						const now = Date.now();
 						if (now - this.lastDoubleClick > 2000) {
-							history.push("/");
+							this.selectNode(undefined);
 						}
-					}, 500);
+					}, 50);
 				}}
 				onDblClick={() => {
 					const now = Date.now();
@@ -177,11 +180,6 @@ class MapView extends Component {
 				{this.renderKiosks5g()}
 				{this.renderNodes()}
 				{this.renderNodeDetail()}
-				<Route
-					exact
-					path="/nodes/:nodeId/panoramas/:panoId"
-					component={Gallery}
-				/>
 			</MapComponent>
 		);
 	}
@@ -307,9 +305,10 @@ class MapView extends Component {
 			const newNodeIdString = uniq(newNodeIds)
 				.sort()
 				.join("-");
-			history.replace(`/nodes/${newNodeIdString}`);
+
+			this.selectNode(newNodeIdString);
 		} else {
-			history.push(`/nodes/${node.id}`);
+			this.selectNode(node.id.toString());
 		}
 	}
 
@@ -374,6 +373,11 @@ class MapView extends Component {
 		if (nodes.length === 1) {
 			const [lng, lat] = nodes[0].coordinates;
 			this.map.current.panTo({ lng, lat });
+			const offset = 0.001; // ~100 meters at NYC lat - https://en.wikipedia.org/wiki/Decimal_degrees#Precision
+			this.map.current.fitBounds(
+				{ east: lng + offset, west: lng - offset, north: lat + offset, south: lat - offset },
+				window.innerWidth / 10,
+			);
 			return;
 		}
 
@@ -442,4 +446,4 @@ class MapView extends Component {
 	}
 }
 
-export default withRouter(MapView);
+export default MapView;
