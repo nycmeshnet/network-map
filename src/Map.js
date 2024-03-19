@@ -14,11 +14,24 @@ class Map extends Component {
         match: {params: {nodeId: "238-240"}},
     }
 
-    updateSelected(selectedNodes){
+    constructor(props) {
+        super(props);
+        window.addEventListener("setMapNode", (e) => {
+                this.updateSelected.bind(this)(e.selectedNodes, false)
+            }
+        )
+    }
+
+    updateSelected(selectedNodes, triggerEvent = true){
         if (selectedNodes) {
             this.setState({match: {params: {nodeId: selectedNodes}}})
         } else {
             this.setState({match: undefined});
+        }
+        if (triggerEvent) {
+            const selectedEvent = new Event("nodeSelectedOnMap");//, {detail: {selectedNodes: selectedNodes}});
+            selectedEvent.selectedNodes = selectedNodes;
+            window.dispatchEvent(selectedEvent);
         }
     }
 
