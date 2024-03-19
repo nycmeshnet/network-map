@@ -38,7 +38,7 @@ class Map extends Component {
     render() {
         return (
             <Provider store={store}>
-                <div className="helvetica">
+                <div className="helvetica" style={{width: "100%"}}>
                     <MapView match={this.state.match} updateSelected={this.updateSelected.bind(this)}/>
                 </div>
             </Provider>

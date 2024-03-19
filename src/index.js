@@ -6,4 +6,4 @@ require("tachyons");
 require("./index.css");
 
 
-ReactDOM.render(<Map />, document.getElementById("map-root"));
+ReactDOM.render(<Map />, document.getElementById("map-inner"));
