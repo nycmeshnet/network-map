@@ -47,9 +47,10 @@ class MapView extends Component {
 	constructor(props) {
 		super(props);
 		this.map = React.createRef();
-		this.markerRefs = {};
-		this.lineRefs = {};
+		this.markerRefs = new Map();
+		this.lineRefs = new Map();
 		this.lastDoubleClick = Date.now();
+		this.recentered = false;
 	}
 
 	componentDidMount() {
@@ -62,15 +63,10 @@ class MapView extends Component {
 		window.addEventListener("keydown", this.keyDownHandler, false);
 		window.addEventListener("keyup", this.keyUpHandler, false);
 
-		if (this.props.match) {
-			try {
-				setTimeout(() => {
-					this.handleSelectedChange(this.props);
-				}, 3000);
-			} catch (e) {
-				console.error(e);
-			}
-		}
+	}
+
+	componentDidUpdate(prevProps, prevState, snapshot) {
+		this.recentered = false;
 	}
 
 	componentWillUnmount() {
@@ -126,7 +122,7 @@ class MapView extends Component {
 
 		const nextSelectedNodeIds = this.selectedNodeIds(nextProps.match);
 		const nextSelectedMarkers = nextSelectedNodeIds
-			.map(id => this.markerRefs[id])
+			.map(id => this.markerRefs.get(id))
 			.filter(m => m); // filter null
 
 		if (!nextSelectedMarkers.length) {
@@ -319,11 +315,11 @@ class MapView extends Component {
 
 	resetAllNodes() {
 		ReactDOM.unstable_batchedUpdates(() => {
-			Object.values(this.markerRefs).forEach(marker =>
+			this.markerRefs.forEach((marker) =>
 				marker.setVisibility("default")
 			);
 
-			Object.values(this.lineRefs).forEach(line =>
+			this.lineRefs.forEach((line) =>
 				line.setVisibility("default")
 			);
 		});
@@ -332,7 +328,7 @@ class MapView extends Component {
 	updateNodes(selectedNodes, markers) {
 		ReactDOM.unstable_batchedUpdates(() => {
 			// Dim all nodes
-			Object.values(this.markerRefs).forEach(marker => {
+			this.markerRefs.forEach((marker) => {
 				marker.setVisibility("dim");
 			});
 
@@ -340,7 +336,7 @@ class MapView extends Component {
 			selectedNodes.forEach(node => {
 				if (node.connectedNodes) {
 					node.connectedNodes.forEach(nodeId => {
-						const connectedMarker = this.markerRefs[nodeId];
+						const connectedMarker = this.markerRefs.get(nodeId);
 						if (connectedMarker) {
 							connectedMarker.setVisibility("secondary");
 						}
@@ -356,7 +352,7 @@ class MapView extends Component {
 	updateLinks(nodes) {
 		ReactDOM.unstable_batchedUpdates(() => {
 			// Dim all links
-			Object.values(this.lineRefs).forEach(line =>
+			this.lineRefs.forEach((line) =>
 				line.setVisibility("dim")
 			);
 
@@ -364,7 +360,7 @@ class MapView extends Component {
 			nodes.forEach(node => {
 				if (node.links) {
 					node.links.forEach(link => {
-						const line = this.lineRefs[this.linkId(link)];
+						const line = this.lineRefs.get(this.linkId(link));
 						if (line) {
 							line.setVisibility("highlight");
 						}
@@ -410,13 +406,15 @@ class MapView extends Component {
 
 	handleMarkerRef(ref) {
 		if (ref) {
-			this.markerRefs[ref.props.node.id] = ref;
+			this.markerRefs.set(ref.props.node.id.toString(), ref);
+			this.checkRefsComplete();
 		}
 	}
 
 	handleLineRef(ref) {
 		if (ref) {
-			this.lineRefs[this.linkId(ref.props.link)] = ref;
+			this.lineRefs.set(this.linkId(ref.props.link), ref);
+			this.checkRefsComplete();
 		}
 	}
 
@@ -429,6 +427,18 @@ class MapView extends Component {
 			return [];
 		}
 		return match.params.nodeId.split("-");
+	}
+
+	checkRefsComplete() {
+		const {nodes, links} = this.props;
+		if (!this.recentered) {
+			if (nodes && this.markerRefs.size === nodes.length) {
+				if (links && this.lineRefs.size === links.length) {
+					this.recentered = true;
+					this.handleSelectedChange(this.props);
+				}
+			}
+		}
 	}
 }
 
