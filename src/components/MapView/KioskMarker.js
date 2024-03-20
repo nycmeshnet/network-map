@@ -28,7 +28,7 @@ export default class KioskMarker extends PureComponent {
 		const [lng, lat] = kiosk.coordinates;
 
 		const icon = {
-			url: isClassic ? "/img/map/kiosk.svg": "/img/map/kiosk-5g.svg",
+			url: isClassic ? "/static/admin/map/img/map/kiosk.svg": "/static/admin/map/img/map/kiosk-5g.svg",
 			anchor: { x: 5, y: 5 }
 		};
 		return <Marker defaultPosition={{ lat, lng }} icon={icon} zIndex={1} onClick={this.handleClick}>
