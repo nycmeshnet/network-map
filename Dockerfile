@@ -20,4 +20,4 @@ RUN npm run build
 EXPOSE 3000
 
 # Command to run the application (serve built files using a lightweight HTTP server like 'serve')
-CMD ["npx", "serve", "-s", "build", "-l", "3000"]
+CMD ["npx", "serve", "-s", "build", "-l", "3000", "--cors"]
