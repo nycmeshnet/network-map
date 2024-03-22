@@ -39,7 +39,7 @@ export default class NodeDetail extends PureComponent {
 					<div className="flex items-center bg-white br2 overflow-hidden shadow-2">
 						{this.renderImage(node)}
 						<div className="pv1 ph2 flex flex-column justify-end">
-							<span className="f5 fw6 nowrap sans-serif">
+							<span className="f5 fw6 nowrap sans-serif black">
 								{node.name || node.id}
 							</span>
 						</div>
