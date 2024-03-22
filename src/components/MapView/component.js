@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import ReactDOM from "react-dom";
 import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps";
 import { withRouter, Route } from "react-router";
-import DocumentTitle from "react-document-title";
 import { uniq, isEqual } from "lodash";
 
 import NodeMarker from "./NodeMarker";
@@ -274,15 +273,13 @@ class MapView extends Component {
 		const nodeIds = this.selectedNodeIds();
 
 		const nodeTitles = nodeIds.join(", ");
-		const title = `${nodeTitles} - Map - NYC Mesh`;
+		// const title = `${nodeTitles} - Map - NYC Mesh`;
 		return (
-			<DocumentTitle title={title}>
-				<Fragment>
-					{nodeIds.map(id => (
-						<NodeDetail key={id} nodeId={id} />
-					))}
-				</Fragment>
-			</DocumentTitle>
+			<Fragment>
+				{nodeIds.map(id => (
+					<NodeDetail key={id} nodeId={id} />
+				))}
+			</Fragment>
 		);
 	}
 
