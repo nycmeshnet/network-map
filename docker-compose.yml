@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  map:
+    container_name: map
+    build: .
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - map
+    expose:
+      - 3000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.port=80"
+        # .nycmesh.net URL (with HTTPS)
+      - "traefik.http.routers.map.rule=Host(`map.grandsvc.mesh.nycmesh.net`)"
+      - "traefik.http.routers.map.entrypoints=websecure"
+      - "traefik.http.routers.map.tls=true"
+      - "traefik.http.routers.map.tls.certresolver=grandsvcresolver"
+        # .nycmesh.net Redirect insecure traffic
+      - "traefik.http.routers.map-insecure.rule=Host(`map.grandsvc.mesh.nycmesh.net`)"
+      - "traefik.http.routers.map-insecure.entrypoints=web"
+      - "traefik.http.middlewares.map-https.redirectscheme.scheme=https"
+      - "traefik.http.routers.map-insecure.middlewares=map-https@docker"
+        # .mesh URL
+      - "traefik.http.routers.map-mesh.rule=Host(`map.grandsvc.mesh`)"
+      - "traefik.http.routers.map-mesh.entrypoints=web"
+
+networks:
+  map:
+    external: true
+    name: traefik-net
