@@ -1,7 +1,7 @@
 version: '3.8'
 services:
-  map:
-    container_name: map
+  admin-map:
+    container_name: admin-map
     build: .
     environment:
       - NODE_ENV=production
@@ -9,27 +9,27 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     networks:
-      - map
+      - admin-map
     expose:
       - 3000
     labels:
       - "traefik.enable=true"
       - "traefik.port=80"
         # .nycmesh.net URL (with HTTPS)
-      - "traefik.http.routers.map.rule=Host(`map.grandsvc.mesh.nycmesh.net`)"
-      - "traefik.http.routers.map.entrypoints=websecure"
-      - "traefik.http.routers.map.tls=true"
-      - "traefik.http.routers.map.tls.certresolver=grandsvcresolver"
+      - "traefik.http.routers.admin-map.rule=Host(`admin-map.grandsvc.mesh.nycmesh.net`)"
+      - "traefik.http.routers.admin-map.entrypoints=websecure"
+      - "traefik.http.routers.admin-map.tls=true"
+      - "traefik.http.routers.admin-map.tls.certresolver=grandsvcresolver"
         # .nycmesh.net Redirect insecure traffic
-      - "traefik.http.routers.map-insecure.rule=Host(`map.grandsvc.mesh.nycmesh.net`)"
-      - "traefik.http.routers.map-insecure.entrypoints=web"
-      - "traefik.http.middlewares.map-https.redirectscheme.scheme=https"
-      - "traefik.http.routers.map-insecure.middlewares=map-https@docker"
+      - "traefik.http.routers.admin-map-insecure.rule=Host(`admin-map.grandsvc.mesh.nycmesh.net`)"
+      - "traefik.http.routers.admin-map-insecure.entrypoints=web"
+      - "traefik.http.middlewares.admin-map-https.redirectscheme.scheme=https"
+      - "traefik.http.routers.admin-map-insecure.middlewares=admin-map-https@docker"
         # .mesh URL
-      - "traefik.http.routers.map-mesh.rule=Host(`map.grandsvc.mesh`)"
-      - "traefik.http.routers.map-mesh.entrypoints=web"
+      - "traefik.http.routers.admin-map-mesh.rule=Host(`admin-map.grandsvc.mesh`)"
+      - "traefik.http.routers.admin-map-mesh.entrypoints=web"
 
 networks:
-  map:
+  admin-map:
     external: true
     name: traefik-net
