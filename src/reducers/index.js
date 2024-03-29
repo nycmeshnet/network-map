@@ -74,7 +74,7 @@ const reducer = (
 				state.sectorsRaw = action.sectors;
 			}
 
-			if (!(state.nodesRaw && state.linksRaw && state.sectorsRaw)) return {
+			if (!(state.nodesRaw.length && state.linksRaw.length && state.sectorsRaw.length)) return {
 				...state,
 				nodesRaw: state.nodesRaw,
 				linksRaw: state.linksRaw,
