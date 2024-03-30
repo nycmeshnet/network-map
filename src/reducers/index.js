@@ -139,6 +139,9 @@ function addGraphData(nodes, links, sectors) {
 		if (node.notes) {
 			node.notes = String(node.notes)
 		}
+
+		// Remove all panos for the admin UI since the <Link> objects break things
+		node.panoramas = []
 	});
 
 	// Add status and nodes to links
