@@ -2,6 +2,7 @@ version: '3.8'
 services:
   admin-map:
     container_name: admin-map
+    image: willnilges/network-map:meshdb-admin
     build: .
     environment:
       - NODE_ENV=production
