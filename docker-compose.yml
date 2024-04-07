@@ -2,6 +2,7 @@ version: '3.8'
 services:
   map:
     container_name: map
+    image: willnilges/network-map:meshdb
     build: .
     environment:
       - NODE_ENV=production
