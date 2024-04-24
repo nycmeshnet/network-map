@@ -131,28 +131,27 @@ export const icons = {
 		</svg>
 	),
 	"linkNYC Classic": (
-		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+		<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
 			<circle
-				cx="10"
-				cy="10"
-				r="3"
-				stroke="white"
-				strokeWidth="0"
 				fill="#01a2eb"
-				opacity="1"
+				stroke="white"
+				r="5"
+				stroke-width="3"
+				cx="5"
+				cy="5"
 			/>
 		</svg>
+
 	),
 	"linkNYC 5G": (
-		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+		<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
 			<circle
-				cx="10"
-				cy="10"
-				r="3"
+				fill="#013147"
 				stroke="white"
-				strokeWidth="0"
-				fill="#fcba03"
-				opacity="1"
+				r="5"
+				stroke-width="3"
+				cx="5"
+				cy="5"
 			/>
 		</svg>
 	)

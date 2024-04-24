@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10">
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
 	<circle
-	    fill="#fcba03"
+	    fill="#013147"
 	  	stroke="white"
-	  	r="3"
-	    stroke-width="2"
+	  	r="5"
+	    stroke-width="3"
 	  	cx="5"
 	  	cy="5"
 	/>
