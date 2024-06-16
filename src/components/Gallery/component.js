@@ -71,13 +71,13 @@ export default class Gallery extends PureComponent {
 						onClick={() =>
 							window
 								.open(
-									`https://node-db.netlify.com/panoramas/${src}`,
+									`https://node-db.netlify.app/panoramas/${src}`,
 									"_blank"
 								)
 								.focus()
 						}
 						className="db center mh-100 mw-100 zoom-in"
-						src={`https://node-db.netlify.com/panoramas/${src}`}
+						src={`https://node-db.netlify.app/panoramas/${src}`}
 						alt="Panorama"
 					/>
 					{this.renderPreviews()}
@@ -105,7 +105,7 @@ export default class Gallery extends PureComponent {
 								index === panoId - 1 ? "" : "o-30"
 							}`}
 							style={{
-								backgroundImage: `url("https://node-db.netlify.com/panoramas/${panorama}")`
+								backgroundImage: `url("https://node-db.netlify.app/panoramas/${panorama}")`
 							}}
 						/>
 					</Link>

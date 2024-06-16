@@ -73,7 +73,7 @@ export default class NodeDetail extends PureComponent {
 				<div
 					className="h-100 w-100 cover bg-center bg-near-white"
 					style={{
-						backgroundImage: `url("https://node-db.netlify.com/panoramas/${firstPanorama}")`
+						backgroundImage: `url("https://node-db.netlify.app/panoramas/${firstPanorama}")`
 					}}
 				/>
 			</Link>
