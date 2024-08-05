@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "update-data": "curl -s https://node-db.netlify.app/nodes.json > src/data/nodes.json && curl -s https://node-db.netlify.app/links.json > src/data/links.json && curl -s https://node-db.netlify.app/kiosks.json > src/data/kiosks.json && curl -s https://node-db.netlify.app/sectors.json > src/data/sectors.json"
+    "update-data": "cd src/data/ && ./update.sh"
   },
   "browserslist": [
     ">0.2%",
