@@ -46,4 +46,4 @@ jobs:
             -n ${{ vars.MAP_NAMESPACE }} \
             --create-namespace \
             -f ./infra/map/values.yaml \
-            --set bookstack.fqdn="${{ vars.FQDN }}"
+            --set map.fqdn="${{ vars.FQDN }}"
