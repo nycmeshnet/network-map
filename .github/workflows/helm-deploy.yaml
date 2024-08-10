@@ -46,4 +46,4 @@ jobs:
             -n ${{ vars.APP_NAMESPACE }} \
             --create-namespace \
             -f ./infra/admin-map/values.yaml \
-            --set bookstack.fqdn="${{ vars.FQDN }}"
+            --set adminmap.fqdn="${{ vars.FQDN }}"
