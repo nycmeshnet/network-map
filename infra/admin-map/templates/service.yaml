@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "admin-map.fullname" . }}
+  namespace: {{ .Values.adminmap_namespace }}
+  labels:
+    {{- include "admin-map.labels" . | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.adminmap.port }}
+      targetPort: {{ .Values.adminmap.port }}
+      protocol: TCP
+      name: http
+  selector:
+    app: adminmap

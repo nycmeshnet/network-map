@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "admin-map.fullname" . }}
+  namespace: {{ .Values.adminmap_namespace }}
+  labels:
+    {{- include "admin-map.labels" . | nindent 4 }}
+spec:
+  rules:
+    - host: {{ .Values.adminmap.fqdn }}
+      http:
+        paths:
+          - path: "/"
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: {{ include "admin-map.fullname" . }}
+                port:
+                  number: {{ .Values.adminmap.port }}
