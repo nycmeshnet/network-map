@@ -5,6 +5,7 @@ on:
     branches:
       #- meshdb
       - meshdb-admin
+      - james/admin-helm
 
 jobs:
   push_to_registry:
