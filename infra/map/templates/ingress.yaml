@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "map.fullname" . }}
+  namespace: {{ .Values.map_namespace }}
+  labels:
+    {{- include "map.labels" . | nindent 4 }}
+spec:
+  rules:
+    - host: {{ .Values.map.fqdn }}
+      http:
+        paths:
+          - path: "/"
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: {{ include "map.fullname" . }}
+                port:
+                  number: {{ .Values.map.port }}

@@ -5,11 +5,13 @@ on:
     branches:
       - meshdb
       #- meshdb-admin
+      -  james/helm
 
 jobs:
   push_to_registry:
     name: Push Docker Image to Docker Hub
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/meshdb'
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
@@ -37,6 +39,7 @@ jobs:
 
   deploy_to_grandsvc:
     name: Deploy to grandsvc
+    if: github.ref == 'refs/heads/meshdb'
     needs: push_to_registry
     runs-on: ubuntu-latest
     steps:
@@ -51,3 +54,19 @@ jobs:
     - name: Pull new Docker image
       # Not a huge fan of this GITHUB_REF shenanigans
       run: ssh ${{ secrets.GRANDSVC_SSH_TARGET }} "cd network-map-${{ github.ref_name }} && git pull && docker compose pull && docker compose up -d"
+
+  deploy_to_dev3:
+    name: Deploy to dev 3
+    uses: ./.github/workflows/helm-deploy.yaml
+    with:
+      environment: dev3
+    secrets: inherit
+    #if: github.ref == 'refs/heads/meshdb'
+
+  deploy_to_prod1:
+    name: Deploy to prod 1
+    uses: ./.github/workflows/helm-deploy.yaml
+    with:
+      environment: prod1
+    secrets: inherit
+    if: github.ref == 'refs/heads/meshdb'
