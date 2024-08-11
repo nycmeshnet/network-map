@@ -11,7 +11,7 @@ jobs:
   push_to_registry:
     name: Push Docker Image to Docker Hub
     runs-on: ubuntu-latest
-    #if: github.ref == 'refs/heads/meshdb-admin'
+    if: github.ref == 'refs/heads/meshdb-admin'
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4

@@ -9,7 +9,7 @@ adminmap_namespace: "adminmap"
 adminmap:
   image:
     repository: willnilges/network-map
-    tag: meshdb-admin
+    tag: admin-helm
     pullPolicy: Always
   port: 3000
 
