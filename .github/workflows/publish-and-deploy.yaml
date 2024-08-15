@@ -69,4 +69,4 @@ jobs:
     with:
       environment: prod1
     secrets: inherit
-    if: github.ref == 'refs/heads/meshdb-admin'
+    #if: github.ref == 'refs/heads/meshdb-admin'
