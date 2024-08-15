@@ -69,4 +69,5 @@ jobs:
     with:
       environment: prod1
     secrets: inherit
-    if: github.ref == 'refs/heads/meshdb'
+    #if: github.ref == 'refs/heads/meshdb'
+    needs: deploy_to_dev3
