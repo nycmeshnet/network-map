@@ -11,7 +11,7 @@ jobs:
   push_to_registry:
     name: Push Docker Image to Docker Hub
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/meshdb'
+    #if: github.ref == 'refs/heads/meshdb'
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
@@ -34,7 +34,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: helm
+          #tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
   deploy_to_grandsvc:
