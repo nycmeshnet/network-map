@@ -17,7 +17,7 @@ spec:
                 name: {{ include "map.fullname" . }}
                 port:
                   number: {{ .Values.map.port }}
-    - host: {{ .Values.map.fqdn.legacy }}
+    - host: {{ .Values.map.fqdn_legacy }}
       http:
         paths:
           - path: "/"

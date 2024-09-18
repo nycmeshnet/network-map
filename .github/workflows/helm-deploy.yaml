@@ -46,5 +46,5 @@ jobs:
             -n ${{ vars.MAP_NAMESPACE }} \
             --create-namespace \
             -f ./infra/map/values.yaml \
-            --set map.fqdn.legacy="${{ vars.FQDN_LEGACY }}" \
+            --set map.fqdn_legacy="${{ vars.FQDN_LEGACY }}" \
             --set map.fqdn="${{ vars.FQDN }}"
