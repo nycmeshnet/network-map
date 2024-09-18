@@ -26,7 +26,7 @@ export function fetchSectors(dispatch) {
 }
 
 export function fetchKiosks(dispatch) {
-	fetch("https://node-db.netlify.com/kiosks.json")
+	fetch("https://db.nycmesh.net/api/v1/mapdata/kiosks?format=json")
 		.then(res => res.json())
 		.then(json => {
 			dispatch({ type: "FETCH_KIOSKS_SUCCESS", kiosks: json });
