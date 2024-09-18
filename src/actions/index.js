@@ -1,5 +1,5 @@
 export function fetchNodes(dispatch) {
-	fetch("https://db.mesh.nycmesh.net/api/v1/mapdata/nodes?format=json")
+	fetch("https://db.nycmesh.net/api/v1/mapdata/nodes?format=json")
 		.then(res => res.json())
 		.then(json => {
 			dispatch({ type: "FETCH_NODES_SUCCESS", nodes: json });
@@ -8,7 +8,7 @@ export function fetchNodes(dispatch) {
 }
 
 export function fetchLinks(dispatch) {
-	fetch("https://db.mesh.nycmesh.net/api/v1/mapdata/links?format=json")
+	fetch("https://db.nycmesh.net/api/v1/mapdata/links?format=json")
 		.then(res => res.json())
 		.then(json => {
 			dispatch({ type: "FETCH_LINKS_SUCCESS", links: json });
@@ -17,7 +17,7 @@ export function fetchLinks(dispatch) {
 }
 
 export function fetchSectors(dispatch) {
-	fetch("https://db.mesh.nycmesh.net/api/v1/mapdata/sectors?format=json")
+	fetch("https://db.nycmesh.net/api/v1/mapdata/sectors?format=json")
 		.then(res => res.json())
 		.then(json => {
 			dispatch({ type: "FETCH_SECTORS_SUCCESS", sectors: json });
