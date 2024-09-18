@@ -46,4 +46,5 @@ jobs:
             -n ${{ vars.APP_NAMESPACE }} \
             --create-namespace \
             -f ./infra/admin-map/values.yaml \
+            --set adminmap.fqdn.legacy="${{ vars.ADMIN_FQDN_LEGACY }}" \
             --set adminmap.fqdn="${{ vars.ADMIN_FQDN }}"
