@@ -17,3 +17,13 @@ spec:
                 name: {{ include "map.fullname" . }}
                 port:
                   number: {{ .Values.map.port }}
+    - host: {{ .Values.map.fqdn.legacy }}
+      http:
+        paths:
+          - path: "/"
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: {{ include "map.fullname" . }}
+                port:
+                  number: {{ .Values.map.port }}
