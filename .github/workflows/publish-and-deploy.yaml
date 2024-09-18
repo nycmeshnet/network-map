@@ -44,6 +44,7 @@ jobs:
       environment: dev3
     secrets: inherit
     #if: github.ref == 'refs/heads/meshdb-admin'
+    needs: push_to_registry
 
   deploy_to_prod1:
     name: Deploy to prod 1
