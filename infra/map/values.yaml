@@ -9,7 +9,7 @@ map_namespace: "map"
 map:
   image:
     repository: willnilges/network-map
-    tag: meshdb
+    tag: helm
     pullPolicy: Always
   port: 3000
 
