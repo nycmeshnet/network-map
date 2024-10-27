@@ -34,9 +34,9 @@ spec:
               containerPort: {{ .Values.adminmap.port }}
               protocol: TCP
           # livenessProbe:
-          #   {{- toYaml .Values.livenessProbe | nindent 12 }}
+          #   {{/* - toYaml .Values.livenessProbe | nindent 12 */}}
           # readinessProbe:
-          #   {{- toYaml .Values.readinessProbe | nindent 12 }}
+          #   {{/* - toYaml .Values.readinessProbe | nindent 12 */}}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
