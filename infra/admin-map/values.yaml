@@ -19,7 +19,13 @@ fullnameOverride: ""
 podAnnotations: {}
 podLabels: {}
 
-resources: {}
+resources:
+  limits:
+    cpu: 256m
+    memory: 256Mi
+  requests:
+    cpu: 128m
+    memory: 128Mi
 
 livenessProbe:
   httpGet:
