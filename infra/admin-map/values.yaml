@@ -21,10 +21,10 @@ podLabels: {}
 
 resources:
   limits:
-    cpu: 256m
+    cpu: 512m
     memory: 256Mi
   requests:
-    cpu: 128m
+    cpu: 256m
     memory: 128Mi
 
 livenessProbe:
