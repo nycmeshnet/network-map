@@ -54,3 +54,12 @@ jobs:
       environment: prod1
     secrets: inherit
     #if: github.ref == 'refs/heads/meshdb-admin'
+  
+  deploy_to_prod2:
+    name: Deploy to prod 2
+    uses: ./.github/workflows/helm-deploy.yaml
+    needs: deploy_to_dev3
+    with:
+      environment: prod2
+    secrets: inherit
+    #if: github.ref == 'refs/heads/meshdb-admin'
