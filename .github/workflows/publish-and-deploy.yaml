@@ -4,14 +4,12 @@ on:
   push:
     branches:
       - meshdb
-      #- meshdb-admin
-      -  james/helm
 
 jobs:
   push_to_registry:
     name: Push Docker Image to Docker Hub
     runs-on: ubuntu-latest
-    #if: github.ref == 'refs/heads/meshdb'
+    if: github.ref == 'refs/heads/meshdb'
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
@@ -44,7 +42,7 @@ jobs:
     with:
       environment: dev3
     secrets: inherit
-    #if: github.ref == 'refs/heads/meshdb'
+    if: github.ref == 'refs/heads/meshdb'
     needs: push_to_registry
 
   deploy_to_prod1:
@@ -53,7 +51,7 @@ jobs:
     with:
       environment: prod1
     secrets: inherit
-    #if: github.ref == 'refs/heads/meshdb'
+    if: github.ref == 'refs/heads/meshdb'
     needs: deploy_to_dev3
   
   deploy_to_prod2:
@@ -62,5 +60,5 @@ jobs:
     with:
       environment: prod2
     secrets: inherit
-    #if: github.ref == 'refs/heads/meshdb'
-    needs: deploy_to_dev3
+    if: github.ref == 'refs/heads/meshdb'
+    needs: deploy_to_prod1
