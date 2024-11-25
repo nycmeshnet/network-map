@@ -10,6 +10,7 @@ jobs:
   push_to_registry:
     name: Push Docker Image to Docker Hub
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/meshdb-admin'
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
@@ -32,22 +33,32 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: "willnilges/network-map:admin-helm"
           labels: ${{ steps.meta.outputs.labels }}
 
-  deploy_to_grandsvc:
-    name: Deploy to grandsvc
+  deploy_to_dev3:
+    name: Deploy to dev 3
+    uses: ./.github/workflows/helm-deploy.yaml
+    with:
+      environment: dev3
+    secrets: inherit
+    if: github.ref == 'refs/heads/meshdb-admin'
     needs: push_to_registry
-    runs-on: ubuntu-latest
-    steps:
-    - name: Install SSH key
-      uses: shimataro/ssh-key-action@d4fffb50872869abe2d9a9098a6d9c5aa7d16be4 # v2
-      with:
-        key: ${{ secrets.GRANDSVC_KEY }}
-        name: id_ed25519 # optional
-        known_hosts: ${{ secrets.GRANDSVC_KNOWN_HOSTS }}
-        #config: ${{ secrets.CONFIG }} # ssh_config; optional
-        if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
-    - name: Pull new Docker image
-      # Not a huge fan of this GITHUB_REF shenanigans
-      run: ssh ${{ secrets.GRANDSVC_SSH_TARGET }} "cd network-map-${{ github.ref_name }} && git pull && docker compose pull && docker compose up -d"
+
+  deploy_to_prod1:
+    name: Deploy to prod 1
+    uses: ./.github/workflows/helm-deploy.yaml
+    needs: deploy_to_dev3
+    with:
+      environment: prod1
+    secrets: inherit
+    if: github.ref == 'refs/heads/meshdb-admin'
+  
+  deploy_to_prod2:
+    name: Deploy to prod 2
+    uses: ./.github/workflows/helm-deploy.yaml
+    needs: deploy_to_prod1
+    with:
+      environment: prod2
+    secrets: inherit
+    if: github.ref == 'refs/heads/meshdb-admin'

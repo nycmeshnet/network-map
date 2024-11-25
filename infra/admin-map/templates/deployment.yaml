@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "admin-map.fullname" . }}
+  namespace: {{ .Values.adminmap_namespace }}
+  labels:
+    {{- include "admin-map.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "admin-map.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        app: adminmap
+        {{- include "admin-map.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.adminmap.image.repository }}:{{ .Values.adminmap.image.tag }}"
+          imagePullPolicy: {{ .Values.adminmap.image.pullPolicy }}
+          env:
+            - name: NODE_ENV
+              value: production
+          ports:
+            - name: http
+              containerPort: {{ .Values.adminmap.port }}
+              protocol: TCP
+          # livenessProbe:
+          #   {{/* - toYaml .Values.livenessProbe | nindent 12 */}}
+          # readinessProbe:
+          #   {{/* - toYaml .Values.readinessProbe | nindent 12 */}}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
