@@ -5,15 +5,19 @@ set -e
 # Set default value for MESHDB_HOST if not already set
 : "${MESHDB_HOST:=db.nycmesh.net}"
 
-KIOSKS_JSON=$(curl -s -f -L "http://$MESHDB_HOST/api/v1/mapdata/kiosks/?format=json")
-echo $KIOSKS_JSON > kiosks.json
+curl -s -f -L -o kiosks.new.json "http://$MESHDB_HOST/api/v1/mapdata/kiosks/?format=json"
+jq . kiosks.new.json
+mv kiosks.new.json kiosks.json
 
-NODES_JSON=$(curl -s -f -L "http://$MESHDB_HOST/api/v1/mapdata/nodes/?format=json")
-echo $NODES_JSON > nodes.json
+curl -s -f -L -o nodes.new.json "http://$MESHDB_HOST/api/v1/mapdata/nodes/?format=json"
+jq . nodes.new.json
+mv nodes.new.json nodes.json
 
-LINKS_JSON=$(curl -s -f -L "http://$MESHDB_HOST/api/v1/mapdata/links/?format=json")
-echo $LINKS_JSON > links.json
+curl -s -f -L -o links.new.json "http://$MESHDB_HOST/api/v1/mapdata/links/?format=json"
+jq . links.new.json
+mv links.new.json links.json
 
-SECTORS_JSON=$(curl -s -f -L "http://$MESHDB_HOST/api/v1/mapdata/sectors/?format=json")
-echo $SECTORS_JSON > sectors.json
+curl -s -f -L -o sectors.new.json "http://$MESHDB_HOST/api/v1/mapdata/sectors/?format=json"
+jq . sectors.new.json
+mv sectors.new.json sectors.json
 
