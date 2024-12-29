@@ -7,7 +7,6 @@ import { nodeColors } from "../../utils";
 const labels = [
 	"active",
 	"remote",
-	"kiosk",
 	"omni",
 	"hub",
 	"supernode",
@@ -16,7 +15,8 @@ const labels = [
 	"potential-supernode",
 	"linkNYC Classic",
 	"linkNYC 5G",
-	"sector"
+	"sector",
+	"VPN"
 ];
 
 export default class Filters extends PureComponent {

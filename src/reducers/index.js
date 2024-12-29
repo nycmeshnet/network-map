@@ -17,6 +17,7 @@ const initialFilters = {
 	"potential-hub": true,
 	"potential-supernode": true,
 	sector: true,
+	VPN: false,
 	backbone: false,
 	changelog: false
 };
