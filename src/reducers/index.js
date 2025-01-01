@@ -7,6 +7,8 @@ import kiosks from "../data/kiosks";
 
 const kiosks5g = kiosks.filter(kiosk => kiosk.type.toLowerCase().includes("5g"));
 const kiosksClassic = kiosks.filter(kiosk => !kiosk.type.toLowerCase().includes("5g"));
+let vpnCounter = 0;
+let fiberCounter = 0;
 
 const initialFilters = {
 	remote: true,
@@ -18,6 +20,7 @@ const initialFilters = {
 	"potential-supernode": true,
 	sector: true,
 	VPN: false,
+	vpnCount: 6,
 	backbone: false,
 	changelog: false
 };
@@ -37,7 +40,7 @@ const reducer = (
 		kiosks5g: initialFilters["linkNYC 5G"] === false ? [] : kiosks5g,
 		nodesById,
 		filters: initialFilters,
-		statusCounts: getCounts(nodes, kiosksClassic, kiosks5g),
+		statusCounts: getCounts(nodes, kiosksClassic, kiosks5g, vpnCounter, fiberCounter),
 		showFilters: false
 	},
 	action
@@ -79,11 +82,18 @@ function addGraphData(nodes, links, sectors) {
 	const nodesById = {};
 
 	const linksByNodeId = {};
+
 	links.forEach(link => {
 		linksByNodeId[link.from] = linksByNodeId[link.from] || [];
 		linksByNodeId[link.to] = linksByNodeId[link.to] || [];
 		linksByNodeId[link.from].push(link);
 		linksByNodeId[link.to].push(link);
+
+		if (link.status === "vpn") {
+			vpnCounter++;
+    		} else if (link.status === "fiber") {
+        		fiberCounter++;
+    		}
 	});
 
 	// Group nodes at same lat / lng
@@ -152,7 +162,7 @@ function addGraphData(nodes, links, sectors) {
 	return { nodes, links, sectors, nodesById };
 }
 
-function getCounts(nodes, kiosksClassic, kiosks5g) {
+function getCounts(nodes, kiosksClassic, kiosks5g, vpnCount, fiberCount) {
 	const counts = {};
 	nodes.forEach(node => {
 		const { type } = node;
@@ -164,6 +174,8 @@ function getCounts(nodes, kiosksClassic, kiosks5g) {
 	});
 	counts["linkNYC Classic"] = kiosksClassic.length;
 	counts["linkNYC 5G"] = kiosks5g.length;
+        counts["VPN"] = vpnCount;
+        counts["fiber"] = fiberCount;
 	return counts;
 }
 

@@ -16,6 +16,7 @@ const labels = [
 	"linkNYC Classic",
 	"linkNYC 5G",
 	"sector",
+	"fiber",
 	"VPN"
 ];
 

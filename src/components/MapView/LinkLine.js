@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { Polyline } from "react-google-maps";
 
+
 export default class LinkLine extends PureComponent {
 	state = {
 		visibility: "default"
@@ -9,9 +10,10 @@ export default class LinkLine extends PureComponent {
 	render() {
 		const { link, visible, filters } = this.props;
 		const { fromNode, toNode } = link;
-
 		const { status } = link;
+
 		if (status === "vpn" && !filters.VPN) return null;
+		if (status === "fiber" && !filters.VPN) return null;
 
 		if (!fromNode || !toNode) {
 			return null;
