@@ -17,6 +17,7 @@ const labels = [
 	"linkNYC 5G",
 	"sector",
 	"fiber",
+	"wireless",
 	"VPN"
 ];
 

@@ -9,6 +9,7 @@ const kiosks5g = kiosks.filter(kiosk => kiosk.type.toLowerCase().includes("5g"))
 const kiosksClassic = kiosks.filter(kiosk => !kiosk.type.toLowerCase().includes("5g"));
 let vpnCounter = 0;
 let fiberCounter = 0;
+let activeCounter = 0;
 
 const initialFilters = {
 	remote: true,
@@ -20,7 +21,7 @@ const initialFilters = {
 	"potential-supernode": true,
 	sector: true,
 	VPN: false,
-	vpnCount: 6,
+	wireless: true,
 	backbone: false,
 	changelog: false
 };
@@ -40,7 +41,7 @@ const reducer = (
 		kiosks5g: initialFilters["linkNYC 5G"] === false ? [] : kiosks5g,
 		nodesById,
 		filters: initialFilters,
-		statusCounts: getCounts(nodes, kiosksClassic, kiosks5g, vpnCounter, fiberCounter),
+		statusCounts: getCounts(nodes, kiosksClassic, kiosks5g, vpnCounter, fiberCounter, activeCounter),
 		showFilters: false
 	},
 	action
@@ -92,7 +93,9 @@ function addGraphData(nodes, links, sectors) {
 		if (link.status === "vpn") {
 			vpnCounter++;
     		} else if (link.status === "fiber") {
-        		fiberCounter++;
+			vpnCounter++;
+    		} else if (link.status === "active") {
+        		activeCounter++;
     		}
 	});
 
@@ -162,7 +165,7 @@ function addGraphData(nodes, links, sectors) {
 	return { nodes, links, sectors, nodesById };
 }
 
-function getCounts(nodes, kiosksClassic, kiosks5g, vpnCount, fiberCount) {
+function getCounts(nodes, kiosksClassic, kiosks5g, vpnCount, fiberCount, activeCount) {
 	const counts = {};
 	nodes.forEach(node => {
 		const { type } = node;
@@ -176,6 +179,7 @@ function getCounts(nodes, kiosksClassic, kiosks5g, vpnCount, fiberCount) {
 	counts["linkNYC 5G"] = kiosks5g.length;
         counts["VPN"] = vpnCount;
         counts["fiber"] = fiberCount;
+        counts["wireless"] = activeCount;
 	return counts;
 }
 
