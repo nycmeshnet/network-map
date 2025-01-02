@@ -14,6 +14,7 @@ export default class LinkLine extends PureComponent {
 
 		if (status === "vpn" && !filters.VPN) return null;
 		if (status === "fiber" && !filters.fiber) return null;
+		if (status === "active" && !filters.wireless) return null;
 
 		if (!fromNode || !toNode) {
 			return null;

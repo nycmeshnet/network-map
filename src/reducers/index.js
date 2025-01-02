@@ -20,6 +20,7 @@ const initialFilters = {
 	"potential-hub": true,
 	"potential-supernode": true,
 	sector: true,
+	fiber: true,
 	VPN: false,
 	wireless: true,
 	backbone: false,
