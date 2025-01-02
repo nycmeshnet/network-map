@@ -13,7 +13,7 @@ export default class LinkLine extends PureComponent {
 		const { status } = link;
 
 		if (status === "vpn" && !filters.VPN) return null;
-		if (status === "fiber" && !filters.VPN) return null;
+		if (status === "fiber" && !filters.fiber) return null;
 
 		if (!fromNode || !toNode) {
 			return null;
@@ -84,9 +84,6 @@ export default class LinkLine extends PureComponent {
 			activeColor = "#03fcf8"
 		}
 
-		if (status === "vpn"){
-		 
-		}
 
 		if (status === "fiber"||status === "vpn"||status === "active"||status === "60GHz") {
 			if (filters.backbone && !isBackbone(link))

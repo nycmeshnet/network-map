@@ -90,12 +90,12 @@ function addGraphData(nodes, links, sectors) {
 		linksByNodeId[link.from].push(link);
 		linksByNodeId[link.to].push(link);
 
-		if (link.status === "vpn") {
-			vpnCounter++;
+		if (link.status === "active") {
+			activeCounter++;
     		} else if (link.status === "fiber") {
-			vpnCounter++;
-    		} else if (link.status === "active") {
-        		activeCounter++;
+			fiberCounter++;
+    		} else if (link.status === "vpn") {
+        		vpnCounter++;
     		}
 	});
 
