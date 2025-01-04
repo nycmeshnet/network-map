@@ -16,8 +16,10 @@ class Map extends Component {
 
     constructor(props) {
         super(props);
-        window.addEventListener("setMapNode", (e) => {
-                this.updateSelected.bind(this)(e.selectedNodes, false)
+        window.addEventListener("message", ({ data, source }) => {
+                console.log(JSON.stringify(data));
+                // Looking for selectedNodes
+                this.updateSelected.bind(this)(data.selectedNodes, false);
             }
         )
     }
