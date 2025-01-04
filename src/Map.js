@@ -31,6 +31,7 @@ class Map extends Component {
             this.setState({match: undefined});
         }
         if (triggerEvent) {
+            console.log("Selected node on map");
             const selectedEvent = new Event("nodeSelectedOnMap");//, {detail: {selectedNodes: selectedNodes}});
             selectedEvent.selectedNodes = selectedNodes;
             window.dispatchEvent(selectedEvent);
