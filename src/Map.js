@@ -11,7 +11,7 @@ const store = createStore(rootReducer);
 
 class Map extends Component {
     state = {
-        match: {params: {nodeId: "238-240"}},
+        match: {params: {nodeId: ""}},
     }
 
     constructor(props) {
@@ -32,9 +32,6 @@ class Map extends Component {
         }
         if (triggerEvent) {
             console.log(`Selected node on map: ${selectedNodes}`);
-            //const selectedEvent = new Event("nodeSelectedOnMap");//, {detail: {selectedNodes: selectedNodes}});
-            //selectedEvent.selectedNodes = selectedNodes;
-            //window.dispatchEvent(selectedEvent);
             window.parent.postMessage({selectedNodes: selectedNodes}, "http://127.0.0.1:8000");
         }
     }
