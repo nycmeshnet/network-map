@@ -1,4 +1,4 @@
-const MESHDB_URL = "http://127.0.0.1:8000";
+export const MESHDB_URL = process.env.REACT_APP_MESHDB_URL;
 
 export function fetchNodes(dispatch) {
 	fetch(`${MESHDB_URL}/api/v1/mapdata/nodes/?format=json`)
