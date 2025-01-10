@@ -4,8 +4,8 @@ import {Provider} from "react-redux";
 import React, {Component} from "react";
 import MapView from "./components/MapView";
 
-
 import rootReducer from "./reducers";
+import { MESHDB_URL } from "./actions";
 
 const store = createStore(rootReducer);
 
@@ -17,7 +17,6 @@ class Map extends Component {
     constructor(props) {
         super(props);
         window.addEventListener("message", ({ data, source }) => {
-                console.log(JSON.stringify(data));
                 // Looking for selectedNodes
                 this.updateSelected.bind(this)(data.selectedNodes, false);
             }
@@ -31,8 +30,7 @@ class Map extends Component {
             this.setState({match: undefined});
         }
         if (triggerEvent) {
-            console.log(`Selected node on map: ${selectedNodes}`);
-            window.parent.postMessage({selectedNodes: selectedNodes}, "http://127.0.0.1:8000");
+            window.parent.postMessage({selectedNodes: selectedNodes}, MESHDB_URL);
         }
     }
 
