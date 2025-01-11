@@ -19,6 +19,8 @@ class Map extends Component {
         window.addEventListener("message", ({ data, source }) => {
                 // Looking for selectedNodes
                 this.updateSelected.bind(this)(data.selectedNodes, false);
+
+                console.log(`State: ${JSON.stringify(this.state)}`);
             }
         )
     }
