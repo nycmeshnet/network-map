@@ -17,15 +17,15 @@ class Map extends Component {
     constructor(props) {
         super(props);
         window.addEventListener("message", ({ data, source }) => {
-                // Looking for selectedNodes
-                this.updateSelected.bind(this)(data.selectedNodes, false);
+            // Looking for selectedNodes
+            this.updateSelected.bind(this)(data.selectedNodes, false);
 
-                console.log(`State: ${JSON.stringify(this.state)}`);
-            }
-        )
+            console.log(`Got message from Admin Panel: ${JSON.stringify(this.state)}`);
+        });
     }
 
     updateSelected(selectedNodes, triggerEvent = true){
+        console.log(`updating admin panel location: ${selectedNodes}`);
         if (selectedNodes) {
             this.setState({match: {params: {nodeId: selectedNodes}}})
         } else {
