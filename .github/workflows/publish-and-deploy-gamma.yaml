@@ -1,0 +1,28 @@
+name: Publish and Deploy (Gamma)
+
+on:
+  push:
+    branches:
+      #- meshdb
+      - meshdb-admin-dev
+
+jobs:
+  # Dev and Prod use the same image
+  push_to_registry_gamma:
+    name: Push to gamma
+    uses: ./.github/workflows/build-push-image.yaml
+    with:
+      environment: gamma1
+      image_tag: willnilges/network-map:admin-helm-gamma
+    secrets: inherit
+    if: github.ref == 'refs/heads/meshdb-admin-dev'
+
+  deploy_to_gamma:
+    name: Deploy to gamma1
+    uses: ./.github/workflows/helm-deploy.yaml
+    with:
+      environment: gamma1
+      imageTag: admin-helm-gamma
+    secrets: inherit
+    if: github.ref == 'refs/heads/meshdb-admin-dev'
+    needs: push_to_registry_gamma

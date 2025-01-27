@@ -29,6 +29,8 @@ spec:
           env:
             - name: NODE_ENV
               value: production
+            - name: REACT_APP_MESHDB_URL
+              value: {{.Values.adminmap.meshDbUrl}}
           ports:
             - name: http
               containerPort: {{ .Values.adminmap.port }}
