@@ -18,7 +18,6 @@ class Map extends Component {
         super(props);
         window.addEventListener("message", ({ data, source }) => {
             this.updateSelected.bind(this)(data.selectedNodes, false);
-            console.log(`[map] Got message from Admin Panel: ${data}. State is now: ${JSON.stringify(this.state)}`);
         });
     }
 
