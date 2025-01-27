@@ -7,6 +7,9 @@ on:
       environment:
         required: true
         type: string
+      imageTag:
+        required: true
+        type: string
 
 jobs:
   helm_deploy:
@@ -47,7 +50,9 @@ jobs:
             --create-namespace \
             -f ./infra/admin-map/values.yaml \
             --set adminmap.fqdn.legacy="${{ vars.ADMIN_FQDN_LEGACY }}" \
-            --set adminmap.fqdn="${{ vars.ADMIN_FQDN }}"
+            --set adminmap.fqdn="${{ vars.ADMIN_FQDN }}" \
+            --set adminmap.meshDbUrl="${{ vars.REACT_APP_MESHDB_URL }}" \
+            --set adminmap.image.tag="${{ inputs.imageTag }}"
           
           # Rolling restart
           kubectl --kubeconfig ./config --server https://${{ secrets.SSH_TARGET_IP }}:6443 -n ${{ vars.APP_NAMESPACE }} rollout restart deploy
