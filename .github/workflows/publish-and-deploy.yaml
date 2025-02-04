@@ -12,7 +12,7 @@ jobs:
     name: Push to prod
     uses: ./.github/workflows/build-push-image.yaml
     with:
-      environment: prod1
+      environment: prod2
       image_tag: willnilges/network-map:admin-helm
     secrets: inherit
     if: github.ref == 'refs/heads/meshdb-admin'
