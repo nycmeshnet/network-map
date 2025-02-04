@@ -40,3 +40,6 @@ jobs:
           push: true
           tags: ${{ inputs.image_tag }}
           labels: ${{ steps.meta.outputs.labels }}
+          # Hardcoding the URL of meshdb into the image we build
+          build-args: |
+            "NEXT_PUBLIC_MESHDB_URL=${{ vars.NEXT_PUBLIC_MESHDB_URL }}"
