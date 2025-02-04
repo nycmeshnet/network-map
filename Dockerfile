@@ -13,6 +13,9 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
+ARG NEXT_PUBLIC_MESHDB_URL
+ENV NEXT_PUBLIC_MESHDB_URL=${NEXT_PUBLIC_MESHDB_URL}
+
 # Create a production build
 RUN npm run build
 
