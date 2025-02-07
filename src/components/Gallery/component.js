@@ -1,18 +1,20 @@
 import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
 import DocumentTitle from "react-document-title";
+import { PANO_URL } from "../../utils";
 
 export default class Gallery extends PureComponent {
 	constructor(props) {
 		super(props);
 		this.state = {
-			panoramas: this.getPanoramas()
+			panoramas: []//this.getPanoramas()
 		};
 	}
 
 	componentDidMount() {
 		this.keyDownHandler = this.handleKeyDown.bind(this);
 		window.addEventListener("keydown", this.keyDownHandler, true);
+		this.fetchPanoramas();
 	}
 
 	componentWillUnmount() {
@@ -71,13 +73,13 @@ export default class Gallery extends PureComponent {
 						onClick={() =>
 							window
 								.open(
-									`https://node-db.netlify.app/panoramas/${src}`,
+									`${src}`,
 									"_blank"
 								)
 								.focus()
 						}
 						className="db center mh-100 mw-100 zoom-in"
-						src={`https://node-db.netlify.app/panoramas/${src}`}
+						src={`${src}`}
 						alt="Panorama"
 					/>
 					{this.renderPreviews()}
@@ -105,7 +107,7 @@ export default class Gallery extends PureComponent {
 								index === panoId - 1 ? "" : "o-30"
 							}`}
 							style={{
-								backgroundImage: `url("https://node-db.netlify.app/panoramas/${panorama}")`
+								backgroundImage: `url("${panorama}")`
 							}}
 						/>
 					</Link>
@@ -114,20 +116,16 @@ export default class Gallery extends PureComponent {
 		);
 	}
 
-	getPanoramas() {
-		const { match, nodesById } = this.props;
-		const { nodeId } = match.params;
-		const node = nodesById[nodeId];
-
-		if (!node) {
-			return [];
-		}
-
-		const { panoramas } = node;
-		if (!panoramas || !panoramas.length) {
-			return [];
-		}
-
-		return panoramas;
-	}
+    fetchPanoramas = async () => {
+        try {
+            const { match } = this.props;
+            const { nodeId } = match.params;
+            const panoResponse = await fetch(`${PANO_URL}/api/v1/install/${nodeId}`);
+            const j = await panoResponse.json();
+            let urls = j.map(image => image.url);
+            this.setState({ panoramas: urls });
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
 }

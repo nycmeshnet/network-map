@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { OverlayView } from "react-google-maps";
 import { Link } from "react-router-dom";
+import { PANO_URL } from "../../utils";
 
 const getPixelPositionOffset = (width, height) => ({
 	x: -width / 2,
@@ -8,6 +9,29 @@ const getPixelPositionOffset = (width, height) => ({
 });
 
 export default class NodeDetail extends PureComponent {
+    constructor(props) {
+		super(props);
+		this.state = {
+			panoramas: []
+		};
+	}
+
+    componentDidMount() {
+        this.fetchPanoramas();
+    }
+
+    fetchPanoramas = async () => {
+        try {
+			console.log(`PANO_URL = ${PANO_URL}`);
+            const panoResponse = await fetch(`${PANO_URL}/api/v1/install/${this.props.nodeId}`);
+            const j = await panoResponse.json();
+            let urls = j.map(image => image.url);
+            this.setState({ panoramas: urls });
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
 	render() {
 		const { nodeId, nodesById } = this.props;
 
@@ -63,17 +87,17 @@ export default class NodeDetail extends PureComponent {
 	}
 
 	renderImage(node) {
-		const { id, panoramas } = node;
-		if (!panoramas || !panoramas.length) {
+		const { id } = node;
+		if (!this.state.panoramas || !this.state.panoramas.length) {
 			return null;
 		}
-		const [firstPanorama] = panoramas;
+		const [firstPanorama] = this.state.panoramas;
 		return (
 			<Link to={`/nodes/${id}/panoramas/1`} className="db h2 w2">
 				<div
 					className="h-100 w-100 cover bg-center bg-near-white"
 					style={{
-						backgroundImage: `url("https://node-db.netlify.app/panoramas/${firstPanorama}")`
+						backgroundImage: `url("${firstPanorama}")`
 					}}
 				/>
 			</Link>
