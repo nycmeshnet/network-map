@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { OverlayView } from "react-google-maps";
 import { Link } from "react-router-dom";
+import { PANO_URL } from "../../utils";
 
 const getPixelPositionOffset = (width, height) => ({
 	x: -width / 2,
@@ -15,20 +16,21 @@ export default class NodeDetail extends PureComponent {
 		};
 	}
 
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  fetchData = async () => {
-    try {
-      const panoResponse = await fetch(`http://127.0.0.1:8001/api/v1/install/${this.props.nodeId}`);
-      const j = await panoResponse.json();
-	  let urls = j.map(image => image.url);
-      this.setState({ panoramas: urls });
-    } catch (error) {
-      console.error('Error fetching data:', error);
+    componentDidMount() {
+        this.fetchPanoramas();
     }
-  };
+
+    fetchPanoramas = async () => {
+        try {
+			console.log(`PANO_URL = ${PANO_URL}`);
+            const panoResponse = await fetch(`${PANO_URL}/api/v1/install/${this.props.nodeId}`);
+            const j = await panoResponse.json();
+            let urls = j.map(image => image.url);
+            this.setState({ panoramas: urls });
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
 
 	render() {
 		const { nodeId, nodesById } = this.props;

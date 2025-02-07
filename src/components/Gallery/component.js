@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { Link } from "react-router-dom";
 import DocumentTitle from "react-document-title";
+import { PANO_URL } from "../../utils";
 
 export default class Gallery extends PureComponent {
 	constructor(props) {
@@ -13,7 +14,7 @@ export default class Gallery extends PureComponent {
 	componentDidMount() {
 		this.keyDownHandler = this.handleKeyDown.bind(this);
 		window.addEventListener("keydown", this.keyDownHandler, true);
-		this.fetchData();
+		this.fetchPanoramas();
 	}
 
 	componentWillUnmount() {
@@ -115,40 +116,16 @@ export default class Gallery extends PureComponent {
 		);
 	}
 
-	getPanoramas() {
-		const { match, nodesById } = this.props;
-		const { nodeId } = match.params;
-		const node = nodesById[nodeId];
-
-		if (!node) {
-			return [];
-		}
-
-		fetch(`http://127.0.0.1:8001/api/v1/install/${nodeId}`).then(
-		    async (response) => {
-		    	const images = await response.json();
-		    	console.log(images);
-				let urls = images.map(a => a.url);
-				if (!urls || !urls.length) {
-					return [];
-				}
-				return urls;
-		    	//setImages(images);
-		    	//setIsLoading(false);
-		    },
-		);
-	}
-
-  fetchData = async () => {
-    try {
-	  const { match, nodesById } = this.props;
-	  const { nodeId } = match.params;
-      const panoResponse = await fetch(`http://127.0.0.1:8001/api/v1/install/${nodeId}`);
-      const j = await panoResponse.json();
-	  let urls = j.map(image => image.url);
-      this.setState({ panoramas: urls });
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
+    fetchPanoramas = async () => {
+        try {
+            const { match } = this.props;
+            const { nodeId } = match.params;
+            const panoResponse = await fetch(`${PANO_URL}/api/v1/install/${nodeId}`);
+            const j = await panoResponse.json();
+            let urls = j.map(image => image.url);
+            this.setState({ panoramas: urls });
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
 }
