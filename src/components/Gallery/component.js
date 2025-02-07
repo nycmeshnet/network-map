@@ -71,13 +71,13 @@ export default class Gallery extends PureComponent {
 						onClick={() =>
 							window
 								.open(
-									`https://node-db.netlify.app/panoramas/${src}`,
+									`${src}`,
 									"_blank"
 								)
 								.focus()
 						}
 						className="db center mh-100 mw-100 zoom-in"
-						src={`https://node-db.netlify.app/panoramas/${src}`}
+						src={`${src}`}
 						alt="Panorama"
 					/>
 					{this.renderPreviews()}
@@ -105,7 +105,7 @@ export default class Gallery extends PureComponent {
 								index === panoId - 1 ? "" : "o-30"
 							}`}
 							style={{
-								backgroundImage: `url("https://node-db.netlify.app/panoramas/${panorama}")`
+								backgroundImage: `url("${panorama}")`
 							}}
 						/>
 					</Link>
@@ -123,11 +123,34 @@ export default class Gallery extends PureComponent {
 			return [];
 		}
 
+		fetch(`http://127.0.0.1:8001/api/v1/install/${nodeId}`).then(
+		    async (response) => {
+		    	const images = await response.json();
+		    	console.log(images);
+				let urls = images.map(a => a.url);
+				if (!urls || !urls.length) {
+					return [];
+				}
+				return urls;
+		    	//setImages(images);
+		    	//setIsLoading(false);
+		    },
+		);
+
+		// XXX (wdn): This pulls the panoramas out of the node object, for display
+		// on the beeg panorama screen. Instead, we can query Pano for the NN
+		// and not manipulate the data
+		/*
 		const { panoramas } = node;
+
+		console.log("Willard is printing.");
+		console.log(node);
+		console.log(panoramas);
 		if (!panoramas || !panoramas.length) {
 			return [];
 		}
 
 		return panoramas;
+			*/
 	}
 }
