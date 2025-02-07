@@ -6,13 +6,14 @@ export default class Gallery extends PureComponent {
 	constructor(props) {
 		super(props);
 		this.state = {
-			panoramas: this.getPanoramas()
+			panoramas: []//this.getPanoramas()
 		};
 	}
 
 	componentDidMount() {
 		this.keyDownHandler = this.handleKeyDown.bind(this);
 		window.addEventListener("keydown", this.keyDownHandler, true);
+		this.fetchData();
 	}
 
 	componentWillUnmount() {
@@ -136,21 +137,18 @@ export default class Gallery extends PureComponent {
 		    	//setIsLoading(false);
 		    },
 		);
-
-		// XXX (wdn): This pulls the panoramas out of the node object, for display
-		// on the beeg panorama screen. Instead, we can query Pano for the NN
-		// and not manipulate the data
-		/*
-		const { panoramas } = node;
-
-		console.log("Willard is printing.");
-		console.log(node);
-		console.log(panoramas);
-		if (!panoramas || !panoramas.length) {
-			return [];
-		}
-
-		return panoramas;
-			*/
 	}
+
+  fetchData = async () => {
+    try {
+	  const { match, nodesById } = this.props;
+	  const { nodeId } = match.params;
+      const panoResponse = await fetch(`http://127.0.0.1:8001/api/v1/install/${nodeId}`);
+      const j = await panoResponse.json();
+	  let urls = j.map(image => image.url);
+      this.setState({ panoramas: urls });
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 }
