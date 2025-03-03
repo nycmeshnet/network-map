@@ -8,10 +8,13 @@ adminmap_namespace: "adminmap"
 
 adminmap:
   image:
-    repository: willnilges/network-map
+    repository: docker.io/willnilges/network-map
     tag: admin-helm
     pullPolicy: Always
   port: 3000
+
+imageCredentials:
+  registry: docker.io
 
 nameOverride: ""
 fullnameOverride: ""

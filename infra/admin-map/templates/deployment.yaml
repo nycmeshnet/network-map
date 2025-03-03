@@ -22,6 +22,10 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
+      {{- if .Values.imageCredentials }}
+      imagePullSecrets:
+        - name: pull-secret
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.adminmap.image.repository }}:{{ .Values.adminmap.image.tag }}"
