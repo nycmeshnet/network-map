@@ -49,6 +49,9 @@ jobs:
             -n ${{ vars.APP_NAMESPACE }} \
             --create-namespace \
             -f ./infra/admin-map/values.yaml \
+            --set imageCredentials.username="${{ secrets.PULL_SECRET_USERNAME }}" \
+            --set imageCredentials.password="${{ secrets.PULL_SECRET_PASSWORD }}" \
+            --set imageCredentials.email="${{ secrets.PULL_SECRET_EMAIL }}" \
             --set adminmap.fqdn.legacy="${{ vars.ADMIN_FQDN_LEGACY }}" \
             --set adminmap.fqdn="${{ vars.ADMIN_FQDN }}" \
             --set adminmap.meshDbUrl="${{ vars.REACT_APP_MESHDB_URL }}" \
