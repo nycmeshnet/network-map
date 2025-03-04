@@ -5,6 +5,9 @@ on:
     branches:
       #- meshdb
       - meshdb-admin
+  workflow_dispatch:
+    branches:
+      - meshdb-admin
 
 jobs:
   # Dev and Prod use the same image
