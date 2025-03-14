@@ -5,6 +5,7 @@ export function fetchNodes(dispatch) {
 		.then(res => res.json())
 		.then(json => {
 			console.log("Fetched Nodes");
+			window.parent.postMessage({type: "FETCH_NODES_SUCCESS"}, "*");
 			dispatch({ type: "FETCH_NODES_SUCCESS", nodes: json });
 		})
 		.catch(err => console.log(err));
@@ -15,6 +16,7 @@ export function fetchLinks(dispatch) {
 		.then(res => res.json())
 		.then(json => {
 			dispatch({ type: "FETCH_LINKS_SUCCESS", links: json });
+			window.parent.postMessage({type: "FETCH_LINKS_SUCCESS"}, "*");
 		})
 		.catch(err => console.log(err));
 }
@@ -24,6 +26,7 @@ export function fetchSectors(dispatch) {
 		.then(res => res.json())
 		.then(json => {
 			dispatch({ type: "FETCH_SECTORS_SUCCESS", sectors: json });
+			window.parent.postMessage({type: "FETCH_SECTORS_SUCCESS"}, "*");
 		})
 		.catch(err => console.log(err));
 }
@@ -33,6 +36,7 @@ export function fetchKiosks(dispatch) {
 		.then(res => res.json())
 		.then(json => {
 			dispatch({ type: "FETCH_KIOSKS_SUCCESS", kiosks: json });
+			window.parent.postMessage({type: "FETCH_KIOSKS_SUCCESS"}, "*");
 		})
 		.catch(err => console.log(err));
 }

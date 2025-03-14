@@ -17,7 +17,9 @@ class Map extends Component {
     constructor(props) {
         super(props);
         window.addEventListener("message", ({ data, source }) => {
-            this.updateSelected.bind(this)(data.selectedNodes, false);
+            if ('selectedNodes' in data) {
+                this.updateSelected.bind(this)(data.selectedNodes, false);
+            }
         });
     }
 
@@ -29,7 +31,7 @@ class Map extends Component {
         }
         if (triggerEvent) {
             console.log(`[map] Posting update: ${selectedNodes}`);
-            window.parent.postMessage({selectedNodes: selectedNodes}, MESHDB_URL);
+            window.parent.postMessage({selectedNodes: selectedNodes}, "*");
         }
     }
 
