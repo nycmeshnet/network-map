@@ -8,6 +8,10 @@
 
 Installs dependencies.
 
+```
+echo '127.0.0.1 map.nycmesh.net' >> /etc/hosts
+```
+
 #### `yarn start`
 
 Runs the app in development mode.  
