@@ -46,7 +46,7 @@ export default class Stats extends PureComponent {
 						<span className="mr3 mb3 blue">
 							{supernode}{" "}
 							<span className="mid-gray db f4 fw5">
-								<a href="/map/nodes/12-584-1934-227-713">SN</a>
+								<a href="/map/nodes/730-584-1934-227-713">SN</a>
 							</span>
 						</span>
 					</div>
