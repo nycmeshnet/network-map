@@ -10,7 +10,7 @@ adminmap:
   image:
     repository: docker.io/willnilges/network-map
     tag: admin-helm
-    pullPolicy: Always
+    pullPolicy: IfNotPresent
   port: 3000
 
 imageCredentials:

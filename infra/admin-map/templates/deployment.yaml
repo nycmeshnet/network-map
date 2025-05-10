@@ -28,7 +28,11 @@ spec:
       {{- end }}
       containers:
         - name: {{ .Chart.Name }}
+          {{- if .Values.adminmap.image.digest }}
+          image: "{{ .Values.adminmap.image.repository }}@{{ .Values.adminmap.image.digest }}"
+          {{- else }}
           image: "{{ .Values.adminmap.image.repository }}:{{ .Values.adminmap.image.tag }}"
+          {{- end }}
           imagePullPolicy: {{ .Values.adminmap.image.pullPolicy }}
           env:
             - name: NODE_ENV
