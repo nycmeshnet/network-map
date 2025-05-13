@@ -7,7 +7,7 @@ on:
       environment:
         required: true
         type: string
-      image_digests:
+      image_digest:
         required: true
         type: string
 
@@ -38,6 +38,8 @@ jobs:
           sudo ip link set up dev wg1
 
       - name: Install Helm Chart
+        env:
+          IMAGE_DIGEST: ${{ inputs.image_digest }}
         run: |
           scp ${{ secrets.SSH_USER }}@${{ secrets.SSH_TARGET_IP }}:~/.kube/config ./
           helm upgrade \
@@ -55,4 +57,4 @@ jobs:
             --set adminmap.fqdn.legacy="${{ vars.ADMIN_FQDN_LEGACY }}" \
             --set adminmap.fqdn="${{ vars.ADMIN_FQDN }}" \
             --set adminmap.meshDbUrl="${{ vars.REACT_APP_MESHDB_URL }}" \
-            --set adminmap.image.digest="${{ inputs.image_digest }}"
+            --set adminmap.image.digest="$IMAGE_DIGEST"
