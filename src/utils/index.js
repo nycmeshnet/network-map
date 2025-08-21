@@ -73,3 +73,5 @@ export const sectorColors = {
 	potential: "#aaa",
 	default: "#007aff"
 };
+
+export const PANO_URL = process.env.REACT_APP_PANO_URL;
